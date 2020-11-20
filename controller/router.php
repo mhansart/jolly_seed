@@ -4,6 +4,9 @@
     {
         switch($_GET["section"])
         {
+            case 'dons':
+                include("controller/donsController.php");
+                break;
             case "create":
                 require_once("controller/personne/create.php");
             break;

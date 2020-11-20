@@ -144,7 +144,7 @@
   color: white;
 }
 .centrePageDons .box {
-  box-shadow: 0px 3px 3px rgba(110, 110, 110, 0.5);
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   margin: 15px;
   padding: 15px;
 }
@@ -258,13 +258,28 @@ main {
 
 footer {
   box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
-  padding: 15px 0 5px 0;
+  padding-bottom: 5px;
+  margin-top: 15px;
   align-items: center;
   justify-content: center;
   background-color: #6E9611;
 }
 @media screen and (max-width: 600px) {
   footer {
+    flex-direction: column;
+    background-color: transparent;
+  }
+}
+footer .footer-container {
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  footer .footer-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer .link-footer {
     flex-direction: column;
   }
 }
@@ -276,11 +291,6 @@ footer .link-footer .line {
     background-color: white;
     height: 1px;
     display: block;
-  }
-}
-@media screen and (max-width: 600px) {
-  footer .link-footer .line {
-    order: 1;
   }
 }
 footer a {
@@ -299,18 +309,19 @@ footer a {
   }
 }
 footer a:hover {
-  background-color: #23512a;
+  color: #23512a;
+}
+@media screen and (max-width: 600px) {
+  footer a:hover {
+    color: white;
+    background-color: #23512a;
+  }
 }
 footer .social {
   background-color: #6E9611;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-@media screen and (max-width: 600px) {
-  footer .social {
-    order: 2;
-  }
 }
 footer .social a {
   font-size: 25px;

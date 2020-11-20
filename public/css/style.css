@@ -113,25 +113,25 @@
   font-family: "Louis George Cafe'";
 }
 .centrePageDons .select {
-  color: #6E9611;
+  color: #6e9611;
   display: inline;
 }
 .centrePageDons .fa-chevron-down {
   color: #ff8617;
 }
 .centrePageDons .options {
-  color: #6E9611;
+  color: #6e9611;
   position: absolute;
   right: 15px;
   background-color: white;
   padding: 10px 0px;
-  border: 1px solid #6E9611;
+  border: 1px solid #6e9611;
   text-align: center;
   width: 100px;
   display: none;
 }
 .centrePageDons .options a {
-  color: #6E9611;
+  color: #6e9611;
   text-decoration: none;
   display: block;
 }
@@ -152,11 +152,11 @@
   height: 30px;
 }
 .centrePageDons .box h3 {
-  color: #6E9611;
+  color: #6e9611;
   margin: 0px;
 }
 .centrePageDons .box .fa-heart {
-  color: #6E9611;
+  color: #6e9611;
   font-size: 20px;
 }
 .centrePageDons .box .imageDon {
@@ -230,7 +230,7 @@ header .header-container .header-se-connecter:focus {
   outline: none;
 }
 header .header-container .header-se-connecter a {
-  background-color: #6E9611;
+  background-color: #6e9611;
   padding: 7px 15px;
   text-decoration: none;
   color: white;
@@ -239,12 +239,12 @@ header .header-container .header-se-connecter a {
 @media screen and (max-width: 600px) {
   header .header-container .header-se-connecter a {
     background-color: white;
-    color: #6E9611;
+    color: #6e9611;
   }
 }
 header .header-container .header-se-connecter a.inscription {
   background-color: white;
-  color: #6E9611;
+  color: #6e9611;
 }
 @media screen and (max-width: 600px) {
   header .header-container .header-se-connecter a.inscription {
@@ -262,7 +262,7 @@ footer {
   margin-top: 15px;
   align-items: center;
   justify-content: center;
-  background-color: #6E9611;
+  background-color: #6e9611;
 }
 @media screen and (max-width: 600px) {
   footer {
@@ -305,7 +305,7 @@ footer a {
   footer a {
     flex-direction: column;
     text-transform: uppercase;
-    background-color: #6E9611;
+    background-color: #6e9611;
   }
 }
 footer a:hover {
@@ -318,7 +318,7 @@ footer a:hover {
   }
 }
 footer .social {
-  background-color: #6E9611;
+  background-color: #6e9611;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,11 +328,11 @@ footer .social a {
   margin: 0 15px;
 }
 footer .social a:hover {
-  background-color: #6E9611;
+  background-color: #6e9611;
   color: #23512a;
 }
 footer p {
-  background-color: #6E9611;
+  background-color: #6e9611;
   color: white;
   font-size: 10px;
   margin: 0;

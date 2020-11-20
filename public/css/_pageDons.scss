@@ -1,0 +1,98 @@
+.centrePageDons{
+    .btnDons{
+        background-color:$clic-color;
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+        border:none;
+        border-radius:15px;
+        padding:0px 15px;
+        line-height:30px;
+        height:30px;
+        width: 50%;
+        
+       
+        a{
+            color:$primary-color;
+            text-decoration-line:none;
+            font-size: 130%;
+        }
+    }
+    .espace{
+        padding:0px 30px;
+        margin-top:20px;
+    }
+    .row{
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-between;
+    }
+    a{
+        color:$clic-color;
+        font-family:$main-font;
+    }
+    .select{
+        color:$secondary-color; 
+       display: inline;
+    }
+    .fa-chevron-down{
+        color:$clic-color; 
+    }
+    .options{
+        color:$secondary-color; 
+        position: absolute;
+        right:15px;
+        background-color: $primary-color;
+        padding:10px 0px;
+        border: 1px solid $secondary-color;
+        text-align: center;
+        width:100px;
+        display:none;
+        a{
+            color:$secondary-color;
+            text-decoration: none; 
+            display:block;
+        }
+        a:first-of-type{
+            background-color: $clic-color;
+            color: $primary-color;
+        }
+        a:hover{
+            background-color: $clic-color;
+            color: $primary-color;
+        }
+    }
+    .box{       
+        box-shadow:$shadow;
+        margin:15px;
+        padding:15px;
+        .pomme{
+            height:30px;
+        }
+        h3{
+            color:$secondary-color;
+            margin: 0px;  
+        }
+        .fa-heart{
+            color:$secondary-color;  
+            font-size:20px;
+        }
+        .imageDon{
+            width: 100%;
+            padding-top: 15px;
+        }
+        button{
+            background-color:$color-flower;
+            border:none;
+            border-radius:15px;
+            padding:0px 15px;
+            line-height:30px;
+            height:30px;
+            a{
+                color:$primary-color;
+                text-decoration-line:none;
+                font-size: 130%;
+            }
+        }
+    }  
+}

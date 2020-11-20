@@ -82,6 +82,101 @@
   display: flex;
 }
 
+.centrePageDons .btnDons {
+  background-color: #ff8617;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  border: none;
+  border-radius: 15px;
+  padding: 0px 15px;
+  line-height: 30px;
+  height: 30px;
+  width: 50%;
+}
+.centrePageDons .btnDons a {
+  color: white;
+  text-decoration-line: none;
+  font-size: 130%;
+}
+.centrePageDons .espace {
+  padding: 0px 30px;
+  margin-top: 20px;
+}
+.centrePageDons .row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.centrePageDons a {
+  color: #ff8617;
+  font-family: "Louis George Cafe'";
+}
+.centrePageDons .select {
+  color: #6E9611;
+  display: inline;
+}
+.centrePageDons .fa-chevron-down {
+  color: #ff8617;
+}
+.centrePageDons .options {
+  color: #6E9611;
+  position: absolute;
+  right: 15px;
+  background-color: white;
+  padding: 10px 0px;
+  border: 1px solid #6E9611;
+  text-align: center;
+  width: 100px;
+  display: none;
+}
+.centrePageDons .options a {
+  color: #6E9611;
+  text-decoration: none;
+  display: block;
+}
+.centrePageDons .options a:first-of-type {
+  background-color: #ff8617;
+  color: white;
+}
+.centrePageDons .options a:hover {
+  background-color: #ff8617;
+  color: white;
+}
+.centrePageDons .box {
+  box-shadow: 0px 3px 3px rgba(110, 110, 110, 0.5);
+  margin: 15px;
+  padding: 15px;
+}
+.centrePageDons .box .pomme {
+  height: 30px;
+}
+.centrePageDons .box h3 {
+  color: #6E9611;
+  margin: 0px;
+}
+.centrePageDons .box .fa-heart {
+  color: #6E9611;
+  font-size: 20px;
+}
+.centrePageDons .box .imageDon {
+  width: 100%;
+  padding-top: 15px;
+}
+.centrePageDons .box button {
+  background-color: #611760;
+  border: none;
+  border-radius: 15px;
+  padding: 0px 15px;
+  line-height: 30px;
+  height: 30px;
+}
+.centrePageDons .box button a {
+  color: white;
+  text-decoration-line: none;
+  font-size: 130%;
+}
+
 * {
   box-sizing: border-box;
 }

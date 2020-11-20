@@ -12,7 +12,7 @@ body{
 }
 header{
     height: auto;
-    box-shadow: $shadow;
+    box-shadow: $shadow-low;
     .header-container{
         height: 75px;
         margin: auto;
@@ -75,20 +75,39 @@ main{
     height: 200px;
 }
 footer{
+    box-shadow: $shadow-up;
     padding: 15px 0 5px 0;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    .line{
-        background-color: $primary-color;
-        height: 1px;
+    background-color: $secondary-color;
+    @media screen and (max-width: 600px) {
+        flex-direction: column; 
+      }
+    .link-footer{
+        .line{
+            display: none;
+            @media screen and (max-width: 600px) {
+                background-color: $primary-color;
+                height: 1px;
+                display: block;
+              }
+        @media screen and (max-width: 600px) {
+           order:1
+          }
+    }
+    
+        
     }
     a{
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            text-transform: uppercase;
+            background-color: $secondary-color;
+          }
+        display: block;
         color: $primary-color;
         text-decoration: none;
-        text-transform: uppercase;
         font-size: $content-size;
-        background-color: $secondary-color;
         padding: 15px 0;
         text-align: center;
         &:hover{
@@ -101,6 +120,9 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
+        @media screen and (max-width: 600px) {
+            order:2
+           }
         a{
             font-size: 25px;
             margin: 0 15px;
@@ -111,9 +133,12 @@ footer{
         }
     }
     p{
+        background-color: $secondary-color;
+        color: $primary-color;
         font-size: 10px;
         margin: 0;
-        margin-top: 15px;
+        padding: 5px 0 10px 0;
+        text-align: center;
     }
 }
 

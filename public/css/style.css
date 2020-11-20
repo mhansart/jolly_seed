@@ -93,7 +93,7 @@ body {
 
 header {
   height: auto;
-  box-shadow: 0px 3px 3px rgba(110, 110, 110, 0.5);
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
 }
 header .header-container {
   height: 75px;
@@ -162,23 +162,46 @@ main {
 }
 
 footer {
+  box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
   padding: 15px 0 5px 0;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #6E9611;
 }
-footer .line {
-  background-color: white;
-  height: 1px;
+@media screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+  }
+}
+footer .link-footer .line {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  footer .link-footer .line {
+    background-color: white;
+    height: 1px;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer .link-footer .line {
+    order: 1;
+  }
 }
 footer a {
+  display: block;
   color: white;
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 17px;
-  background-color: #6E9611;
   padding: 15px 0;
   text-align: center;
+}
+@media screen and (max-width: 600px) {
+  footer a {
+    flex-direction: column;
+    text-transform: uppercase;
+    background-color: #6E9611;
+  }
 }
 footer a:hover {
   background-color: #23512a;
@@ -189,6 +212,11 @@ footer .social {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 600px) {
+  footer .social {
+    order: 2;
+  }
+}
 footer .social a {
   font-size: 25px;
   margin: 0 15px;
@@ -198,9 +226,12 @@ footer .social a:hover {
   color: #23512a;
 }
 footer p {
+  background-color: #6E9611;
+  color: white;
   font-size: 10px;
   margin: 0;
-  margin-top: 15px;
+  padding: 5px 0 10px 0;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

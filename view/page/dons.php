@@ -16,11 +16,11 @@
           <section class="box">
             <div class="dons">
               <div class="d-flex row">
-                <img class="pomme" src="static/pomme-mauve.png" />
+                <img class="pomme" src="./public/image/pomme-mauve.png" />
                 <h3>Reinettes étoilées</h3>
                 <i class="far fa-heart"></i>
               </div>
-              <img class="imageDon" src="static/reinette-etoilee.jpg" />
+              <img class="imageDon" src="./public/image/reinette-etoilee.jpg" />
               <div class="d-flex row">
                 <div>
                   <p>Date : 26/10/2020</p>

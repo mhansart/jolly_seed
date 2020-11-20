@@ -3,7 +3,7 @@
     {
         if($_POST["login"] === "admin" && $_POST["mdp"] === "admin")
         {
-            header("Location:?section=read");
+            header("Location:?section=dons");
         }
     }
 

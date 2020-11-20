@@ -6,6 +6,6 @@
 
     require_once("controller/router.php");
 
-
+    require_once("view/menu/menu_footer.php");
     require_once("view/html/footer.php");
 ?>

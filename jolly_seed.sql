@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
+<<<<<<< HEAD
 -- Généré le : ven. 20 nov. 2020 à 15:40
+=======
+-- Généré le : ven. 20 nov. 2020 à 14:37
+>>>>>>> f4817712d7bab2f6e1036253ead143cc086f6cb4
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.4.8
 
@@ -33,6 +37,7 @@ CREATE TABLE `ads` (
   `ads_category` varchar(30) NOT NULL,
   `ads_date` date NOT NULL,
   `ads_description` varchar(300) NOT NULL,
+<<<<<<< HEAD
   `ads_picture` varchar(300) NOT NULL,
   `ads_active` int(11) NOT NULL,
   `ads_title` varchar(50) NOT NULL
@@ -52,6 +57,11 @@ INSERT INTO `ads` (`ads_id`, `ads_type`, `ads_category`, `ads_date`, `ads_descri
 (7, 'Jardinier', 'Un peu de temps', '2020-10-22', 'Un peu de temps pour m\'aider à enlever les fleurs de mes rhododendrons? ', '', 1, 'Offre'),
 (8, 'Jardinier', 'Journée', '2020-10-18', 'Dispo samedi… Un peu d\'air frais me fera du bien!', '', 0, 'Demande');
 
+=======
+  `ads_picture` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+>>>>>>> f4817712d7bab2f6e1036253ead143cc086f6cb4
 -- --------------------------------------------------------
 
 --
@@ -71,6 +81,18 @@ CREATE TABLE `users` (
   `user_citycode` int(11) NOT NULL,
   `user_phone` int(11) NOT NULL,
   `user_email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users_ads`
+--
+
+CREATE TABLE `users_ads` (
+  `user_id` int(11) NOT NULL,
+  `ads_id` int(11) NOT NULL,
+  `favorite` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -124,13 +146,21 @@ ALTER TABLE `users_ads`
 -- AUTO_INCREMENT pour la table `ads`
 --
 ALTER TABLE `ads`
+<<<<<<< HEAD
   MODIFY `ads_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+=======
+  MODIFY `ads_id` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> f4817712d7bab2f6e1036253ead143cc086f6cb4
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+>>>>>>> f4817712d7bab2f6e1036253ead143cc086f6cb4
 
 --
 -- Contraintes pour les tables déchargées

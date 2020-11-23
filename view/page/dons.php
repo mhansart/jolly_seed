@@ -13,7 +13,8 @@
             </div>
           </div>
           <button class="btnDons"><a href="#">Poster une annonce</a></button>
-          <section class="box">
+          <?=$dons?>
+          <!--<section class="box">
             <div class="dons">
               <div class="d-flex row">
                 <img class="pomme" src="./public/image/pomme-mauve.png" />
@@ -35,6 +36,6 @@
                 connaisse pas, elles sont petites mais délicieuses à souhait!
               </article>
             </div>
-          </section>
+          </section>-->
         </section>
       </section>

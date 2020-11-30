@@ -7,6 +7,18 @@
             case 'dons':
                 include("controller/donsController.php");
                 break;
+            case "createAnnonce":
+                require_once("controller/annonce/create.php");
+            break;
+            case "readAnnonce":
+                require_once("controller/annonce/read.php");
+            break;
+            case "updateAnnonce":
+                require_once("controller/annonce/update.php");
+            break;
+            case "deleteAnnonce":
+                require_once("controller/annonce/delete.php");
+            break;
             case "create":
                 require_once("controller/personne/create.php");
             break;

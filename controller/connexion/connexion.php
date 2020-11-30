@@ -3,7 +3,8 @@
     {
         if($_POST["nom"] === "admin" && $_POST["prenom"] === "admin")
         {
-            header("Location:?section=dons");
+            //header("Location:?section=dons");
+            header("Location:?section=readAnnonce");
         }
     }
 

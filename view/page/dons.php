@@ -13,7 +13,9 @@
             </div>
           </div>
           <button class="btnDons"><a href="#">Poster une annonce</a></button>
+          <div class="annonceDons">
           <?=$dons?>
+          <div>
           <!--<section class="box">
             <div class="dons">
               <div class="d-flex row">

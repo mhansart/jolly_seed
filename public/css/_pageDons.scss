@@ -1,4 +1,5 @@
 .centrePageDons{
+  
     .btnDons{
         background-color:$clic-color;
         display: block;
@@ -62,6 +63,11 @@
             color: $primary-color;
         }
     }
+    .annonceDons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     .box{       
         box-shadow:$shadow-low;
         margin:15px;
@@ -82,7 +88,6 @@
             padding-top: 15px;
         }
         button{
-            background-color:$color-flower;
             border:none;
             border-radius:15px;
             padding:0px 15px;
@@ -93,6 +98,21 @@
                 text-decoration-line:none;
                 font-size: 130%;
             }
+        }
+        .seed{ 
+            background-color:$color-seed;
+        }
+        .flower{ 
+            background-color:$color-flower;
+        }
+        .time{ 
+            background-color:$color-time;
+        }
+        .ground{ 
+            background-color:$color-ground;
+        }
+        .plant{ 
+            background-color:$color-plant;
         }
     }  
 }

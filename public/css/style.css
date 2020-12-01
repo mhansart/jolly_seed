@@ -143,6 +143,11 @@
   background-color: #ff8617;
   color: white;
 }
+.centrePageDons .annonceDons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .centrePageDons .box {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   margin: 15px;
@@ -164,7 +169,6 @@
   padding-top: 15px;
 }
 .centrePageDons .box button {
-  background-color: #611760;
   border: none;
   border-radius: 15px;
   padding: 0px 15px;
@@ -175,6 +179,21 @@
   color: white;
   text-decoration-line: none;
   font-size: 130%;
+}
+.centrePageDons .box .seed {
+  background-color: #34348B;
+}
+.centrePageDons .box .flower {
+  background-color: #611760;
+}
+.centrePageDons .box .time {
+  background-color: #dc0411;
+}
+.centrePageDons .box .ground {
+  background-color: #780000;
+}
+.centrePageDons .box .plant {
+  background-color: #fcd12d;
 }
 
 * {

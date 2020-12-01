@@ -1,5 +1,4 @@
 var h = window.innerHeight;
-var w = window.innerWidth;
 var style = document.createElement('style');
 document.head.appendChild(style);
 style.sheet.insertRule(`body {height: ${h}px}`);
@@ -25,22 +24,39 @@ window.addEventListener('scroll', () => {
 const menuBurger = document.getElementById('menu-burger');
 const menuNav = document.querySelector('.nav-connected');
 const navBar = document.querySelector('.nav-pages');
-console.log(navBar);
-console.log(h);
+
+const getSizeNav = ()=>{
+    var w = window.innerWidth;
+    if(parseInt(w)<600){
+        menuNav.style.height = `${h}px`;
+    }else{
+        menuNav.style.height = '100%';
+    }
+}
+getSizeNav();
+
+window.addEventListener('resize', function(){
+    getSizeNav();
+});
+
 menuBurger.addEventListener('click', function(){
     if(!menuNav.classList.contains('open-menu')){
-        menuNav.style.transition = "all 0.3s"
         menuNav.classList.add('open-menu');
-        style.sheet.insertRule(`.nav-pages {height: ${h}px}`);
+        
     }else{
         menuNav.classList.remove('open-menu');
-        navBar.style.innerHeight = "auto";
-        menuNav.style.transition = "none";
-        style.sheet.deleteRule(`.nav-pages {height}`);
     }
 })
-const options = document.querySelector(".options")
-const chevron = document.querySelector(".fa-chevron-down")
-chevron.addEventListener("click", function () {
-    options.style.display = "block";
-});
+
+// const options = document.querySelector(".options")
+// const chevron = document.querySelector(".fa-chevron-down")
+// chevron.addEventListener("click", function () {
+//     options.style.display = "block";
+// });
+
+const btnNewForum = document.querySelector('.new-forum');
+const formNewForum = document.querySelector('.form-new-forum');
+btnNewForum.addEventListener('click', function(){
+    formNewForum.style.display="flex";
+    btnNewForum.style.display="none";
+})

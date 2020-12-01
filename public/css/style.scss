@@ -5,6 +5,7 @@
 @import "pageDons";
 * {
   box-sizing: border-box;
+  transition: all 0.3s;
 }
 body {
   margin: 0;
@@ -13,52 +14,159 @@ body {
 header {
   height: auto;
   box-shadow: $shadow-low;
-  padding: 10px 0;
+  .subheader {
+    background-color: $secondary-color;
+    padding: 15px 0;
+    .subheader-container {
+      margin: auto;
+      justify-content: space-between;
+      padding: 0 20px;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        padding: 0 15px;
+      }
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        display: flex;
+        align-items: center;
+        &:hover {
+          color: $third-color;
+        }
+        .sign-out-icon {
+          display: none;
+          font-size: 20px;
+          @media screen and (max-width: 420px) {
+            display: block;
+          }
+        }
+        .btn-deconnexion {
+          @media screen and (max-width: 420px) {
+            display: none;
+          }
+        }
+      }
+      .search-bar {
+        box-shadow: $shadow-low;
+        border-radius: 20px;
+        padding: 5px 15px;
+        background-color: $primary-color;
+        width: 250px;
+        @media screen and (max-width: 420px) {
+          width: 200px;
+        }
+        input {
+          border: none;
+          &:focus {
+            outline: none;
+          }
+        }
+        i {
+          padding-top: 1px;
+          transform: scaleX(-1);
+          color: $clic-color;
+        }
+      }
+    }
+  }
   .header-container {
     height: auto;
     margin: auto;
     align-items: center;
     justify-content: space-between;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .menu-burger {
+      display: none;
+      font-size: $h3-size;
+    }
+    @media screen and (max-width: 1035px) {
+      flex-direction: column;
+    }
     @media screen and (max-width: 600px) {
       width: 100%;
-      padding: 0px 15px;
+      padding: 15px 15px;
+      flex-direction: row;
+      .nav-connected {
+        display: none;
+      }
+      .menu-burger {
+        display: block;
+      }
     }
     .nav-connected {
       flex-grow: 1;
-      .menu-burger {
-        display: none;
-        @media screen and (max-width: 600px) {
-          margin-left: 15px;
-          justify-content: left;
-          font-size: 28px;
-        }
-      }
-      .search-compte {
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        .search-bar {
-          box-shadow: $shadow-low;
-          border-radius: 20px;
-          padding: 5px 15px;
-          flex-grow: 1;
-          input {
-            border: none;
-            flex-grow: 1;
-          }
-          i {
-            transform: scaleX(-1);
-            color: $clic-color;
-          }
-        }
-      }
       .nav-pages {
         list-style-type: none;
         justify-content: flex-end;
+        align-items: center;
         flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
         li {
-          padding: 0 20px;
-          &:last-child {
-            padding-right: 0;
+          &:not(:last-child) {
+            padding: 7px 15px;
+            a {
+              position: relative;
+              color: $clic-color;
+              display: block;
+              &::before {
+                content: "";
+                width: 0%;
+                height: 1px;
+                position: absolute;
+                top: 30px;
+                left: 0;
+                background-color: $clic-color;
+                transition: all 0.3s;
+              }
+            }
+            &:hover {
+              a {
+                &::before {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          &.btn-moncompte {
+            a {
+              color: $primary-color;
+              box-shadow: $shadow-low;
+              border-radius: 20px;
+              position: relative;
+              padding: 7px 15px 8px 15px;
+              display: block;
+              color: $clic-color;
+              overflow: hidden;
+              &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                top: 0;
+                left: 0;
+                border-radius: 20px;
+                background-color: $clic-color;
+                transition: all 0.3s;
+                z-index: -1;
+              }
+              &:hover {
+                color: $primary-color;
+                z-index: 2;
+                &::before {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 1035px) {
+            margin-top: 15px;
+            &:not(:last-child) {
+              padding: 7px 10px;
+              padding-bottom: 8px;
+            }
           }
           a {
             font-size: $menu-size;
@@ -73,8 +181,20 @@ header {
       flex-grow: 1;
       &-connexion {
         flex-grow: 0;
+        justify-content: space-between;
+        .search-compte {
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          > a {
+            margin: 0 15px;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
         h1 {
           margin-left: 30px;
+          flex-grow: 0;
         }
       }
     }

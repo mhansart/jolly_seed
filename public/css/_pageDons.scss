@@ -1,22 +1,20 @@
+button{
+    padding:7px 15px;
+    border:none;
+    border-radius:15px;
+    display: block;
+    a{
+        color:$primary-color;
+        text-decoration-line:none;
+        font-size: 130%;
+        font-family:$main-font;
+        
+    }
+}
 .centrePageDons{
     .btnDons{
         background-color:$clic-color;
-        display: block;
-        margin: auto;
-        margin-top: 15px;
-        border:none;
-        border-radius:15px;
-        padding:0px 15px;
-        line-height:30px;
-        height:30px;
-        width: 50%;
-        
-       
-        a{
-            color:$primary-color;
-            text-decoration-line:none;
-            font-size: 130%;
-        }
+        margin: auto; 
     }
     .espace{
         padding:0px 30px;
@@ -26,10 +24,6 @@
         flex-direction: row;
         align-items:center;
         justify-content: space-between;
-    }
-    a{
-        color:$clic-color;
-        font-family:$main-font;
     }
     .select{
         color:$secondary-color; 
@@ -62,36 +56,59 @@
             color: $primary-color;
         }
     }
+    .annonceDons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top:15px;
+    }
     .box{       
         box-shadow:$shadow-low;
-        margin:15px;
+        width: 46%;
+        margin: 1%;
         padding:15px;
-        .pomme{
-            height:30px;
-        }
-        h3{
-            color:$secondary-color;
-            margin: 0px;  
-        }
-        .fa-heart{
-            color:$secondary-color;  
-            font-size:20px;
-        }
+        display: flex;
+        height: auto;
         .imageDon{
-            width: 100%;
-            padding-top: 15px;
+            display: block; 
+            background-color: blue;
+            width: 300px;
+            height: 300px; 
+            background-size: cover;
+            background-position: center center;
         }
-        button{
-            background-color:$color-flower;
-            border:none;
-            border-radius:15px;
-            padding:0px 15px;
-            line-height:30px;
-            height:30px;
-            a{
-                color:$primary-color;
-                text-decoration-line:none;
-                font-size: 130%;
+        .dons{
+            padding: 0px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .pomme{
+                height:30px;
+            }
+            h3{
+                color:$secondary-color;
+                margin: 0px;  
+            }
+            .fa-heart{
+                color:$secondary-color;  
+                font-size:20px;
+            }
+          
+            .seed{ 
+                background-color:$color-seed;
+            }
+            .flower{ 
+                background-color:$color-flower;
+            }
+            .time{ 
+                background-color:$color-time;
+            }
+            .ground{ 
+                background-color:$color-ground;
+            }
+            .plant{ 
+                background-color:$color-plant;
             }
         }
     }  

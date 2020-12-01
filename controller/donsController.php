@@ -1,30 +1,53 @@
 <?php 
+ // récupérer les annoncess et afficher
+ $d = new Annonce();
+ $tabDons = $d->read();
+ // var_dump($tabAnnonces);
+ // générer le tableau html
+
 
 $dons = "";
-$dons .= "
-<section class='box'>
-            <div class='dons'>
-              <div class='d-flex row'>
-                <img class='pomme' src='./public/image/pomme-mauve.png' />
-                <h3>Reinettes étoilées</h3>
-                <i class='far fa-heart'></i>
+foreach ($tabDons as $value) {
+  //définir la couleur du logo-pomme
+  if ($value["ads_type"]==="don"){
+    switch($value["ads_category"])
+    {
+    case "seed" :
+      $imageDon = "pomme-bleue.png";
+    break;
+    case "ground" :
+      $imageDon = "pomme-bordeaux.png";
+    break;
+    case "flower" :
+      $imageDon = "pomme-mauve.png";
+    break;
+    default :
+    $imageDon = "pomme-jaune.png";
+    break;
+    }
+ } else {
+  $imageDon = "pomme-rouge.png";
+ };
+// création de l'annonce
+  $dons .= "<section class='box'>
+              <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
               </div>
-              <img class='imageDon' src='./public/image/reinette-etoilee.jpg' />
-              <div class='d-flex row'>
-                <div>
-                  <p>Date : 26/10/2020</p>
+              <div class= 'dons'>
+                <div class='d-flex row'>
+                  <img class='pomme' src='./public/image/" .$imageDon. "' />
+                  <h3>" . $value["ads_title"] . "</h3>
+                  <i class='far fa-heart'></i>
+                </div>
+                <div class='d-flex row'>
+                  <p>Date: ". $value["ads_date"] . "</p>
                   <p>Lieu : Ottignies</p>
                 </div>
-                <button>
-                  <a href='#'>Contact</a>
+                <article>" . $value["ads_description"] . "</article>
+                <button class=". $value["ads_category"] ." ><a href='#'>Contact</a>
                 </button>
               </div>
-              <article>
-                Venez cueillir ces délicieuses pommes. Pour ceux qui ne la
-                connaisse pas, elles sont petites mais délicieuses à souhait!
-              </article>
-            </div>
-          </section>";
+            </section>";
+}
 
 
     include("view/page/dons.php");

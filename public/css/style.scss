@@ -1,155 +1,218 @@
 // @import "node_modules/bootstrap/scss/bootstrap";
 @use 'variables' as *;
 // @import "@fortawesome/fontawesome-free/css/all.css";
-@import 'framework';
-@import 'pageDons';
-*{
-    box-sizing: border-box;
+@import "framework";
+@import "pageDons";
+* {
+  box-sizing: border-box;
 }
-body{
-    margin: 0;
-    font-family: $main-font;
+body {
+  margin: 0;
+  font-family: $main-font;
 }
-header{
+header {
+  height: auto;
+  box-shadow: $shadow-low;
+  padding: 10px 0;
+  .header-container {
     height: auto;
-    box-shadow: $shadow-low;
-    .header-container{
-        height: 75px;
-        margin: auto;
-        align-items: center;
-        justify-content: space-between;
-        @media screen and (max-width: 600px) {
-            width: 100%;
-            padding: 0 15px;
-          }
-        .jolly-name{
-            align-items: center;
-            flex-grow: 1;
-            
-        }
-        .logo-container{
-            a{
-                align-items: center;
-            }
-        }
-        h1{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            margin: 0;
-            color: $third-color;
-            @media screen and (max-width: 600px) {
-                margin-left: 15px;
-                justify-content: left;
-              }
-        }
-        .header-se-connecter{
-            border: none;
-            &:focus{
-                outline: none;
-            }
-            a{
-                background-color: $secondary-color;
-                padding: 7px 15px;
-                text-decoration: none;
-                color: $primary-color;
-                font-family: $main-font;
-                @media screen and (max-width: 600px) {
-                    background-color: $primary-color;
-                    color: $secondary-color;
-                  }
-                &.inscription{
-                    background-color: $primary-color;
-                    color: $secondary-color;
-                    @media screen and (max-width: 600px) {
-                        display: none;
-                      }
-                }
-                
-            }
-        }
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      padding: 0px 15px;
     }
+    .nav-connected {
+      flex-grow: 1;
+      .menu-burger {
+        display: none;
+        @media screen and (max-width: 600px) {
+          margin-left: 15px;
+          justify-content: left;
+          font-size: 28px;
+        }
+      }
+      .search-compte {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        .search-bar {
+          box-shadow: $shadow-low;
+          border-radius: 20px;
+          padding: 5px 15px;
+          flex-grow: 1;
+          input {
+            border: none;
+            flex-grow: 1;
+          }
+          i {
+            transform: scaleX(-1);
+            color: $clic-color;
+          }
+        }
+      }
+      .nav-pages {
+        list-style-type: none;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        li {
+          padding: 0 20px;
+          &:last-child {
+            padding-right: 0;
+          }
+          a {
+            font-size: $menu-size;
+            text-decoration: none;
+            color: $clic-color;
+          }
+        }
+      }
+    }
+    .jolly-name {
+      align-items: center;
+      flex-grow: 1;
+      &-connexion {
+        flex-grow: 0;
+        h1 {
+          margin-left: 30px;
+        }
+      }
+    }
+    .logo-container {
+      a {
+        align-items: center;
+        img {
+          height: 55px;
+        }
+      }
+    }
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      margin: 0;
+      color: $third-color;
+      @media screen and (max-width: 600px) {
+        margin-left: 15px;
+        justify-content: left;
+        font-size: 28px;
+      }
+    }
+    .header-se-connecter {
+      border: none;
+      &:focus {
+        outline: none;
+      }
+      a {
+        background-color: $clic-color;
+        padding: 7px 15px;
+        text-decoration: none;
+        color: $primary-color;
+        font-family: $main-font;
+        display: block;
+        .sign-in-icon {
+          font-size: 20px;
+          display: none;
+          @media screen and (max-width: 420px) {
+            display: block;
+          }
+        }
+        .btn-connexion {
+          @media screen and (max-width: 420px) {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          background-color: transparent;
+          color: $clic-color;
+        }
+      }
+      &-inscription {
+        .inscription {
+          background-color: transparent;
+          color: $clic-color;
+        }
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+    }
+  }
 }
-main{
-    height: 200px;
+main {
+  height: 200px;
 }
-footer{
-    box-shadow: $shadow-up;
-    padding-bottom: 5px ;
-    margin-top: 15px;
+footer {
+  box-shadow: $shadow-up;
+  padding-bottom: 5px;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary-color;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    background-color: transparent;
+  }
+  .footer-container {
+    margin: auto;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  .link-footer {
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+    .line {
+      display: none;
+      @media screen and (max-width: 600px) {
+        background-color: $primary-color;
+        height: 1px;
+        display: block;
+      }
+    }
+  }
+  a {
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      text-transform: uppercase;
+      background-color: $secondary-color;
+    }
+    display: block;
+    color: $primary-color;
+    text-decoration: none;
+    font-size: $content-size;
+    padding: 15px 0;
+    text-align: center;
+    &:hover {
+      color: $third-color;
+      @media screen and (max-width: 600px) {
+        color: $primary-color;
+        background-color: $third-color;
+      }
+    }
+  }
+  .social {
+    background-color: $secondary-color;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $secondary-color;
-    @media screen and (max-width: 600px) {
-        flex-direction: column; 
-        background-color: transparent;
+    a {
+      font-size: 25px;
+      margin: 0 15px;
+      &:hover {
+        background-color: $secondary-color;
+        color: $third-color;
       }
-    .footer-container{
-        margin: auto;
-        @media screen and (max-width: 600px) {
-            width: 100%;
-          }
     }
-    .link-footer{
-        @media screen and (max-width: 600px) {
-            flex-direction: column;
-          }
-        .line{
-            display: none;
-            @media screen and (max-width: 600px) {
-                background-color: $primary-color;
-                height: 1px;
-                display: block;
-              }
-    }
-    
-        
-    }
-    a{
-        @media screen and (max-width: 600px) {
-            flex-direction: column;
-            text-transform: uppercase;
-            background-color: $secondary-color;
-          }
-        display: block;
-        color: $primary-color;
-        text-decoration: none;
-        font-size: $content-size;
-        padding: 15px 0;
-        text-align: center;
-        &:hover{
-            color: $third-color;
-            @media screen and (max-width: 600px) {
-                color: $primary-color;
-                background-color: $third-color;
-              }
-        }
-        
-        
-    }
-    .social{
-        background-color: $secondary-color;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        a{
-            font-size: 25px;
-            margin: 0 15px;
-            &:hover{
-                background-color: $secondary-color;
-                color: $third-color;
-            }
-        }
-    }
-    p{
-        background-color: $secondary-color;
-        color: $primary-color;
-        font-size: 10px;
-        margin: 0;
-        padding: 5px 0 10px 0;
-        text-align: center;
-    }
+  }
+  p {
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-size: 10px;
+    margin: 0;
+    padding: 5px 0 10px 0;
+    text-align: center;
+  }
 }
-
-

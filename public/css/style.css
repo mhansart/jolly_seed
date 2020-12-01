@@ -113,25 +113,25 @@
   font-family: "Louis George Cafe'";
 }
 .centrePageDons .select {
-  color: #6E9611;
+  color: #6e9611;
   display: inline;
 }
 .centrePageDons .fa-chevron-down {
   color: #ff8617;
 }
 .centrePageDons .options {
-  color: #6E9611;
+  color: #6e9611;
   position: absolute;
   right: 15px;
   background-color: white;
   padding: 10px 0px;
-  border: 1px solid #6E9611;
+  border: 1px solid #6e9611;
   text-align: center;
   width: 100px;
   display: none;
 }
 .centrePageDons .options a {
-  color: #6E9611;
+  color: #6e9611;
   text-decoration: none;
   display: block;
 }
@@ -152,11 +152,11 @@
   height: 30px;
 }
 .centrePageDons .box h3 {
-  color: #6E9611;
+  color: #6e9611;
   margin: 0px;
 }
 .centrePageDons .box .fa-heart {
-  color: #6E9611;
+  color: #6e9611;
   font-size: 20px;
 }
 .centrePageDons .box .imageDon {
@@ -189,9 +189,10 @@ body {
 header {
   height: auto;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 10px 0;
 }
 header .header-container {
-  height: 75px;
+  height: auto;
   margin: auto;
   align-items: center;
   justify-content: space-between;
@@ -199,15 +200,64 @@ header .header-container {
 @media screen and (max-width: 600px) {
   header .header-container {
     width: 100%;
-    padding: 0 15px;
+    padding: 0px 15px;
   }
+}
+header .header-container .nav-connected {
+  flex-grow: 1;
+}
+header .header-container .nav-connected .menu-burger {
+  display: none;
+}
+header .header-container .nav-connected .search-compte {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+header .header-container .nav-connected .search-compte .search-bar {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  border-radius: 20px;
+  padding: 5px 15px;
+  flex-grow: 1;
+}
+header .header-container .nav-connected .search-compte .search-bar input {
+  border: none;
+  flex-grow: 1;
+}
+header .header-container .nav-connected .search-compte .search-bar i {
+  transform: scaleX(-1);
+  color: #ff8617;
+}
+header .header-container .nav-connected .nav-pages {
+  list-style-type: none;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+header .header-container .nav-connected .nav-pages li {
+  padding: 0 20px;
+}
+header .header-container .nav-connected .nav-pages li:last-child {
+  padding-right: 0;
+}
+header .header-container .nav-connected .nav-pages li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #ff8617;
 }
 header .header-container .jolly-name {
   align-items: center;
   flex-grow: 1;
 }
+header .header-container .jolly-name-connexion {
+  flex-grow: 0;
+}
+header .header-container .jolly-name-connexion h1 {
+  margin-left: 30px;
+}
 header .header-container .logo-container a {
   align-items: center;
+}
+header .header-container .logo-container a img {
+  height: 55px;
 }
 header .header-container h1 {
   display: flex;
@@ -221,6 +271,7 @@ header .header-container h1 {
   header .header-container h1 {
     margin-left: 15px;
     justify-content: left;
+    font-size: 28px;
   }
 }
 header .header-container .header-se-connecter {
@@ -230,24 +281,39 @@ header .header-container .header-se-connecter:focus {
   outline: none;
 }
 header .header-container .header-se-connecter a {
-  background-color: #6E9611;
+  background-color: #ff8617;
   padding: 7px 15px;
   text-decoration: none;
   color: white;
   font-family: "Louis George Cafe'";
+  display: block;
+}
+header .header-container .header-se-connecter a .sign-in-icon {
+  font-size: 20px;
+  display: none;
+}
+@media screen and (max-width: 420px) {
+  header .header-container .header-se-connecter a .sign-in-icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .header-container .header-se-connecter a .btn-connexion {
+    display: none;
+  }
 }
 @media screen and (max-width: 600px) {
   header .header-container .header-se-connecter a {
-    background-color: white;
-    color: #6E9611;
+    background-color: transparent;
+    color: #ff8617;
   }
 }
-header .header-container .header-se-connecter a.inscription {
-  background-color: white;
-  color: #6E9611;
+header .header-container .header-se-connecter-inscription .inscription {
+  background-color: transparent;
+  color: #ff8617;
 }
 @media screen and (max-width: 600px) {
-  header .header-container .header-se-connecter a.inscription {
+  header .header-container .header-se-connecter-inscription {
     display: none;
   }
 }
@@ -262,7 +328,7 @@ footer {
   margin-top: 15px;
   align-items: center;
   justify-content: center;
-  background-color: #6E9611;
+  background-color: #6e9611;
 }
 @media screen and (max-width: 600px) {
   footer {
@@ -305,7 +371,7 @@ footer a {
   footer a {
     flex-direction: column;
     text-transform: uppercase;
-    background-color: #6E9611;
+    background-color: #6e9611;
   }
 }
 footer a:hover {
@@ -318,7 +384,7 @@ footer a:hover {
   }
 }
 footer .social {
-  background-color: #6E9611;
+  background-color: #6e9611;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,11 +394,11 @@ footer .social a {
   margin: 0 15px;
 }
 footer .social a:hover {
-  background-color: #6E9611;
+  background-color: #6e9611;
   color: #23512a;
 }
 footer p {
-  background-color: #6E9611;
+  background-color: #6e9611;
   color: white;
   font-size: 10px;
   margin: 0;

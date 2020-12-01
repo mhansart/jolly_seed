@@ -82,22 +82,22 @@
   display: flex;
 }
 
-.centrePageDons .btnDons {
-  background-color: #ff8617;
-  display: block;
-  margin: auto;
-  margin-top: 15px;
+button {
+  padding: 7px 15px;
   border: none;
   border-radius: 15px;
-  padding: 0px 15px;
-  line-height: 30px;
-  height: 30px;
-  width: 50%;
+  display: block;
 }
-.centrePageDons .btnDons a {
+button a {
   color: white;
   text-decoration-line: none;
   font-size: 130%;
+  font-family: "Louis George Cafe'";
+}
+
+.centrePageDons .btnDons {
+  background-color: #ff8617;
+  margin: auto;
 }
 .centrePageDons .espace {
   padding: 0px 30px;
@@ -107,10 +107,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-}
-.centrePageDons a {
-  color: #ff8617;
-  font-family: "Louis George Cafe'";
 }
 .centrePageDons .select {
   color: #6e9611;
@@ -147,52 +143,55 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
 }
 .centrePageDons .box {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
-  margin: 15px;
+  width: 46%;
+  margin: 1%;
   padding: 15px;
+  display: flex;
+  height: auto;
 }
-.centrePageDons .box .pomme {
+.centrePageDons .box .imageDon {
+  display: block;
+  background-color: blue;
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+}
+.centrePageDons .box .dons {
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.centrePageDons .box .dons .pomme {
   height: 30px;
 }
-.centrePageDons .box h3 {
+.centrePageDons .box .dons h3 {
   color: #6e9611;
   margin: 0px;
 }
-.centrePageDons .box .fa-heart {
+.centrePageDons .box .dons .fa-heart {
   color: #6e9611;
   font-size: 20px;
 }
-.centrePageDons .box .imageDon {
-  width: 100%;
-  padding-top: 15px;
+.centrePageDons .box .dons .seed {
+  background-color: #34348b;
 }
-.centrePageDons .box button {
-  border: none;
-  border-radius: 15px;
-  padding: 0px 15px;
-  line-height: 30px;
-  height: 30px;
-}
-.centrePageDons .box button a {
-  color: white;
-  text-decoration-line: none;
-  font-size: 130%;
-}
-.centrePageDons .box .seed {
-  background-color: #34348B;
-}
-.centrePageDons .box .flower {
+.centrePageDons .box .dons .flower {
   background-color: #611760;
 }
-.centrePageDons .box .time {
+.centrePageDons .box .dons .time {
   background-color: #dc0411;
 }
-.centrePageDons .box .ground {
+.centrePageDons .box .dons .ground {
   background-color: #780000;
 }
-.centrePageDons .box .plant {
+.centrePageDons .box .dons .plant {
   background-color: #fcd12d;
 }
 
@@ -227,6 +226,13 @@ header .header-container .nav-connected {
 }
 header .header-container .nav-connected .menu-burger {
   display: none;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .menu-burger {
+    margin-left: 15px;
+    justify-content: left;
+    font-size: 28px;
+  }
 }
 header .header-container .nav-connected .search-compte {
   justify-content: flex-end;

@@ -29,26 +29,24 @@ foreach ($tabDons as $value) {
   $imageDon = "pomme-rouge.png";
  };
 // création de l'annonce
-  $dons .= "<section class='box w-30'><div class='dons'>
-              <div class='d-flex row'>
-                <img class='pomme' src='./public/image/" .$imageDon. "' />
-                <h3>" . $value["ads_title"] . "</h3>
-                <i class='far fa-heart'></i>
+  $dons .= "<section class='box'>
+              <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
               </div>
-              <img class='imageDon' src='./public/image/" . $value["ads_picture"] . "' />
-              <div class='d-flex row'>
-                <div>
+              <div class= 'dons'>
+                <div class='d-flex row'>
+                  <img class='pomme' src='./public/image/" .$imageDon. "' />
+                  <h3>" . $value["ads_title"] . "</h3>
+                  <i class='far fa-heart'></i>
+                </div>
+                <div class='d-flex row'>
                   <p>Date: ". $value["ads_date"] . "</p>
                   <p>Lieu : Ottignies</p>
                 </div>
-                <button class=". $value["ads_category"] ." >
-                  <a href='#'>Contact</a>
+                <article>" . $value["ads_description"] . "</article>
+                <button class=". $value["ads_category"] ." ><a href='#'>Contact</a>
                 </button>
               </div>
-              <article>" . $value["ads_description"] . 
-              "</article>
-            </div>
-          </section>";
+            </section>";
 }
 
 

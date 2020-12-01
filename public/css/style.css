@@ -85,7 +85,7 @@
 button {
   padding: 7px 15px;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   display: block;
 }
 button a {
@@ -157,8 +157,8 @@ button a {
 .centrePageDons .box .imageDon {
   display: block;
   background-color: blue;
-  width: 300px;
-  height: 300px;
+  min-width: 200px;
+  height: 200px;
   background-size: cover;
   background-position: center center;
 }
@@ -197,17 +197,21 @@ button a {
 
 * {
   box-sizing: border-box;
-  transition: all 0.3s;
 }
 
 body {
   margin: 0;
   font-family: "Louis George Cafe'";
+  overflow-x: hidden;
 }
 
 header {
+  transition: all 0.3s;
   height: auto;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  position: fixed;
+  background-color: white;
+  z-index: 9;
 }
 header .subheader {
   background-color: #6e9611;
@@ -229,6 +233,7 @@ header .subheader .subheader-container a {
   color: white;
   display: flex;
   align-items: center;
+  transition: all 0.3s;
 }
 header .subheader .subheader-container a:hover {
   color: #23512a;
@@ -253,6 +258,7 @@ header .subheader .subheader-container .search-bar {
   padding: 5px 15px;
   background-color: white;
   width: 250px;
+  align-items: center;
 }
 @media screen and (max-width: 420px) {
   header .subheader .subheader-container .search-bar {
@@ -261,6 +267,7 @@ header .subheader .subheader-container .search-bar {
 }
 header .subheader .subheader-container .search-bar input {
   border: none;
+  padding: 2px;
 }
 header .subheader .subheader-container .search-bar input:focus {
   outline: none;
@@ -279,7 +286,7 @@ header .header-container {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-header .header-container .menu-burger {
+header .header-container #menu-burger {
   display: none;
   font-size: 24px;
 }
@@ -295,11 +302,30 @@ header .header-container .menu-burger {
     flex-direction: row;
   }
   header .header-container .nav-connected {
-    display: none;
+    margin-top: 145px;
+    height: auto;
+    padding-bottom: 30px;
+    margin-left: 600px;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
   }
-  header .header-container .menu-burger {
+  header .header-container .nav-connected .nav-pages {
+    flex-direction: column;
+    box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
+  }
+  header .header-container #menu-burger {
     display: block;
+    cursor: pointer;
   }
+}
+header .header-container .open-menu {
+  display: block;
+  margin-left: 0px;
 }
 header .header-container .nav-connected {
   flex-grow: 1;
@@ -312,13 +338,70 @@ header .header-container .nav-connected .nav-pages {
   padding: 0;
   margin: 0;
 }
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages {
+    align-items: flex-start;
+    background-color: white;
+    justify-content: flex-start;
+  }
+}
+header .header-container .nav-connected .nav-pages li svg {
+  height: 21.6px;
+  width: auto;
+  fill: #ff8617;
+  margin-right: 2px;
+}
+header .header-container .nav-connected .nav-pages li .li-icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li .li-icon {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1035px) {
+  header .header-container .nav-connected .nav-pages li {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 header .header-container .nav-connected .nav-pages li:not(:last-child) {
   padding: 7px 15px;
+}
+@media screen and (max-width: 1035px) {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) {
+    padding: 7px 10px;
+    padding-bottom: 8px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) {
+    margin-top: 0;
+    padding: 0;
+  }
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #6e9611;
+  }
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover {
+    background-color: #ff8617;
+    color: white;
+  }
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover svg {
+    fill: white;
+  }
 }
 header .header-container .nav-connected .nav-pages li:not(:last-child) a {
   position: relative;
   color: #ff8617;
-  display: block;
+  display: flex;
 }
 header .header-container .nav-connected .nav-pages li:not(:last-child) a::before {
   content: "";
@@ -333,6 +416,14 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) a::before
 header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
   width: 100%;
 }
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
+    display: none;
+  }
+}
+header .header-container .nav-connected .nav-pages li.btn-moncompte {
+  padding: 0;
+}
 header .header-container .nav-connected .nav-pages li.btn-moncompte a {
   color: white;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
@@ -342,6 +433,20 @@ header .header-container .nav-connected .nav-pages li.btn-moncompte a {
   display: block;
   color: #ff8617;
   overflow: hidden;
+}
+@media screen and (max-width: 1035px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a {
+    padding: 7px 10px 8px 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a {
+    box-shadow: none;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 header .header-container .nav-connected .nav-pages li.btn-moncompte a::before {
   content: "";
@@ -359,16 +464,17 @@ header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover {
   color: white;
   z-index: 2;
 }
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover {
+    background-color: #ff8617;
+  }
+}
 header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
   width: 100%;
 }
-@media screen and (max-width: 1035px) {
-  header .header-container .nav-connected .nav-pages li {
-    margin-top: 15px;
-  }
-  header .header-container .nav-connected .nav-pages li:not(:last-child) {
-    padding: 7px 10px;
-    padding-bottom: 8px;
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
+    display: none;
   }
 }
 header .header-container .nav-connected .nav-pages li a {
@@ -464,12 +570,21 @@ header .header-container .header-se-connecter-inscription .inscription {
 }
 
 main {
-  height: 200px;
+  padding-top: 150px;
+}
+@media screen and (max-width: 1035px) {
+  main {
+    padding-top: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  main {
+    padding-top: 150px;
+  }
 }
 
 footer {
   box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
-  padding-bottom: 5px;
   margin-top: 15px;
   align-items: center;
   justify-content: center;
@@ -494,16 +609,6 @@ footer .footer-container {
     flex-direction: column;
   }
 }
-footer .link-footer .line {
-  display: none;
-}
-@media screen and (max-width: 600px) {
-  footer .link-footer .line {
-    background-color: white;
-    height: 1px;
-    display: block;
-  }
-}
 footer a {
   display: block;
   color: white;
@@ -511,12 +616,14 @@ footer a {
   font-size: 17px;
   padding: 15px 0;
   text-align: center;
+  transition: all 0.3s;
 }
 @media screen and (max-width: 600px) {
   footer a {
     flex-direction: column;
     text-transform: uppercase;
     background-color: #6e9611;
+    border-bottom: 1px solid white;
   }
 }
 footer a:hover {
@@ -537,6 +644,7 @@ footer .social {
 footer .social a {
   font-size: 25px;
   margin: 0 15px;
+  transition: all 0.3s;
 }
 footer .social a:hover {
   background-color: #6e9611;
@@ -549,6 +657,10 @@ footer p {
   margin: 0;
   padding: 5px 0 10px 0;
   text-align: center;
+}
+
+.reduce {
+  margin-top: -60px;
 }
 
 /*# sourceMappingURL=style.css.map */

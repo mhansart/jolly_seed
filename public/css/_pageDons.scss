@@ -1,115 +1,114 @@
-button{
-    padding:7px 15px;
-    border:none;
-    border-radius:15px;
-    display: block;
-    a{
-        color:$primary-color;
-        text-decoration-line:none;
-        font-size: 130%;
-        font-family:$main-font;
-        
-    }
+button {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  a {
+    color: $primary-color;
+    text-decoration-line: none;
+    font-size: 130%;
+    font-family: $main-font;
+  }
 }
-.centrePageDons{
-    .btnDons{
-        background-color:$clic-color;
-        margin: auto; 
+.centrePageDons {
+  .btnDons {
+    background-color: $clic-color;
+    margin: auto;
+  }
+  .espace {
+    padding: 0px 30px;
+    margin-top: 20px;
+  }
+  .row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .select {
+    color: $secondary-color;
+    display: inline;
+  }
+  .fa-chevron-down {
+    color: $clic-color;
+  }
+  .options {
+    color: $secondary-color;
+    position: absolute;
+    right: 15px;
+    background-color: $primary-color;
+    padding: 10px 0px;
+    border: 1px solid $secondary-color;
+    text-align: center;
+    width: 100px;
+    display: none;
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      display: block;
     }
-    .espace{
-        padding:0px 30px;
-        margin-top:20px;
+    a:first-of-type {
+      background-color: $clic-color;
+      color: $primary-color;
     }
-    .row{
-        flex-direction: row;
-        align-items:center;
-        justify-content: space-between;
+    a:hover {
+      background-color: $clic-color;
+      color: $primary-color;
     }
-    .select{
-        color:$secondary-color; 
-       display: inline;
+  }
+  .annonceDons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .box {
+    box-shadow: $shadow-low;
+    width: 46%;
+    margin: 1%;
+    padding: 15px;
+    display: flex;
+    height: auto;
+    .imageDon {
+      display: block;
+      background-color: blue;
+      min-width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-position: center center;
     }
-    .fa-chevron-down{
-        color:$clic-color; 
+    .dons {
+      padding: 0px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .pomme {
+        height: 30px;
+      }
+      h3 {
+        color: $secondary-color;
+        margin: 0px;
+      }
+      .fa-heart {
+        color: $secondary-color;
+        font-size: 20px;
+      }
+
+      .seed {
+        background-color: $color-seed;
+      }
+      .flower {
+        background-color: $color-flower;
+      }
+      .time {
+        background-color: $color-time;
+      }
+      .ground {
+        background-color: $color-ground;
+      }
+      .plant {
+        background-color: $color-plant;
+      }
     }
-    .options{
-        color:$secondary-color; 
-        position: absolute;
-        right:15px;
-        background-color: $primary-color;
-        padding:10px 0px;
-        border: 1px solid $secondary-color;
-        text-align: center;
-        width:100px;
-        display:none;
-        a{
-            color:$secondary-color;
-            text-decoration: none; 
-            display:block;
-        }
-        a:first-of-type{
-            background-color: $clic-color;
-            color: $primary-color;
-        }
-        a:hover{
-            background-color: $clic-color;
-            color: $primary-color;
-        }
-    }
-    .annonceDons{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top:15px;
-    }
-    .box{       
-        box-shadow:$shadow-low;
-        width: 46%;
-        margin: 1%;
-        padding:15px;
-        display: flex;
-        height: auto;
-        .imageDon{
-            display: block; 
-            background-color: blue;
-            width: 300px;
-            height: 300px; 
-            background-size: cover;
-            background-position: center center;
-        }
-        .dons{
-            padding: 0px 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            .pomme{
-                height:30px;
-            }
-            h3{
-                color:$secondary-color;
-                margin: 0px;  
-            }
-            .fa-heart{
-                color:$secondary-color;  
-                font-size:20px;
-            }
-          
-            .seed{ 
-                background-color:$color-seed;
-            }
-            .flower{ 
-                background-color:$color-flower;
-            }
-            .time{ 
-                background-color:$color-time;
-            }
-            .ground{ 
-                background-color:$color-ground;
-            }
-            .plant{ 
-                background-color:$color-plant;
-            }
-        }
-    }  
+  }
 }

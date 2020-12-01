@@ -43,12 +43,11 @@ foreach ($tabDons as $value) {
                   <p>Lieu : Ottignies</p>
                 </div>
                 <article>" . $value["ads_description"] . "</article>
-                <button class=". $value["ads_category"] ." ><a href='#'>Contact</a>
-                </button>
+                <div><button class=". $value["ads_category"] ." ><a href='#'>Contact</a>
+                </button></div>
               </div>
             </section>";
 }
 
 
     include("view/page/dons.php");
-?>

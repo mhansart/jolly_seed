@@ -33,18 +33,21 @@ foreach ($tabDons as $value) {
               <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
-                <div class='d-flex row'>
+                <div>
                   <img class='pomme' src='./public/image/" .$imageDon. "' />
-                  <h3>" . $value["ads_title"] . "</h3>
-                  <i class='far fa-heart'></i>
+                  <h3>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
                 <div class='d-flex row'>
-                  <p>Date: ". $value["ads_date"] . "</p>
-                  <p>Lieu : Ottignies</p>
+                  <p>Date: ". $value["ads_date"] . "&nbsp;</p>
+                  <p> &nbsp; </p>
+                  <p>&nbsp;Lieu : Ottignies</p>
                 </div>
                 <article>" . $value["ads_description"] . "</article>
-                <button class=". $value["ads_category"] ." ><a href='#'>Contact</a>
-                </button>
+                <div class='d-flex row'>
+                  <button class=". $value["ads_category"] ." ><a href='#'>Contact</a>
+                  </button>
+                  <i class='far fa-heart'></i>
+                </div>
               </div>
             </section>";
 }

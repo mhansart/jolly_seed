@@ -87,6 +87,7 @@ header {
     #menu-burger {
       display: none;
       font-size: $h3-size;
+      color: $clic-color;
     }
     @media screen and (max-width: 1035px) {
       flex-direction: column;

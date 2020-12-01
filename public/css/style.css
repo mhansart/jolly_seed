@@ -1,18 +1,736 @@
-/* Error: expected "{".
- *     ,
- * 286 | >>>>>>> ab5ac0f85bd20358fb30047e2f9300b885b56d5b
- *     |                                                 ^
- *     '
- *   public\css\_pagedons.scss 286:49  @import
- *   public\css\style.scss 5:9         root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a     \2577 \a 286 \2502  >>>>>>> ab5ac0f85bd20358fb30047e2f9300b885b56d5b\d\a     \2502                                                  ^\a     \2575 \a   public\\css\\_pagedons.scss 286:49  @import\a   public\\css\\style.scss 5:9         root stylesheet';
+.h-10 {
+  height: 10%;
 }
+
+.h-20 {
+  height: 20%;
+}
+
+.h-30 {
+  height: 30%;
+}
+
+.h-40 {
+  height: 40%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-60 {
+  height: 60%;
+}
+
+.h-70 {
+  height: 70%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+button {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+}
+button a {
+  color: white;
+  text-decoration-line: none;
+  font-size: 130%;
+  font-family: "Louis George Cafe'";
+}
+
+.centrePageDons .espace {
+  padding: 0% 5%;
+  margin-top: 20px;
+}
+.centrePageDons a {
+  color: #ff8617;
+}
+@media screen and (max-width: 600px) {
+  .centrePageDons a {
+    width: 40%;
+  }
+}
+.centrePageDons .row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .centrePageDons .row {
+    flex-wrap: wrap;
+  }
+}
+.centrePageDons .btnDons {
+  background-color: #ff8617;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .centrePageDons .btnDons {
+    order: 3;
+    margin-top: 15px;
+  }
+}
+.centrePageDons .btnDons a {
+  color: white;
+}
+.centrePageDons .tri {
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .centrePageDons .tri {
+    order: 2;
+    width: 40%;
+    text-align: right;
+  }
+}
+.centrePageDons .tri .select {
+  color: #6e9611;
+  display: inline;
+}
+.centrePageDons .tri .fa-chevron-down {
+  color: #ff8617;
+}
+.centrePageDons .tri .options {
+  color: #6e9611;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  background-color: white;
+  padding: 10px 0px;
+  border: 1px solid #6e9611;
+  text-align: center;
+  width: 100px;
+  display: none;
+}
+.centrePageDons .tri .options a {
+  color: #6e9611;
+  text-decoration: none;
+  display: block;
+}
+.centrePageDons .tri .options a:hover {
+  background-color: #ff8617;
+  color: white;
+}
+.centrePageDons .annonceDons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15px;
+}
+@media screen and (max-width: 1035px) {
+  .centrePageDons .annonceDons {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.centrePageDons .box {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  width: 46%;
+  margin: 1%;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 1035px) {
+  .centrePageDons .box {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .centrePageDons .box {
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 420px) {
+  .centrePageDons .box {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+}
+.centrePageDons .box a {
+  color: white;
+}
+.centrePageDons .box .imageDon {
+  display: block;
+  background-color: white;
+  min-width: 200px;
+  height: 250px;
+  background-size: cover;
+  background-position: center center;
+}
+.centrePageDons .box .dons {
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .centrePageDons .box .dons {
+    margin-top: 15px;
+  }
+}
+.centrePageDons .box .dons .pomme {
+  height: 30px;
+}
+.centrePageDons .box .dons h3 {
+  color: #6e9611;
+  margin: 0px;
+  display: inline;
+}
+.centrePageDons .box .dons .fa-heart {
+  color: #6e9611;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.centrePageDons .box .dons button {
+  margin-top: 15px;
+}
+.centrePageDons .box .dons .seed {
+  background-color: #34348b;
+}
+.centrePageDons .box .dons .flower {
+  background-color: #611760;
+}
+.centrePageDons .box .dons .time {
+  background-color: #dc0411;
+}
+.centrePageDons .box .dons .ground {
+  background-color: #780000;
+}
+.centrePageDons .box .dons .plant {
+  background-color: #fcd12d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Louis George Cafe'";
+  overflow-x: hidden;
+}
+
+header {
+  transition: all 0.3s;
+  height: auto;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  position: fixed;
+  background-color: white;
+  z-index: 9;
+}
+header .subheader {
+  background-color: #6e9611;
+  padding: 15px 0;
+}
+header .subheader .subheader-container {
+  margin: auto;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+@media screen and (max-width: 600px) {
+  header .subheader .subheader-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+header .subheader .subheader-container a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+header .subheader .subheader-container a:hover {
+  color: #23512a;
+}
+header .subheader .subheader-container a .sign-out-icon {
+  display: none;
+  font-size: 20px;
+}
+@media screen and (max-width: 420px) {
+  header .subheader .subheader-container a .sign-out-icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .subheader .subheader-container a .btn-deconnexion {
+    display: none;
+  }
+}
+header .subheader .subheader-container .search-bar {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: white;
+  width: 250px;
+  align-items: center;
+}
+@media screen and (max-width: 420px) {
+  header .subheader .subheader-container .search-bar {
+    width: 200px;
+  }
+}
+header .subheader .subheader-container .search-bar input {
+  border: none;
+  padding: 2px;
+}
+header .subheader .subheader-container .search-bar input:focus {
+  outline: none;
+}
+header .subheader .subheader-container .search-bar i {
+  padding-top: 1px;
+  transform: scaleX(-1);
+  color: #ff8617;
+}
+header .header-container {
+  height: auto;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+header .header-container #menu-burger {
+  display: none;
+  font-size: 24px;
+  color: #ff8617;
+}
+@media screen and (max-width: 1035px) {
+  header .header-container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container {
+    width: 100%;
+    padding: 15px 15px;
+    flex-direction: row;
+  }
+  header .header-container .nav-connected {
+    margin-top: 145px;
+    height: auto;
+    padding-bottom: 30px;
+    margin-left: 600px;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  header .header-container .nav-connected .nav-pages {
+    flex-direction: column;
+    box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
+  }
+  header .header-container #menu-burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+header .header-container .open-menu {
+  display: block;
+  margin-left: 0px;
+}
+header .header-container .nav-connected {
+  flex-grow: 1;
+}
+header .header-container .nav-connected .nav-pages {
+  list-style-type: none;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages {
+    align-items: flex-start;
+    background-color: white;
+    justify-content: flex-start;
+  }
+}
+header .header-container .nav-connected .nav-pages li svg {
+  height: 21.6px;
+  width: auto;
+  fill: #ff8617;
+  margin-right: 2px;
+}
+header .header-container .nav-connected .nav-pages li .li-icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li .li-icon {
+    display: flex;
+  }
+}
+@media screen and (max-width: 1035px) {
+  header .header-container .nav-connected .nav-pages li {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+header .header-container .nav-connected .nav-pages li:not(:last-child) {
+  padding: 7px 15px;
+}
+@media screen and (max-width: 1035px) {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) {
+    padding: 7px 10px;
+    padding-bottom: 8px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) {
+    margin-top: 0;
+    padding: 0;
+  }
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #6e9611;
+  }
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover {
+    background-color: #ff8617;
+    color: white;
+  }
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover svg {
+    fill: white;
+  }
+}
+header .header-container .nav-connected .nav-pages li:not(:last-child) a {
+  position: relative;
+  color: #ff8617;
+  display: flex;
+}
+header .header-container .nav-connected .nav-pages li:not(:last-child) a::before {
+  content: "";
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
+    display: none;
+  }
+}
+header .header-container .nav-connected .nav-pages li.btn-moncompte {
+  padding: 0;
+}
+header .header-container .nav-connected .nav-pages li.btn-moncompte a {
+  color: white;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  border-radius: 20px;
+  position: relative;
+  padding: 7px 15px 8px 15px;
+  display: block;
+  color: #ff8617;
+  overflow: hidden;
+}
+@media screen and (max-width: 1035px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a {
+    padding: 7px 10px 8px 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a {
+    box-shadow: none;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+header .header-container .nav-connected .nav-pages li.btn-moncompte a::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  background-color: #ff8617;
+  transition: all 0.3s;
+  z-index: -1;
+}
+header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover {
+  color: white;
+  z-index: 2;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover {
+    background-color: #ff8617;
+  }
+}
+header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
+    display: none;
+  }
+}
+header .header-container .nav-connected .nav-pages li a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #ff8617;
+}
+header .header-container .jolly-name {
+  align-items: center;
+  flex-grow: 1;
+}
+header .header-container .jolly-name-connexion {
+  flex-grow: 0;
+  justify-content: space-between;
+}
+header .header-container .jolly-name-connexion .search-compte {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+header .header-container .jolly-name-connexion .search-compte > a {
+  margin: 0 15px;
+}
+header .header-container .jolly-name-connexion .search-compte > a:last-child {
+  margin-right: 0;
+}
+header .header-container .jolly-name-connexion h1 {
+  margin-left: 30px;
+  flex-grow: 0;
+}
+header .header-container .logo-container a {
+  align-items: center;
+}
+header .header-container .logo-container a img {
+  height: 55px;
+}
+header .header-container h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0;
+  color: #23512a;
+}
+@media screen and (max-width: 600px) {
+  header .header-container h1 {
+    margin-left: 15px;
+    justify-content: left;
+    font-size: 28px;
+  }
+}
+header .header-container .header-se-connecter {
+  border: none;
+}
+header .header-container .header-se-connecter:focus {
+  outline: none;
+}
+header .header-container .header-se-connecter a {
+  background-color: #ff8617;
+  padding: 7px 15px;
+  text-decoration: none;
+  color: white;
+  font-family: "Louis George Cafe'";
+  display: block;
+}
+header .header-container .header-se-connecter a .sign-in-icon {
+  font-size: 20px;
+  display: none;
+}
+@media screen and (max-width: 420px) {
+  header .header-container .header-se-connecter a .sign-in-icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .header-container .header-se-connecter a .btn-connexion {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container .header-se-connecter a {
+    background-color: transparent;
+    color: #ff8617;
+  }
+}
+header .header-container .header-se-connecter-inscription .inscription {
+  background-color: transparent;
+  color: #ff8617;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .header-se-connecter-inscription {
+    display: none;
+  }
+}
+
+main {
+  padding-top: 150px;
+}
+@media screen and (max-width: 1035px) {
+  main {
+    padding-top: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  main {
+    padding-top: 150px;
+  }
+}
+
+footer {
+  box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: #6e9611;
+}
+@media screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    background-color: transparent;
+  }
+}
+footer .footer-container {
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  footer .footer-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer .link-footer {
+    flex-direction: column;
+  }
+}
+footer a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 15px 0;
+  text-align: center;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 600px) {
+  footer a {
+    flex-direction: column;
+    text-transform: uppercase;
+    background-color: #6e9611;
+    border-bottom: 1px solid white;
+  }
+}
+footer a:hover {
+  color: #23512a;
+}
+@media screen and (max-width: 600px) {
+  footer a:hover {
+    color: white;
+    background-color: #23512a;
+  }
+}
+footer .social {
+  background-color: #6e9611;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .social a {
+  font-size: 25px;
+  margin: 0 15px;
+  transition: all 0.3s;
+}
+footer .social a:hover {
+  background-color: #6e9611;
+  color: #23512a;
+}
+footer p {
+  background-color: #6e9611;
+  color: white;
+  font-size: 10px;
+  margin: 0;
+  padding: 5px 0 10px 0;
+  text-align: center;
+}
+
+.reduce {
+  margin-top: -60px;
+}
+
+/*# sourceMappingURL=style.css.map */

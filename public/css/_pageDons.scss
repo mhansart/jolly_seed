@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 button {
   padding: 7px 15px;
   border: none;
@@ -112,3 +113,174 @@ button {
     }
   }
 }
+=======
+button{
+    padding:7px 15px;
+    border:none;
+    border-radius:20px;
+    display: block;
+    a{
+        color:$primary-color;
+        text-decoration-line:none;
+        font-size: 130%;
+        font-family:$main-font;   
+    }
+}
+.centrePageDons{
+    .espace{
+        padding:0% 5%;
+        margin-top:20px;
+    }
+    a{
+        color: $clic-color;
+        @media screen and (max-width: 600px) {
+        width: 40%;
+      }
+    }
+    .row{
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            flex-wrap: wrap;
+          }
+    }
+    .btnDons{
+        background-color:$clic-color;
+        margin: auto; 
+        @media screen and (max-width: 600px) {
+            order: 3;
+            margin-top:15px;
+          }
+        a{
+            color: $primary-color;
+        }
+    }
+    .tri{
+        position: relative;
+        @media screen and (max-width: 600px) {
+            order: 2;
+            width:40%;
+            text-align: right;
+          }
+        .select{
+            color:$secondary-color; 
+           display: inline;
+        }
+        .fa-chevron-down{
+            color:$clic-color; 
+        }
+        .options{
+            color:$secondary-color; 
+            position: absolute;
+            right:0px;
+            top:30px;
+            background-color: $primary-color;
+            padding:10px 0px;
+            border: 1px solid $secondary-color;
+            text-align: center;
+            width:100px;
+            display:none;
+            a{
+                color:$secondary-color;
+                text-decoration: none; 
+                display:block;
+            }
+        
+            a:hover{
+                background-color: $clic-color;
+                color: $primary-color;
+            }
+        }
+    }
+ 
+    .annonceDons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top:15px;
+        @media screen and (max-width: 1035px) {
+            flex-direction: column;
+            justify-content: center;
+          }
+    }
+    .box{       
+        box-shadow:$shadow-low;
+        width: 46%;
+        margin: 1%;
+        padding:15px;
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: 1035px) {
+            width: 80%;
+            margin: auto;
+          }
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            width: 80%;
+            margin: auto;
+          }
+          @media screen and (max-width: 420px) {
+            flex-direction: column;
+            width: 90%;
+            margin: auto;
+          }
+        a{
+            color: $primary-color;
+        }
+       
+        .imageDon{
+            display: block; 
+            background-color: white;
+            min-width: 200px;
+            height: 250px;    
+            background-size: cover;
+            background-position: center center;
+
+        }
+        .dons{
+       
+            padding: 0px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            @media screen and (max-width: 600px) {
+                margin-top:15px;
+              } 
+            .pomme{
+                height:30px;
+            }
+            h3{
+                color:$secondary-color;
+                margin: 0px; 
+                display: inline;
+            }
+            .fa-heart{
+                color:$secondary-color;  
+                font-size:20px;
+                margin-top: 10px;
+            }
+            button{
+                margin-top: 15px;
+            }
+            .seed{ 
+                background-color:$color-seed;
+            }
+            .flower{ 
+                background-color:$color-flower;
+            }
+            .time{ 
+                background-color:$color-time;
+            }
+            .ground{ 
+                background-color:$color-ground;
+            }
+            .plant{ 
+                background-color:$color-plant;
+            }
+        }
+    }  
+}
+>>>>>>> ab5ac0f85bd20358fb30047e2f9300b885b56d5b

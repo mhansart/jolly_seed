@@ -30,6 +30,14 @@ header {
         width: 100%;
         padding: 0 15px;
       }
+      .hello-name {
+        color: $primary-color;
+        padding: 6px 15px 7px 15px;
+        border-radius: 20px;
+        background-color: $third-color;
+        margin: 0;
+        margin-right: 15px;
+      }
       a {
         text-decoration: none;
         color: $primary-color;
@@ -73,6 +81,54 @@ header {
           padding-top: 1px;
           transform: scaleX(-1);
           color: $clic-color;
+        }
+      }
+    }
+  }
+  .header-container-deconnected {
+    height: auto;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .header-se-connecter {
+      border: none;
+      &:focus {
+        outline: none;
+      }
+      a {
+        background-color: $clic-color;
+        padding: 7px 15px;
+        text-decoration: none;
+        color: $primary-color;
+        font-family: $main-font;
+        display: block;
+        .sign-in-icon {
+          font-size: 20px;
+          display: none;
+          @media screen and (max-width: 420px) {
+            display: block;
+          }
+        }
+        .btn-connexion {
+          @media screen and (max-width: 420px) {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 600px) {
+          background-color: transparent;
+          color: $clic-color;
+        }
+      }
+      &-inscription {
+        .inscription {
+          background-color: transparent;
+          color: $clic-color;
+        }
+        @media screen and (max-width: 600px) {
+          display: none;
         }
       }
     }
@@ -263,88 +319,49 @@ header {
         }
       }
     }
-    .jolly-name {
-      align-items: center;
-      flex-grow: 1;
-      &-connexion {
-        flex-grow: 0;
-        justify-content: space-between;
-        .search-compte {
-          justify-content: flex-end;
-          flex-wrap: wrap;
-          > a {
-            margin: 0 15px;
-            &:last-child {
-              margin-right: 0;
-            }
-          }
-        }
-        h1 {
-          margin-left: 30px;
-          flex-grow: 0;
-        }
-      }
-    }
-    .logo-container {
-      a {
-        align-items: center;
-        img {
-          height: 55px;
+  }
+}
+.jolly-name {
+  align-items: center;
+  flex-grow: 1;
+  &-connexion {
+    flex-grow: 0;
+    justify-content: space-between;
+    .search-compte {
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      > a {
+        margin: 0 15px;
+        &:last-child {
+          margin-right: 0;
         }
       }
     }
     h1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-      margin: 0;
-      color: $third-color;
-      @media screen and (max-width: 600px) {
-        margin-left: 15px;
-        justify-content: left;
-        font-size: 28px;
-      }
+      margin-left: 30px;
+      flex-grow: 0;
     }
-    .header-se-connecter {
-      border: none;
-      &:focus {
-        outline: none;
-      }
-      a {
-        background-color: $clic-color;
-        padding: 7px 15px;
-        text-decoration: none;
-        color: $primary-color;
-        font-family: $main-font;
-        display: block;
-        .sign-in-icon {
-          font-size: 20px;
-          display: none;
-          @media screen and (max-width: 420px) {
-            display: block;
-          }
-        }
-        .btn-connexion {
-          @media screen and (max-width: 420px) {
-            display: none;
-          }
-        }
-        @media screen and (max-width: 600px) {
-          background-color: transparent;
-          color: $clic-color;
-        }
-      }
-      &-inscription {
-        .inscription {
-          background-color: transparent;
-          color: $clic-color;
-        }
-        @media screen and (max-width: 600px) {
-          display: none;
-        }
-      }
+  }
+}
+.logo-container {
+  a {
+    align-items: center;
+    img {
+      height: 55px;
     }
+  }
+}
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0;
+  color: $third-color;
+  @media screen and (max-width: 600px) {
+    margin-left: 15px;
+    justify-content: left;
+    font-size: 28px;
   }
 }
 main {

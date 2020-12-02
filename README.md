@@ -1,3 +1,3 @@
 # jolly_seed
-pour faire fondtionner le scss:
+pour faire fonctionner le scss:
 sass --watch public/css/style.scss public/css/style.css

@@ -5,7 +5,7 @@ if (isset($_POST["nom"], $_POST["prenom"])) {
         header("Location:?section=readAnnonce");
         $_SESSION["nom"] = $_POST["nom"];
         $_SESSION["prenom"] = $_POST["prenom"];
-        echo $_SESSION['nom'];
+        $_SESSION['userId'] = 1;
     }
 }
 

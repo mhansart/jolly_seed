@@ -1,0 +1,27 @@
+@use 'variables' as *;
+.forum-container {
+  margin: auto;
+  padding: 0 20px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+.new-forum {
+  background-color: $clic-color;
+  color: $primary-color;
+  font-size: $content-size;
+  cursor: pointer;
+}
+.form-new-forum {
+  flex-direction: column;
+  display: none;
+}
+.one-forum {
+  margin-top: 15px;
+  box-shadow: $shadow-low;
+  padding: 15px;
+  h3 {
+    margin: 0;
+  }
+}

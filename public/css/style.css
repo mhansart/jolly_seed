@@ -264,6 +264,38 @@ button a {
   background-color: #fcd12d;
 }
 
+.forum-container {
+  margin: auto;
+  padding: 0 20px;
+}
+@media screen and (max-width: 600px) {
+  .forum-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+.new-forum {
+  background-color: #ff8617;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.form-new-forum {
+  flex-direction: column;
+  display: none;
+}
+
+.one-forum {
+  margin-top: 15px;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 15px;
+}
+.one-forum h3 {
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -372,6 +404,8 @@ header .header-container #menu-burger {
     flex-direction: row;
   }
   header .header-container .nav-connected {
+    display: block;
+    box-shadow: 5px 8px 5px 10px rgba(110, 110, 110, 0.2);
     margin-top: 145px;
     height: auto;
     padding-bottom: 30px;
@@ -386,7 +420,6 @@ header .header-container #menu-burger {
   }
   header .header-container .nav-connected .nav-pages {
     flex-direction: column;
-    box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
   }
   header .header-container #menu-burger {
     display: block;
@@ -394,11 +427,11 @@ header .header-container #menu-burger {
   }
 }
 header .header-container .open-menu {
-  display: block;
   margin-left: 0px;
 }
 header .header-container .nav-connected {
   flex-grow: 1;
+  transition: all 0.3s;
 }
 header .header-container .nav-connected .nav-pages {
   list-style-type: none;
@@ -654,7 +687,7 @@ main {
 }
 
 footer {
-  box-shadow: 5px 5px 5px 10px rgba(110, 110, 110, 0.2);
+  box-shadow: 5px 8px 5px 10px rgba(110, 110, 110, 0.2);
   margin-top: 15px;
   align-items: center;
   justify-content: center;
@@ -715,6 +748,11 @@ footer .social a {
   font-size: 25px;
   margin: 0 15px;
   transition: all 0.3s;
+}
+@media screen and (max-width: 600px) {
+  footer .social a {
+    border-bottom: none;
+  }
 }
 footer .social a:hover {
   background-color: #6e9611;

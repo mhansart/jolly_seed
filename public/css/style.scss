@@ -3,6 +3,7 @@
 // @import "@fortawesome/fontawesome-free/css/all.css";
 @import "framework";
 @import "pageDons";
+@import "forum";
 * {
   box-sizing: border-box;
 }
@@ -97,6 +98,8 @@ header {
       padding: 15px 15px;
       flex-direction: row;
       .nav-connected {
+        display: block;
+        box-shadow: $shadow-up;
         margin-top: 145px;
         height: auto;
         padding-bottom: 30px;
@@ -110,7 +113,6 @@ header {
         z-index: -2;
         .nav-pages {
           flex-direction: column;
-          box-shadow: $shadow-up;
         }
       }
       #menu-burger {
@@ -119,11 +121,11 @@ header {
       }
     }
     .open-menu {
-      display: block;
       margin-left: 0px;
     }
     .nav-connected {
       flex-grow: 1;
+      transition: all 0.3s;
       .nav-pages {
         list-style-type: none;
         justify-content: flex-end;
@@ -406,6 +408,9 @@ footer {
       font-size: 25px;
       margin: 0 15px;
       transition: all 0.3s;
+      @media screen and (max-width: 600px) {
+        border-bottom: none;
+      }
       &:hover {
         background-color: $secondary-color;
         color: $third-color;

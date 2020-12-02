@@ -8,6 +8,9 @@ if (isset($_GET["section"])) {
         case 'connexion':
             require_once("controller/connexion/connexion.php");
             break;
+        case 'inscription':
+            require_once("controller/inscriptionController.php");
+            break;
         case 'dons':
             include("controller/donsController.php");
             break;

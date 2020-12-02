@@ -368,6 +368,14 @@ header .subheader .subheader-container {
     padding: 0 15px;
   }
 }
+header .subheader .subheader-container .hello-name {
+  color: white;
+  padding: 6px 15px 7px 15px;
+  border-radius: 20px;
+  background-color: #23512a;
+  margin: 0;
+  margin-right: 15px;
+}
 header .subheader .subheader-container a {
   text-decoration: none;
   color: white;
@@ -416,6 +424,58 @@ header .subheader .subheader-container .search-bar i {
   padding-top: 1px;
   transform: scaleX(-1);
   color: #ff8617;
+}
+header .header-container-deconnected {
+  height: auto;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+header .header-container-deconnected .header-se-connecter {
+  border: none;
+}
+header .header-container-deconnected .header-se-connecter:focus {
+  outline: none;
+}
+header .header-container-deconnected .header-se-connecter a {
+  background-color: #ff8617;
+  padding: 7px 15px;
+  text-decoration: none;
+  color: white;
+  font-family: "Louis George Cafe'";
+  display: block;
+}
+header .header-container-deconnected .header-se-connecter a .sign-in-icon {
+  font-size: 20px;
+  display: none;
+}
+@media screen and (max-width: 420px) {
+  header .header-container-deconnected .header-se-connecter a .sign-in-icon {
+    display: block;
+  }
+}
+@media screen and (max-width: 420px) {
+  header .header-container-deconnected .header-se-connecter a .btn-connexion {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  header .header-container-deconnected .header-se-connecter a {
+    background-color: transparent;
+    color: #ff8617;
+  }
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription {
+  background-color: transparent;
+  color: #ff8617;
+}
+@media screen and (max-width: 600px) {
+  header .header-container-deconnected .header-se-connecter-inscription {
+    display: none;
+  }
 }
 header .header-container {
   height: auto;
@@ -624,35 +684,38 @@ header .header-container .nav-connected .nav-pages li a {
   text-decoration: none;
   color: #ff8617;
 }
-header .header-container .jolly-name {
+
+.jolly-name {
   align-items: center;
   flex-grow: 1;
 }
-header .header-container .jolly-name-connexion {
+.jolly-name-connexion {
   flex-grow: 0;
   justify-content: space-between;
 }
-header .header-container .jolly-name-connexion .search-compte {
+.jolly-name-connexion .search-compte {
   justify-content: flex-end;
   flex-wrap: wrap;
 }
-header .header-container .jolly-name-connexion .search-compte > a {
+.jolly-name-connexion .search-compte > a {
   margin: 0 15px;
 }
-header .header-container .jolly-name-connexion .search-compte > a:last-child {
+.jolly-name-connexion .search-compte > a:last-child {
   margin-right: 0;
 }
-header .header-container .jolly-name-connexion h1 {
+.jolly-name-connexion h1 {
   margin-left: 30px;
   flex-grow: 0;
 }
-header .header-container .logo-container a {
+
+.logo-container a {
   align-items: center;
 }
-header .header-container .logo-container a img {
+.logo-container a img {
   height: 55px;
 }
-header .header-container h1 {
+
+h1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -661,53 +724,10 @@ header .header-container h1 {
   color: #23512a;
 }
 @media screen and (max-width: 600px) {
-  header .header-container h1 {
+  h1 {
     margin-left: 15px;
     justify-content: left;
     font-size: 28px;
-  }
-}
-header .header-container .header-se-connecter {
-  border: none;
-}
-header .header-container .header-se-connecter:focus {
-  outline: none;
-}
-header .header-container .header-se-connecter a {
-  background-color: #ff8617;
-  padding: 7px 15px;
-  text-decoration: none;
-  color: white;
-  font-family: "Louis George Cafe'";
-  display: block;
-}
-header .header-container .header-se-connecter a .sign-in-icon {
-  font-size: 20px;
-  display: none;
-}
-@media screen and (max-width: 420px) {
-  header .header-container .header-se-connecter a .sign-in-icon {
-    display: block;
-  }
-}
-@media screen and (max-width: 420px) {
-  header .header-container .header-se-connecter a .btn-connexion {
-    display: none;
-  }
-}
-@media screen and (max-width: 600px) {
-  header .header-container .header-se-connecter a {
-    background-color: transparent;
-    color: #ff8617;
-  }
-}
-header .header-container .header-se-connecter-inscription .inscription {
-  background-color: transparent;
-  color: #ff8617;
-}
-@media screen and (max-width: 600px) {
-  header .header-container .header-se-connecter-inscription {
-    display: none;
   }
 }
 

@@ -7,19 +7,20 @@ const subHeader = document.querySelector('.subheader');
 
 
 // const heightSubheader = getComputedStyle(subHeader).height;
-
-window.addEventListener('scroll', () => {
-	(function scroll() {
-        const headerMenu = document.querySelector('header');
-		if(headerMenu) {
-			if(window.pageYOffset > 100){
-				headerMenu.classList.add('reduce');
-			} else {
-				headerMenu.classList.remove('reduce');
-			}
-		}
-	})();
-});
+if(subHeader !== null){
+    window.addEventListener('scroll', () => {
+        (function scroll() {
+            const headerMenu = document.querySelector('header');
+            if(headerMenu) {
+                if(window.pageYOffset > 100){
+                    headerMenu.classList.add('reduce');
+                } else {
+                    headerMenu.classList.remove('reduce');
+                }
+            }
+        })();
+    });
+}
 
 const menuBurger = document.getElementById('menu-burger');
 const menuNav = document.querySelector('.nav-connected');

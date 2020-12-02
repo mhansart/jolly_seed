@@ -29,6 +29,15 @@ class Personne extends Connexion
         return $this->execute($requete);
     }
 
+    public function readById($_id)
+    {
+        $requete = "SELECT * FROM `users` WHERE `user_id` = :id";
+        $tabChamps = array(
+            ":id" => $_id
+        );
+        return $this->execute($requete, $tabChamps);
+    }
+
     public function readConnexion($_email)
     {
         $requete = "SELECT `user_id`,user_email,user_mdp, user_firstname FROM users WHERE user_email = :email";
@@ -43,6 +52,28 @@ class Personne extends Connexion
         $requete = "SELECT MAX(LAST_INSERT_ID(`user_id`))as 'dernier_id' FROM users";
 
         return $this->execute($requete);
+    }
+
+    public function updatePicture($_userPicture, $_id)
+    {
+        $requete = "UPDATE users SET user_picture = :picture WHERE `user_id` = :id";
+
+        $tabChamps = array(
+            ":picture" => $_userPicture,
+            ":id" => $_id
+        );
+        return $this->execute($requete, $tabChamps);
+    }
+
+    public function updateDescription($_userDescription, $_id)
+    {
+        $requete = "UPDATE users SET user_description = :descriptionUser WHERE `user_id` = :id";
+
+        $tabChamps = array(
+            ":descriptionUser" => $_userDescription,
+            ":id" => $_id
+        );
+        return $this->execute($requete, $tabChamps);
     }
 
     public function update($_id, $_nom, $_prenom, $_sexe, $_adRue, $_adNum, $_adCp, $_adVille)

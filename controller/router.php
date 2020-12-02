@@ -20,6 +20,9 @@ if (isset($_GET["section"])) {
         case 'forum':
             include("controller/forumController.php");
             break;
+        case 'VoirPlusForum':
+            include("controller/VoirPlusForumController.php");
+            break;
         case 'moncompte':
             include("controller/moncompteController.php");
             break;

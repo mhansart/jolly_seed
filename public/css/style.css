@@ -303,15 +303,21 @@ h3 {
   background-position: center center;
 }
 
-.forum-container {
+.forum-container,
+.voir-plus-forum-container {
   margin: auto;
   padding: 0 20px;
 }
 @media screen and (max-width: 600px) {
-  .forum-container {
+  .forum-container,
+.voir-plus-forum-container {
     width: 100%;
     padding: 0 15px;
   }
+}
+
+p {
+  font-size: 17px;
 }
 
 .new-forum {
@@ -319,20 +325,178 @@ h3 {
   color: white;
   font-size: 17px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .form-new-forum {
   flex-direction: column;
   display: none;
+  font-size: 17px;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 15px;
+  margin: 15px 0;
+}
+.form-new-forum input,
+.form-new-forum textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+}
+.form-new-forum input:focus,
+.form-new-forum textarea:focus {
+  outline: none;
+}
+.form-new-forum button {
+  margin-top: 15px;
+  background-color: #ff8617;
+  color: white;
+  font-family: "Louis George Cafe'";
+  font-size: 17px;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  transition: all 0.3s;
+}
+.form-new-forum button:hover {
+  box-shadow: none;
+}
+
+.one-forum-view {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.one-forum-view h2 {
+  margin-top: 0;
+}
+.one-forum-view form {
+  justify-content: flex-end;
+}
+.one-forum-view form input {
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  color: #ff8617;
+  font-family: "Louis George Cafe'";
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.one-forum-view form input:hover {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+}
+.one-forum-view form input:focus {
+  outline: none;
+}
+
+.date {
+  margin-top: 0;
+  font-size: 14px;
+  color: #7f7f7f;
+}
+
+.quest-name {
+  margin: 5px 0;
+  color: #23512a;
 }
 
 .one-forum {
   margin-top: 15px;
-  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
-  padding: 15px;
 }
 .one-forum h3 {
   margin: 0;
+}
+.one-forum h2 {
+  margin-top: 0;
+}
+.one-forum .voir-plus-response {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 15px;
+  margin-left: 50px;
+  margin-bottom: 15px;
+}
+.one-forum .voir-plus-response .resp-name {
+  margin: 5px 0;
+  color: #23512a;
+}
+.one-forum .voir-plus-quest {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 15px;
+  margin-right: 50px;
+  margin-bottom: 15px;
+}
+.one-forum .voir-plus-quest .quest-name,
+.one-forum .voir-plus-quest .resp-name {
+  margin: 5px 0;
+  color: #23512a;
+}
+
+.btn-send {
+  margin: 15px 0;
+  padding: 7px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+}
+.btn-send input {
+  border: none;
+  flex-grow: 1;
+}
+.btn-send input:focus {
+  outline: none;
+}
+.btn-send button {
+  padding: 0;
+  background-color: transparent;
+  color: #ff8617;
+  font-size: 20px;
+}
+.btn-send button:focus {
+  outline: none;
+}
+
+.forum-user-pp {
+  height: 50px;
+  min-width: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100px;
+  margin-right: 15px;
+}
+
+.forum-tag {
+  padding: 6px 15px 7px 15px;
+  color: #ff8617;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+.forum-tag:first-child {
+  margin-left: 0;
+}
+
+.moncompte-container {
+  margin: auto;
+  padding: 0 20px;
+}
+@media screen and (max-width: 600px) {
+  .moncompte-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+.moncompte-container p {
+  margin: 0;
+  padding: 7px 0 7px 15px;
+}
+
+.user-pp {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.infos-user {
+  margin-bottom: 15px;
 }
 
 * {
@@ -370,11 +534,16 @@ header .subheader .subheader-container {
 }
 header .subheader .subheader-container .hello-name {
   color: white;
-  padding: 6px 15px 7px 15px;
+  padding: 5px 15px;
   border-radius: 20px;
   background-color: #23512a;
   margin: 0;
   margin-right: 15px;
+}
+@media screen and (max-width: 860px) {
+  header .subheader .subheader-container .hello-name {
+    display: none;
+  }
 }
 header .subheader .subheader-container a {
   text-decoration: none;
@@ -732,16 +901,16 @@ h1 {
 }
 
 main {
-  padding-top: 150px;
+  padding-top: 160px;
 }
 @media screen and (max-width: 1035px) {
   main {
-    padding-top: 200px;
+    padding-top: 210px;
   }
 }
 @media screen and (max-width: 600px) {
   main {
-    padding-top: 150px;
+    padding-top: 160px;
   }
 }
 

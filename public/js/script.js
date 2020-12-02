@@ -48,11 +48,3 @@ menuBurger.addEventListener('click', function(){
         menuNav.classList.remove('open-menu');
     }
 })
-/*
-const btnNewForum = document.querySelector('.new-forum');
-const formNewForum = document.querySelector('.form-new-forum');
-btnNewForum.addEventListener('click', function(){
-    formNewForum.style.display="flex";
-    btnNewForum.style.display="none";
-})
-*/

@@ -1,8 +1,9 @@
 <?php
 // récupérer les annoncess et afficher
+
 $d = new Annonce();
-$tabDons = $d->read();
-// var_dump($tabAnnonces);
+$tabDons = $d->readByCategoryType("time");
+// var_dump($tabDons);
 // générer le tableau html
 
 

@@ -47,16 +47,11 @@ menuBurger.addEventListener('click', function(){
         menuNav.classList.remove('open-menu');
     }
 })
-
-// const options = document.querySelector(".options")
-// const chevron = document.querySelector(".fa-chevron-down")
-// chevron.addEventListener("click", function () {
-//     options.style.display = "block";
-// });
-
+/*
 const btnNewForum = document.querySelector('.new-forum');
 const formNewForum = document.querySelector('.form-new-forum');
 btnNewForum.addEventListener('click', function(){
     formNewForum.style.display="flex";
     btnNewForum.style.display="none";
 })
+*/

@@ -95,6 +95,18 @@ button a {
   font-family: "Louis George Cafe'";
 }
 
+h2 {
+  color: #6e9611;
+}
+
+h3 {
+  color: #6e9611;
+}
+
+.column {
+  flex-direction: column;
+}
+
 .centrePageDons .espace {
   padding: 0% 5%;
   margin-top: 20px;
@@ -147,6 +159,10 @@ button a {
 .centrePageDons .tri .fa-chevron-down {
   color: #ff8617;
 }
+.centrePageDons .tri .choixTri {
+  display: inline-block;
+  width: 75px;
+}
 .centrePageDons .tri .options {
   color: #6e9611;
   position: absolute;
@@ -192,14 +208,14 @@ button a {
 @media screen and (max-width: 1035px) {
   .centrePageDons .box {
     width: 80%;
-    margin: auto;
+    margin: 1% auto;
   }
 }
 @media screen and (max-width: 600px) {
   .centrePageDons .box {
     flex-direction: column;
     width: 80%;
-    margin: auto;
+    margin: 1% auto;
   }
 }
 @media screen and (max-width: 420px) {
@@ -236,7 +252,6 @@ button a {
   height: 30px;
 }
 .centrePageDons .box .dons h3 {
-  color: #6e9611;
   margin: 0px;
   display: inline;
 }
@@ -262,6 +277,30 @@ button a {
 }
 .centrePageDons .box .dons .plant {
   background-color: #fcd12d;
+}
+
+.posterAnnonce {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  margin: 1% auto;
+  padding: 15px;
+  width: 600px;
+  text-align: center;
+}
+.posterAnnonce h2 {
+  text-align: center;
+}
+.posterAnnonce button {
+  background-color: #ff8617;
+  margin: 25px auto;
+}
+.posterAnnonce .imageAnnonce {
+  display: block;
+  background-color: #6e9611;
+  background-image: url("../image/logo.png");
+  width: 300px;
+  height: 250px;
+  background-size: cover;
+  background-position: center center;
 }
 
 .forum-container {

@@ -10,6 +10,15 @@ button {
     font-family: $main-font;
   }
 }
+h2{
+  color: $secondary-color;
+}
+h3{
+  color: $secondary-color;
+}
+.column{
+  flex-direction: column;
+}
 .centrePageDons {
   .espace {
     padding: 0% 5%;
@@ -53,6 +62,10 @@ button {
     }
     .fa-chevron-down {
       color: $clic-color;
+    }
+    .choixTri{
+      display: inline-block;
+      width:75px;
     }
     .options {
       color: $secondary-color;
@@ -98,12 +111,12 @@ button {
     flex-direction: row;
     @media screen and (max-width: 1035px) {
       width: 80%;
-      margin: auto;
+      margin: 1% auto;
     }
     @media screen and (max-width: 600px) {
       flex-direction: column;
       width: 80%;
-      margin: auto;
+      margin: 1% auto;
     }
     @media screen and (max-width: 420px) {
       flex-direction: column;
@@ -135,7 +148,6 @@ button {
         height: 30px;
       }
       h3 {
-        color: $secondary-color;
         margin: 0px;
         display: inline;
       }
@@ -163,5 +175,29 @@ button {
         background-color: $color-plant;
       }
     }
+  }
+}
+// CREATION D'ANNONCE
+.posterAnnonce{
+  box-shadow: $shadow-low;
+  margin: 1% auto;
+  padding: 15px;
+  width: 600px;
+  text-align: center;
+  h2{
+    text-align: center;
+  }
+  button{
+    background-color: $clic-color;
+    margin: 25px auto;
+  }
+  .imageAnnonce {
+    display: block;
+    background-color: $secondary-color;
+    background-image: url('../image/logo.png');
+    width: 300px;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
   }
 }

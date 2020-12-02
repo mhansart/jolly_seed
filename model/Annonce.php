@@ -25,6 +25,24 @@
             return $this->execute($requete);
         }
 
+        public function readByCategoryType($_ads_category)
+        {
+            $requete = "SELECT * FROM ads WHERE ads_category != :temps";
+            $tabChamps = array(
+                ":temps" => $_ads_category
+            );
+            return $this->execute($requete, $tabChamps);
+        }
+
+        public function readByCategoryTime($_ads_category)
+        {
+            $requete = "SELECT * FROM ads WHERE ads_category == :temps";
+            $tabChamps = array(
+                ":temps" => $_ads_category
+            );
+            return $this->execute($requete, $tabChamps);
+        }
+
         public function readById($_ads_id)
         {
             $requete = "SELECT * FROM ads WHERE ads_id = :adsId";

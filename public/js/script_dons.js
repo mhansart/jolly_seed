@@ -36,6 +36,8 @@ btnDons.addEventListener("click", function (e) {
 
 // Modifications selon CHOIX des CATEGORIES
 
+
+let fichierImage = document.querySelector(".fichierImage");
 const categories = document.getElementsByName('ads_category');
 const time = document.querySelector(".time");
 time.style.display = "none";
@@ -71,6 +73,7 @@ for (let categorie of categories){
               break;
             case "seed":
               img.style.backgroundImage = "url('../jolly_seed/public/image/seed.jpg')";
+              fichierImage.value = "seed.jpg";
               cacher();
               break;
             case "flower":
@@ -90,11 +93,11 @@ for (let categorie of categories){
 
 
 // POSTER l'ANNONCE
-/*
+
 const creer = document.querySelector(".creer");
 creer.addEventListener("click", function (e) {
     posterAnnonce.style.display = "none";
     annonceDons.style.display = "flex";
     enteteDons.style.visibility = "visible";
 });
-*/
+

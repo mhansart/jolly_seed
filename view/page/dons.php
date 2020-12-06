@@ -56,7 +56,7 @@
       </div>
       <div class="imageAlternative">
         <p>Afin d'illustrer vortre annonce, vous pouvez soit utiliser l'image ci-contre ou en télécharger une nouvelle.</p>
-        <input type="file" class="message-texte" name="ads_picture"><br />
+        <input type="file" class="fichierImage" name="ads_picture" value="Pas d'image"><br />
       </div>
     </div>
     <label class="titre" for="titre"><h3>Titre:</h3></label>
@@ -82,7 +82,7 @@
       <label for="intro"> Paragraphe d'introdution</label><br/>
     </div>
     <p>Si toutes les cases sont décochées, le seul moyen de contact sera via le site.</p>-->
-    <button class="creer" type="submit"><a href="#">Créer l'annonce</a></button>
+    <button class="creer" type="submit">Créer l'annonce</button>
   </form>
 </section>
 <script src="public/js/script_dons.js"></script>

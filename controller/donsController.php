@@ -57,9 +57,9 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
 {
     $p = new Annonce();
     $active = 1;
-    $date = "2020/12/01"; // pour tester
-    var_dump($date); //rien ne s'affiche nulle-part
+    $date = date("Y-m-d h:i:sa"); 
     if ($_POST["ads_category"]==="time"){
+      
       $type = "jardinier";
     }
     else{
@@ -75,14 +75,23 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
     } else {
       $title = $_POST["ads_title"];
     }
-    $picture = "test.jpg";// pour tester
+    echo($_POST["ads_picture"]);
+    if(isset($_POST["ads_picture"])){
+    $picture = $_POST["ads_picture"];
+    } elseif ($_POST["ads_category"]==="seed"){
+      $picture = "seed.jpg";  
+    } elseif ($_POST["ads_category"]==="flower"){
+      $picture = "tomates.jpg";  
+    } elseif ($_POST["ads_category"]==="ground"){
+      $picture = "copeaux.jpg";  
+    } else {
+      $picture = "chene.jpg"; 
+    }
+    echo($picture);
     $p->create($type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $picture, $active, $title);
     header("Location:?section=dons");
 }
-// test avecqqch de basique car rien dne fonctionne:
-$b = new Annonce();
-$b->create('don','temps', 'un peu','2020/10/02','test','bal.jpg','1','titre');
-//et même ceci ne fonctionne pas!
+
 
 
 include("view/page/dons.php");

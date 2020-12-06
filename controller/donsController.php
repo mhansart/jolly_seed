@@ -50,7 +50,39 @@ foreach ($tabDons as $value) {
                 </div>
               </div>
             </section>";
+
 }
+
+if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
+{
+    $p = new Annonce();
+    $active = 1;
+    $date = "2020/12/01"; // pour tester
+    var_dump($date); //rien ne s'affiche nulle-part
+    if ($_POST["ads_category"]==="time"){
+      $type = "jardinier";
+    }
+    else{
+      $type = "don";
+    }
+    if(isset($_POST["ads_time"])){
+      $time = $_POST["ads_time"]; 
+    } else {
+      $time = "";
+    }
+    if(isset($_POST["ads_titleSecondaire"])){
+      $title = $_POST["ads_titleSecondaire"];
+    } else {
+      $title = $_POST["ads_title"];
+    }
+    $picture = "test.jpg";// pour tester
+    $p->create($type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $picture, $active, $title);
+    header("Location:?section=dons");
+}
+// test avecqqch de basique car rien dne fonctionne:
+$b = new Annonce();
+$b->create('don','temps', 'un peu','2020/10/02','test','bal.jpg','1','titre');
+//et même ceci ne fonctionne pas!
 
 
 include("view/page/dons.php");

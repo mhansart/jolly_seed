@@ -4,6 +4,7 @@
 @import "framework";
 @import "pageDons";
 @import "forum";
+@import "moncompte";
 * {
   box-sizing: border-box;
 }
@@ -32,11 +33,14 @@ header {
       }
       .hello-name {
         color: $primary-color;
-        padding: 6px 15px 7px 15px;
+        padding: 5px 15px;
         border-radius: 20px;
         background-color: $third-color;
         margin: 0;
         margin-right: 15px;
+        @media screen and (max-width: 860px) {
+          display: none;
+        }
       }
       a {
         text-decoration: none;
@@ -365,12 +369,12 @@ h1 {
   }
 }
 main {
-  padding-top: 150px;
+  padding-top: 160px;
   @media screen and (max-width: 1035px) {
-    padding-top: 200px;
+    padding-top: 210px;
   }
   @media screen and (max-width: 600px) {
-    padding-top: 150px;
+    padding-top: 160px;
   }
 }
 footer {

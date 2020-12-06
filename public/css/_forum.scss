@@ -1,5 +1,6 @@
 @use 'variables' as *;
-.forum-container {
+.forum-container,
+.voir-plus-forum-container {
   margin: auto;
   padding: 0 20px;
   @media screen and (max-width: 600px) {
@@ -7,21 +8,150 @@
     padding: 0 15px;
   }
 }
+p {
+  font-size: $content-size;
+}
 .new-forum {
   background-color: $clic-color;
   color: $primary-color;
   font-size: $content-size;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 .form-new-forum {
   flex-direction: column;
   display: none;
+  font-size: $content-size;
+  box-shadow: $shadow-low;
+  padding: 15px;
+  margin: 15px 0;
+  input,
+  textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    box-shadow: $shadow-low;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    margin-top: 15px;
+    background-color: $clic-color;
+    color: $primary-color;
+    font-family: $main-font;
+    font-size: $content-size;
+    box-shadow: $shadow-low;
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+.one-forum-view {
+  box-shadow: $shadow-low;
+  padding: 15px;
+  margin-bottom: 15px;
+  h2 {
+    margin-top: 0;
+  }
+  form {
+    justify-content: flex-end;
+    input {
+      padding: 7px 15px;
+      border-radius: 20px;
+      border: none;
+      background-color: transparent;
+      color: $clic-color;
+      font-family: $main-font;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        box-shadow: $shadow-low;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.date {
+  margin-top: 0;
+  font-size: 14px;
+  color: $neutral-color;
+}
+.quest-name {
+  margin: 5px 0;
+  color: $third-color;
 }
 .one-forum {
   margin-top: 15px;
-  box-shadow: $shadow-low;
-  padding: 15px;
   h3 {
     margin: 0;
+  }
+  h2 {
+    margin-top: 0;
+  }
+
+  .voir-plus-response {
+    box-shadow: $shadow-low;
+    padding: 15px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    .resp-name {
+      margin: 5px 0;
+      color: $third-color;
+    }
+  }
+  .voir-plus-quest {
+    box-shadow: $shadow-low;
+    padding: 15px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    .quest-name,
+    .resp-name {
+      margin: 5px 0;
+      color: $third-color;
+    }
+  }
+}
+.btn-send {
+  margin: 15px 0;
+  padding: 7px 20px;
+  border-radius: 20px;
+  box-shadow: $shadow-low;
+  input {
+    border: none;
+    flex-grow: 1;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    padding: 0;
+    background-color: transparent;
+    color: $clic-color;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.forum-user-pp {
+  height: 50px;
+  min-width: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100px;
+  margin-right: 15px;
+}
+.forum-tag {
+  padding: 6px 15px 7px 15px;
+  color: $clic-color;
+  background-color: $neutral-color2;
+  border-radius: 20px;
+  margin: 0 5px;
+  &:first-child {
+    margin-left: 0;
   }
 }

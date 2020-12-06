@@ -1,0 +1,1 @@
+<div class="voir-plus-forum-container w-90"><?= $thisForum;  ?></div>

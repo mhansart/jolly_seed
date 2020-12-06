@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.moncompte-container {
+  margin: auto;
+  padding: 0 20px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+  p {
+    margin: 0;
+    padding: 7px 0 7px 15px;
+  }
+}
+.user-pp {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.infos-user {
+  margin-bottom: 15px;
+}

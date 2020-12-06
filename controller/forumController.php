@@ -6,19 +6,36 @@ $tabForum = $p->readForum();
 $forum = "";
 
 foreach ($tabForum as $oneForum) {
-    $thisDate = substr($oneForum['forum_date'], 0, -9);
-    $forum .= '<div class="one-forum">
-                <h3>' . $oneForum['forum_title'] . '</h3>
-                <p>' . $thisDate . '</p>
-                <p>' . $oneForum['forum_msg'] . '</p>
+    $userId = $oneForum['user_id'];
+    $u = new Personne();
+    $tabUser = $u->readById($userId);
+    $image = ($tabUser[0]['user_picture'] === "") ? 'public/image/default.png' : 'uploads/' . $tabUser[0]['user_picture'];
+    $forum .= '<div class="one-forum-view">
+    <h2>' . $oneForum['forum_title'] . '</h2>
+    <div class="d-flex">
+                    <div class="forum-user-pp" style="background-image:url(' . $image . ')"></div>
+                    <div class="w-100">
+                        <p class="quest-name"><strong>' . $tabUser[0]['user_firstname'] . ' ' . $tabUser[0]['user_name'] . ' </strong></p>
+                        <p class="date">' . $oneForum['format_date'] . '</p>
+                        <p>' . $oneForum['forum_msg'] . '</p>
+                        <form action="#" method="post" class="w-100 d-flex">
+                            <input type="hidden" name="name" value="' . $oneForum['forum_id'] . '">
+                            <input type="submit" name="submit" class="voir-forum" value="Voir plus">
+                        </form>
+                        </div>
+                    </div>
                 </div>';
 }
-$forumDate = date("Y-m-d h:i:sa");
+$forumDate = date("Y-m-d");
 if (isset($_POST["qust-forum"], $_POST["text-forum"])) {
     if ($_POST["qust-forum"] !== "" && $_POST["text-forum"] !== "") {
-        $p->createForum($_POST["qust-forum"], $_POST["text-forum"], $forumDate, $_SESSION['userId']);
+        $p->createForum($_POST["qust-forum"], $_POST["text-forum"], $forumDate, $_SESSION['user_id'], str_replace(' ', '', $_POST['tag-forum']));
         header("Location:?section=forum");
     }
+}
+if (isset($_POST['name'])) {
+    $_SESSION['forum'] = $_POST['name'];
+    header("Location:?section=VoirPlusForum");
 }
 
 include("view/page/forum.php");

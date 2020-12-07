@@ -8,43 +8,137 @@
     padding: 0 15px;
   }
 }
+.forum-container {
+  .retour-forum {
+    display: none;
+  }
+}
+.retour-forum {
+  color: $clic-color;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  font-weight: 700;
+  i {
+    padding-top: 2px;
+    font-size: 12px;
+    margin-right: 15px;
+    transition: all 0.3s;
+  }
+  &:hover {
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.description-forum {
+  margin: 0;
+  padding: 15px 0;
+  p {
+    margin: 0;
+    margin-bottom: 5px;
+    &.description-search-forum {
+      padding-right: 30px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
 p {
   font-size: $content-size;
 }
-.new-forum {
-  background-color: $clic-color;
-  color: $primary-color;
-  font-size: $content-size;
-  cursor: pointer;
-  margin-bottom: 15px;
-}
-.form-new-forum {
-  flex-direction: column;
-  display: none;
-  font-size: $content-size;
-  box-shadow: $shadow-low;
-  padding: 15px;
-  margin: 15px 0;
-  input,
-  textarea {
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    box-shadow: $shadow-low;
+.new-forum-container {
+  justify-content: space-between;
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+  }
+  .new-forum {
+    background-color: $clic-color;
+    color: $primary-color;
+    font-size: $content-size;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-left: 15px;
     &:focus {
       outline: none;
     }
+    @media screen and (max-width: 720px) {
+      width: 100%;
+      margin-left: 0;
+      order: 2;
+    }
   }
-  button {
-    margin-top: 15px;
-    background-color: $clic-color;
-    color: $primary-color;
-    font-family: $main-font;
+  .search-bar-forum {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    box-shadow: $shadow-low;
+    border-radius: 20px;
+    padding: 5px 15px;
+    background-color: $primary-color;
+    width: 250px;
+    align-items: center;
+    @media screen and (max-width: 720px) {
+      width: 100%;
+      margin-right: 0;
+      order: 1;
+    }
+    input {
+      flex-grow: 1;
+      border: none;
+      padding: 2px;
+      &:focus {
+        outline: none;
+      }
+    }
+    i {
+      padding-top: 1px;
+      transform: scaleX(-1);
+      color: $clic-color;
+    }
+  }
+  .form-new-forum {
+    flex-direction: column;
+    display: none;
     font-size: $content-size;
     box-shadow: $shadow-low;
-    transition: all 0.3s;
-    &:hover {
-      box-shadow: none;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    .close-form-forum {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+    input,
+    textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      box-shadow: $shadow-low;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      margin-top: 15px;
+      background-color: $clic-color;
+      color: $primary-color;
+      font-family: $main-font;
+      font-size: $content-size;
+      box-shadow: $shadow-low;
+      transition: all 0.3s;
+      cursor: pointer;
+      &:hover {
+        box-shadow: none;
+      }
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
@@ -57,8 +151,9 @@ p {
   }
   form {
     justify-content: flex-end;
-    input {
-      padding: 7px 15px;
+    .voir-forum {
+      padding: 0;
+      margin: 7px 15px;
       border-radius: 20px;
       border: none;
       background-color: transparent;
@@ -66,8 +161,21 @@ p {
       font-family: $main-font;
       cursor: pointer;
       transition: all 0.3s;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 0.5px;
+        top: 20px;
+        left: 0;
+        width: 0%;
+        background-color: $clic-color;
+        transition: all 0.3s;
+      }
       &:hover {
-        box-shadow: $shadow-low;
+        &::before {
+          width: 100%;
+        }
       }
       &:focus {
         outline: none;
@@ -80,39 +188,29 @@ p {
   font-size: 14px;
   color: $neutral-color;
 }
-.quest-name {
+.quest-name,
+.resp-name {
   margin: 5px 0;
   color: $third-color;
 }
 .one-forum {
   margin-top: 15px;
-  h3 {
-    margin: 0;
-  }
   h2 {
     margin-top: 0;
   }
-
   .voir-plus-response {
     box-shadow: $shadow-low;
     padding: 15px;
+    padding-bottom: 0;
     margin-left: 50px;
     margin-bottom: 15px;
-    .resp-name {
-      margin: 5px 0;
-      color: $third-color;
-    }
   }
   .voir-plus-quest {
     box-shadow: $shadow-low;
     padding: 15px;
+    padding-bottom: 0;
     margin-right: 50px;
     margin-bottom: 15px;
-    .quest-name,
-    .resp-name {
-      margin: 5px 0;
-      color: $third-color;
-    }
   }
 }
 .btn-send {
@@ -132,6 +230,7 @@ p {
     background-color: transparent;
     color: $clic-color;
     font-size: 20px;
+    cursor: pointer;
     &:focus {
       outline: none;
     }
@@ -151,6 +250,23 @@ p {
   background-color: $neutral-color2;
   border-radius: 20px;
   margin: 0 5px;
+  display: inline-flex;
+  margin-bottom: 15px;
+  cursor: pointer;
+  form {
+    input {
+      border: none;
+      color: $clic-color;
+      background-color: transparent;
+      font-family: $main-font;
+      font-size: $content-size;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
   &:first-child {
     margin-left: 0;
   }

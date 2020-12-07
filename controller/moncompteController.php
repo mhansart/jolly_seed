@@ -6,11 +6,11 @@ $image = ($tabUser[0]['user_picture'] === "") ? 'public/image/default.png' : 'up
 $infosUser = '<div class="d-flex infos-user">
                 <div class="user-pp" style="background-image:url(' . $image . ')"></div>
                 <div>
-                    <p>Nom :' . $tabUser[0]['user_name'] . '</p>
-                    <p>Prénom :' . $tabUser[0]['user_firstname'] . '</p>
-                    <p>Adresse :' . $tabUser[0]['user_street'] . ' ' . $tabUser[0]['user_street_number'] . ' ' . $tabUser[0]['user_box'] . ', ' . $tabUser[0]['user_citycode'] . ' ' . $tabUser[0]['user_city'] . '</p>
-                    <p>N° téléphone :' . $tabUser[0]['user_phone'] . '</p>
-                    <p>E-mail :' . $tabUser[0]['user_email'] . '</p>
+                    <p>Nom: ' . $tabUser[0]['user_name'] . '</p>
+                    <p>Prénom: ' . $tabUser[0]['user_firstname'] . '</p>
+                    <p>Adresse: ' . $tabUser[0]['user_street'] . ' ' . $tabUser[0]['user_street_number'] . ' ' . $tabUser[0]['user_box'] . ', ' . $tabUser[0]['user_citycode'] . ' ' . $tabUser[0]['user_city'] . '</p>
+                    <p>N° téléphone: ' . $tabUser[0]['user_phone'] . '</p>
+                    <p>E-mail: ' . $tabUser[0]['user_email'] . '</p>
                 </div>
             </div>';
 

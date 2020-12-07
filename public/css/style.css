@@ -356,38 +356,131 @@ h3 {
   }
 }
 
+.forum-container .retour-forum {
+  display: none;
+}
+
+.retour-forum {
+  color: #ff8617;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  font-weight: 700;
+}
+.retour-forum i {
+  padding-top: 2px;
+  font-size: 12px;
+  margin-right: 15px;
+  transition: all 0.3s;
+}
+.retour-forum:hover i {
+  margin-right: 5px;
+}
+
+.description-forum {
+  margin: 0;
+  padding: 15px 0;
+}
+.description-forum p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.description-forum p.description-search-forum {
+  padding-right: 30px;
+}
+.description-forum p:last-child {
+  margin-bottom: 0;
+}
+
 p {
   font-size: 17px;
 }
 
-.new-forum {
+.new-forum-container {
+  justify-content: space-between;
+}
+@media screen and (max-width: 720px) {
+  .new-forum-container {
+    flex-direction: column;
+  }
+}
+.new-forum-container .new-forum {
   background-color: #ff8617;
   color: white;
   font-size: 17px;
   cursor: pointer;
   margin-bottom: 15px;
+  margin-left: 15px;
 }
-
-.form-new-forum {
+.new-forum-container .new-forum:focus {
+  outline: none;
+}
+@media screen and (max-width: 720px) {
+  .new-forum-container .new-forum {
+    width: 100%;
+    margin-left: 0;
+    order: 2;
+  }
+}
+.new-forum-container .search-bar-forum {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: white;
+  width: 250px;
+  align-items: center;
+}
+@media screen and (max-width: 720px) {
+  .new-forum-container .search-bar-forum {
+    width: 100%;
+    margin-right: 0;
+    order: 1;
+  }
+}
+.new-forum-container .search-bar-forum input {
+  flex-grow: 1;
+  border: none;
+  padding: 2px;
+}
+.new-forum-container .search-bar-forum input:focus {
+  outline: none;
+}
+.new-forum-container .search-bar-forum i {
+  padding-top: 1px;
+  transform: scaleX(-1);
+  color: #ff8617;
+}
+.new-forum-container .form-new-forum {
   flex-direction: column;
   display: none;
   font-size: 17px;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   padding: 15px;
-  margin: 15px 0;
+  margin-bottom: 15px;
+  position: relative;
 }
-.form-new-forum input,
-.form-new-forum textarea {
+.new-forum-container .form-new-forum .close-form-forum {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.new-forum-container .form-new-forum input,
+.new-forum-container .form-new-forum textarea {
   padding: 10px;
   margin: 10px 0;
   border: none;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
 }
-.form-new-forum input:focus,
-.form-new-forum textarea:focus {
+.new-forum-container .form-new-forum input:focus,
+.new-forum-container .form-new-forum textarea:focus {
   outline: none;
 }
-.form-new-forum button {
+.new-forum-container .form-new-forum button {
   margin-top: 15px;
   background-color: #ff8617;
   color: white;
@@ -395,9 +488,13 @@ p {
   font-size: 17px;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   transition: all 0.3s;
+  cursor: pointer;
 }
-.form-new-forum button:hover {
+.new-forum-container .form-new-forum button:hover {
   box-shadow: none;
+}
+.new-forum-container .form-new-forum button:focus {
+  outline: none;
 }
 
 .one-forum-view {
@@ -411,8 +508,9 @@ p {
 .one-forum-view form {
   justify-content: flex-end;
 }
-.one-forum-view form input {
-  padding: 7px 15px;
+.one-forum-view form .voir-forum {
+  padding: 0;
+  margin: 7px 15px;
   border-radius: 20px;
   border: none;
   background-color: transparent;
@@ -420,11 +518,22 @@ p {
   font-family: "Louis George Cafe'";
   cursor: pointer;
   transition: all 0.3s;
+  position: relative;
 }
-.one-forum-view form input:hover {
-  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+.one-forum-view form .voir-forum::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  top: 20px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
 }
-.one-forum-view form input:focus {
+.one-forum-view form .voir-forum:hover::before {
+  width: 100%;
+}
+.one-forum-view form .voir-forum:focus {
   outline: none;
 }
 
@@ -434,7 +543,8 @@ p {
   color: #7f7f7f;
 }
 
-.quest-name {
+.quest-name,
+.resp-name {
   margin: 5px 0;
   color: #23512a;
 }
@@ -442,32 +552,22 @@ p {
 .one-forum {
   margin-top: 15px;
 }
-.one-forum h3 {
-  margin: 0;
-}
 .one-forum h2 {
   margin-top: 0;
 }
 .one-forum .voir-plus-response {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   padding: 15px;
+  padding-bottom: 0;
   margin-left: 50px;
   margin-bottom: 15px;
-}
-.one-forum .voir-plus-response .resp-name {
-  margin: 5px 0;
-  color: #23512a;
 }
 .one-forum .voir-plus-quest {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   padding: 15px;
+  padding-bottom: 0;
   margin-right: 50px;
   margin-bottom: 15px;
-}
-.one-forum .voir-plus-quest .quest-name,
-.one-forum .voir-plus-quest .resp-name {
-  margin: 5px 0;
-  color: #23512a;
 }
 
 .btn-send {
@@ -488,6 +588,7 @@ p {
   background-color: transparent;
   color: #ff8617;
   font-size: 20px;
+  cursor: pointer;
 }
 .btn-send button:focus {
   outline: none;
@@ -508,6 +609,20 @@ p {
   background-color: #e0e0e0;
   border-radius: 20px;
   margin: 0 5px;
+  display: inline-flex;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.forum-tag form input {
+  border: none;
+  color: #ff8617;
+  background-color: transparent;
+  font-family: "Louis George Cafe'";
+  font-size: 17px;
+  cursor: pointer;
+}
+.forum-tag form input:focus {
+  outline: none;
 }
 .forum-tag:first-child {
   margin-left: 0;
@@ -573,12 +688,18 @@ header .subheader .subheader-container {
   }
 }
 header .subheader .subheader-container .hello-name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  padding: 5px 15px;
+  padding: 5px;
   border-radius: 20px;
-  background-color: #23512a;
   margin: 0;
   margin-right: 15px;
+}
+header .subheader .subheader-container .hello-name strong {
+  margin-left: 5px;
 }
 @media screen and (max-width: 860px) {
   header .subheader .subheader-container .hello-name {
@@ -595,19 +716,35 @@ header .subheader .subheader-container a {
 header .subheader .subheader-container a:hover {
   color: #23512a;
 }
-header .subheader .subheader-container a .sign-out-icon {
+header .subheader .subheader-container a .btn-moncompte {
+  padding: 4px 15px 5px 15px;
+  background-color: #ff8617;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+header .subheader .subheader-container a .btn-moncompte:hover {
+  background-color: transparent;
+}
+@media screen and (max-width: 500px) {
+  header .subheader .subheader-container a .btn-moncompte {
+    display: none;
+  }
+}
+header .subheader .subheader-container a .mon-compte-icon {
   display: none;
   font-size: 20px;
 }
-@media screen and (max-width: 420px) {
-  header .subheader .subheader-container a .sign-out-icon {
+header .subheader .subheader-container a .mon-compte-icon:hover {
+  color: #ff8617;
+}
+@media screen and (max-width: 500px) {
+  header .subheader .subheader-container a .mon-compte-icon {
     display: block;
   }
 }
-@media screen and (max-width: 420px) {
-  header .subheader .subheader-container a .btn-deconnexion {
-    display: none;
-  }
+header .subheader .subheader-container a .sign-out-icon {
+  margin-left: 15px;
+  font-size: 20px;
 }
 header .subheader .subheader-container .search-bar {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
@@ -786,7 +923,6 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) {
 }
 @media screen and (max-width: 1035px) {
   header .header-container .nav-connected .nav-pages li:not(:last-child) {
-    padding: 7px 10px;
     padding-bottom: 8px;
   }
 }
@@ -833,7 +969,13 @@ header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::
   }
 }
 header .header-container .nav-connected .nav-pages li.btn-moncompte {
+  display: none;
   padding: 0;
+}
+@media screen and (max-width: 600px) {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte {
+    display: block;
+  }
 }
 header .header-container .nav-connected .nav-pages li.btn-moncompte a {
   color: white;
@@ -844,11 +986,6 @@ header .header-container .nav-connected .nav-pages li.btn-moncompte a {
   display: block;
   color: #ff8617;
   overflow: hidden;
-}
-@media screen and (max-width: 1035px) {
-  header .header-container .nav-connected .nav-pages li.btn-moncompte a {
-    padding: 7px 10px 8px 10px;
-  }
 }
 @media screen and (max-width: 600px) {
   header .header-container .nav-connected .nav-pages li.btn-moncompte a {

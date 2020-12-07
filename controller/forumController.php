@@ -17,14 +17,15 @@ foreach ($tabForum as $oneForum) {
                     <div class="w-100">
                         <p class="quest-name"><strong>' . $tabUser[0]['user_firstname'] . ' ' . $tabUser[0]['user_name'] . ' </strong></p>
                         <p class="date">' . $oneForum['format_date'] . '</p>
-                        <p>' . $oneForum['forum_msg'] . '</p>
-                        <form action="#" method="post" class="w-100 d-flex">
-                            <input type="hidden" name="name" value="' . $oneForum['forum_id'] . '">
-                            <input type="submit" name="submit" class="voir-forum" value="Voir plus">
-                        </form>
-                        </div>
-                    </div>
-                </div>';
+                        <p>' . $oneForum['forum_msg'] . '</p>';
+    $tags = explode(',', $oneForum['forum_tags']);
+    foreach ($tags as $tag) {
+        $forum .= '<span class="forum-tag">#' . $tag . '</span>';
+    }
+    $forum .= '<form action="#" method="post" class="w-100 d-flex">
+                    <input type="hidden" name="name" value="' . $oneForum['forum_id'] . '">
+                <button type="submit" class="voir-forum">Voir plus</button></form></div>
+    </div></div>';
 }
 $forumDate = date("Y-m-d");
 if (isset($_POST["qust-forum"], $_POST["text-forum"])) {

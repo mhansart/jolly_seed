@@ -40,7 +40,7 @@ class Personne extends Connexion
 
     public function readConnexion($_email)
     {
-        $requete = "SELECT `user_id`,user_email,user_mdp, user_firstname FROM users WHERE user_email = :email";
+        $requete = "SELECT `user_id`,user_email,user_mdp, user_firstname, user_city FROM users WHERE user_email = :email";
         $tabChamps = array(
             ":email" => $_email
         );

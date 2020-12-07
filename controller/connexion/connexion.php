@@ -10,6 +10,7 @@ if (isset($_POST["email"], $_POST["mdp"])) {
         if (password_verify($_POST['mdp'], $dbmdp)) {
             $_SESSION['user_id'] = $tabUsers[0]['user_id'];
             $_SESSION['prenom'] = $tabUsers[0]['user_firstname'];
+            $_SESSION['user_city'] = $tabUsers[0]['user_city'];
             header("Location:?section=accueil");
         } else {
             $errorConnexion = "Le mot de passe ou l'e-mail est incorrect";

@@ -20,7 +20,7 @@
 </section>
 <section class="posterAnnonce box"> 
   <h2>Création d'annonce</h2>
-  <form  method="post">
+  <form enctype="multipart/form-data" method="post" >
     <h3>Catégorie:</h3>
     <div class= "sectionCategorie">
       <div class="radio">

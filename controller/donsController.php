@@ -40,7 +40,7 @@ foreach ($tabDons as $value) {
                 <div class='d-flex row'>
                   <p>Date: " . $value["ads_date"] . "&nbsp;</p>
                   <p> &nbsp; </p>
-                  <p>&nbsp;Lieu : Ottignies</p>
+                  <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                 </div>
                 <article>" . $value["ads_description"] . "</article>
                 <div class='d-flex row'>
@@ -52,6 +52,8 @@ foreach ($tabDons as $value) {
             </section>";
 
 }
+echo($_SESSION['user_id']);
+echo($_SESSION['user_city']);
 
 if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
 {
@@ -75,23 +77,59 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
     } else {
       $title = $_POST["ads_title"];
     }
-    echo($_POST["ads_picture"]);
-    if(isset($_POST["ads_picture"])){
-    $picture = $_POST["ads_picture"];
-    } elseif ($_POST["ads_category"]==="seed"){
-      $picture = "seed.jpg";  
-    } elseif ($_POST["ads_category"]==="flower"){
-      $picture = "tomates.jpg";  
-    } elseif ($_POST["ads_category"]==="ground"){
-      $picture = "copeaux.jpg";  
-    } else {
-      $picture = "chene.jpg"; 
-    }
-    echo($picture);
-    $p->create($type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $picture, $active, $title);
-    header("Location:?section=dons");
+    //IMAGES
+    if (isset($_FILES["ads_picture"])) {
+      var_dump($_FILES["ads_picture"]);
+     if ($_FILES["ads_picture"]["name"]!== ""){
+      $target_dir = "uploads/";
+      $target_file = $target_dir . basename($_FILES["ads_picture"]["name"]);
+      $uploadOk = 1;
+      $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+      $check = filesize($_FILES["ads_picture"]["tmp_name"]);
+
+      if ($check !== false) {
+          $uploadOk = 1;
+      } else {
+          $uploadOk = 0;
+      }
+
+      // Allow certain file formats
+      if (
+          $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+      ) {
+          echo "Sorry, only JPG, JPEG & PNG files are allowed.";
+          $uploadOk = 0;
+      }
+      // Check if $uploadOk is set to 0 by an error
+      if ($uploadOk == 0) {
+          echo "Sorry, your file was not uploaded.";
+          // if everything is ok, try to upload file
+      } else {
+          $newName = strtolower("photo-annonce". $_SESSION['user_id'] . '.' . $imageFileType);
+          echo $newName;
+          if (move_uploaded_file($_FILES["ads_picture"]["tmp_name"], $target_dir . $newName)) {
+          }
+      }
+
+      $annoncePicture = $newName;
+     } else {
+        if ($_POST["ads_category"]==="seed"){
+          $annoncePicture = "seed.jpg"; 
+        } elseif ($_POST["ads_category"]==="time"){
+          $annoncePicture = "avatar.png"; 
+        } elseif ($_POST["ads_category"]==="flower"){
+          $annoncePicture = "tomates.jpg";  
+        } elseif ($_POST["ads_category"]==="ground"){
+          $annoncePicture = "copeaux.jpg";  
+        } else {
+          $annoncePicture = "chene.jpg"; 
+        }
+      }
+    } 
+   
+  $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $annoncePicture, $active, $title);
+  header("Location:?section=dons");
 }
-
-
 
 include("view/page/dons.php");

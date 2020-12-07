@@ -20,6 +20,7 @@ if (isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["rue"], $_POS
 
             $lastUserId = $p->lastInsert();
             $_SESSION['user_id'] = $lastUserId[0]['dernier_id'];
+            $_SESSION['user_city'] = $_POST["ville"];
             header("Location:?section=accueil");
         }
     }

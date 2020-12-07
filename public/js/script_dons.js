@@ -93,11 +93,11 @@ for (let categorie of categories){
 
 
 // POSTER l'ANNONCE
-
+/*
 const creer = document.querySelector(".creer");
 creer.addEventListener("click", function (e) {
     posterAnnonce.style.display = "none";
     annonceDons.style.display = "flex";
     enteteDons.style.visibility = "visible";
 });
-
+*/

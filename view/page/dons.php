@@ -20,7 +20,7 @@
 </section>
 <section class="posterAnnonce box"> 
   <h2>Création d'annonce</h2>
-  <form action="/action_page.php" method="post">
+  <form  method="post">
     <h3>Catégorie:</h3>
     <div class= "sectionCategorie">
       <div class="radio">
@@ -36,9 +36,9 @@
         <label for="plant">Plants / Arbustres / Arbres</label><br/>
       </div>
       <div class="time">
-        <input type="radio" id="demande" name="ads_title" value="demande" />
+        <input type="radio" id="demande" name="ads_titleSecondaire" value="Demande" />
         <label for="demande">Demande</label><br/>
-        <input type="radio" id="offre" name="ads_title" value="offre" />
+        <input type="radio" id="offre" name="ads_titleSecondaire" value="Offre" />
         <label for="offre">Offre</label><br/>
         <div class="timeSlot">
           <input type="radio" id="demiJournee" name="ads_time" value="demiJournee" />
@@ -56,15 +56,15 @@
       </div>
       <div class="imageAlternative">
         <p>Afin d'illustrer vortre annonce, vous pouvez soit utiliser l'image ci-contre ou en télécharger une nouvelle.</p>
-        <input type="file" class="message-texte" name="ads_picture"><br />
+        <input type="file" class="fichierImage" name="ads_picture" value="Pas d'image"><br />
       </div>
     </div>
-    <label for="titre"><h3>Titre:</h3></label>
-    <input type="text" id="titre" name="ads_title" placeholder="nombre de char à fixer"/><br />
+    <label class="titre" for="titre"><h3>Titre:</h3></label>
+    <input class="titre" type="text" id="titre" name="ads_title" placeholder="nombre de char à fixer" value="Pas de titre"/><br />
 
     <label for="description"><h3>Description:</h3></label>
     <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br />
-
+<!--
     <label for="contact"><h3>Contact:</h3></label>
     <p> Pour la prise de contact, je désire partager :</p>
     <div class="left">
@@ -81,8 +81,8 @@
       <input type="checkbox" id="intro" name="intro" value="intro">
       <label for="intro"> Paragraphe d'introdution</label><br/>
     </div>
-    <p>Si toutes les cases sont décochées, le seul moyen de contact sera via le site.</p>
-    <button class="creer"><a href="#">Créer l'annonce</a></button>
+    <p>Si toutes les cases sont décochées, le seul moyen de contact sera via le site.</p>-->
+    <button class="creer" type="submit">Créer l'annonce</button>
   </form>
 </section>
 <script src="public/js/script_dons.js"></script>

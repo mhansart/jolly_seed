@@ -36,17 +36,20 @@ btnDons.addEventListener("click", function (e) {
 
 // Modifications selon CHOIX des CATEGORIES
 
-const categories = document.getElementsByName('categorie');
+
+let fichierImage = document.querySelector(".fichierImage");
+const categories = document.getElementsByName('ads_category');
 const time = document.querySelector(".time");
 time.style.display = "none";
 const timeSlot = document.querySelector(".timeSlot");
 timeSlot.style.display = "none";
 const img = document.querySelector(".imageAnnonce");
-
-const cacher = (arguments) => {
+let titres = document.querySelectorAll(".titre");
+const cacher = () => {
     img.style.border = "none";
     time.style.display = "none";
     timeSlot.style.display = "none";
+    titre.style.display = "inline";
 };
 
 for (let categorie of categories){
@@ -57,17 +60,20 @@ for (let categorie of categories){
               img.style.backgroundImage = "url('../jolly_seed/public/image/avatar.png')";
               img.style.border = "2px solid #6e9611";
               time.style.display = "block";
-              var times = document.getElementsByName('time');
+              titre.style.display = "none";
+              var times = document.getElementsByName('ads_titleSecondaire');
               for (let tme of times){
-                tme.addEventListener("change", function (e) {
-                   if (e.currentTarget.value ==="offre") {
-                    timeSlot.style.display = "block";   
+                tme.addEventListener("change", function (e) {   let title = document.getElementsByName('ads_title');
+                console.log(title);
+                   if (e.currentTarget.value ==="Offre") {
+                    timeSlot.style.display = "block"; 
                    };
                 });
             }
               break;
             case "seed":
               img.style.backgroundImage = "url('../jolly_seed/public/image/seed.jpg')";
+              fichierImage.value = "seed.jpg";
               cacher();
               break;
             case "flower":
@@ -85,6 +91,7 @@ for (let categorie of categories){
     });
 }
 
+
 // POSTER l'ANNONCE
 
 const creer = document.querySelector(".creer");
@@ -93,3 +100,4 @@ creer.addEventListener("click", function (e) {
     annonceDons.style.display = "flex";
     enteteDons.style.visibility = "visible";
 });
+

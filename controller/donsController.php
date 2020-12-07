@@ -50,7 +50,48 @@ foreach ($tabDons as $value) {
                 </div>
               </div>
             </section>";
+
 }
+
+if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
+{
+    $p = new Annonce();
+    $active = 1;
+    $date = date("Y-m-d h:i:sa"); 
+    if ($_POST["ads_category"]==="time"){
+      
+      $type = "jardinier";
+    }
+    else{
+      $type = "don";
+    }
+    if(isset($_POST["ads_time"])){
+      $time = $_POST["ads_time"]; 
+    } else {
+      $time = "";
+    }
+    if(isset($_POST["ads_titleSecondaire"])){
+      $title = $_POST["ads_titleSecondaire"];
+    } else {
+      $title = $_POST["ads_title"];
+    }
+    echo($_POST["ads_picture"]);
+    if(isset($_POST["ads_picture"])){
+    $picture = $_POST["ads_picture"];
+    } elseif ($_POST["ads_category"]==="seed"){
+      $picture = "seed.jpg";  
+    } elseif ($_POST["ads_category"]==="flower"){
+      $picture = "tomates.jpg";  
+    } elseif ($_POST["ads_category"]==="ground"){
+      $picture = "copeaux.jpg";  
+    } else {
+      $picture = "chene.jpg"; 
+    }
+    echo($picture);
+    $p->create($type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $picture, $active, $title);
+    header("Location:?section=dons");
+}
+
 
 
 include("view/page/dons.php");

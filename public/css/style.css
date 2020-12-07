@@ -720,7 +720,7 @@ header .subheader .subheader-container a .btn-moncompte {
   padding: 4px 15px 5px 15px;
   background-color: #ff8617;
   border-radius: 20px;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
 }
 header .subheader .subheader-container a .btn-moncompte:hover {
   background-color: transparent;
@@ -923,7 +923,6 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) {
 }
 @media screen and (max-width: 1035px) {
   header .header-container .nav-connected .nav-pages li:not(:last-child) {
-    padding: 7px 10px;
     padding-bottom: 8px;
   }
 }
@@ -1030,11 +1029,6 @@ header .header-container .nav-connected .nav-pages li a {
   font-size: 18px;
   text-decoration: none;
   color: #ff8617;
-}
-@media screen and (max-width: 640px) {
-  header .header-container .nav-connected .nav-pages li a {
-    font-size: 16px;
-  }
 }
 
 .jolly-name {

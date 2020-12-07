@@ -52,31 +52,16 @@ foreach ($tabDons as $value) {
             </section>";
 
 }
-echo($_SESSION['user_id']);
-echo($_SESSION['user_city']);
-
+ // CREATIOn d'UNE ANNONCE DON
+ 
 if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
 {
     $p = new Annonce();
     $active = 1;
     $date = date("Y-m-d h:i:sa"); 
-    if ($_POST["ads_category"]==="time"){
-      
-      $type = "jardinier";
-    }
-    else{
-      $type = "don";
-    }
-    if(isset($_POST["ads_time"])){
-      $time = $_POST["ads_time"]; 
-    } else {
-      $time = "";
-    }
-    if(isset($_POST["ads_titleSecondaire"])){
-      $title = $_POST["ads_titleSecondaire"];
-    } else {
-      $title = $_POST["ads_title"];
-    }
+    $type = "don";
+    $time = "";
+    
     //IMAGES
     if (isset($_FILES["ads_picture"])) {
       var_dump($_FILES["ads_picture"]);
@@ -113,11 +98,9 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
       }
 
       $annoncePicture = $newName;
-     } else {
+     } else { // fixe les images prédéfinies
         if ($_POST["ads_category"]==="seed"){
-          $annoncePicture = "seed.jpg"; 
-        } elseif ($_POST["ads_category"]==="time"){
-          $annoncePicture = "avatar.png"; 
+          $annoncePicture = "seed.jpg";  
         } elseif ($_POST["ads_category"]==="flower"){
           $annoncePicture = "tomates.jpg";  
         } elseif ($_POST["ads_category"]==="ground"){
@@ -127,8 +110,8 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
         }
       }
     } 
-   
-  $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $annoncePicture, $active, $title);
+
+  $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $annoncePicture, $active, $_POST["ads_title"]);
   header("Location:?section=dons");
 }
 

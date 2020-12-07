@@ -19,35 +19,19 @@
   </section>
 </section>
 <section class="posterAnnonce box"> 
-  <h2>Création d'annonce</h2>
+  <h2>Création d'annonce de don</h2>
   <form enctype="multipart/form-data" method="post" >
     <h3>Catégorie:</h3>
     <div class= "sectionCategorie">
       <div class="radio">
-        <input type="radio" id="time" name="ads_category" value="time" />
-        <label for="time">Temps demandé / Temps offert</label><br/>
-        <input type="radio" id="seed" name="ads_category" value="seed" />
+        <input type="radio" id="seed" name="ads_category" value="seed" checked/>
         <label for="seed">Graines / Semences / Noyaux</label><br/>
-        <input type="radio" id="flower" name="ads_category" value="flower" checked/>
+        <input type="radio" id="flower" name="ads_category" value="flower"/>
         <label for="flower">Fleurs / Fruits / Légumes </label><br/>
         <input type="radio" id="ground" name="ads_category" value="ground" />
         <label for="ground">Terreau / Copeaux / Buches / Bois</label><br/>
         <input type="radio" id="plant" name="ads_category" value="plant" />
         <label for="plant">Plants / Arbustres / Arbres</label><br/>
-      </div>
-      <div class="time">
-        <input type="radio" id="demande" name="ads_titleSecondaire" value="Demande" />
-        <label for="demande">Demande</label><br/>
-        <input type="radio" id="offre" name="ads_titleSecondaire" value="Offre" />
-        <label for="offre">Offre</label><br/>
-        <div class="timeSlot">
-          <input type="radio" id="demiJournee" name="ads_time" value="demiJournee" />
-          <label for="demiJournee">Une demi-journée</label><br/>
-          <input type="radio" id="journee" name="ads_time" value="journee" />
-          <label for="journee">Une journee</label><br/>
-          <input type="radio" id="plus" name="ads_time" value="plus" />
-          <label for="plus">Plus d'une journée</label><br/>
-        </div>
       </div>
     </div>
     <h3>Image: </h3>

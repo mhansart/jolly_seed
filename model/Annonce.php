@@ -37,11 +37,11 @@
             return $this->execute($requete, $tabChamps);
         }
 
-        public function readByCategoryTime($_ads_category)
+        public function readByCategoryTime($_category)
         {
-            $requete = "SELECT * FROM ads WHERE ads_category == :temps";
+            $requete = "SELECT * FROM ads WHERE ads_category = :temps";
             $tabChamps = array(
-                ":temps" => $_ads_category
+                ":temps" => $_category
             );
             return $this->execute($requete, $tabChamps);
         }

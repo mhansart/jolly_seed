@@ -23,7 +23,6 @@ chevron.addEventListener("click", function () {
 });
 
 // Montrer la Section CREATION d'ANNONCE 
-
 const enteteDons = document.querySelector(".enteteDons");
 const annonceDons = document.querySelector(".annonceDons");
 const posterAnnonce = document.querySelector(".posterAnnonce");
@@ -35,29 +34,14 @@ btnDons.addEventListener("click", function (e) {
     enteteDons.style.display = "none";
 });
 
-// Modifications selon CHOIX des CATEGORIES
-
-let fichierImage = document.querySelector(".fichierImage");
-const categories = document.getElementsByName('ads_category');
 const img = document.querySelector(".imageAnnonce");
-img.style.backgroundImage = "url('../jolly_seed/public/image/seed.jpg')";
-for (let categorie of categories){
-    categorie.addEventListener("change", function (e) {
-        
-        switch(e.currentTarget.value) {
-            case "seed":
-              img.style.backgroundImage = "url('../jolly_seed/public/image/seed.jpg')";
-              fichierImage.value = "seed.jpg";
-              break;
-            case "flower":
-              img.style.backgroundImage = "url('../jolly_seed/public/image/tomates.jpg')";
-              break;
-            case "ground":
-              img.style.backgroundImage = "url('../jolly_seed/public/image/copeaux.jpg')";
-            break;
-              default:
-              img.style.backgroundImage = "url('../jolly_seed/public/image/chene.jpg')";
-          };
-    });
-}
-
+//img.style.backgroundImage = "url('../jolly_seed/public/image/avatar.png')";
+// POSTER l'ANNONCE
+/*
+const creer = document.querySelector(".creer");
+creer.addEventListener("click", function (e) {
+    posterAnnonce.style.display = "none";
+    annonceDons.style.display = "flex";
+    enteteDons.style.visibility = "visible";
+});
+*/

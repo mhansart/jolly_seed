@@ -35,13 +35,8 @@ btnDons.addEventListener("click", function (e) {
 });
 
 const img = document.querySelector(".imageAnnonce");
-//img.style.backgroundImage = "url('../jolly_seed/public/image/avatar.png')";
-// POSTER l'ANNONCE
-/*
-const creer = document.querySelector(".creer");
-creer.addEventListener("click", function (e) {
-    posterAnnonce.style.display = "none";
-    annonceDons.style.display = "flex";
-    enteteDons.style.visibility = "visible";
+const photoPerso = document.querySelector("#photoPerso");
+photoPerso.addEventListener("click", function (e) {
+    img.style.backgroundImage = "url('../jolly_seed/public/image/avatar.png')";   
 });
-*/
+

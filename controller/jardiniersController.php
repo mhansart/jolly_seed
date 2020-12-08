@@ -34,7 +34,10 @@ foreach ($tabDons as $value) {
             </section>";
 
 }
-
+$i = new Annonce();
+  $infosUser = $i->readByUserId($_SESSION['user_id']);
+  $annoncePicture = $infosUser[0]["user_picture"]; 
+  
 if(isset($_POST["ads_titleSecondaire"], $_POST["ads_time"], $_POST["ads_description"]))
 {
   $p = new Annonce();
@@ -49,9 +52,14 @@ if(isset($_POST["ads_titleSecondaire"], $_POST["ads_time"], $_POST["ads_descript
     $title = "Demande";
   }
   //IMAGES
-
-  $annoncePicture = "avatar.png"; 
-
+  $j = new Annonce();
+  $infosUser = $j->readByUserId($_SESSION['user_id']);
+  $annoncePicture = $infosUser[0]["user_picture"]; 
+  if(isset($_POST["photoPerso"])){
+      $annoncePicture = $infosUser[0]["user_picture"]; 
+  } else {
+  $annoncePicture = "avatar.png";
+  }
   $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $category, $_POST["ads_time"], $date, $_POST["ads_description"], $annoncePicture, $active, $title);
   //header("Location:?section=jardiniers");
 }

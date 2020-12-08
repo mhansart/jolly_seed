@@ -54,6 +54,14 @@
             );
             return $this->execute($requete, $tabChamps);
         }
+        public function readByUserId($_user_id)
+        {
+            $requete = "SELECT user_city, user_picture, user_description FROM users WHERE user_id = :userId";
+            $tabChamps = array(
+                ":userId" => $_user_id
+            );
+            return $this->execute($requete, $tabChamps);
+        }
 
         public function update($_ads_id, $_ads_type, $_ads_category, $_ads_date, $_ads_description, $_ads_picture, $_ads_active, $_ads_title)
         {

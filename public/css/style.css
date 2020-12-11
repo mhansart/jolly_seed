@@ -669,16 +669,19 @@ h2 {
 label {
   display: block;
   width: 150px;
+  float: left;
 }
 
 label {
   display: block;
   width: 150px;
+  float: left;
 }
 
 label {
   display: block;
   width: 150px;
+  float: left;
 }
 
 * {

@@ -1,4 +1,4 @@
-<section class="container-connexion">
+<section class="container-connexion w-80">
     <h2>Connexion</h2>
     <fieldset>
         <form method="post">
@@ -22,7 +22,7 @@
 
             <div>
                 <button type="submit" id="bouton">Se connecter</button>
-            </div>
+            </div><br/>
 
             <div><button type="reset">Effacer</button></div>
         </form>

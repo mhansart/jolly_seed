@@ -338,18 +338,6 @@ h3 {
 }
 .posterAnnonce .imageAnnonce {
   display: block;
-<<<<<<< HEAD
-  min-width: 250px;
-  height: 250px;
-  background-size: cover;
-  background-position: center center;
-}
-.posterAnnonce .imageAnnonceFixe {
-  display: block;
-  background-image: url("../image/avatar.png");
-  border: 3px solid #6e9611;
-=======
->>>>>>> 2dc977c58e08a657ab709448af6ab7d1560512b3
   min-width: 250px;
   height: 250px;
   background-size: cover;
@@ -378,7 +366,7 @@ h3 {
 }
 @media screen and (max-width: 600px) {
   .forum-container,
-.voir-plus-forum-container {
+  .voir-plus-forum-container {
     width: 100%;
     padding: 0 15px;
   }
@@ -873,7 +861,10 @@ header .header-container-deconnected .header-se-connecter a .sign-in-icon {
     color: #ff8617;
   }
 }
-header .header-container-deconnected .header-se-connecter-inscription .inscription {
+header
+  .header-container-deconnected
+  .header-se-connecter-inscription
+  .inscription {
   background-color: transparent;
   color: #ff8617;
 }
@@ -996,11 +987,22 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) {
     justify-content: space-between;
     border-bottom: 1px solid #6e9611;
   }
-  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover {
+  header
+    .header-container
+    .nav-connected
+    .nav-pages
+    li:not(:last-child)
+    a:hover {
     background-color: #ff8617;
     color: white;
   }
-  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover svg {
+  header
+    .header-container
+    .nav-connected
+    .nav-pages
+    li:not(:last-child)
+    a:hover
+    svg {
     fill: white;
   }
 }
@@ -1009,7 +1011,12 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) a {
   color: #ff8617;
   display: flex;
 }
-header .header-container .nav-connected .nav-pages li:not(:last-child) a::before {
+header
+  .header-container
+  .nav-connected
+  .nav-pages
+  li:not(:last-child)
+  a::before {
   content: "";
   width: 0%;
   height: 1px;
@@ -1019,11 +1026,21 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) a::before
   background-color: #ff8617;
   transition: all 0.3s;
 }
-header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
+header
+  .header-container
+  .nav-connected
+  .nav-pages
+  li:not(:last-child):hover
+  a::before {
   width: 100%;
 }
 @media screen and (max-width: 600px) {
-  header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
+  header
+    .header-container
+    .nav-connected
+    .nav-pages
+    li:not(:last-child):hover
+    a::before {
     display: none;
   }
 }
@@ -1076,11 +1093,21 @@ header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover {
     background-color: #ff8617;
   }
 }
-header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
+header
+  .header-container
+  .nav-connected
+  .nav-pages
+  li.btn-moncompte
+  a:hover::before {
   width: 100%;
 }
 @media screen and (max-width: 600px) {
-  header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
+  header
+    .header-container
+    .nav-connected
+    .nav-pages
+    li.btn-moncompte
+    a:hover::before {
     display: none;
   }
 }

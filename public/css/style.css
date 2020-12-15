@@ -338,6 +338,7 @@ h3 {
 }
 .posterAnnonce .imageAnnonce {
   display: block;
+<<<<<<< HEAD
   min-width: 250px;
   height: 250px;
   background-size: cover;
@@ -347,6 +348,8 @@ h3 {
   display: block;
   background-image: url("../image/avatar.png");
   border: 3px solid #6e9611;
+=======
+>>>>>>> 2dc977c58e08a657ab709448af6ab7d1560512b3
   min-width: 250px;
   height: 250px;
   background-size: cover;
@@ -677,6 +680,37 @@ p {
 
 .infos-user {
   margin-bottom: 15px;
+}
+
+h2 {
+  text-align: center;
+}
+
+#photo-accueil {
+  width: 100%;
+  height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+label {
+  display: block;
+  width: 150px;
+  float: left;
+}
+
+label {
+  display: block;
+  width: 150px;
+  float: left;
+}
+
+label {
+  display: block;
+  width: 150px;
+  float: left;
 }
 
 * {

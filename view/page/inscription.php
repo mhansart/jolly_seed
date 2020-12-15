@@ -1,4 +1,4 @@
-<section class="container-inscription">
+<section class="container-inscription w-80">
     <h2>Inscription</h2>
     <fieldset>
         <form method="post">

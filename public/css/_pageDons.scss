@@ -156,6 +156,9 @@ h3{
         font-size: 20px;
         margin-top: 10px;
       }
+      .fa-heart:hover{
+        color: $clic-color;
+      }
       button {
         margin-top: 15px;
       }
@@ -223,16 +226,38 @@ h3{
   .annonceImage{
     align-items: center;
   }
+  .conteneurImageAnnonce{
+    position: relative;
+  }
   .imageAnnonce {
     display: block;
-    //background-image: url('../image/avatar.png');
     min-width: 250px;
     height: 250px;
     background-size: cover;
     background-position: center center;
   }
+  .imageAnnonceFixe {
+    display: block;
+    background-image: url('../image/avatar.png');
+    border: 3px solid $secondary-color;
+    min-width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+
   .imageAlternative{
 padding: 0px 15px;
    display: block;
   }
+ 
+}
+.coeur{
+  background-color: transparent;
+}
+.coeur:hover{
+  cursor: pointer;
 }

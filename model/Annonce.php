@@ -2,13 +2,13 @@
     require_once("Connexion.php");
     class Annonce extends Connexion 
     {
-        public function create($_ads_user_id, $ads_city, $_ads_type, $_ads_category, $_ads_time, $_ads_date, $_ads_description, $_ads_picture, $_ads_active, $_ads_title)
+        public function create($_ads_user_id, $_ads_city, $_ads_type, $_ads_category, $_ads_time, $_ads_date, $_ads_description, $_ads_picture, $_ads_active, $_ads_title)
         {
             $requete = "INSERT INTO ads ( ads_user_id, ads_city, ads_type, ads_category, ads_time, ads_date, ads_description, ads_picture, ads_active, ads_title) VALUES (:adsUserId, :adsCity, :adsType, :adsCategory, :adsTime, :adsDate, :adsDescription, :adsPicture, :adsActive, :adsTitle)";
 
             $tabChamps= array(
                 ":adsUserId" => $_ads_user_id,  
-                ":adsCity" => $ads_city,
+                ":adsCity" => $_ads_city,
                 ":adsType" => $_ads_type,
                 ":adsCategory" => $_ads_category,
                 ":adsTime" => $_ads_time,
@@ -63,6 +63,40 @@
             return $this->execute($requete, $tabChamps);
         }
 
+        public function readLikeByUserId($like_user_id)
+        {
+            $requete = "SELECT like_ads_id, like_option FROM like_user_ads WHERE like_user_id = :likeUserId";
+            $tabChamps = array(
+                ":likeUserId" => $like_user_id
+            );
+            return $this->execute($requete, $tabChamps);
+        }
+
+        public function readLikeByUserIdAndAdsId($like_user_id,$like_ads_id)
+        {
+            $requete = "SELECT like_option FROM like_user_ads WHERE like_user_id = :likeUserId AND like_ads_id = :likeAdsId";
+            $tabChamps = array(
+                ":likeUserId" => $like_user_id,
+                ":likeAdsId" => $like_ads_id
+            );
+            return $this->execute($requete, $tabChamps);
+        }
+
+        public function createLike($_like_user_id, $_like_ads_id, $_like_option)
+        {
+            $requete = "INSERT INTO like_user_ads ( like_user_id, like_ads_id, like_option) VALUES (:likeUserId, :likeAdsId, :likeOption)";
+
+            $tabChamps= array(
+                ":likeUserId" => $_like_user_id,  
+                ":likeAdsId" => $_like_ads_id,
+                ":likeOption" => $_like_option,
+            );
+
+            $this->execute($requete, $tabChamps);
+        }
+
+
+/*
         public function update($_ads_id, $_ads_type, $_ads_category, $_ads_date, $_ads_description, $_ads_picture, $_ads_active, $_ads_title)
         {
             $requete = "UPDATE ads SET ads_type = :adsType, ads_category = :adsCategory, ads_date = :adsDate, ads_description = :adsDescription, ads_picture = :adsPicture, ads_active = :adsActive, ads_title = :adsTitle WHERE ads_id = :id";
@@ -80,14 +114,16 @@
 
             return $this->execute($requete, $tabChamps);
         }
-
-        public function delete($_ads_id)
+*/
+        public function deleteLike($_like_user_id, $_like_ads_id)
         {
-            $requete = "DELETE FROM ads WHERE ads_id = :adsId";
+            $requete = "DELETE FROM like_user_ads WHERE like_user_id = :likeUserId AND like_ads_id = :likeAdsId";
             $tabChamps = array(
-                ":adsId" => $_ads_id
+                ":likeUserId" => $_like_user_id,
+                ":likeAdsId" => $_like_ads_id
             );
             $this->execute($requete, $tabChamps);
         }
+        
     }
 ?>

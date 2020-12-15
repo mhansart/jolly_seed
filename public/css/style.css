@@ -260,6 +260,9 @@ h3 {
   font-size: 20px;
   margin-top: 10px;
 }
+.centrePageDons .box .dons .fa-heart:hover {
+  color: #ff8617;
+}
 .centrePageDons .box .dons button {
   margin-top: 15px;
 }
@@ -330,17 +333,39 @@ h3 {
 .posterAnnonce .annonceImage {
   align-items: center;
 }
+.posterAnnonce .conteneurImageAnnonce {
+  position: relative;
+}
 .posterAnnonce .imageAnnonce {
   display: block;
-  background-image: url("../image/avatar.png");
   min-width: 250px;
   height: 250px;
   background-size: cover;
   background-position: center center;
 }
+.posterAnnonce .imageAnnonceFixe {
+  display: block;
+  background-image: url("../image/avatar.png");
+  border: 3px solid #6e9611;
+  min-width: 250px;
+  height: 250px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .posterAnnonce .imageAlternative {
   padding: 0px 15px;
   display: block;
+}
+
+.coeur {
+  background-color: transparent;
+}
+
+.coeur:hover {
+  cursor: pointer;
 }
 
 .forum-container,

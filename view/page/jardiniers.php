@@ -40,7 +40,11 @@
     </div>
     <h3>Image: </h3>
     <div class="sectionCategorie annonceImage">
-      <div class='imageAnnonce' style='background-image: url("../jolly_seed/public/image/<?=$annoncePicture?>");'>
+      <div class="conteneurImageAnnonce">
+        <div class='imageAnnonce' style='background-image: url("../jolly_seed/public/image/<?=$annoncePicture?>");'>
+        </div>
+        <div class='imageAnnonceFixe'>
+        </div>
       </div>
       <div class="imageAlternative">
       <input type="checkbox" id="photoPerso" name="photoPerso" checked />

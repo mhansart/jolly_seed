@@ -52,7 +52,7 @@ foreach ($tabDons as $value) {
             </section>";
 
 }
- // CREATIOn d'UNE ANNONCE DON
+ // CREATION d'UNE ANNONCE DON
  
 if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
 {
@@ -62,7 +62,7 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
     $type = "don";
     $time = "";
     
-    //IMAGES
+    //gestion d'images
     if (isset($_FILES["ads_picture"])) {
       var_dump($_FILES["ads_picture"]);
      if ($_FILES["ads_picture"]["name"]!== ""){

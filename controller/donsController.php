@@ -37,7 +37,7 @@ foreach ($tabDons as $value) {
               <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
-                <div>
+                <div class='titreDon'>
                   <img class='pomme' src='./public/image/" . $imageDon . "' />
                   <h3>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
@@ -120,7 +120,7 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
           echo "Sorry, your file was not uploaded.";
           // if everything is ok, try to upload file
       } else {
-          $newName = strtolower("photo-annonce". $_SESSION['user_id'] . '.' . $imageFileType);
+          $newName = strtolower("d-". $_SESSION['user_id'] . '.' . $imageFileType);
           echo $newName;
           if (move_uploaded_file($_FILES["ads_picture"]["tmp_name"], $target_dir . $newName)) {
           }

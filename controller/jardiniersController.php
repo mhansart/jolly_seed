@@ -61,6 +61,7 @@ foreach ($tabJardiniers as $value) {
     }
     
 }
+// CREATION d'UNE ANNONCE JARDINIER
 $i = new Annonce();
   $infosUser = $i->readByUserId($_SESSION['user_id']);
   $annoncePicture = $infosUser[0]["user_picture"]; 

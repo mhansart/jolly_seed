@@ -1,6 +1,10 @@
 <?php
 // récupérer les annoncess et afficher
 
+//Lectures du tableau 'like'
+$f = new Annonce();
+$tabLike = $f->readLikeByUserId($_SESSION['user_id']);
+
 $d = new Annonce();
 $tabDons = $d->readByCategoryType("time");
 // var_dump($tabDons);
@@ -45,12 +49,37 @@ foreach ($tabDons as $value) {
                 <article>" . $value["ads_description"] . "</article>
                 <div class='d-flex row'>
                   <button class=" . $value["ads_category"] . " ><a href='#'>Contact</a>
-                  </button>
-                  <i class='far fa-heart'></i>
-                </div>
-              </div>
-            </section>";
-
+                  </button>";
+         //pose d'un coeur vide       
+         $Like = "far fa-heart";
+         for($i =0; $i < count($tabLike); $i++){
+           if ($tabLike[$i]["like_ads_id"] === $value["ads_id"]){
+               $Like = "fas fa-heart"; // coeur plein si like
+             }
+           }
+         $aime = $value["ads_id"];
+         $dons .= " <form method='post' >
+                       <input class='aime' type='hidden' id='aime$aime' name='like_ads_id$aime' value='$aime'/>
+                       <button class='coeur' type='submit'><i class='$Like'></i></button>
+                     </form>
+               </div>
+             </div>
+           </section>";
+          
+   if(isset($_POST["like_ads_id$aime"])) 
+   { //lecture des likes
+     $r = new annonce(); 
+     $likeDislike = $r->readLikeByUserIdAndAdsId($_SESSION['user_id'],$_POST["like_ads_id$aime"]);
+     if  (empty($likeDislike)) { //si vide alors créer
+       $l = new Annonce();
+       $l->createLike($_SESSION['user_id'], $_POST["like_ads_id$aime"], "1");
+       header("Location:?section=dons");
+     } elseif ($likeDislike[0]["like_option"] === '1'){ //si n'aime plus alors enlever
+       $d = new Annonce();
+       $d ->deleteLike($_SESSION['user_id'], $_POST["like_ads_id$aime"]);
+       header("Location:?section=dons");
+     }
+   }
 }
  // CREATION d'UNE ANNONCE DON
  

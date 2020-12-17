@@ -35,7 +35,7 @@ btnDons.addEventListener("click", function (e) {
     enteteDons.style.display = "none";
 });
 
-// Modifications selon CHOIX des CATEGORIES
+// Modifications d'IMAGE selon CHOIX des CATEGORIES
 
 let fichierImage = document.querySelector(".fichierImage");
 const categories = document.getElementsByName('ads_category');
@@ -60,4 +60,22 @@ for (let categorie of categories){
           };
     });
 }
+/*
+//GESTION DES COEURS pour ne pas recharger PHP
+const coeurs = document.querySelectorAll(".fa-heart");
+console.log(coeurs);
+for (let coeur of coeurs){
+    coeur.addEventListener("click", function (e) {
+        console.log(e.currentTarget.getAttribute('class'));
+        /*
+        if (coeur.getAttribute("class");) {
+
+        } else {
+
+        };
+        
+    });
+}
+*/
+
 

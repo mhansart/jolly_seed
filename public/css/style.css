@@ -1058,9 +1058,11 @@ p {
   padding: 15px;
 }
 .chat-container .chat-send {
-  padding: 0 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
+  background-color: #e0e0e0;
 }
 .chat-container .chat-send .btn-send-chat {
+  background-color: white;
   padding: 7px 20px;
   border-radius: 20px;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
@@ -1271,6 +1273,10 @@ p {
   display: block;
   width: 150px;
   float: left;
+}
+
+h3 {
+  color: #6e9611;
 }
 
 * {

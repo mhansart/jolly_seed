@@ -68,8 +68,10 @@
     padding: 15px;
   }
   .chat-send {
-    padding: 0 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
+    background-color: $neutral-color2;
     .btn-send-chat {
+      background-color: $primary-color;
       padding: 7px 20px;
       border-radius: 20px;
       box-shadow: $shadow-low;

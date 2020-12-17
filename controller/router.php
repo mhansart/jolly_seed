@@ -32,6 +32,9 @@ if (isset($_GET["section"])) {
         case 'moncompte':
             include("controller/moncompteController.php");
             break;
+        case 'mesAnnonces':
+            include("controller/mesAnnoncesController.php");
+            break;
         case 'chat':
             include("controller/chatController.php");
             break;

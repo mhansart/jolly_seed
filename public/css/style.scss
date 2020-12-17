@@ -12,6 +12,9 @@
 @import "inscription";
 @import "connexion";
 
+h3 {
+  color: $secondary-color;
+}
 * {
   box-sizing: border-box;
 }

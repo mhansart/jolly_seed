@@ -87,31 +87,27 @@
   justify-content: space-between;
 }
 
-button {
+.centrePageDons button {
   padding: 7px 15px;
   border: none;
   border-radius: 20px;
   display: block;
 }
-button a {
+.centrePageDons button a {
   color: white;
   text-decoration-line: none;
   font-size: 130%;
   font-family: "Louis George Cafe'";
 }
-
-h2 {
+.centrePageDons h2 {
   color: #6e9611;
 }
-
-h3 {
+.centrePageDons h3 {
   color: #6e9611;
 }
-
-.column {
+.centrePageDons .column {
   flex-direction: column;
 }
-
 .centrePageDons .enteteDons {
   padding: 0% 5%;
   margin-top: 20px;
@@ -196,10 +192,9 @@ h3 {
   justify-content: center;
   margin-top: 15px;
 }
-@media screen and (max-width: 1035px) {
+@media screen and (max-width: 1200px) {
   .centrePageDons .annonceDons {
     flex-direction: column;
-    justify-content: center;
   }
 }
 .centrePageDons .box {
@@ -210,13 +205,32 @@ h3 {
   display: flex;
   flex-direction: row;
 }
+@media screen and (max-width: 1200px) {
+  .centrePageDons .box {
+    width: 70%;
+    margin: 1% auto;
+  }
+}
 @media screen and (max-width: 1035px) {
   .centrePageDons .box {
     width: 80%;
     margin: 1% auto;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 860px) {
+  .centrePageDons .box {
+    width: 90%;
+    margin: 1% auto;
+  }
+}
+@media screen and (max-width: 680px) {
+  .centrePageDons .box {
+    flex-direction: column;
+    width: 70%;
+    margin: 1% auto;
+  }
+}
+@media screen and (max-width: 550px) {
   .centrePageDons .box {
     flex-direction: column;
     width: 80%;
@@ -236,21 +250,30 @@ h3 {
 .centrePageDons .box .imageDon {
   display: block;
   background-color: white;
-  min-width: 200px;
-  height: 250px;
+  width: 200px;
+  padding: 100px;
   background-size: cover;
   background-position: center center;
+}
+@media screen and (max-width: 680px) {
+  .centrePageDons .box .imageDon {
+    margin: auto;
+  }
 }
 .centrePageDons .box .dons {
   padding: 0px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
   .centrePageDons .box .dons {
     margin-top: 15px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .centrePageDons .box .dons .titreDon {
+    margin: auto;
   }
 }
 .centrePageDons .box .dons .pomme {
@@ -264,6 +287,10 @@ h3 {
   color: #6e9611;
   font-size: 20px;
   margin-top: 10px;
+}
+.centrePageDons .box .dons .fa-heart:hover {
+  color: #ff8617;
+  cursor: pointer;
 }
 .centrePageDons .box .dons button {
   margin-top: 15px;
@@ -282,6 +309,9 @@ h3 {
 }
 .centrePageDons .box .dons .plant {
   background-color: #fcd12d;
+}
+.centrePageDons .coeur {
+  background-color: transparent;
 }
 
 .posterAnnonce {
@@ -309,42 +339,94 @@ h3 {
 .posterAnnonce .radio {
   text-align: left;
   padding-left: 25px;
+  width: 350px;
+  margin: auto;
+}
+.posterAnnonce .DonOptionRadio {
+  width: 250px;
+}
+.posterAnnonce .donTitre {
+  display: block;
+  margin: auto;
 }
 .posterAnnonce .time {
   text-align: left;
-  padding-left: 50px;
+  width: 200px;
+  margin: auto;
 }
 .posterAnnonce .timeSlot {
   text-align: left;
-  padding-left: 75px;
+  padding-left: 25px;
 }
 .posterAnnonce button {
   background-color: #ff8617;
   margin: 25px auto;
 }
 .posterAnnonce .sectionCategorie {
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 1035px) {
-  .posterAnnonce .sectionCategorie {
-    flex-direction: column;
-    justify-content: center;
-  }
+  margin: auto;
 }
 .posterAnnonce .annonceImage {
+  align-items: center;
+  margin: auto;
+}
+.posterAnnonce .conteneurImageAnnonce {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   align-items: center;
 }
 .posterAnnonce .imageAnnonce {
   display: block;
-  min-width: 250px;
-  height: 250px;
+  width: 250px;
+  padding-top: 250px;
+  position: relative;
   background-size: cover;
   background-position: center center;
+  margin-bottom: 15px;
+}
+.posterAnnonce .imageAnnonceFixe {
+  display: block;
+  background-image: url("../image/avatar.png");
+  border: 3px solid #6e9611;
+  width: 250px;
+  padding-top: 250px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .posterAnnonce .imageAlternative {
   padding: 0px 15px;
   display: block;
+  min-width: 250px;
+  max-width: 500px;
+  text-align: left;
+}
+.posterAnnonce .inputAccord {
+  display: inline;
+}
+.posterAnnonce button {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+}
+.posterAnnonce button a {
+  color: white;
+  text-decoration-line: none;
+  font-size: 130%;
+  font-family: "Louis George Cafe'";
+}
+.posterAnnonce h2 {
+  color: #6e9611;
+}
+.posterAnnonce h3 {
+  color: #6e9611;
+}
+.posterAnnonce .column {
+  flex-direction: column;
 }
 
 .forum-container,
@@ -1147,6 +1229,36 @@ p {
 .allMsg-menu .oneChat:hover {
   background-color: #ff8617;
   color: white;
+}
+
+.accueil-container h2 {
+  text-align: center;
+}
+.accueil-container #photo-accueil {
+  width: 100%;
+  height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.contact-container label {
+  display: block;
+  width: 150px;
+  float: left;
+}
+
+.container-inscription .label {
+  display: block;
+  width: 150px;
+  float: left;
+}
+
+.container-connexion label {
+  display: block;
+  width: 150px;
+  float: left;
 }
 
 * {

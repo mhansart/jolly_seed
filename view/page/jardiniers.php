@@ -40,15 +40,19 @@
     </div>
     <h3>Image: </h3>
     <div class="sectionCategorie annonceImage">
-      <div class='imageAnnonce' style='background-image: url("../jolly_seed/public/image/<?=$annoncePicture?>");'>
-      </div>
-      <div class="imageAlternative">
-      <input type="checkbox" id="photoPerso" name="photoPerso" checked />
-          <label for="plus">Je donne mon accord pour publier ma photo</label><br/>
+      <div class="conteneurImageAnnonce">
+        <div class='imageAnnonce' style='background-image: url("../jolly_seed/public/image/<?=$annoncePicture?>");'>
+          <div class='imageAnnonceFixe'>
+          </div>
+        </div>
+        <div class="imageAlternative">
+          <input class="inputAccord" type="checkbox" id="photoPerso" name="photoPerso" checked />
+          <label class="accord" for="plus">Je donne mon accord pour publier ma photo</label><br/>
+        </div>
       </div>
     </div>
     
-    <label for="description"><h3>Description:</h3></label>
+    <h3>Description:</h3>
     <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br />
 <!--
     <label for="contact"><h3>Contact:</h3></label>

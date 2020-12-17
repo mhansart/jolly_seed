@@ -1,25 +1,26 @@
-button {
-  padding: 7px 15px;
-  border: none;
-  border-radius: 20px;
-  display: block;
-  a {
-    color: $primary-color;
-    text-decoration-line: none;
-    font-size: 130%;
-    font-family: $main-font;
-  }
-}
-h2{
-  color: $secondary-color;
-}
-h3{
-  color: $secondary-color;
-}
-.column{
-  flex-direction: column;
-}
+
 .centrePageDons {
+  button {
+    padding: 7px 15px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    a {
+      color: $primary-color;
+      text-decoration-line: none;
+      font-size: 130%;
+      font-family: $main-font;
+    }
+  }
+  h2{
+    color: $secondary-color;
+  }
+  h3{
+    color: $secondary-color;
+  }
+  .column{
+    flex-direction: column;
+  }
   .enteteDons {
     padding: 0% 5%;
     margin-top: 20px;
@@ -97,9 +98,8 @@ h3{
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 15px;
-    @media screen and (max-width: 1035px) {
+    @media screen and (max-width: 1200px) {
       flex-direction: column;
-      justify-content: center;
     }
   }
   .box {
@@ -109,11 +109,24 @@ h3{
     padding: 15px;
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 1200px) {
+      width: 70%;
+      margin: 1% auto;
+    }
     @media screen and (max-width: 1035px) {
       width: 80%;
       margin: 1% auto;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 860px) {
+      width: 90%;
+      margin: 1% auto;
+    }
+    @media screen and (max-width: 680px) {
+      flex-direction: column;
+      width: 70%;
+      margin: 1% auto;
+    }
+    @media screen and (max-width: 550px) {
       flex-direction: column;
       width: 80%;
       margin: 1% auto;
@@ -130,19 +143,28 @@ h3{
     .imageDon {
       display: block;
       background-color: white;
-      min-width: 200px;
-      height: 250px;
+      width: 200px;
+      padding: 100px;
       background-size: cover;
       background-position: center center;
+      @media screen and (max-width: 680px) {
+        margin: auto;
+      }
     }
+    
     .dons {
       padding: 0px 15px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 100%;
-      @media screen and (max-width: 600px) {
+      
+      @media screen and (max-width: 680px) {
         margin-top: 15px;
+      }
+      .titreDon{
+        @media screen and (max-width: 680px) {
+          margin: auto;
+        }
       }
       .pomme {
         height: 30px;
@@ -150,11 +172,16 @@ h3{
       h3 {
         margin: 0px;
         display: inline;
+    
       }
       .fa-heart {
         color: $secondary-color;
         font-size: 20px;
         margin-top: 10px;
+      }
+      .fa-heart:hover{
+        color: $clic-color;
+        cursor: pointer;
       }
       button {
         margin-top: 15px;
@@ -175,6 +202,9 @@ h3{
         background-color: $color-plant;
       }
     }
+  }
+  .coeur{
+    background-color: transparent;
   }
 }
 // CREATION D'ANNONCE
@@ -198,41 +228,102 @@ h3{
   .radio{
     text-align: left; 
    padding-left: 25px;
+   width: 350px;
+   margin: auto;
   }
+  .DonOptionRadio{
+    width: 250px;
+  }
+  .donTitre{
+    display: block;
+    margin: auto;
+  }
+  
   .time{
     text-align: left; 
-    padding-left: 50px;
+    width: 200px;
+    margin: auto;
   }
   .timeSlot{
     text-align: left; 
-    padding-left: 75px;
+    padding-left: 25px;
   }
   button{
     background-color: $clic-color;
     margin: 25px auto;
   }
-  .sectionCategorie{
-    display: flex;
-    flex-direction: row;
   
-    @media screen and (max-width: 1035px) {
-      flex-direction: column;
-      justify-content: center; 
-    }
+  .sectionCategorie{
+   margin: auto;
   }
+  
   .annonceImage{
+    align-items: center;
+    margin:auto;
+  }
+  .conteneurImageAnnonce{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+    width: 100%;
     align-items: center;
   }
   .imageAnnonce {
     display: block;
-    //background-image: url('../image/avatar.png');
-    min-width: 250px;
-    height: 250px;
+    width: 250px;
+    padding-top: 250px;
+    position: relative;
     background-size: cover;
     background-position: center center;
+    margin-bottom: 15px;
   }
+  .imageAnnonceFixe {
+    display: block;
+    background-image: url('../image/avatar.png');
+    border: 3px solid $secondary-color;
+   width: 250px;
+   padding-top: 250px;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top:0;
+    left:0;
+ 
+  }
+
   .imageAlternative{
-padding: 0px 15px;
+  padding: 0px 15px;
    display: block;
+   min-width: 250px;
+   max-width: 500px;
+   text-align: left;
+  }
+ 
+  .inputAccord{
+    display: inline;
+  }
+  
+  button {
+    padding: 7px 15px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    a {
+      color: $primary-color;
+      text-decoration-line: none;
+      font-size: 130%;
+      font-family: $main-font;
+    }
+  }
+  h2{
+    color: $secondary-color;
+  }
+  h3{
+    color: $secondary-color;
+  }
+  .column{
+    flex-direction: column;
   }
 }
+
+

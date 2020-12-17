@@ -36,9 +36,14 @@ btnDons.addEventListener("click", function (e) {
     enteteDons.style.display = "none";
 });
 
+// GESTION de l'image 
 const img = document.querySelector(".imageAnnonce");
+const imgFixe = document.querySelector(".imageAnnonceFixe");
+imgFixe.style.display = "none"
 const photoPerso = document.querySelector("#photoPerso");
 photoPerso.addEventListener("click", function (e) {
-    img.style.backgroundImage = "url('../jolly_seed/public/image/avatar.png')";   
+   if (imgFixe.style.display === "none"){
+    imgFixe.style.display = "block";
+   } else { imgFixe.style.display = "none";}
 });
 

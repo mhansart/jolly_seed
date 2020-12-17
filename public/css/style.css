@@ -1089,7 +1089,7 @@ p {
   margin-top: -15px;
   height: 30px;
   width: 100%;
-  background-color: #ff8617;
+  background-color: #6e9611;
   transition: all 0.3s;
 }
 .menu-mon-compte nav {
@@ -1132,7 +1132,7 @@ p {
 .menu-mon-compte nav ul li::after {
   content: "";
   position: absolute;
-  background-color: #6e9611;
+  background-color: #ff8617;
   height: 100%;
   width: 0;
   top: 0;
@@ -1141,6 +1141,7 @@ p {
   transition: all 0.3s;
 }
 .menu-mon-compte nav ul li.active::after {
+  background-color: #23512a;
   width: 100%;
 }
 .menu-mon-compte nav ul li:hover::after {
@@ -1184,7 +1185,7 @@ p {
 .allMsg-menu .padding-search-bar {
   padding: 15px;
   border-bottom: 1px solid #6e9611;
-  background-color: #6e9611;
+  background-color: #23512a;
 }
 .allMsg-menu .search-bar-message {
   flex-grow: 1;

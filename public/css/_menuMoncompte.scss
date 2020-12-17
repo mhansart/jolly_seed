@@ -5,7 +5,7 @@
   margin-top: -15px;
   height: 30px;
   width: 100%;
-  background-color: $clic-color;
+  background-color: $secondary-color;
   transition: all 0.3s;
   nav {
     justify-content: flex-end;
@@ -38,7 +38,7 @@
         &::after {
           content: "";
           position: absolute;
-          background-color: $secondary-color;
+          background-color: $clic-color;
           height: 100%;
           width: 0;
           top: 0;
@@ -48,6 +48,7 @@
         }
         &.active {
           &::after {
+            background-color: $third-color;
             width: 100%;
           }
         }
@@ -95,7 +96,7 @@
   .padding-search-bar {
     padding: 15px;
     border-bottom: 1px solid $secondary-color;
-    background-color: $secondary-color;
+    background-color: $third-color;
   }
   .search-bar-message {
     flex-grow: 1;

@@ -63,6 +63,9 @@ p {
     background-color: $clic-color;
     color: $primary-color;
     font-size: $content-size;
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: none;
     cursor: pointer;
     &:focus {
       outline: none;
@@ -129,6 +132,9 @@ p {
       }
     }
     button {
+      padding: 7px 15px;
+      border-radius: 20px;
+      border: none;
       margin-top: 15px;
       background-color: $clic-color;
       color: $primary-color;
@@ -230,6 +236,7 @@ p {
     }
   }
   button {
+    border: none;
     padding: 0;
     background-color: transparent;
     color: $clic-color;

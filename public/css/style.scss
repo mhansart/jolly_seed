@@ -296,20 +296,22 @@ header {
                 background-color: $clic-color;
                 transition: all 0.3s;
               }
-              @media screen and (max-width: 600px) {
-                &.active {
-                  background-color: $clic-color;
-                  color: $primary-color;
-                  svg {
-                    fill: $primary-color;
+              &.active {
+                color: $secondary-color;
+                &::before {
+                  width: 100%;
+                  background-color: $secondary-color;
+                  @media screen and (max-width: 600px) {
+                    display: none;
                   }
                 }
               }
-              &.active {
-                &::before {
-                  width: 100%;
-                  @media screen and (max-width: 600px) {
-                    display: none;
+              @media screen and (max-width: 600px) {
+                &.active {
+                  background-color: $secondary-color;
+                  color: $primary-color;
+                  svg {
+                    fill: $primary-color;
                   }
                 }
               }
@@ -347,7 +349,7 @@ header {
                 display: flex;
                 justify-content: space-between;
                 &.active {
-                  background-color: $clic-color;
+                  background-color: $secondary-color;
                   color: $primary-color;
                 }
               }

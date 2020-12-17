@@ -123,6 +123,9 @@
     display: inline;
   }
   button {
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: none;
     display: inline-flex;
     background-color: $clic-color;
     color: $primary-color;

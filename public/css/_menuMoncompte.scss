@@ -38,7 +38,7 @@
         &::after {
           content: "";
           position: absolute;
-          background-color: $third-color;
+          background-color: $secondary-color;
           height: 100%;
           width: 0;
           top: 0;
@@ -95,7 +95,7 @@
   .padding-search-bar {
     padding: 15px;
     border-bottom: 1px solid $secondary-color;
-    background-color: $third-color;
+    background-color: $secondary-color;
   }
   .search-bar-message {
     flex-grow: 1;

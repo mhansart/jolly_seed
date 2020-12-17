@@ -81,7 +81,7 @@ if (isset($_POST["update-picture"])) {
             echo "Sorry, your file was not uploaded.";
             // if everything is ok, try to upload file
         } else {
-            $newName = strtolower($_SESSION['prenom']) . '-' . $_SESSION['user_id'] . '.' . $imageFileType;
+            $newName = 'u-' . $_SESSION['user_id'] . '.' . $imageFileType;
             echo $newName;
             if (move_uploaded_file($_FILES["user-picture"]["tmp_name"], $target_dir . $newName)) {
             }

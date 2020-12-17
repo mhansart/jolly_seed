@@ -4,6 +4,11 @@ const forumImage = document.querySelector(".forum-image");
 const searchBar = document.querySelector(".search-bar-forum");
 const closeForm = document.querySelector(".close-form-forum");
 const forumContainer = document.querySelector(".new-forum-container");
+const textAdd = document.getElementById('info-add-forum');
+const forumAddForm = document.getElementById('forum-add-form');
+const forumMenu = document.getElementById('forum-menu');
+
+forumMenu.classList.add('active');
 
 //remettre les propriétés css de base si la fenêtre change de taille
 const getSizeWindow = () => {
@@ -11,10 +16,12 @@ const getSizeWindow = () => {
   if (parseInt(w) < 720) {
     forumContainer.style.flexDirection = "column";
     searchBar.style.width = "100%";
+    forumAddForm.style.width = "100%";
   }
   if (parseInt(w) > 720) {
     forumContainer.style.flexDirection = "row";
-    searchBar.style.width = "50%";
+    searchBar.style.width = "100%";
+    forumAddForm.style.width = "50%";
   }
 };
 // au changement de largeur de la fenêtre, appeler la fonction
@@ -28,8 +35,10 @@ btnNewForum.addEventListener("click", function () {
   const w = window.innerWidth;
   const searchWidth = getComputedStyle(searchBar).width;
   const searchHeight = getComputedStyle(searchBar).height;
+  forumAddForm.style.width = "100%";
   formNewForum.style.display = "flex";
   btnNewForum.style.display = "none";
+  textAdd.style.display="none";
   // si la fenetre est plus petite que 720px
   if (w < 720) {
     searchBar.style.order = "1";
@@ -40,19 +49,24 @@ btnNewForum.addEventListener("click", function () {
     forumContainer.style.flexDirection = "column";
     searchBar.style.width = searchWidth;
     searchBar.style.height = searchHeight;
+    forumAddForm.style.padding = "0px";
   }
   // clic sur la croix pour fermer le formulaire
   closeForm.addEventListener("click", function () {
     formNewForum.style.display = "none";
     btnNewForum.style.display = "block";
+    textAdd.style.display="block";
+    
     if (w < 720) {
       searchBar.style.order = "1";
       btnNewForum.style.order = "2";
       formNewForum.style.order = "3";
       forumContainer.style.flexDirection = "column";
+      forumAddForm.style.width = "100%";
     }
     if (w >= 720) {
       forumContainer.style.flexDirection = "row";
+      forumAddForm.style.width = "50%";
     }
   });
 });

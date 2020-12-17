@@ -1,0 +1,95 @@
+@use 'variables' as *;
+
+.chat-container {
+  padding: 0 15px;
+  margin: auto;
+  padding-top: 30px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 30px 15px 15px 15px;
+  }
+  & > div {
+    box-shadow: $shadow-low;
+  }
+  .infos-interlocuteur {
+    align-items: center;
+    background-color: $neutral-color2;
+    margin-bottom: 15px;
+    padding: 15px;
+    .img-interlocuteur {
+      width: 35px;
+      height: 35px;
+      border-radius: 100px;
+      background-size: cover;
+      background-position: center;
+      margin-right: 15px;
+    }
+  }
+  .sender-user {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 15px;
+    .infos-msg-text {
+      min-width: 40%;
+    }
+    .msg-date-chat {
+      padding: 5px 0 15px 0;
+      color: $neutral-color;
+      font-size: 12px;
+      width: 80%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .receiver-user {
+    padding: 0 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .infos-msg-text {
+      width: 80%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      .msg-date-chat {
+        padding: 5px 0 15px 0;
+        color: $neutral-color;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .msg-text-chat {
+    width: 80%;
+    box-shadow: $shadow-low;
+    padding: 15px;
+  }
+  .chat-send {
+    padding: 0 15px 15px 15px;
+    .btn-send-chat {
+      padding: 7px 20px;
+      border-radius: 20px;
+      box-shadow: $shadow-low;
+      input {
+        border: none;
+        flex-grow: 1;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        padding: 0;
+        background-color: transparent;
+        color: $clic-color;
+        font-size: 20px;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

@@ -1,3 +1,5 @@
+const jardiniersMenu = document.getElementById('jardiniers-menu');
+jardiniersMenu.classList.add('active');
 // Tri
 
 const options = document.querySelector(".options");

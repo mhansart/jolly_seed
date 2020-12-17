@@ -2,7 +2,8 @@
 
 .moncompte-container {
   margin: auto;
-  padding: 0 20px;
+  margin-top: 30px;
+  padding: 0 15px 0 20px;
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 0 15px;
@@ -13,11 +14,198 @@
   }
 }
 .user-pp {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  min-width: 200px;
   background-size: cover;
   background-position: center;
+  @media screen and (max-width: 800px) {
+    width: 70%;
+    height: 400px;
+    background-position: center 20%;
+    margin: auto;
+  }
+  @media screen and (max-width: 600px) {
+    width: 80%;
+    height: 400px;
+    background-position: center 20%;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+  }
+  & > div {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+  }
 }
 .infos-user {
   margin-bottom: 15px;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+.btn-modif-picture-moncompte {
+  padding: 7px 15px;
+  border-radius: 20px;
+  background-color: $clic-color;
+  color: $primary-color;
+  display: inline-flex;
+  cursor: pointer;
+}
+#modif-infos-mon-compte {
+  padding: 7px 15px;
+  border-radius: 20px;
+  background-color: $clic-color;
+  color: $primary-color;
+  display: inline-flex;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.form-modif-picture-moncompte,
+.modif-infos-moncompte {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: none;
+  background-color: $primary-color;
+  padding: 30px;
+  flex-direction: column;
+  z-index: 29;
+  width: 50%;
+  &.form-modif-picture-moncompte {
+    label {
+      margin-bottom: 10px;
+    }
+  }
+  &.modif-infos-moncompte {
+    overflow-y: scroll;
+    max-height: 90%;
+  }
+  @media screen and (max-width: 992px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 95%;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+  label {
+    min-width: 120px;
+    @media screen and (max-width: 600px) {
+      padding: 7px 15px;
+    }
+  }
+  input,
+  textarea {
+    border: none;
+    padding: 7px 15px;
+    box-shadow: $shadow-low;
+    flex-grow: 1;
+    &:focus {
+      outline: none;
+    }
+  }
+  .btn-modif-img {
+    display: inline;
+  }
+  button {
+    display: inline-flex;
+    background-color: $clic-color;
+    color: $primary-color;
+    margin-top: 15px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  &.d-flex {
+    display: flex;
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+}
+#overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 19; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s;
+  display: none;
+  &.d-flex {
+    display: flex;
+  }
+}
+.infos-container-moncompte {
+  width: 100%;
+  margin-left: 15px;
+
+  @media screen and (max-width: 800px) {
+    margin-left: 0;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .infos {
+    .mes-infos-mon-compte {
+      margin: 5px 0;
+      display: flex;
+      box-shadow: $shadow-low;
+      @media screen and (max-width: 400px) {
+        flex-direction: column;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      .infos-categories-moncompte {
+        min-width: 40%;
+        padding-left: 18px;
+        padding-bottom: 5px;
+        padding-right: 15px;
+        background-color: $neutral-color2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @media screen and (max-width: 400px) {
+          padding: 7px 15px;
+        }
+      }
+      .infos-moncompte {
+        padding: 15px 15px;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+.btn-modif-info-moncompte {
+  @media screen and (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+  }
 }

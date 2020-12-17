@@ -1,3 +1,5 @@
+const donsMenu = document.getElementById('dons-menu');
+donsMenu.classList.add('active');
 // Tri
 
 const options = document.querySelector(".options");

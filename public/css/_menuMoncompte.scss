@@ -1,0 +1,153 @@
+@use 'variables' as *;
+
+.menu-mon-compte {
+  position: fixed;
+  margin-top: -15px;
+  height: 30px;
+  width: 100%;
+  background-color: $clic-color;
+  transition: all 0.3s;
+  nav {
+    justify-content: flex-end;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    padding: 0 15px;
+    @media screen and (max-width: 600px) {
+      justify-content: space-between;
+      width: 100%;
+      padding: 0;
+    }
+    ul {
+      margin: 0;
+      list-style-type: none;
+      padding: 0;
+      align-items: center;
+      @media screen and (max-width: 600px) {
+        justify-content: space-between;
+        width: 100%;
+      }
+      li {
+        height: 100%;
+        position: relative;
+        padding: 0 15px;
+        transition: all 0.3s;
+        @media screen and (max-width: 600px) {
+          padding: 0 10px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: $third-color;
+          height: 100%;
+          width: 0;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: all 0.3s;
+        }
+        &.active {
+          &::after {
+            width: 100%;
+          }
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+
+        a {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding-bottom: 2px;
+          text-decoration: none;
+          padding: 0;
+          color: $primary-color;
+          font-size: 14px;
+          .li-icon {
+            display: none;
+            @media screen and (max-width: 600px) {
+              display: flex;
+            }
+          }
+          span {
+            @media screen and (max-width: 600px) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.allMsg-menu {
+  overflow: hidden;
+  position: absolute;
+  background-color: $primary-color;
+  color: $secondary-color;
+  width: 300px;
+  height: 0px;
+  right: 0;
+  transition: height 0.3s;
+  box-shadow: $shadow-low;
+  .padding-search-bar {
+    padding: 15px;
+    border-bottom: 1px solid $secondary-color;
+    background-color: $third-color;
+  }
+  .search-bar-message {
+    flex-grow: 1;
+    box-shadow: $shadow-low;
+    border-radius: 20px;
+    padding: 7px 15px;
+    background-color: $primary-color;
+    align-items: center;
+    @media screen and (max-width: 720px) {
+      width: 100%;
+      margin-right: 0;
+      order: 1;
+    }
+    input {
+      flex-grow: 1;
+      border: none;
+      padding: 2px;
+      &:focus {
+        outline: none;
+      }
+    }
+    i {
+      padding-top: 1px;
+      transform: scaleX(-1);
+      color: $clic-color;
+    }
+  }
+  .oneChat {
+    border-bottom: 1px solid $secondary-color;
+    cursor: pointer;
+    input {
+      cursor: pointer;
+      font-size: $content-size;
+      display: flex;
+      justify-content: flex-start;
+      color: $secondary-color;
+      font-family: $main-font;
+      padding: 15px 30px;
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+    &:hover {
+      background-color: $clic-color;
+      color: $primary-color;
+    }
+  }
+}

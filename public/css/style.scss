@@ -5,6 +5,8 @@
 @import "pageDons";
 @import "forum";
 @import "moncompte";
+@import "chat";
+@import "menuMoncompte";
 * {
   box-sizing: border-box;
 }
@@ -26,7 +28,7 @@ header {
     .subheader-container {
       margin: auto;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 15px;
       @media screen and (max-width: 600px) {
         width: 100%;
         padding: 0 15px;
@@ -54,8 +56,10 @@ header {
         display: flex;
         align-items: center;
         transition: all 0.3s;
-        &:hover {
-          color: $third-color;
+        &.active {
+          .btn-moncompte {
+            background-color: $third-color;
+          }
         }
         .btn-moncompte {
           padding: 4px 15px 5px 15px;
@@ -63,7 +67,7 @@ header {
           border-radius: 20px;
           transition: background-color 0.3s;
           &:hover {
-            background-color: transparent;
+            background-color: $third-color;
           }
           @media screen and (max-width: 500px) {
             display: none;
@@ -78,10 +82,17 @@ header {
           @media screen and (max-width: 500px) {
             display: block;
           }
+          @media screen and (max-width: 400px) {
+            display: none;
+          }
         }
         .sign-out-icon {
           margin-left: 15px;
           font-size: 20px;
+          transition: color 0.3s;
+          &:hover {
+            color: $third-color;
+          }
         }
         // .btn-deconnexion {
         //   @media screen and (max-width: 420px) {
@@ -280,6 +291,23 @@ header {
                 background-color: $clic-color;
                 transition: all 0.3s;
               }
+              @media screen and (max-width: 600px) {
+                &.active {
+                  background-color: $clic-color;
+                  color: $primary-color;
+                  svg {
+                    fill: $primary-color;
+                  }
+                }
+              }
+              &.active {
+                &::before {
+                  width: 100%;
+                  @media screen and (max-width: 600px) {
+                    display: none;
+                  }
+                }
+              }
             }
             &:hover {
               a {
@@ -313,6 +341,10 @@ header {
                 border-radius: 0;
                 display: flex;
                 justify-content: space-between;
+                &.active {
+                  background-color: $clic-color;
+                  color: $primary-color;
+                }
               }
               &::before {
                 content: "";
@@ -351,6 +383,7 @@ header {
     }
   }
 }
+
 .jolly-name {
   align-items: center;
   flex-grow: 1;
@@ -475,4 +508,7 @@ footer {
 }
 .reduce {
   margin-top: -60px;
+}
+.reduce-mon-compte {
+  margin-top: -75px;
 }

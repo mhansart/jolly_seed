@@ -14,8 +14,10 @@ if (isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["rue"], $_POS
         if ($emailExist) {
             $msgInscription = "Cet e-mail existe déjà.";
         } else {
+            $picture = "default.png";
+            $description = "undefined";
             $passwordCrypte = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-            $p->createUser($_POST["nom"], $_POST["prenom"], $_POST['email'], $_POST["rue"], $_POST["numero"], $_POST["codepostal"], $_POST['boite'], $_POST["ville"], $passwordCrypte, $_POST['telephone']);
+            $p->createUser($_POST["nom"], $_POST["prenom"], $_POST['email'], $_POST["rue"], $_POST["numero"], $_POST["codepostal"], $_POST['boite'], $_POST["ville"], $passwordCrypte, $_POST['telephone'], $picture, $description);
             $_SESSION['prenom'] = $_POST['prenom'];
 
             $lastUserId = $p->lastInsert();

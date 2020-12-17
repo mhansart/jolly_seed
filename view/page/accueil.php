@@ -11,11 +11,11 @@
 
     <h3>Description :</h3>
 
-    <p> Nous sommes une plateforme de communication entre personnes qui désirent donner des produits issus du jardin et d'autres qui désirent donner leur temps pour l'entretien ou la récolte.<br/>
+    <p> Nous sommes une plateforme de communication entre personnes qui désirent donner des produits issus du jardin et d'autres qui désirent donner leur temps pour l'entretien ou la récolte.<br />
         Le site n'est pas un site commercial. </p>
 
     <h3>Comment l'application fonctionne t-elle ? </h3>
 
     <p> Vous devez vous connecter pour pouvoir créer un compte et voir la totalité des annonces. Celles-ci sont catégorisées par thèmes, mots-clé mais surtout proximité avec les autres personnes ce qui vous permettra de donner et obtenir de l'aide de la manière la plus simple et optimale qui soit.
-        <p/>
-</div>        
+        <p />
+</div>

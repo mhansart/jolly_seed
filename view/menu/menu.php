@@ -5,7 +5,7 @@
     echo '<div class="subheader w-100">
             <div class="subheader-container d-flex w-80 h-100">
               <div class="search-bar d-flex"><input class="w-90"/><i class="fas fa-search"></i></div><div class="d-flex"><p class="hello-name">Bienvenue <strong>' . $_SESSION['prenom'] . '</strong></p>
-              <a href="?section=moncompte"><span class="btn-moncompte">Mon compte</span><i class="mon-compte-icon fas fa-user"></i></a>
+              <a id="subheader-mon-compte" href="?section=moncompte"><span class="btn-moncompte">Mon compte</span><i class="mon-compte-icon fas fa-user"></i></a>
               <a href="?section=deconnexion"><i class="sign-out-icon fas fa-sign-out-alt"></i></a>
               </div>
             </div>
@@ -24,9 +24,9 @@
             <i class="fas fa-bars" id="menu-burger"></i>
             <div class="nav-connected">
                 <ul class="d-flex nav-pages">
-                  <li><a href="?section=accueil"><span>Accueil</span><i class="fas fa-home li-icon"></i></a></li>
-                  <li><a href="?section=dons"><span>Les dons</span><i class="fas fa-carrot li-icon"></i></a></li>
-                  <li><a href="?section=jardiniers"><span>Les jardiniers</span>
+                  <li><a id="accueil-menu" href="?section=accueil"><span>Accueil</span><i class="fas fa-home li-icon"></i></a></li>
+                  <li><a id="dons-menu" href="?section=dons"><span>Les dons</span><i class="fas fa-carrot li-icon"></i></a></li>
+                  <li><a id="jardiniers-menu" href="?section=jardiniers"><span>Les jardiniers</span>
                   
                   <svg version="1.1" class="li-icon" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	                viewBox="0 0 20.3 26.43"  xml:space="preserve">
@@ -44,10 +44,10 @@
               </a>
             </li>
             <li>
-              <a href="?section=forum"><span>Forum</span><i class="fas fa-comments li-icon"></i>
+              <a id="forum-menu" href="?section=forum"><span>Forum</span><i class="fas fa-comments li-icon"></i>
               </a>
             </li>
-            <li class="btn-moncompte"><a href="?section=moncompte"><span>Mon compte</span><i class="fas fa-user li-icon"></i></a></li>
+            <li class="btn-moncompte"><a id="moncompte-menu" href="?section=moncompte"><span>Mon compte</span><i class="fas fa-user li-icon"></i></a></li>
           </ul>
         </div>
       </div>';

@@ -2,9 +2,9 @@
 require_once("Connexion.php");
 class Personne extends Connexion
 {
-    public function createUser($_nom, $_prenom, $_email, $_adRue, $_adNum, $_adCp, $_box, $_adVille, $_mdp, $_phone)
+    public function createUser($_nom, $_prenom, $_email, $_adRue, $_adNum, $_adCp, $_box, $_adVille, $_mdp, $_phone, $_picture, $_description)
     {
-        $requete = "INSERT INTO users (`user_name`, user_firstname,  user_mdp, user_street, user_street_number, user_box,user_city,user_citycode,user_phone,user_email) VALUES (:nom, :prenom,  :mdp, :street, :streetNumber, :boxNumber,:city,:citycode,:phone,:email)";
+        $requete = "INSERT INTO users (`user_name`, user_firstname,  user_mdp, user_street, user_street_number, user_box,user_city,user_citycode,user_phone,user_email,user_picture,user_description) VALUES (:nom, :prenom,  :mdp, :street, :streetNumber, :boxNumber,:city,:citycode,:phone,:email,:picture,:userDescription)";
 
         $tabChamps = array(
             ":nom" => $_nom,
@@ -17,7 +17,8 @@ class Personne extends Connexion
             ":city" => $_adVille,
             ":mdp" => $_mdp,
             ":phone" => $_phone,
-
+            ":picture" => $_picture,
+            ":userDescription" => $_description,
         );
 
         $this->execute($requete, $tabChamps);
@@ -65,30 +66,22 @@ class Personne extends Connexion
         return $this->execute($requete, $tabChamps);
     }
 
-    public function updateDescription($_userDescription, $_id)
+    public function updateUser($_id, $_nom, $_prenom, $_rue, $_number, $_boxnumber, $_citycode, $_city, $_phone, $_email, $_description)
     {
-        $requete = "UPDATE users SET user_description = :descriptionUser WHERE `user_id` = :id";
-
-        $tabChamps = array(
-            ":descriptionUser" => $_userDescription,
-            ":id" => $_id
-        );
-        return $this->execute($requete, $tabChamps);
-    }
-
-    public function update($_id, $_nom, $_prenom, $_sexe, $_adRue, $_adNum, $_adCp, $_adVille)
-    {
-        $requete = "UPDATE personne SET nom = :nom, prenom = :prenom, sexe = :sexe, ad_rue = :adRue, ad_num = :adNum, ad_cp = :adCp, ad_ville = :adVille WHERE id = :id";
+        $requete = "UPDATE users SET `user_name` = :nom, user_firstname = :prenom, user_street = :street, user_street_number = :streetnumber, user_box = :boxnumber, user_citycode = :citycode, user_city = :city, user_phone = :phone, user_email = :email, user_description = :userdescription WHERE `user_id`= :update_id";
 
         $tabChamps = array(
             ":nom" => $_nom,
             ":prenom" => $_prenom,
-            ":sexe" => $_sexe,
-            ":adRue" => $_adRue,
-            ":adNum" => $_adNum,
-            "adCp" => $_adCp,
-            ":adVille" => $_adVille,
-            ":id" => $_id
+            ":street" => $_rue,
+            ":streetnumber" => $_number,
+            ":boxnumber" => $_boxnumber,
+            ":citycode" => $_citycode,
+            ":city" => $_city,
+            ":phone" => $_phone,
+            ":email" => $_email,
+            ":userdescription" => $_description,
+            ":update_id" => $_id
         );
 
         return $this->execute($requete, $tabChamps);

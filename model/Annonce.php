@@ -85,7 +85,7 @@
         public function readAdsId()
         {
             $requete = "SELECT ads_id FROM ads";
-            $this->execute($requete);
+            return $this->execute($requete);
         }
 
         public function createLike($_like_user_id, $_like_ads_id, $_like_option)

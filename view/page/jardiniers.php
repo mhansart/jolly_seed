@@ -7,9 +7,13 @@
         <p class="select">Trier par: <span class="choixTri">Date </span></p>
         <i class="fas fa-chevron-down"></i>
         <div class="options">
-          <a id="date" class="opt" href="#">Date</a>
-          <a id="categorie" class="opt" href="#">Catégorie</a>
-          <a id="proximite" class="opt" href="#">Proximité</a>
+          <div id="date" class="opt">Date</div>
+          <div id="categorie" class="opt">Catégorie</div>
+          <div class="sous-options">
+            <p class="ssopt tmpsDoOpt">Temps donné</p>
+            <p class="ssopt tmpsOffOpt">Temps offert</p>
+          </div>
+          <div id="proximite" class="opt">Proximité</div>
         </div>
       </div>
     </div>
@@ -19,7 +23,7 @@
   </section>
 </section>
 <section class="posterAnnonce box">
-  <button class="sortir"><i class="fas fa-times"></i></button>
+<button class="sortir"><i class="fas fa-times"></i></button>
   <h2>Création d'annonce</h2>
   <form enctype="multipart/form-data" method="post" >
     <h3>Catégorie:</h3>

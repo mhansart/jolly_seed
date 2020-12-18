@@ -33,12 +33,12 @@ foreach ($tabDons as $value) {
     $imageDon = "pomme-rouge.png";
   };
   // création de l'annonce
-  $dons .= "<section class='box'>
+  $dons .= "<section id='don_".$value["ads_id"]."' class='box'>
               <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
                 <div class='titreDon'>
-                  <img class='pomme' src='./public/image/" . $imageDon . "' />
+                  <img id='img_".$value["ads_id"]."' class='pomme' src='./public/image/" . $imageDon . "' />
                   <h3>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
                 <div class='d-flex row'>
@@ -85,6 +85,13 @@ foreach ($tabDons as $value) {
      }
    }
 }
+
+//LECTURE dernier ADS_ID  pour nommage de photoperso
+$ai = new Annonce();
+$adsIds = $ai->readAdsId();
+$lastAdsId = $adsIds[count($adsIds)-1]["ads_id"];
+$futurAdsId = $lastAdsId+1;
+
  // CREATION d'UNE ANNONCE DON
  
 if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
@@ -124,7 +131,7 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
           echo "Sorry, your file was not uploaded.";
           // if everything is ok, try to upload file
       } else {
-          $newName = strtolower("d-". $_SESSION['user_id'] . '.' . $imageFileType);
+          $newName = strtolower("d-". $futurAdsId . '.' . $imageFileType);
           echo $newName;
           if (move_uploaded_file($_FILES["ads_picture"]["tmp_name"], $target_dir . $newName)) {
           }
@@ -148,10 +155,7 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
   header("Location:?section=dons");
 }
 
-//LECTURE dernier ADS_ID  pour affichage de photoperso
-$ai = new Annonce();
-$lastAdsId = $ai->readAdsId();
-var_dump($lastAdsId);
+
 
 //LIEN vers CONTACT
 if (isset($_POST["contact"])) {

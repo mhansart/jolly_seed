@@ -81,6 +81,11 @@ class Annonce extends Connexion
         );
         return $this->execute($requete, $tabChamps);
     }
+    public function readAdsId()
+    {
+        $requete = "SELECT ads_id FROM ads";
+        return $this->execute($requete);
+    }
 
     public function readLikeByUserIdAndAdsId($like_user_id, $like_ads_id)
     {

@@ -27,8 +27,11 @@ foreach ($tabJardiniers as $value) {
                 </div>
                 <article>" . $value["ads_description"] . "</article>
                 <div class='d-flex row'>
-                  <button class=" . $value["ads_category"] . " ><a href='#'>Contact</a>
-                  </button>"; 
+                <form class='contactAnnonce' action='#' method='post'>
+                  <input type='hidden' name='contact' value='".$value["ads_user_id"]."'>
+                  <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
+                </form>";
+              //gestion du CONTACT 
            //pose d'un coeur vide       
           $Like = "far fa-heart";
           for($i =0; $i < count($tabLike); $i++){
@@ -90,6 +93,12 @@ if(isset($_POST["ads_titleSecondaire"], $_POST["ads_time"], $_POST["ads_descript
   }
   $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $category, $_POST["ads_time"], $date, $_POST["ads_description"], $annoncePicture, $active, $title);
   //header("Location:?section=jardiniers");
+}
+
+//LIEN vers CONTACT
+if (isset($_POST["contact"])) {
+  header("Location:?section=chat");
+  $_SESSION["chat"] = $_POST["contact"];
 }
 
 include("view/page/jardiniers.php");

@@ -24,7 +24,7 @@ chevron.addEventListener("click", function () {
 }
 });
 
-// Montrer la Section CREATION d'ANNONCE 
+// MONTRER la Section CREATION d'ANNONCE 
 
 const enteteDons = document.querySelector(".enteteDons");
 const annonceDons = document.querySelector(".annonceDons");
@@ -37,7 +37,15 @@ btnDons.addEventListener("click", function (e) {
     enteteDons.style.display = "none";
 });
 
-// Modifications selon CHOIX des CATEGORIES
+//QUITTER CREATION d'ANNONCE
+const sortir = document.querySelector(".sortir");
+sortir.addEventListener("click", function (e) {
+    posterAnnonce.style.display = "none";
+    annonceDons.style.display = "block";
+    enteteDons.style.display = "flex";
+});
+
+// Modifications d'IMAGE selon CHOIX des CATEGORIES
 
 let fichierImage = document.querySelector(".fichierImage");
 const categories = document.getElementsByName('ads_category');
@@ -62,4 +70,22 @@ for (let categorie of categories){
           };
     });
 }
+/*
+//GESTION DES COEURS pour ne pas recharger PHP
+const coeurs = document.querySelectorAll(".fa-heart");
+console.log(coeurs);
+for (let coeur of coeurs){
+    coeur.addEventListener("click", function (e) {
+        console.log(e.currentTarget.classList);
+        /*
+        if (coeur.getAttribute("class");) {
+
+        } else {
+
+        };
+        
+    });
+}
+*/
+
 

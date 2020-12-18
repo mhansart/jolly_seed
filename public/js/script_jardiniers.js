@@ -24,7 +24,7 @@ chevron.addEventListener("click", function () {
 }
 });
 
-// Montrer la Section CREATION d'ANNONCE 
+// MONTRER la Section CREATION d'ANNONCE 
 const enteteDons = document.querySelector(".enteteDons");
 const annonceDons = document.querySelector(".annonceDons");
 const posterAnnonce = document.querySelector(".posterAnnonce");
@@ -34,6 +34,14 @@ btnDons.addEventListener("click", function (e) {
     posterAnnonce.style.display = "block";
     annonceDons.style.display = "none";
     enteteDons.style.display = "none";
+});
+
+//QUITTER CREATION d'ANNONCE
+const sortir = document.querySelector(".sortir");
+sortir.addEventListener("click", function (e) {
+    posterAnnonce.style.display = "none";
+    annonceDons.style.display = "block";
+    enteteDons.style.display = "flex";
 });
 
 // GESTION de l'image 

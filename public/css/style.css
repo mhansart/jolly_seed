@@ -295,6 +295,18 @@
 .centrePageDons .box .dons button {
   margin-top: 15px;
 }
+.centrePageDons .box .dons .btnContact {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  color: white;
+  font-size: 110%;
+  font-family: "Louis George Cafe'";
+}
+.centrePageDons .box .dons .btnContact:hover {
+  cursor: pointer;
+}
 .centrePageDons .box .dons .seed {
   background-color: #34348b;
 }
@@ -320,6 +332,7 @@
   padding: 15px;
   width: 60%;
   text-align: center;
+  position: relative;
 }
 @media screen and (max-width: 600px) {
   .posterAnnonce {
@@ -330,6 +343,25 @@
   .posterAnnonce {
     width: 90%;
   }
+}
+.posterAnnonce .sortir {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 0px;
+  background-color: white;
+  margin: 5px;
+}
+.posterAnnonce .sortir:hover {
+  cursor: pointer;
+}
+.posterAnnonce .sortir i {
+  font-size: 150%;
+  color: #ff8617;
+  font-weight: 100;
+}
+.posterAnnonce .sortir i:hover {
+  color: #23512a;
 }
 .posterAnnonce .left {
   text-align: left;

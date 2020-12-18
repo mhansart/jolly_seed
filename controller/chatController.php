@@ -8,11 +8,15 @@ $nomInterlocuteur = $tabInterlocuteur[0]['user_firstname'] . ' ' . $tabInterlocu
 $imageInterlocuteur = 'uploads/' . $tabInterlocuteur[0]['user_picture'];
 $m = new Message();
 $tabMessage = $m->readMessage($_SESSION["user_id"], $_SESSION["chat"]);
-// var_dump($tabMessage);
+var_dump($tabMessage);
+if (count($tabMessage) !== 0) {
 
-foreach ($tabMessage as $message) {
-    $category_user = $message['sender_id'] == $_SESSION['user_id'] ? "sender-user" : "receiver-user";
-    $conversation .= '<div class="' . $category_user . '"><div class="infos-msg-text"><div class="msg-text-chat" >' . $message['msg_text'] . '</div><div class="msg-date-chat">' . $message['format_date'] . ' ' . $message['format_hour'] . '</div></div></div>';
+    foreach ($tabMessage as $message) {
+        $category_user = $message['sender_id'] == $_SESSION['user_id'] ? "sender-user" : "receiver-user";
+        $conversation .= '<div class="' . $category_user . '"><div class="infos-msg-text"><div class="msg-text-chat" >' . $message['msg_text'] . '</div><div class="msg-date-chat">' . $message['format_date'] . ' ' . $message['format_hour'] . '</div></div></div>';
+    }
+} else {
+    $conversation .= '<p class="no-chat">Envoyez votre premier message à <span class="bold">' . $nomInterlocuteur . '</span>.';
 }
 $conversation .= '<div class="chat-send"><div class="btn-send-chat w-100"><form action="#" method="post" class="d-flex">
 <input type="text" class="ipt-response-chat d-flex" name="msg-response">

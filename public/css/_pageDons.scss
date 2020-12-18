@@ -186,6 +186,18 @@
       button {
         margin-top: 15px;
       }
+      .btnContact{
+          padding: 7px 15px;
+          border: none;
+          border-radius: 20px;
+          display: block;
+          color: $primary-color;
+          font-size: 110%;
+          font-family: $main-font;
+          &:hover{
+            cursor: pointer;
+          }
+      }
       .seed {
         background-color: $color-seed;
       }
@@ -214,11 +226,31 @@
   padding: 15px;
   width: 60%;
   text-align: center;
+  position: relative;
   @media screen and (max-width: 600px) {
     width: 75%;
   }
   @media screen and (max-width: 420px) {
     width: 90%;
+  }
+  .sortir{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 0px;
+    background-color: white;
+    margin: 5px;
+    &:hover{
+      cursor: pointer; 
+      }
+    i{
+      font-size: 150%;
+      color: $clic-color;
+      font-weight: 100;
+      &:hover{
+      color: $third-color;
+      }
+    }
   }
   .left{
     text-align: left; 

@@ -1086,6 +1086,10 @@ p {
   outline: none;
 }
 
+.mg-auto {
+  margin: auto;
+}
+
 .menu-mon-compte {
   position: fixed;
   margin-top: -15px;

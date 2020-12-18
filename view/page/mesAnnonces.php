@@ -1,6 +1,6 @@
 <?php require_once("view/menu/menu_moncompte.php"); ?>
 
-<section class="pageDons">
+<section class="pageDons w-80 mg-auto">
     <section class="centrePageDons">
         <div class="annonceDons">
             <?= $mesdons ?>

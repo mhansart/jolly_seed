@@ -4,34 +4,41 @@ donsMenu.classList.add('active');
 // TRI Options
 
 const options = document.querySelector(".options");
-const chevron = document.querySelector(".fa-chevron-down");
 const ssopts = document.querySelector(".sous-options");
+const chev = document.querySelector(".chevron");
 const boxs = document.querySelectorAll(".box");
-chevron.addEventListener("click", function () {
-    options.style.display = "block";
-    const opts = document.querySelectorAll(".opt");
-    const choixTri = document.querySelector(".choixTri");
-    for (let opt of opts){
-    opt.addEventListener("click", function (e) {
-        if (e.currentTarget.id === "date"){
-            choixTri.innerHTML = "Date";
-            for (box of boxs){
-                box.style.display="flex";
-            } 
-            options.style.display = "none";
-        } else if (e.currentTarget.id === "categorie"){
-            choixTri.innerHTML = "Catégorie"; 
-            ssopts.style.display = "block";
-        } else {
-            choixTri.innerHTML = "Proximité";
-            options.style.display = "none";
-            for (box of boxs){
-                box.style.display="flex";
-            } 
+chev.addEventListener("click", function () {
+    if (chev.innerHTML === "<i class=\"fas fa-chevron-down\"></i>"){
+        chev.innerHTML = "<i class=\"fas fa-chevron-up\"></i>"
+        options.style.display = "block";
+        const opts = document.querySelectorAll(".opt");
+        const choixTri = document.querySelector(".choixTri");
+        for (let opt of opts){
+            opt.addEventListener("click", function (e) {
+                if (e.currentTarget.id === "date"){
+                    choixTri.innerHTML = "Date";
+                    for (box of boxs){
+                        box.style.display="flex";
+                    } 
+                    options.style.display = "none";
+                    chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
+                } else if (e.currentTarget.id === "categorie"){
+                    choixTri.innerHTML = "Catégorie"; 
+                    ssopts.style.display = "block";
+                } else {
+                    choixTri.innerHTML = "Proximité";
+                    options.style.display = "none";
+                    for (box of boxs){
+                        box.style.display="flex";
+                        chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
+                    } 
+                } 
+            });
         }
-        
-    });
-}
+    } else {
+        options.style.display = "none"; 
+        chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
+    }
 });
 
 // TRI Sous-options
@@ -56,6 +63,7 @@ seedopt.addEventListener("click", function (e) {
         }
     }
     options.style.display = "none";
+    chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
 });
 // tri flower
 floweropt.addEventListener("click", function (e) {
@@ -72,6 +80,7 @@ floweropt.addEventListener("click", function (e) {
         }
     }
     options.style.display = "none";
+    chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
 });
 // tri ground
 groundopt.addEventListener("click", function (e) {
@@ -88,6 +97,7 @@ groundopt.addEventListener("click", function (e) {
         }
     }
     options.style.display = "none";
+    chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
 });
 //tri plant
 plantopt.addEventListener("click", function (e) {
@@ -104,6 +114,7 @@ plantopt.addEventListener("click", function (e) {
         }
     }
     options.style.display = "none";
+    chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
 });
 
 // MONTRER la Section CREATION d'ANNONCE 

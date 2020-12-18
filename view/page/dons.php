@@ -5,7 +5,7 @@
       <button class="btnDons"><a href="#">Poster une annonce</a></button>
       <div class="tri">
         <p class="select">Trier par: <span class="choixTri">Date </span></p>
-        <i class="fas fa-chevron-down"></i>
+        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
         <div class="options">
           <div id="date" class="opt">Date</div>
           <div id="categorie" class="opt">Catégorie</div>

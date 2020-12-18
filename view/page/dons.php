@@ -19,6 +19,7 @@
   </section>
 </section>
 <section class="posterAnnonce box"> 
+  <button class="sortir"><i class="fas fa-times"></i></button>
   <h2>Création d'annonce de don</h2>
   <form enctype="multipart/form-data" method="post" >
     <h3>Catégorie:</h3>
@@ -41,8 +42,11 @@
         </div>
         <div class="imageAlternative">
           <p>Afin d'illustrer vortre annonce, vous pouvez soit utiliser l'image ci-contre ou en télécharger une nouvelle.</p>
-          <input type="file" class="fichierImage" name="ads_picture" value="Pas d'image"><br />
+          <input type="file" class="fichierImage" name="ads_picture" value="Pas d'image"><br/><br/>
+          <input type="checkbox" id="photoPerso" name="photoPerso"/>
+          <label for="photoPerso">Je désire utiliser ma photo</label><br/>
         </div>
+        
       </div>
     </div>
     <h3>Titre: </h3>

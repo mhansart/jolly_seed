@@ -48,8 +48,12 @@ foreach ($tabDons as $value) {
                 </div>
                 <article>" . $value["ads_description"] . "</article>
                 <div class='d-flex row'>
-                  <button class=" . $value["ads_category"] . " ><a href='#'>Contact</a>
-                  </button>";
+                <form class='contactAnnonce' action='#' method='post'>
+                  <input type='hidden' name='contact' value='".$value["ads_user_id"]."'>
+                  <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
+                </form>";
+                //gestion du CONTACT
+
          //pose d'un coeur vide       
          $Like = "far fa-heart";
          for($i =0; $i < count($tabLike); $i++){
@@ -142,6 +146,17 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
 
   $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $annoncePicture, $active, $_POST["ads_title"]);
   header("Location:?section=dons");
+}
+
+//LECTURE dernier ADS_ID  pour affichage de photoperso
+$ai = new Annonce();
+$lastAdsId = $ai->readAdsId();
+var_dump($lastAdsId);
+
+//LIEN vers CONTACT
+if (isset($_POST["contact"])) {
+  header("Location:?section=chat");
+  $_SESSION["chat"] = $_POST["contact"];
 }
 
 include("view/page/dons.php");

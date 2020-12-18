@@ -18,7 +18,8 @@
     <div>
   </section>
 </section>
-<section class="posterAnnonce box"> 
+<section class="posterAnnonce box">
+  <button class="sortir"><i class="fas fa-times"></i></button>
   <h2>Création d'annonce</h2>
   <form enctype="multipart/form-data" method="post" >
     <h3>Catégorie:</h3>

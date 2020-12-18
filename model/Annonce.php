@@ -82,6 +82,12 @@
             return $this->execute($requete, $tabChamps);
         }
 
+        public function readAdsId()
+        {
+            $requete = "SELECT ads_id FROM ads";
+            $this->execute($requete);
+        }
+
         public function createLike($_like_user_id, $_like_ads_id, $_like_option)
         {
             $requete = "INSERT INTO like_user_ads ( like_user_id, like_ads_id, like_option) VALUES (:likeUserId, :likeAdsId, :likeOption)";

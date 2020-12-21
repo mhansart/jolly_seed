@@ -41,6 +41,9 @@ if (isset($_GET["section"])) {
         case 'chat':
             include("controller/chatController.php");
             break;
+        case 'search':
+            include("controller/searchController.php");
+            break;
         case 'deconnexion':
             require_once("controller/deconnexionController.php");
             break;

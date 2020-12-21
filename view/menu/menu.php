@@ -4,7 +4,7 @@
 
     echo '<div class="subheader w-100">
             <div class="subheader-container d-flex w-80 h-100">
-              <div class="search-bar d-flex"><input class="w-90"/><i class="fas fa-search"></i></div><div class="d-flex"><p class="hello-name">Bienvenue <strong>' . $_SESSION['prenom'] . '</strong></p>
+              <div class="search-bar d-flex"><input class="w-90"/><a href="?section=search"><i class="fas fa-search"></i></a></div><div class="d-flex"><p class="hello-name">Bienvenue <strong>' . $_SESSION['prenom'] . '</strong></p>
               <a id="subheader-mon-compte" href="?section=moncompte"><span class="btn-moncompte">Mon compte</span><i class="mon-compte-icon fas fa-user"></i></a>
               <a href="?section=deconnexion"><i class="sign-out-icon fas fa-sign-out-alt"></i></a>
               </div>

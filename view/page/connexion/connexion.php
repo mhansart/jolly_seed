@@ -16,6 +16,6 @@
 
             <div class="btns-connexion"><button type="submit" id="bouton">Se connecter</button><button type="reset" class="effacer-connexion">Effacer</button></div>
         </form>
-        <p class="fin-connexion"><span>Pas encore de compte? </span><a href="?section=inscription"><span class="bold">Inscrivez-vous</a></p>
+        <p class="fin-connexion"><span>Pas encore de compte? </span><a href="?section=inscription"><span class="bold"> Inscrivez-vous</a></p>
     </div>
 </section>

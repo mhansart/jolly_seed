@@ -5,12 +5,13 @@
             <div class="img-interlocuteur" style="background-image:url(<?= $imageInterlocuteur ?>)"></div>
             <div class="nom-interlocuteur"> <?= $nomInterlocuteur ?></div>
         </div>
+        <div class="msgs-chat">
 
-        <?= $conversation ?>
+            <?= $conversation ?>
+        </div>
     </div>
-</div>
 
-<!-- <h1>Hello !</h1>
+    <!-- <h1>Hello !</h1>
 
 <div id="messages"><?= $msg ?></div>
 
@@ -24,6 +25,6 @@
 
 
 
-<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-<script src="public/js/script_chat.js"></script>
-<script src="public/js/script_moncompte.js"></script>
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <script src="public/js/script_chat.js"></script>
+    <script src="public/js/script_moncompte.js"></script>

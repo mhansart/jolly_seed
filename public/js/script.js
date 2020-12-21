@@ -5,6 +5,22 @@ style.sheet.insertRule(`body {height: ${h}px}`);
 
 const subHeader = document.querySelector('.subheader');
 
+const header = document.querySelector('header');
+const heightHeader = parseInt(getComputedStyle(header).height,10);
+const main = document.querySelector('main');
+const footer = document.querySelector('footer');
+const heightFooter = parseInt(getComputedStyle(footer).height,10);
+// mainChat.style.minHeight = `${}`
+
+const getSizeMain = ()=>{
+    main.style.minHeight = `${h-heightFooter-19}px`;
+}
+getSizeMain();
+
+window.addEventListener('resize', function(){
+    getSizeMain();
+});
+
 
 // const heightSubheader = getComputedStyle(subHeader).height;
 if(subHeader !== null){
@@ -26,25 +42,27 @@ const menuBurger = document.getElementById('menu-burger');
 const menuNav = document.querySelector('.nav-connected');
 const navBar = document.querySelector('.nav-pages');
 
-const getSizeNav = ()=>{
-    var w = window.innerWidth;
-    if(parseInt(w)<600){
-        menuNav.style.height = `${h}px`;
-    }else{
-        menuNav.style.height = '100%';
+if(menuNav){
+    const getSizeNav = ()=>{
+        var w = window.innerWidth;
+        if(parseInt(w)<600){
+            menuNav.style.height = `${h}px`;
+        }else{
+            menuNav.style.height = '100%';
+        }
     }
-}
-getSizeNav();
-
-window.addEventListener('resize', function(){
     getSizeNav();
-});
 
-menuBurger.addEventListener('click', function(){
-    if(!menuNav.classList.contains('open-menu')){
-        menuNav.classList.add('open-menu');
-        
-    }else{
-        menuNav.classList.remove('open-menu');
-    }
-})
+    window.addEventListener('resize', function(){
+        getSizeNav();
+    });
+
+    menuBurger.addEventListener('click', function(){
+        if(!menuNav.classList.contains('open-menu')){
+            menuNav.classList.add('open-menu');
+            
+        }else{
+            menuNav.classList.remove('open-menu');
+        }
+    })
+}

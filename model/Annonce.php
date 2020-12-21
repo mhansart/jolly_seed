@@ -109,6 +109,17 @@ class Annonce extends Connexion
 
         $this->execute($requete, $tabChamps);
     }
+    public function updateActive($_id, $_active)
+    {
+        $requete = "UPDATE ads SET `ads_active` = :active WHERE `ads_id`= :ads_id";
+
+        $tabChamps = array(
+            ":active" => $_active,
+            ":ads_id" => $_id
+        );
+
+        return $this->execute($requete, $tabChamps);
+    }
 
 
     /*

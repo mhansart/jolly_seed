@@ -1,8 +1,66 @@
-.contact-container{
-    label
-    {
-        display: block; 
-        width: 150px;
-        float: left;
+@use 'variables' as *;
+
+.contact-container {
+  margin: auto;
+  margin-top: -60px;
+  padding: 0 15px;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input,
+    textarea {
+      border: none;
+      box-shadow: $shadow-low;
+      padding: 7px 15px;
+      &:focus {
+        outline: none;
+      }
     }
+    label {
+      padding: 7px 0px;
+    }
+    button {
+      display: inline-flex;
+      padding: 7px 15px;
+      border-radius: 20px;
+      border: none;
+      background-color: $clic-color;
+      color: $primary-color;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  h3 {
+    margin-top: 0;
+  }
+  .form-contact {
+    padding-left: 15px;
+    @media screen and (max-width: 850px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      padding-left: 0;
+    }
+    span {
+      padding: 7px 0;
+    }
+  }
+  .image-deco-contact {
+    background-image: url(../image/plantation.jpg);
+    background-size: cover;
+    background-position: center;
+    @media screen and (max-width: 850px) {
+      width: 40%;
+    }
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
 }

@@ -61,7 +61,7 @@
       color: $secondary-color;
       display: inline;
     }
-    .fa-chevron-down {
+    .chevron {
       color: $clic-color;
     }
     .choixTri{
@@ -76,14 +76,34 @@
       background-color: $primary-color;
       padding: 10px 0px;
       border: 1px solid $secondary-color;
-      text-align: center;
-      width: 100px;
       display: none;
-      a {
+      .opt {
         color: $secondary-color;
-        text-decoration: none;
-        display: block;
+        text-align: left;
+        padding-left: 10px;
+        padding-right:10px;
+        &:hover {
+          background-color: $clic-color;
+          color: $primary-color;
+        }
       }
+      .sous-options{
+        text-align: right;
+        display: none;
+        .ssopt{
+          margin: 0px;
+          padding-right: 10px;
+          padding-left:30px;
+          white-space: nowrap;
+          
+          &:hover {
+            background-color: $clic-color;
+            color: $primary-color;
+
+          }
+        }
+      }
+      
 
       a:hover {
         background-color: $clic-color;
@@ -192,7 +212,8 @@
           border-radius: 20px;
           display: block;
           color: $primary-color;
-          font-size: 110%;
+          //font-weight: bold;
+          font-size: 100%;
           font-family: $main-font;
           &:hover{
             cursor: pointer;

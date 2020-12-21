@@ -12,13 +12,13 @@ $tabJardiniers = $e->readByCategoryTime("time");
 $dons = "";
 foreach ($tabJardiniers as $value) {
   // création de l'annonce
-  $dons .= "<section class='box'>
+  $dons .= "<section id='don_".$value["ads_id"]."' class='box'>
               <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
                 <div>
-                  <img class='pomme' src='./public/image/pomme-rouge.png' />
-                  <h3>&nbsp;" . $value["ads_title"] . "</h3>
+                  <img id='img_".$value["ads_id"]."' class='pomme' src='./public/image/pomme-rouge.png' />
+                  <h3 id='titre_".$value["ads_id"]."' class='titreTemps'>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
                 <div class='d-flex row'>
                   <p>Date: " . $value["ads_date"] . "&nbsp;</p>

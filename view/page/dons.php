@@ -5,11 +5,17 @@
       <button class="btnDons"><a href="#">Poster une annonce</a></button>
       <div class="tri">
         <p class="select">Trier par: <span class="choixTri">Date </span></p>
-        <i class="fas fa-chevron-down"></i>
+        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
         <div class="options">
-          <a id="date" class="opt" href="#">Date</a>
-          <a id="categorie" class="opt" href="#">Catégorie</a>
-          <a id="proximite" class="opt" href="#">Proximité</a>
+          <div id="date" class="opt">Date</div>
+          <div id="categorie" class="opt">Catégorie</div>
+          <div class="sous-options">
+            <p class="ssopt seedOpt">Graines / Semences / Noyaux</p>
+            <p class="ssopt flowerOpt">Fleurs / Fruits / Légumes </p>
+            <p class="ssopt groundOpt">Terreau / Copeaux / Buches / Bois</p>
+            <p class="ssopt plantOpt">Plants / Arbustres / Arbres</p>
+          </div>
+          <div id="proximite" class="opt">Proximité</div>
         </div>
       </div>
     </div>
@@ -43,8 +49,9 @@
         <div class="imageAlternative">
           <p>Afin d'illustrer vortre annonce, vous pouvez soit utiliser l'image ci-contre ou en télécharger une nouvelle.</p>
           <input type="file" class="fichierImage" name="ads_picture" value="Pas d'image"><br/><br/>
-          <input type="checkbox" id="photoPerso" name="photoPerso"/>
-          <label for="photoPerso">Je désire utiliser ma photo</label><br/>
+          <input class="futurId" type="hidden" value="<?=$futurAdsId?>">
+          <input type="checkbox" id="checkPhoto" name="checkPhoto"/>
+          <label for="checkPhoto">Je désire utiliser ma photo</label><br/>
         </div>
         
       </div>
@@ -54,25 +61,7 @@
     <input class="donTitre" type="text" id="donTitre" name="ads_title" placeholder="nombre de char à fixer" value="Pas de donTitre"/><br />
     <h3>Description:</h3>
     <label for="description"><p>Descriptif du don proposé:</p></label>
-    <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br />
-<!--
-    <label for="contact"><h3>Contact:</h3></label>
-    <p> Pour la prise de contact, je désire partager :</p>
-    <div class="left">
-      <input type="checkbox" id="contactNom" name="contactNom" value="nom">
-      <label for="contactNom"> Nom de famille</label><br/>
-      <input type="checkbox" id="contactPrenom" name="contactPrenom" value="prenom">
-      <label for="contactPrenom"> Prénom</label><br/>
-      <input type="checkbox" id="photo" name="photo" value="mail">
-      <label for="photo"> Photo personnelle</label><br/>  
-      <input type="checkbox" id="adresse mail" name="adresse mail" value="mail">
-      <label for="adresse mail"> Adresse mail</label><br/>        
-      <input type="checkbox" id="noTel" name="noTel" value="tel">
-      <label for="noTel"> Numéro de téléphone</label><br/>
-      <input type="checkbox" id="intro" name="intro" value="intro">
-      <label for="intro"> Paragraphe d'introdution</label><br/>
-    </div>
-    <p>Si toutes les cases sont décochées, le seul moyen de contact sera via le site.</p>-->
+    <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br /> 
     <button class="creer" type="submit">Créer l'annonce</button>
   </form>
 </section>

@@ -105,6 +105,7 @@
       z-index: -1;
       display: flex;
       align-items: flex-end;
+      opacity: 0.8;
     }
     &::after {
       content: '"';
@@ -118,6 +119,7 @@
       z-index: -1;
       display: flex;
       align-items: flex-end;
+      opacity: 0.8;
     }
   }
 }

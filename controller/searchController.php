@@ -40,7 +40,7 @@ foreach ($tabAnnonces as $value) {
         };
         // création de l'annonce
         $allSearch .= "<section id='don_" . $value["ads_id"] . "' class='box " . $classCategory . "-search'>
-                  <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
+                  <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
                   </div>
                   <div class= 'dons'>
                     <div class='titreDon'>

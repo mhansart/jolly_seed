@@ -88,7 +88,19 @@
   justify-content: space-between;
 }
 
-.centrePageDons button {
+.pageDons {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .pageDons {
+    width: 100%;
+  }
+}
+.pageDons button {
+  cursor: pointer;
+}
+.pageDons .centrePageDons button {
   padding: 7px 15px;
   border: none;
   border-radius: 20px;
@@ -97,80 +109,79 @@
   font-size: 100%;
   font-family: "Louis George Cafe'";
 }
-.centrePageDons h2 {
+.pageDons .centrePageDons h2 {
   color: #6e9611;
 }
-.centrePageDons h3 {
+.pageDons .centrePageDons h3 {
   color: #6e9611;
 }
-.centrePageDons .column {
+.pageDons .centrePageDons .column {
   flex-direction: column;
 }
-.centrePageDons .enteteDons {
-  padding: 0% 5%;
+.pageDons .centrePageDons .enteteDons {
   margin-top: 20px;
 }
-.centrePageDons a {
+.pageDons .centrePageDons a {
   color: #ff8617;
 }
 @media screen and (max-width: 600px) {
-  .centrePageDons a {
+  .pageDons .centrePageDons a {
     width: 40%;
   }
 }
-.centrePageDons .row {
+.pageDons .centrePageDons .row {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 @media screen and (max-width: 600px) {
-  .centrePageDons .row {
+  .pageDons .centrePageDons .row {
     flex-wrap: wrap;
   }
 }
-.centrePageDons .btnCarte {
+.pageDons .centrePageDons .btnCarte {
   color: #ff8617;
   background-color: transparent;
-  cursor: pointer;
 }
-.centrePageDons .btnCarte:hover {
+.pageDons .centrePageDons .btnCarte:hover {
   text-decoration: underline;
 }
-.centrePageDons .btnDons {
+.pageDons .centrePageDons .btnDons {
   background-color: #ff8617;
   margin: auto;
 }
 @media screen and (max-width: 600px) {
-  .centrePageDons .btnDons {
+  .pageDons .centrePageDons .btnDons {
     order: 3;
     margin-top: 15px;
   }
 }
-.centrePageDons .btnDons a {
+.pageDons .centrePageDons .btnDons a {
   color: white;
 }
-.centrePageDons .tri {
+.pageDons .centrePageDons .tri {
   position: relative;
 }
 @media screen and (max-width: 600px) {
-  .centrePageDons .tri {
+  .pageDons .centrePageDons .tri {
     order: 2;
     width: 40%;
     text-align: right;
   }
 }
-.centrePageDons .tri .select {
+.pageDons .centrePageDons .tri .select {
   color: #6e9611;
   display: inline;
+  font-size: 100%;
 }
-.centrePageDons .tri .chevron {
+.pageDons .centrePageDons .tri .chevron {
   color: #ff8617;
 }
-.centrePageDons .tri .choixTri {
+.pageDons .centrePageDons .tri .choixTri {
   display: inline-block;
   width: 75px;
 }
-.centrePageDons .tri .options {
+.pageDons .centrePageDons .tri .options {
   color: #6e9611;
   position: absolute;
   right: 0px;
@@ -180,35 +191,35 @@
   border: 1px solid #6e9611;
   display: none;
 }
-.centrePageDons .tri .options .opt {
+.pageDons .centrePageDons .tri .options .opt {
   color: #6e9611;
   text-align: left;
   padding-left: 10px;
   padding-right: 10px;
 }
-.centrePageDons .tri .options .opt:hover {
+.pageDons .centrePageDons .tri .options .opt:hover {
   background-color: #ff8617;
   color: white;
 }
-.centrePageDons .tri .options .sous-options {
+.pageDons .centrePageDons .tri .options .sous-options {
   text-align: right;
   display: none;
 }
-.centrePageDons .tri .options .sous-options .ssopt {
+.pageDons .centrePageDons .tri .options .sous-options .ssopt {
   margin: 0px;
   padding-right: 10px;
   padding-left: 30px;
   white-space: nowrap;
 }
-.centrePageDons .tri .options .sous-options .ssopt:hover {
+.pageDons .centrePageDons .tri .options .sous-options .ssopt:hover {
   background-color: #ff8617;
   color: white;
 }
-.centrePageDons .tri .options a:hover {
+.pageDons .centrePageDons .tri .options a:hover {
   background-color: #ff8617;
   color: white;
 }
-.centrePageDons .annonceDons {
+.pageDons .centrePageDons .annonceDons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -216,61 +227,61 @@
   margin-top: 15px;
 }
 @media screen and (max-width: 1200px) {
-  .centrePageDons .annonceDons {
+  .pageDons .centrePageDons .annonceDons {
     flex-direction: column;
   }
 }
-.centrePageDons .box {
+.pageDons .centrePageDons .box {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
-  width: 46%;
+  width: 48%;
   margin: 1%;
   padding: 15px;
   display: flex;
   flex-direction: row;
 }
 @media screen and (max-width: 1200px) {
-  .centrePageDons .box {
+  .pageDons .centrePageDons .box {
     width: 70%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 1035px) {
-  .centrePageDons .box {
+  .pageDons .centrePageDons .box {
     width: 80%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 860px) {
-  .centrePageDons .box {
+  .pageDons .centrePageDons .box {
     width: 90%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 680px) {
-  .centrePageDons .box {
+  .pageDons .centrePageDons .box {
     flex-direction: column;
     width: 70%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 550px) {
-  .centrePageDons .box {
+  .pageDons .centrePageDons .box {
     flex-direction: column;
     width: 80%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 420px) {
-  .centrePageDons .box {
+  .pageDons .centrePageDons .box {
     flex-direction: column;
     width: 90%;
     margin: auto;
   }
 }
-.centrePageDons .box a {
+.pageDons .centrePageDons .box a {
   color: white;
 }
-.centrePageDons .box .imageDon {
+.pageDons .centrePageDons .box .imageDon {
   display: block;
   background-color: white;
   width: 200px;
@@ -279,46 +290,45 @@
   background-position: center center;
 }
 @media screen and (max-width: 680px) {
-  .centrePageDons .box .imageDon {
+  .pageDons .centrePageDons .box .imageDon {
     margin: auto;
   }
 }
-.centrePageDons .box .dons {
+.pageDons .centrePageDons .box .dons {
   padding: 0px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 @media screen and (max-width: 680px) {
-  .centrePageDons .box .dons {
+  .pageDons .centrePageDons .box .dons {
     margin-top: 15px;
   }
 }
 @media screen and (max-width: 680px) {
-  .centrePageDons .box .dons .titreDon {
+  .pageDons .centrePageDons .box .dons .titreDon {
     margin: auto;
   }
 }
-.centrePageDons .box .dons .pomme {
+.pageDons .centrePageDons .box .dons .pomme {
   height: 30px;
 }
-.centrePageDons .box .dons h3 {
+.pageDons .centrePageDons .box .dons h3 {
   margin: 0px;
   display: inline;
 }
-.centrePageDons .box .dons .fa-heart {
+.pageDons .centrePageDons .box .dons .fa-heart {
   color: #6e9611;
   font-size: 20px;
   margin-top: 10px;
 }
-.centrePageDons .box .dons .fa-heart:hover {
+.pageDons .centrePageDons .box .dons .fa-heart:hover {
   color: #ff8617;
-  cursor: pointer;
 }
-.centrePageDons .box .dons button {
+.pageDons .centrePageDons .box .dons button {
   margin-top: 15px;
 }
-.centrePageDons .box .dons .btnContact {
+.pageDons .centrePageDons .box .dons .btnContact {
   padding: 7px 15px;
   border: none;
   border-radius: 20px;
@@ -327,29 +337,28 @@
   font-size: 100%;
   font-family: "Louis George Cafe'";
 }
-.centrePageDons .box .dons .btnContact:hover {
+.pageDons .centrePageDons .box .dons .btnContact:hover {
   cursor: pointer;
 }
-.centrePageDons .box .dons .seed {
+.pageDons .centrePageDons .box .dons .seed {
   background-color: #34348b;
 }
-.centrePageDons .box .dons .flower {
+.pageDons .centrePageDons .box .dons .flower {
   background-color: #611760;
 }
-.centrePageDons .box .dons .time {
+.pageDons .centrePageDons .box .dons .time {
   background-color: #dc0411;
 }
-.centrePageDons .box .dons .ground {
+.pageDons .centrePageDons .box .dons .ground {
   background-color: #780000;
 }
-.centrePageDons .box .dons .plant {
+.pageDons .centrePageDons .box .dons .plant {
   background-color: #fcd12d;
 }
-.centrePageDons .coeur {
+.pageDons .centrePageDons .coeur {
   background-color: transparent;
 }
-
-.posterAnnonce {
+.pageDons .posterAnnonce {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   margin: 1% auto;
   padding: 15px;
@@ -358,80 +367,78 @@
   position: relative;
 }
 @media screen and (max-width: 600px) {
-  .posterAnnonce {
+  .pageDons .posterAnnonce {
     width: 75%;
   }
 }
 @media screen and (max-width: 420px) {
-  .posterAnnonce {
+  .pageDons .posterAnnonce {
     width: 90%;
   }
 }
-.posterAnnonce .sortir {
+.pageDons .posterAnnonce .sortir {
   position: absolute;
   top: 0px;
-  left: 0px;
+  right: 0px;
   border-radius: 0px;
   background-color: white;
   margin: 5px;
 }
-.posterAnnonce .sortir:hover {
-  cursor: pointer;
-}
-.posterAnnonce .sortir i {
+.pageDons .posterAnnonce .sortir i {
   font-size: 150%;
   color: #ff8617;
   font-weight: 100;
 }
-.posterAnnonce .sortir i:hover {
+.pageDons .posterAnnonce .sortir i:hover {
   color: #23512a;
 }
-.posterAnnonce .left {
+.pageDons .posterAnnonce .left {
   text-align: left;
   margin: auto;
   display: inline-block;
 }
-.posterAnnonce .radio {
+.pageDons .posterAnnonce .radio {
   text-align: left;
   padding-left: 25px;
   width: 350px;
   margin: auto;
 }
-.posterAnnonce .DonOptionRadio {
+.pageDons .posterAnnonce .DonOptionRadio {
   width: 250px;
 }
-.posterAnnonce .donTitre {
+.pageDons .posterAnnonce .donTitre {
   display: block;
   margin: auto;
 }
-.posterAnnonce .time {
+.pageDons .posterAnnonce .time {
   text-align: left;
   width: 200px;
   margin: auto;
 }
-.posterAnnonce .timeSlot {
+.pageDons .posterAnnonce .timeSlot {
   text-align: left;
   padding-left: 25px;
 }
-.posterAnnonce button {
+.pageDons .posterAnnonce button {
   background-color: #ff8617;
+  color: white;
   margin: 25px auto;
 }
-.posterAnnonce .sectionCategorie {
+.pageDons .posterAnnonce .sectionCategorie {
   margin: auto;
 }
-.posterAnnonce .annonceImage {
+.pageDons .posterAnnonce .annonceImage {
   align-items: center;
   margin: auto;
 }
-.posterAnnonce .conteneurImageAnnonce {
+.pageDons .posterAnnonce .conteneurImageAnnonce {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   align-items: center;
 }
-.posterAnnonce .imageAnnonce {
+.pageDons .posterAnnonce .imageAnnonce {
   display: block;
   width: 250px;
   padding-top: 250px;
@@ -440,7 +447,7 @@
   background-position: center center;
   margin-bottom: 15px;
 }
-.posterAnnonce .imageAnnonceFixe {
+.pageDons .posterAnnonce .imageAnnonceFixe {
   display: block;
   background-image: url("../image/avatar.png");
   border: 3px solid #6e9611;
@@ -452,39 +459,38 @@
   top: 0;
   left: 0;
 }
-.posterAnnonce .imageAlternative {
+.pageDons .posterAnnonce .imageAlternative {
   padding: 0px 15px;
   display: block;
   min-width: 250px;
   max-width: 500px;
   text-align: left;
 }
-.posterAnnonce .inputAccord {
+.pageDons .posterAnnonce .inputAccord {
   display: inline;
 }
-.posterAnnonce button {
+.pageDons .posterAnnonce button {
   padding: 7px 15px;
   border: none;
   border-radius: 20px;
   display: block;
 }
-.posterAnnonce button a {
+.pageDons .posterAnnonce button a {
   color: white;
   text-decoration-line: none;
   font-size: 130%;
   font-family: "Louis George Cafe'";
 }
-.posterAnnonce h2 {
+.pageDons .posterAnnonce h2 {
   color: #6e9611;
 }
-.posterAnnonce h3 {
+.pageDons .posterAnnonce h3 {
   color: #6e9611;
 }
-.posterAnnonce .column {
+.pageDons .posterAnnonce .column {
   flex-direction: column;
 }
-
-.carteTri .retour {
+.pageDons .carteTri .retour {
   position: absolute;
   top: 150px;
   right: 0px;
@@ -493,18 +499,15 @@
   margin: 15px;
   text-align: right;
 }
-.carteTri .retour:hover {
-  cursor: pointer;
-}
-.carteTri .retour i {
+.pageDons .carteTri .retour i {
   font-size: 150%;
   color: #ff8617;
   font-weight: 100;
 }
-.carteTri .retour i:hover {
+.pageDons .carteTri .retour i:hover {
   color: #23512a;
 }
-.carteTri #mapid {
+.pageDons .carteTri #mapid {
   transform: translateY(40px);
   height: 600px;
 }
@@ -1379,7 +1382,6 @@ p {
   width: 100%;
   height: auto;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
@@ -1495,7 +1497,7 @@ p {
   height: 100%;
   font-family: "Catamaran", sans-serif;
   font-size: 70px;
-  color: #6e9611;
+  color: #ff8617;
   position: absolute;
   top: -75px;
   left: 10px;
@@ -1510,7 +1512,7 @@ p {
   height: 100%;
   font-family: "Catamaran", sans-serif;
   font-size: 70px;
-  color: #6e9611;
+  color: #ff8617;
   position: absolute;
   bottom: -45px;
   right: 15px;

@@ -1,6 +1,11 @@
 const jardiniersMenu = document.getElementById('jardiniers-menu');
 jardiniersMenu.classList.add('active');
 
+const enteteDons = document.querySelector(".enteteDons");
+const annonceDons = document.querySelector(".annonceDons");
+const posterAnnonce = document.querySelector(".posterAnnonce");
+posterAnnonce.style.display = "none";
+const btnDons = document.querySelector(".btnDons");
 
 // TRI Options
 
@@ -8,7 +13,6 @@ const options = document.querySelector(".options");
 const ssopts = document.querySelector(".sous-options");
 const chev = document.querySelector(".chevron");
 const boxs = document.querySelectorAll(".box");
-console.log(chev.innerHTML);
 chev.addEventListener("click", function () {
     if (chev.innerHTML === "<i class=\"fas fa-chevron-down\"></i>"){
         chev.innerHTML = "<i class=\"fas fa-chevron-up\"></i>"
@@ -24,6 +28,7 @@ chev.addEventListener("click", function () {
                     } 
                     options.style.display = "none";
                     chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>"
+                    posterAnnonce.style.display = "none";
                 } else if (e.currentTarget.id === "categorie"){
                     choixTri.innerHTML = "Catégorie"; 
                     ssopts.style.display = "block";
@@ -34,6 +39,7 @@ chev.addEventListener("click", function () {
                     for (box of boxs){
                         box.style.display="flex";
                     } 
+                    posterAnnonce.style.display = "none";
                 }
             });
         }
@@ -87,11 +93,7 @@ optTmpsOff.addEventListener("click", function (e) {
 });
 
 // MONTRER la Section CREATION d'ANNONCE 
-const enteteDons = document.querySelector(".enteteDons");
-const annonceDons = document.querySelector(".annonceDons");
-const posterAnnonce = document.querySelector(".posterAnnonce");
-posterAnnonce.style.display = "none";
-const btnDons = document.querySelector(".btnDons");
+
 btnDons.addEventListener("click", function (e) {
     posterAnnonce.style.display = "block";
     annonceDons.style.display = "none";

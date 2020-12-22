@@ -56,14 +56,16 @@ const floweropt = document.querySelector(".flowerOpt");
 const groundopt = document.querySelector(".groundOpt");
 const plantopt = document.querySelector(".plantOpt");
 const pommes = document.querySelectorAll(".pomme");
+
 // tri seed
 seedopt.addEventListener("click", function (e) {
     console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
+
     for (pomme of pommes){
-        if(pomme.src === "http://localhost/exo/PHP/jolly_seed/public/image/pomme-bleue.png"){
+        if(pomme.classList.contains("pomme_seed")){
             let pommeId= pomme.id;
             boxId = "#don_" + pommeId.split("_")[1];
             let box = document.querySelector(boxId);
@@ -80,7 +82,7 @@ floweropt.addEventListener("click", function (e) {
         box.style.display="none";
     }  
     for (pomme of pommes){
-        if(pomme.src === "http://localhost/exo/PHP/jolly_seed/public/image/pomme-mauve.png"){
+        if(pomme.classList.contains("pomme_flower")){
             let pommeId= pomme.id;
             boxId = "#don_" + pommeId.split("_")[1];
             let box = document.querySelector(boxId);
@@ -97,7 +99,7 @@ groundopt.addEventListener("click", function (e) {
         box.style.display="none";
     }  
     for (pomme of pommes){
-        if(pomme.src === "http://localhost/exo/PHP/jolly_seed/public/image/pomme-bordeaux.png"){
+        if(pomme.classList.contains("pomme_ground")){
             let pommeId= pomme.id;
             boxId = "#don_" + pommeId.split("_")[1];
             let box = document.querySelector(boxId);
@@ -114,7 +116,7 @@ plantopt.addEventListener("click", function (e) {
         box.style.display="none";
     }  
     for (pomme of pommes){
-        if(pomme.src === "http://localhost/exo/PHP/jolly_seed/public/image/pomme-jaune.png"){
+        if(pomme.classList.contains("pomme_plant")){
             let pommeId= pomme.id;
             boxId = "#don_" + pommeId.split("_")[1];
             let box = document.querySelector(boxId);
@@ -239,5 +241,42 @@ for (let coeur of coeurs){
     });
 }
 */
+//fonct sui permet de récuper coordonnées en fonction de l'adresse
+function ajaxGet(url){
+    return new Promise(function(resolve, reject){
+        let xmlhttp = new XMLHttpRequest()
+        xmlhttp.onreadyState = function(){
+            if(xmlhttp.readyState===4){
+                if(xmlhttp.status===200){
+                    resolve(xmlhttp.response)
+                } else {
+                    reject(xmlhttp)
+                }
+            }
+        }
+        xmlhttp.onerror = function(error){
+            reject(error)
+        }
+        xmlhttp.open('get', url, true)
+        xmlhttp.send()
+    })
+}
+//PQ est ce que mon console.log ne fonctionne pas??ainsi que le reste...
+ajaxGet("https://nominatim.openstreetmap.org/search?q=3+rue+du+patch,+rixensart&format=json&addressdetails1&limit=1").then(reponse => {
+    console.log(reponse)
+    //conversion en Javascript:
+    let data = JSON.parse(reponse)
+    coord = [data[0].lat, data[0].lon]
+    alert(coord)
+    const marker2 = L.marker(coord)
+    marker2.addTo(carte)
+})
 
+
+//récuperer lnotre v-base de nonnées... NON-FONCTIONNEL
+/*
+ajaxGet("http://localhost/phpmyadmin/sql.php?server=1&db=jolly_seed&table=users&pos=0").then(data => {
+    console.log(data);
+})
+*/
 

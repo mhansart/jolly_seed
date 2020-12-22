@@ -1,414 +1,415 @@
-
-.centrePageDons {
-  button {
-    padding: 7px 15px;
-    border: none;
-    border-radius: 20px;
-    display: block;
-    color: $primary-color;
-    font-size:100%;
-    font-family: $main-font;
+.pageDons{
+  width:80%;
+  margin:0 auto;
+  @media screen and (max-width: 600px) {
+    width: 100%;
   }
-  h2{
-    color: $secondary-color;
-  }
-  h3{
-    color: $secondary-color;
-  }
-  .column{
-    flex-direction: column;
-  }
-  .enteteDons {
-    padding: 0% 5%;
-    margin-top: 20px;
-  }
-  a {
-    color: $clic-color;
-    @media screen and (max-width: 600px) {
-      width: 40%;
-    }
-  }
-  .row {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    @media screen and (max-width: 600px) {
-      flex-wrap: wrap;
-    }
-  }
-  .btnCarte{
-    color: $clic-color;
-    background-color: transparent;
+  button{
     cursor: pointer;
-    &:hover{
-      text-decoration: underline;
-    }
   }
-  .btnDons {
-    background-color: $clic-color;
-    margin: auto;
-    @media screen and (max-width: 600px) {
-      order: 3;
-      margin-top: 15px;
+  .centrePageDons {
+    button {
+      padding: 7px 15px;
+      border: none;
+      border-radius: 20px;
+      display: block;
+      color: $primary-color;
+      font-size:100%;
+      font-family: $main-font;
+    }
+    h2{
+      color: $secondary-color;
+    }
+    h3{
+      color: $secondary-color;
+    }
+    .column{
+      flex-direction: column;
+    }
+    .enteteDons {
+      margin-top: 20px;
     }
     a {
-      color: $primary-color;
-    }
-  }
-  .tri {
-    position: relative;
-    @media screen and (max-width: 600px) {
-      order: 2;
-      width: 40%;
-      text-align: right;
-    }
-    .select {
-      color: $secondary-color;
-      display: inline;
-    }
-    .chevron {
       color: $clic-color;
+      @media screen and (max-width: 600px) {
+        width: 40%;
+      }
     }
-    .choixTri{
-      display: inline-block;
-      width:75px;
+    .row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 600px) {
+        flex-wrap: wrap;
+      }
     }
-    .options {
-      color: $secondary-color;
-      position: absolute;
-      right: 0px;
-      top: 30px;
-      background-color: $primary-color;
-      padding: 10px 0px;
-      border: 1px solid $secondary-color;
-      display: none;
-      .opt {
+    .btnCarte{
+      color: $clic-color;
+      background-color: transparent;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .btnDons {
+      background-color: $clic-color;
+      margin: auto;
+      @media screen and (max-width: 600px) {
+        order: 3;
+        margin-top: 15px;
+      }
+      a {
+        color: $primary-color;
+      }
+    }
+    .tri {
+      position: relative;
+      @media screen and (max-width: 600px) {
+        order: 2;
+        width: 40%;
+        text-align: right;
+      }
+      .select {
         color: $secondary-color;
-        text-align: left;
-        padding-left: 10px;
-        padding-right:10px;
-        &:hover {
+        display: inline;
+        font-size: 100%;
+      }
+      .chevron {
+        color: $clic-color;
+       
+      }
+      .choixTri{
+        display: inline-block;
+        width:75px;
+      }
+      .options {
+        color: $secondary-color;
+        position: absolute;
+        right: 0px;
+        top: 30px;
+        background-color: $primary-color;
+        padding: 10px 0px;
+        border: 1px solid $secondary-color;
+        display: none;
+        .opt {
+          color: $secondary-color;
+          text-align: left;
+          padding-left: 10px;
+          padding-right:10px;
+          &:hover {
+            background-color: $clic-color;
+            color: $primary-color;
+          }
+        }
+        .sous-options{
+          text-align: right;
+          display: none;
+          .ssopt{
+            margin: 0px;
+            padding-right: 10px;
+            padding-left:30px;
+            white-space: nowrap;
+            
+            &:hover {
+              background-color: $clic-color;
+              color: $primary-color;
+
+            }
+          }
+        }
+        
+
+        a:hover {
           background-color: $clic-color;
           color: $primary-color;
         }
       }
-      .sous-options{
-        text-align: right;
-        display: none;
-        .ssopt{
-          margin: 0px;
-          padding-right: 10px;
-          padding-left:30px;
-          white-space: nowrap;
-          
-          &:hover {
-            background-color: $clic-color;
-            color: $primary-color;
+    }
 
-          }
-        }
-      }
-      
-
-      a:hover {
-        background-color: $clic-color;
-        color: $primary-color;
+    .annonceDons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 15px;
+      @media screen and (max-width: 1200px) {
+        flex-direction: column;
       }
     }
-  }
-
-  .annonceDons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 15px;
-    @media screen and (max-width: 1200px) {
-      flex-direction: column;
-    }
-  }
-  .box {
-    box-shadow: $shadow-low;
-    width: 46%;
-    margin: 1%;
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-    @media screen and (max-width: 1200px) {
-      width: 70%;
-      margin: 1% auto;
-    }
-    @media screen and (max-width: 1035px) {
-      width: 80%;
-      margin: 1% auto;
-    }
-    @media screen and (max-width: 860px) {
-      width: 90%;
-      margin: 1% auto;
-    }
-    @media screen and (max-width: 680px) {
-      flex-direction: column;
-      width: 70%;
-      margin: 1% auto;
-    }
-    @media screen and (max-width: 550px) {
-      flex-direction: column;
-      width: 80%;
-      margin: 1% auto;
-    }
-    @media screen and (max-width: 420px) {
-      flex-direction: column;
-      width: 90%;
-      margin: auto;
-    }
-    a {
-      color: $primary-color;
-    }
-
-    .imageDon {
-      display: block;
-      background-color: white;
-      width: 200px;
-      padding: 100px;
-      background-size: cover;
-      background-position: center center;
+    .box {
+      box-shadow: $shadow-low;
+      width: 48%;
+      margin: 1%;
+      padding: 15px;
+      display: flex;
+      flex-direction: row;
+      @media screen and (max-width: 1200px) {
+        width: 70%;
+        margin: 1% auto;
+      }
+      @media screen and (max-width: 1035px) {
+        width: 80%;
+        margin: 1% auto;
+      }
+      @media screen and (max-width: 860px) {
+        width: 90%;
+        margin: 1% auto;
+      }
       @media screen and (max-width: 680px) {
+        flex-direction: column;
+        width: 70%;
+        margin: 1% auto;
+      }
+      @media screen and (max-width: 550px) {
+        flex-direction: column;
+        width: 80%;
+        margin: 1% auto;
+      }
+      @media screen and (max-width: 420px) {
+        flex-direction: column;
+        width: 90%;
         margin: auto;
       }
-    }
-    
-    .dons {
-      padding: 0px 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      
-      @media screen and (max-width: 680px) {
-        margin-top: 15px;
+      a {
+        color: $primary-color;
       }
-      .titreDon{
+      .imageDon {
+        display: block;
+        background-color: white;
+        width: 200px;
+        padding: 100px;
+        background-size: cover;
+        background-position: center center;
         @media screen and (max-width: 680px) {
           margin: auto;
         }
       }
-      .pomme {
-        height: 30px;
-      }
-      h3 {
-        margin: 0px;
-        display: inline;
-    
-      }
-      .fa-heart {
-        color: $secondary-color;
-        font-size: 20px;
-        margin-top: 10px;
-      }
-      .fa-heart:hover{
-        color: $clic-color;
-        cursor: pointer;
-      }
-      button {
-        margin-top: 15px;
-      }
-      .btnContact{
-          padding: 7px 15px;
-          border: none;
-          border-radius: 20px;
-          display: block;
-          color: $primary-color;
-          //font-weight: bold;
-          font-size: 100%;
-          font-family: $main-font;
-          &:hover{
-            cursor: pointer;
+      
+      .dons {
+        padding: 0px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        @media screen and (max-width: 680px) {
+          margin-top: 15px;
+        }
+        .titreDon{
+          @media screen and (max-width: 680px) {
+            margin: auto;
           }
-      }
-      .seed {
-        background-color: $color-seed;
-      }
-      .flower {
-        background-color: $color-flower;
-      }
-      .time {
-        background-color: $color-time;
-      }
-      .ground {
-        background-color: $color-ground;
-      }
-      .plant {
-        background-color: $color-plant;
-      }
-    }
-  }
-  .coeur{
-    background-color: transparent;
-  }
-}
-// CREATION D'ANNONCE
-.posterAnnonce{
-  box-shadow: $shadow-low;
-  margin: 1% auto;
-  padding: 15px;
-  width: 60%;
-  text-align: center;
-  position: relative;
-  @media screen and (max-width: 600px) {
-    width: 75%;
-  }
-  @media screen and (max-width: 420px) {
-    width: 90%;
-  }
-  .sortir{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 0px;
-    background-color: white;
-    margin: 5px;
-    &:hover{
-      cursor: pointer; 
-      }
-    i{
-      font-size: 150%;
-      color: $clic-color;
-      font-weight: 100;
-      &:hover{
-      color: $third-color;
+        }
+        .pomme {
+          height: 30px;
+        }
+        h3 {
+          margin: 0px;
+          display: inline;
+      
+        }
+        .fa-heart {
+          color: $secondary-color;
+          font-size: 20px;
+          margin-top: 10px;
+        }
+        .fa-heart:hover{
+          color: $clic-color;
+        }
+        button {
+          margin-top: 15px;
+        }
+        .btnContact{
+            padding: 7px 15px;
+            border: none;
+            border-radius: 20px;
+            display: block;
+            color: $primary-color;
+            //font-weight: bold;
+            font-size: 100%;
+            font-family: $main-font;
+            &:hover{
+              cursor: pointer;
+            }
+        }
+        .seed {
+          background-color: $color-seed;
+        }
+        .flower {
+          background-color: $color-flower;
+        }
+        .time {
+          background-color: $color-time;
+        }
+        .ground {
+          background-color: $color-ground;
+        }
+        .plant {
+          background-color: $color-plant;
+        }
       }
     }
+    .coeur{
+      background-color: transparent;
+    }
   }
-  .left{
-    text-align: left; 
-    margin: auto;
-    display: inline-block;
-  }
-  .radio{
-    text-align: left; 
-   padding-left: 25px;
-   width: 350px;
-   margin: auto;
-  }
-  .DonOptionRadio{
-    width: 250px;
-  }
-  .donTitre{
-    display: block;
-    margin: auto;
-  }
-  
-  .time{
-    text-align: left; 
-    width: 200px;
-    margin: auto;
-  }
-  .timeSlot{
-    text-align: left; 
+  // CREATION D'ANNONCE
+  .posterAnnonce{
+    box-shadow: $shadow-low;
+    margin: 1% auto;
+    padding: 15px;
+    width: 60%;
+    text-align: center;
+    position: relative;
+    @media screen and (max-width: 600px) {
+      width: 75%;
+    }
+    @media screen and (max-width: 420px) {
+      width: 90%;
+    }
+    .sortir{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      border-radius: 0px;
+      background-color: white;
+      margin: 5px;
+      i{
+        font-size: 150%;
+        color: $clic-color;
+        font-weight: 100;
+        &:hover{
+        color: $third-color;
+        }
+      }
+    }
+    .left{
+      text-align: left; 
+      margin: auto;
+      display: inline-block;
+    }
+    .radio{
+      text-align: left; 
     padding-left: 25px;
-  }
-  button{
-    background-color: $clic-color;
-    margin: 25px auto;
-  }
-  
-  .sectionCategorie{
-   margin: auto;
-  }
-  
-  .annonceImage{
-    align-items: center;
-    margin:auto;
-  }
-  .conteneurImageAnnonce{
-    display: flex;
-    flex-wrap: wrap;
-   justify-content: center;
-    width: 100%;
-    align-items: center;
-  }
-  .imageAnnonce {
-    display: block;
+    width: 350px;
+    margin: auto;
+    }
+    .DonOptionRadio{
+      width: 250px;
+    }
+    .donTitre{
+      display: block;
+      margin: auto;
+    }
+    
+    .time{
+      text-align: left; 
+      width: 200px;
+      margin: auto;
+    }
+    .timeSlot{
+      text-align: left; 
+      padding-left: 25px;
+    }
+    button{
+      background-color: $clic-color;
+      color: $primary-color;
+      margin: 25px auto;
+    }
+    
+    .sectionCategorie{
+    margin: auto;
+    }
+    
+    .annonceImage{
+      align-items: center;
+      margin:auto;
+    }
+    .conteneurImageAnnonce{
+      display: flex;
+      flex-wrap: wrap;
+    justify-content: center;
+      width: 100%;
+      align-items: center;
+    }
+    .imageAnnonce {
+      display: block;
+      width: 250px;
+      padding-top: 250px;
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+      margin-bottom: 15px;
+    }
+    .imageAnnonceFixe {
+      display: block;
+      background-image: url('../image/avatar.png');
+      border: 3px solid $secondary-color;
     width: 250px;
     padding-top: 250px;
-    position: relative;
-    background-size: cover;
-    background-position: center center;
-    margin-bottom: 15px;
-  }
-  .imageAnnonceFixe {
-    display: block;
-    background-image: url('../image/avatar.png');
-    border: 3px solid $secondary-color;
-   width: 250px;
-   padding-top: 250px;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    top:0;
-    left:0;
- 
-  }
-
-  .imageAlternative{
-  padding: 0px 15px;
-   display: block;
-   min-width: 250px;
-   max-width: 500px;
-   text-align: left;
-  }
- 
-  .inputAccord{
-    display: inline;
-  }
+      background-size: cover;
+      background-position: center center;
+      position: absolute;
+      top:0;
+      left:0;
   
-  button {
-    padding: 7px 15px;
-    border: none;
-    border-radius: 20px;
-    display: block;
-    a {
-      color: $primary-color;
-      text-decoration-line: none;
-      font-size: 130%;
-      font-family: $main-font;
     }
-  }
-  h2{
-    color: $secondary-color;
-  }
-  h3{
-    color: $secondary-color;
-  }
-  .column{
-    flex-direction: column;
-  }
-}
-//section CARTE
-.carteTri{
-  .retour{
-    position: absolute;
-    top:150px;
-    right:0px;
-    border: none;
-    background-color: white;
-    margin: 15px;
-    text-align: right;
-    &:hover{
-      cursor: pointer; 
-      }
-    i{
-      font-size: 150%;
-      color: $clic-color;
-      font-weight: 100;
-      &:hover{
-      color: $third-color;
-      }
-    }
-  }
-  #mapid {
-    transform: translateY(40px);
-    height: 600px;
-  }
-}
 
+    .imageAlternative{
+    padding: 0px 15px;
+    display: block;
+    min-width: 250px;
+    max-width: 500px;
+    text-align: left;
+    }
+  
+    .inputAccord{
+      display: inline;
+    }
+    
+    button {
+      padding: 7px 15px;
+      border: none;
+      border-radius: 20px;
+      display: block;
+      a {
+        color: $primary-color;
+        text-decoration-line: none;
+        font-size: 130%;
+        font-family: $main-font;
+      }
+    }
+    h2{
+      color: $secondary-color;
+    }
+    h3{
+      color: $secondary-color;
+    }
+    .column{
+      flex-direction: column;
+    }
+  }
+  //section CARTE
+  .carteTri{
+    .retour{
+      position: absolute;
+      top:150px;
+      right:0px;
+      border: none;
+      background-color: white;
+      margin: 15px;
+      text-align: right;
+      i{
+        font-size: 150%;
+        color: $clic-color;
+        font-weight: 100;
+        &:hover{
+        color: $third-color;
+        }
+      }
+    }
+    #mapid {
+      transform: translateY(40px);
+      height: 600px;
+    }
+  }
+}
 

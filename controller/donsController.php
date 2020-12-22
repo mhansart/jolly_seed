@@ -5,6 +5,7 @@
 $f = new Annonce();
 $tabLike = $f->readLikeByUserId($_SESSION['user_id']);
 
+// récupérer les annoncess et afficher
 $d = new Annonce();
 $tabDons = $d->readByCategoryType("time");
 // var_dump($tabDons);
@@ -34,11 +35,11 @@ foreach ($tabDons as $value) {
   };
   // création de l'annonce
   $dons .= "<section id='don_".$value["ads_id"]."' class='box'>
-              <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
+              <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
                 <div class='titreDon'>
-                  <img id='img_".$value["ads_id"]."' class='pomme' src='./public/image/" . $imageDon . "' />
+                  <img id='img_".$value["ads_id"]."' class='pomme pomme_" . $value["ads_category"] . "' src='./public/image/" . $imageDon . "' />
                   <h3>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
                 <div class='d-flex row'>

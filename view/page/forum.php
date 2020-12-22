@@ -24,6 +24,7 @@
         </div>
     </div>
     <div class="all-forum">
+        <h2 class="no-result-forum">Malheureusement, votre recherche n'a donné aucun résultat</h2>
         <?= $forum; ?>
     </div>
 </div>

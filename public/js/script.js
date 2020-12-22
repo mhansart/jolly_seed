@@ -66,3 +66,11 @@ if(menuNav){
         }
     })
 }
+
+document.getElementById("search-bar-general")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.key === "Enter") {
+        document.getElementById("search-bar-general-button").click();
+    }
+});

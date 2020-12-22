@@ -480,7 +480,7 @@
 
 .forum-container,
 .voir-plus-forum-container {
-  margin: auto;
+  margin: 0px auto;
   padding: 0 20px;
 }
 @media screen and (max-width: 600px) {
@@ -500,7 +500,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  width: 150px;
+  width: 200px;
   font-weight: 700;
 }
 .retour-forum i {
@@ -533,6 +533,10 @@ p {
   .bloc-info-forum:last-child {
     padding-left: 0px;
   }
+}
+
+.no-result-forum {
+  display: none;
 }
 
 .new-forum-container {
@@ -1698,8 +1702,204 @@ p {
 }
 
 .search-container {
-  margin: auto;
+  margin: 0 auto;
   padding: 0 15px;
+}
+.search-container .tri-search {
+  min-width: 270px;
+  margin-right: 15px;
+}
+.search-container .tri-search h3 {
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+}
+.search-container .tri-search > div {
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+}
+.search-container .tri-search > div:hover p {
+  background-color: #ff8617;
+  color: white;
+}
+.search-container .tri-search > div p {
+  background-color: #e0e0e0;
+  margin: 0;
+  cursor: pointer;
+  padding: 15px;
+  height: 100%;
+}
+.search-container .tri-search > div:last-child {
+  border: none;
+}
+.search-container .tri-search > div:last-child p {
+  border: 1px solid #e0e0e0;
+}
+.search-container .tri-search ul {
+  list-style-type: none;
+  padding: 0px;
+  display: none;
+  margin: 0;
+}
+.search-container .tri-search ul.d-block {
+  display: block;
+}
+.search-container .tri-search ul li {
+  cursor: pointer;
+  padding: 4px 15px;
+}
+.search-container .tri-search ul li:hover {
+  background-color: #ff8617;
+  color: white;
+}
+.search-container .result-search {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.search-container .result-search h2 {
+  margin-top: 0;
+  color: #6e9611;
+  margin-left: 1%;
+}
+.search-container .result-search .box {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  width: 100%;
+  margin: 1%;
+  padding: 15px;
+  display: flex;
+}
+.search-container .result-search .box a {
+  color: white;
+}
+.search-container .result-search .box .imageDon {
+  display: block;
+  background-color: white;
+  width: 200px;
+  padding: 100px;
+  background-size: cover;
+  background-position: center center;
+}
+@media screen and (max-width: 680px) {
+  .search-container .result-search .box .imageDon {
+    margin: auto;
+  }
+}
+.search-container .result-search .box .dons {
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 680px) {
+  .search-container .result-search .box .dons {
+    margin-top: 15px;
+  }
+}
+.search-container .result-search .box .dons .titreDon {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 680px) {
+  .search-container .result-search .box .dons .titreDon {
+    margin: auto;
+  }
+}
+.search-container .result-search .box .dons .pomme {
+  height: 30px;
+}
+.search-container .result-search .box .dons h3 {
+  margin: 0px;
+  margin-left: 5px;
+  display: inline;
+}
+.search-container .result-search .box .dons .fa-heart {
+  color: #6e9611;
+  font-size: 20px;
+}
+.search-container .result-search .box .dons .fa-heart:hover {
+  color: #ff8617;
+  cursor: pointer;
+}
+.search-container .result-search .box .dons .btnContact {
+  padding: 7px 15px;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  color: white;
+  font-size: 100%;
+  font-family: "Louis George Cafe'";
+}
+.search-container .result-search .box .dons .btnContact:hover {
+  cursor: pointer;
+}
+.search-container .result-search .box .dons .seed {
+  background-color: #34348b;
+}
+.search-container .result-search .box .dons .flower {
+  background-color: #611760;
+}
+.search-container .result-search .box .dons .time {
+  background-color: #dc0411;
+}
+.search-container .result-search .box .dons .ground {
+  background-color: #780000;
+}
+.search-container .result-search .box .dons .plant {
+  background-color: #fcd12d;
+}
+.search-container .result-search .btn-ads-search {
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.search-container .result-search .coeur {
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
+}
+.search-container .result-search .coeur i {
+  margin: 0;
+}
+.search-container .result-search .one-forum-view {
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.search-container .result-search .one-forum-view h2 {
+  margin-top: 0;
+}
+.search-container .result-search .one-forum-view form {
+  justify-content: flex-end;
+}
+.search-container .result-search .one-forum-view form .voir-forum {
+  padding: 0;
+  margin: 7px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  color: #ff8617;
+  font-family: "Louis George Cafe'";
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+.search-container .result-search .one-forum-view form .voir-forum::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  top: 20px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.search-container .result-search .one-forum-view form .voir-forum:hover::before {
+  width: 100%;
+}
+.search-container .result-search .one-forum-view form .voir-forum:focus {
+  outline: none;
 }
 
 h3 {
@@ -2277,6 +2477,11 @@ footer p {
 
 .reduce-mon-compte {
   margin-top: -75px;
+}
+
+button:focus,
+input:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */

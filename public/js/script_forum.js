@@ -76,6 +76,7 @@ const searchContainer = document.querySelector(".all-forum");
 const allForum = document.querySelectorAll(".one-forum-view");
 const tags = document.querySelectorAll(".forum-tag");
 const forumRetour = document.querySelector('.retour-forum');
+const noResult = document.querySelector('.no-result-forum');
 const tagsArr = [];
 
 tags.forEach((tag) => {
@@ -101,7 +102,11 @@ const searchWord = (str) => {
   uniqueArray = resultArr.filter(function (item, pos) {
     return resultArr.indexOf(item) == pos;
   });
-  render(uniqueArray);
+  if (uniqueArray.length ===0){
+    noResult.style.display="block";
+  }else{
+    render(uniqueArray);
+  }
 };
 
 iptSearch.addEventListener("input", (e) => {

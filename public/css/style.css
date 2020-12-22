@@ -92,11 +92,8 @@
   border: none;
   border-radius: 20px;
   display: block;
-}
-.centrePageDons button a {
   color: white;
-  text-decoration-line: none;
-  font-size: 130%;
+  font-size: 100%;
   font-family: "Louis George Cafe'";
 }
 .centrePageDons h2 {
@@ -129,6 +126,14 @@
   .centrePageDons .row {
     flex-wrap: wrap;
   }
+}
+.centrePageDons .btnCarte {
+  color: #ff8617;
+  background-color: transparent;
+  cursor: pointer;
+}
+.centrePageDons .btnCarte:hover {
+  text-decoration: underline;
 }
 .centrePageDons .btnDons {
   background-color: #ff8617;
@@ -476,6 +481,31 @@
 }
 .posterAnnonce .column {
   flex-direction: column;
+}
+
+.carteTri .retour {
+  position: absolute;
+  top: 150px;
+  right: 0px;
+  border: none;
+  background-color: white;
+  margin: 15px;
+  text-align: right;
+}
+.carteTri .retour:hover {
+  cursor: pointer;
+}
+.carteTri .retour i {
+  font-size: 150%;
+  color: #ff8617;
+  font-weight: 100;
+}
+.carteTri .retour i:hover {
+  color: #23512a;
+}
+.carteTri #mapid {
+  transform: translateY(40px);
+  height: 600px;
 }
 
 .forum-container,

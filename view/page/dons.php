@@ -4,8 +4,8 @@
       <button class=btnCarte>Voir sur la carte</button>
       <button class="btnDons">Poster une annonce</button>
       <div class="tri">
-        <p class="select">Trier par: <span class="choixTri">Date </span></p>
-        <span class="chevron"><i class="fas fa-chevron-down"></i></span>
+        <p class="select">Trier par: <span class="choixTri">Date </span>
+        <span class="chevron"><i class="fas fa-chevron-down"></i></span></p>
         <div class="options">
           <div id="date" class="opt">Date</div>
           <div id="categorie" class="opt">Catégorie</div>

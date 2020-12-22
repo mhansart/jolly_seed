@@ -13,7 +13,7 @@ $dons = "";
 foreach ($tabJardiniers as $value) {
   // création de l'annonce
   $dons .= "<section id='don_".$value["ads_id"]."' class='box'>
-              <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
+              <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
                 <div>

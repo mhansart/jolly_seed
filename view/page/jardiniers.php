@@ -10,7 +10,7 @@
           <div id="date" class="opt">Date</div>
           <div id="categorie" class="opt">Catégorie</div>
           <div class="sous-options">
-            <p class="ssopt tmpsDoOpt">Temps donné</p>
+            <p class="ssopt tmpsDoOpt">Temps demandé</p>
             <p class="ssopt tmpsOffOpt">Temps offert</p>
           </div>
           <div id="proximite" class="opt">Proximité</div>

@@ -155,8 +155,6 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
   header("Location:?section=dons");
 }
 
-
-
 //LIEN vers CONTACT
 if (isset($_POST["contact"])) {
   header("Location:?section=chat");

@@ -7,6 +7,7 @@
   width: 100%;
   background-color: $secondary-color;
   transition: all 0.3s;
+  z-index: 1;
   nav {
     justify-content: flex-end;
     height: 100%;
@@ -33,7 +34,10 @@
         padding: 0 15px;
         transition: all 0.3s;
         @media screen and (max-width: 600px) {
-          padding: 0 10px;
+          padding: 0 7px;
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
         }
         &::after {
           content: "";
@@ -44,7 +48,6 @@
           top: 0;
           left: 0;
           z-index: -1;
-          transition: all 0.3s;
         }
         &.active {
           &::after {
@@ -91,6 +94,7 @@
   width: 300px;
   height: 0px;
   right: 0;
+  top: 30px;
   transition: height 0.3s;
   box-shadow: $shadow-low;
   .padding-search-bar {

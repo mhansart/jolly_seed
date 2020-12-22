@@ -1,6 +1,7 @@
-<section class="container-inscription w-80">
-    <h2>Inscription</h2>
-    <fieldset>
+<section class="container-connexion w-80">
+    <div class="picture-connexion w-30"></div>
+    <div class="content-connexion w-70">
+        <h3>Inscription</h3>
         <form method="post">
             <div class="prenom">
                 <label for="prenom">Prénom:</label>
@@ -52,14 +53,15 @@
                 <input type="text" placeholder="Téléphone fixe ou mobile" name="telephone" class="input" id="telephone" required>
             </div>
 
-            <div>
-                <input type="checkbox" id="checkbox" name="checkbox" checked>
+            <div class="ipt-checkbox">
+                <input type="checkbox" id="checkbox" name="checkbox" require>
                 <label for="checkbox">J'accepte les conditions générales</label>
             </div>
-            <p><?= $msgInscription ?></p>
+            <span class="bold" style="color:red"><?= $msgInscription; ?></span>
 
-            <div><button type="submit" id="bouton">S'inscrire</button></div><br>
-            <div><button type="reset">Effacer</button></div>
+            <div class="btns-connexion"><button type="submit" id="bouton">S'inscrire</button><button type="reset" class="effacer-connexion">Effacer</button></div>
+
         </form>
-    </fieldset>
+        <p class="fin-connexion"><span>Déja inscrit? </span><a href="?section=connexion"><span class="bold"> Connectez-vous</a></p>
+    </div>
 </section>

@@ -1039,8 +1039,11 @@ p {
 
 .chat-container {
   padding: 0 15px;
-  margin: auto;
+  margin: 0 auto;
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 @media screen and (max-width: 600px) {
   .chat-container {
@@ -1050,12 +1053,16 @@ p {
 }
 .chat-container > div {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .chat-container .infos-interlocuteur {
   align-items: center;
   background-color: #e0e0e0;
   margin-bottom: 15px;
   padding: 15px;
+  height: auto;
 }
 .chat-container .infos-interlocuteur .img-interlocuteur {
   width: 35px;
@@ -1064,6 +1071,12 @@ p {
   background-size: cover;
   background-position: center;
   margin-right: 15px;
+}
+.chat-container .msgs-chat {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 .chat-container .sender-user {
   width: 100%;
@@ -1107,9 +1120,11 @@ p {
   padding: 15px;
 }
 .chat-container .chat-send {
-  padding: 0 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
+  background-color: #e0e0e0;
 }
 .chat-container .chat-send .btn-send-chat {
+  background-color: white;
   padding: 7px 20px;
   border-radius: 20px;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
@@ -1132,6 +1147,32 @@ p {
 .chat-container .chat-send .btn-send-chat button:focus {
   outline: none;
 }
+.chat-container .no-chat {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.chat-container .no-chat p {
+  text-align: center;
+}
+.chat-container .no-chat .picture-user-chat {
+  height: 150px;
+  width: 150px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 300px;
+}
+
+.mg-auto {
+  margin: auto;
+}
+
+.bold {
+  font-weight: 700;
+}
 
 .menu-mon-compte {
   position: fixed;
@@ -1140,6 +1181,7 @@ p {
   width: 100%;
   background-color: #6e9611;
   transition: all 0.3s;
+  z-index: 1;
 }
 .menu-mon-compte nav {
   justify-content: flex-end;
@@ -1175,7 +1217,10 @@ p {
 }
 @media screen and (max-width: 600px) {
   .menu-mon-compte nav ul li {
-    padding: 0 10px;
+    padding: 0 7px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
   }
 }
 .menu-mon-compte nav ul li::after {
@@ -1187,7 +1232,6 @@ p {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.3s;
 }
 .menu-mon-compte nav ul li.active::after {
   background-color: #23512a;
@@ -1228,6 +1272,7 @@ p {
   width: 300px;
   height: 0px;
   right: 0;
+  top: 30px;
   transition: height 0.3s;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
 }
@@ -1304,22 +1349,361 @@ p {
   background-size: cover;
 }
 
-.contact-container label {
-  display: block;
-  width: 150px;
-  float: left;
+.contact-container {
+  margin: auto;
+  margin-top: -60px;
+  padding: 0 15px;
+}
+@media screen and (max-width: 600px) {
+  .contact-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-container form input,
+.contact-container form textarea {
+  border: none;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 7px 15px;
+}
+.contact-container form input:focus,
+.contact-container form textarea:focus {
+  outline: none;
+}
+.contact-container form label {
+  padding: 7px 0px;
+}
+.contact-container form button {
+  display: inline-flex;
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ff8617;
+  color: white;
+  cursor: pointer;
+}
+.contact-container form button:focus {
+  outline: none;
+}
+.contact-container h3 {
+  margin-top: 0;
+}
+.contact-container .form-contact {
+  padding-left: 15px;
+}
+@media screen and (max-width: 850px) {
+  .contact-container .form-contact {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact-container .form-contact {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+.contact-container .form-contact span {
+  padding: 7px 0;
+}
+.contact-container .image-deco-contact {
+  background-image: url(../image/plantation.jpg);
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (max-width: 850px) {
+  .contact-container .image-deco-contact {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact-container .image-deco-contact {
+    display: none;
+  }
 }
 
-.container-inscription .label {
-  display: block;
-  width: 150px;
-  float: left;
+.container-connexion {
+  margin: auto;
+  margin-top: -60px;
+  padding: 0 15px;
+  display: flex;
 }
-
+@media screen and (max-width: 1035px) {
+  .container-connexion {
+    margin-top: -110px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container-connexion {
+    margin-top: -60px;
+    width: 100%;
+  }
+}
 .container-connexion label {
-  display: block;
-  width: 150px;
-  float: left;
+  display: flex;
+  width: 30%;
+  padding: 7px 0;
+}
+.container-connexion input {
+  width: 70%;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 7px 7px;
+  margin-bottom: 15px;
+}
+.container-connexion input:focus {
+  outline: none;
+}
+.container-connexion form > div {
+  display: flex;
+}
+@media screen and (max-width: 850px) {
+  .container-connexion form > div {
+    flex-direction: column;
+  }
+  .container-connexion form > div label,
+.container-connexion form > div input {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+.container-connexion form button {
+  padding: 7px 15px;
+  border-radius: 20px;
+  background-color: #ff8617;
+  color: white;
+  font-family: "Louis George Cafe'";
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+.container-connexion form button:focus {
+  outline: none;
+}
+.container-connexion form .btns-connexion {
+  flex-direction: row;
+  padding-top: 15px;
+}
+@media screen and (max-width: 600px) {
+  .container-connexion form .btns-connexion {
+    justify-content: center;
+  }
+}
+.container-connexion form .btns-connexion .effacer-connexion {
+  background-color: transparent;
+  color: #ff8617;
+  font-size: 16px;
+}
+.container-connexion .picture-connexion {
+  background-image: url("../image/carrot.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.container-connexion .picture-connexion.connexion-page {
+  background-image: url("../image/framboise.jpg");
+  background-position: bottom;
+  min-height: 400px;
+}
+@media screen and (max-width: 600px) {
+  .container-connexion .picture-connexion {
+    display: none;
+  }
+}
+.container-connexion .content-connexion {
+  padding-left: 15px;
+}
+.container-connexion .content-connexion h3 {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+.container-connexion .content-connexion a {
+  text-decoration: none;
+  color: #ff8617;
+}
+@media screen and (max-width: 850px) {
+  .container-connexion .content-connexion label {
+    display: none;
+  }
+  .container-connexion .content-connexion input {
+    margin: 7px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container-connexion .content-connexion {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+.container-connexion .ipt-checkbox {
+  display: flex;
+}
+@media screen and (max-width: 850px) {
+  .container-connexion .ipt-checkbox {
+    flex-direction: row;
+    padding-top: 7px;
+  }
+  .container-connexion .ipt-checkbox input {
+    width: auto;
+  }
+}
+.container-connexion .ipt-checkbox input[type=checkbox] {
+  position: relative;
+  padding: 5px;
+  margin-right: 10px;
+  width: auto;
+  margin-bottom: 0;
+  margin-top: 9px;
+  cursor: pointer;
+}
+.container-connexion .ipt-checkbox input[type=checkbox]:not(:checked):after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 120%;
+  width: 120%;
+  background-color: white;
+  border: 1px solid #ff8617;
+  border-radius: 2px;
+}
+.container-connexion .ipt-checkbox input[type=checkbox]:checked:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 120%;
+  width: 120%;
+  background-color: #ff8617;
+  border: 1px solid #ff8617;
+  border-radius: 2px;
+}
+.container-connexion .ipt-checkbox label {
+  display: flex;
+  flex-grow: 1;
+}
+.container-connexion .nom-connexion,
+.container-connexion .motdepasse-connexion {
+  display: flex;
+  flex-direction: column;
+}
+.container-connexion .nom-connexion input,
+.container-connexion .motdepasse-connexion input {
+  width: 100%;
+}
+@media screen and (max-width: 850px) {
+  .container-connexion .nom-connexion input,
+.container-connexion .motdepasse-connexion input {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+.container-connexion .nom-connexion label,
+.container-connexion .motdepasse-connexion label {
+  width: 100%;
+}
+@media screen and (max-width: 850px) {
+  .container-connexion .nom-connexion label,
+.container-connexion .motdepasse-connexion label {
+    display: block;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container-connexion .fin-connexion {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-connexion .fin-connexion span {
+    text-align: center;
+  }
+  .container-connexion .fin-connexion a {
+    text-align: center;
+  }
+}
+
+.mesannonces-container {
+  margin: auto;
+  padding: 0 15px;
+}
+@media screen and (max-width: 600px) {
+  .mesannonces-container {
+    width: 100%;
+  }
+}
+.mesannonces-container .box {
+  margin: 0;
+  width: calc(50% - 7px);
+  margin-top: 15px;
+}
+.mesannonces-container .box:nth-child(2n) {
+  margin-left: 7px;
+}
+.mesannonces-container .box:nth-child(2n+1) {
+  margin-right: 7px;
+}
+.mesannonces-container .box .dons {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+@media screen and (max-width: 1220px) {
+  .mesannonces-container .box {
+    width: 100%;
+  }
+  .mesannonces-container .box:nth-child(2n) {
+    margin-left: 0px;
+  }
+  .mesannonces-container .box:nth-child(2n+1) {
+    margin-right: 0px;
+  }
+}
+.mesannonces-container .box .justif-end {
+  justify-content: flex-end;
+}
+.mesannonces-container .box .btnActive {
+  margin-top: 15px;
+}
+.mesannonces-container .box .btnActive:focus {
+  outline: none;
+}
+.mesannonces-container .box .btnContact:focus {
+  outline: none;
+}
+.mesannonces-container .coeur:focus {
+  outline: none;
+}
+.mesannonces-container .voir-plus-favoris {
+  width: 100%;
+  padding-top: 15px;
+  text-align: center;
+}
+.mesannonces-container .voir-plus-favoris button {
+  margin: auto;
+  cursor: pointer;
+  background-color: #ff8617;
+}
+.mesannonces-container .voir-plus-favoris button:focus {
+  outline: none;
+}
+.mesannonces-container .voir-plus-favoris p {
+  margin: 0;
+  margin-top: 10px;
+}
+.mesannonces-container .no-annonce {
+  width: 100%;
+  text-align: center;
+}
+
+.search-container {
+  margin: auto;
+  padding: 0 15px;
+}
+
+h3 {
+  color: #6e9611;
 }
 
 * {
@@ -1327,6 +1711,7 @@ p {
 }
 
 body {
+  min-height: 100%;
   margin: 0;
   font-family: "Louis George Cafe'";
   overflow-x: hidden;
@@ -1383,6 +1768,9 @@ header .subheader .subheader-container a {
 }
 header .subheader .subheader-container a.active .btn-moncompte {
   background-color: #23512a;
+}
+header .subheader .subheader-container a.active .mon-compte-icon {
+  color: #23512a;
 }
 header .subheader .subheader-container a .btn-moncompte {
   padding: 4px 15px 5px 15px;
@@ -1453,9 +1841,14 @@ header .header-container-deconnected {
   margin: auto;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
+  padding-left: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+@media screen and (max-width: 600px) {
+  header .header-container-deconnected {
+    width: 100%;
+  }
 }
 header .header-container-deconnected .header-se-connecter {
   border: none;
@@ -1466,6 +1859,7 @@ header .header-container-deconnected .header-se-connecter:focus {
 header .header-container-deconnected .header-se-connecter a {
   background-color: #ff8617;
   padding: 7px 15px;
+  border-radius: 20px;
   text-decoration: none;
   color: white;
   font-family: "Louis George Cafe'";
@@ -1781,6 +2175,9 @@ h1 {
 
 main {
   padding-top: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 @media screen and (max-width: 1035px) {
   main {

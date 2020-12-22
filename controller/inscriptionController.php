@@ -9,7 +9,7 @@ foreach ($tabUsers as $oneUser) {
 }
 // récupérer les personnes et afficher
 if (isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["rue"], $_POST["numero"], $_POST["codepostal"], $_POST["ville"], $_POST["mdp"], $_POST["telephone"])) {
-    if ($_POST['checkbox'] === "on") {
+    if (isset($_POST['checkbox'])) {
         $emailExist = in_array($_POST['email'], $emailsUsers);
         if ($emailExist) {
             $msgInscription = "Cet e-mail existe déjà.";
@@ -25,6 +25,8 @@ if (isset($_POST["nom"], $_POST["prenom"], $_POST["email"], $_POST["rue"], $_POS
             $_SESSION['user_city'] = $_POST["ville"];
             header("Location:?section=accueil");
         }
+    } else {
+        $msgInscription = "Vous devez accepter les conditions générales";
     }
 }
 

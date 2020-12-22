@@ -1,50 +1,24 @@
-<div class="contact-container w-80">
+<div class="contact-container w-80 d-flex">
+    <div class="image-deco-contact w-50">
+    </div>
+    <div class="w-50 form-contact">
+        <h3>Contact</h3>
+        <p> Si vous avez le moindre commentaire, la moindre question, ou la moindre proposition,
+            nous sommes là pour en prendre de la graine 😉 </p>
 
-    <h2>contact</h2>
+        <form method="post">
+            <label>Nom:</label>
+            <input type="text" name="nom" required>
+            <label>Prénom:</label>
+            <input type="text" name="prenom" required>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Message:</label>
+            <textarea rows="7" name="message" required></textarea>
+            <span style="color:<?= $colorEtat; ?>"><?= $etat; ?></span>
+            <div><button type="submit">Envoyer</button></div>
 
-    <p> Bienvenue sur la page Contact <br />
-        Si vous avez le moindre commentaire, la moindre question, ou la moindre proposition... <br/>
-        Nous sommes là pour en prendre de la graine 😉 <br/><br/>
-        Veuillez tout simplement remplir le Formulaire qui suit </p>
-
-    <section class="container-contact">
-
-        <fieldset>
-
-            <div class="nom">
-                <label for="nom">Nom</label>
-                <input type="text" placeholder="Entrer  votre Nom" name="nom" class="input" id="nom" required />
-            </div><br />
-            <form method="post">
-                <div class="email">
-                    <label for="email">E-mail</label>
-                    <input type="text" placeholder="Entrer votre E-mail" name="email" class="input" id="email" required />
-                </div><br />
-
-                <div class="sujet">
-                    <label for="sujet">Sujet du message</label>
-                    <input type="text" placeholder="Entrer  votre Sujet" name="sujet" class="input" id="sujet" required />
-                </div><br />
-                <div class="message">
-                    <label for="message">Message</label>
-                    <input type="text" placeholder="Entrer  votre Message" name="message" class="input" id="message" required />
-                </div><br />
-
-
-
-                <div>
-                    <input type="checkbox" id="checkbox" class="input" name="checkbox" checked />
-                    <label for="checkbox">En cochant cette case, j'accepte la politique de confidentialité de ce site.*</label>
-                </div><br />
-
-
-                <div>
-                    <button type="submit" id="bouton">Envoyer</button>
-                </div>
-
-
-            </form>
-        </fieldset>
-
-    </section>
-</div>    
+        </form>
+    </div>
+</div>
+<script src="public/js/script_footer.js"></script>

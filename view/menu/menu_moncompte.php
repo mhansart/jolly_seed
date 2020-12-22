@@ -33,10 +33,10 @@ if (isset($_POST["chat"])) {
                 <a href="?section=moncompte"><span>Mes infos</span><i class="fas fa-user li-icon"></i></a>
             </li>
             <li id="menu-mesannonces">
-                <a href="#">Mes annonces</a>
+                <a href="?section=mesAnnonces">Mes annonces</a>
             </li>
             <li id="menu-mesfavoris">
-                <a href="#">Mes favoris</a>
+                <a href="?section=mesFavoris">Mes favoris</a>
             </li>
             <li id="menu-messagerie">
                 <a id="menu-messagerie-a" href="#">Messagerie</a>

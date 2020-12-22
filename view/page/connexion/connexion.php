@@ -1,31 +1,21 @@
 <section class="container-connexion w-80">
-    <h2>Connexion</h2>
-    <fieldset>
+    <div class="picture-connexion connexion-page w-50"></div>
+    <div class="content-connexion w-50">
+        <h3>Connexion</h3>
         <form method="post">
-            <div class="nom">
+            <div class="nom-connexion">
                 <label for="email">E-mail</label>
-                <input type="text" placeholder="Entrer votre e-mail" name="email" class="input" id="email" required />
+                <input type="text" placeholder="Entrez votre e-mail" name="email" class="input" id="email" required />
             </div>
 
-
-            <div class="motdepasse">
+            <div class="motdepasse-connexion">
                 <label for="motdepasse">Mot de passe</label>
-                <input type="text" placeholder="Entrer le mot de passe" name="mdp" class="input" id="motdepasse" required />
+                <input type="password" placeholder="Entrez votre mot de passe" name="mdp" class="input" id="motdepasse" required />
             </div>
+            <span class="bold" style="color:red"><?= $errorConnexion; ?></span>
 
-
-            <div>
-                <input type="checkbox" id="checkbox" class="input" name="checkbox" checked />
-                <label for="checkbox">Se souvenir de moi</label>
-            </div>
-            <p><?= $errorConnexion; ?></p>
-
-            <div>
-                <button type="submit" id="bouton">Se connecter</button>
-            </div><br/>
-
-            <div><button type="reset">Effacer</button></div>
+            <div class="btns-connexion"><button type="submit" id="bouton">Se connecter</button><button type="reset" class="effacer-connexion">Effacer</button></div>
         </form>
-    </fieldset>
-    <a href id="forget-password">Mot de passe oublié ?</a>
+        <p class="fin-connexion"><span>Pas encore de compte? </span><a href="?section=inscription"><span class="bold"> Inscrivez-vous</a></p>
+    </div>
 </section>

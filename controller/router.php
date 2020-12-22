@@ -32,8 +32,17 @@ if (isset($_GET["section"])) {
         case 'moncompte':
             include("controller/moncompteController.php");
             break;
+        case 'mesAnnonces':
+            include("controller/mesAnnoncesController.php");
+            break;
+        case 'mesFavoris':
+            include("controller/mesFavorisController.php");
+            break;
         case 'chat':
             include("controller/chatController.php");
+            break;
+        case 'search':
+            include("controller/searchController.php");
             break;
         case 'deconnexion':
             require_once("controller/deconnexionController.php");

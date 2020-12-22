@@ -13,10 +13,9 @@ const menuActive = document.getElementById("subheader-mon-compte");
 const menuMonCompte = document.getElementById("moncompte-menu");
 const menuMessagerie = document.getElementById("menu-messagerie-a");
 const messagerieHidden = document.querySelector(".allMsg-menu");
-const header = document.querySelector('header');
 
-const heightHeader = getComputedStyle(header).height;
-
+const headerGet = document.querySelector('header');
+const heightHeaderGet = getComputedStyle(headerGet).height;
 
 
 menuActive.classList.add('active');
@@ -35,7 +34,7 @@ window.addEventListener('scroll', () => {
 });
 
 menuMessagerie.addEventListener('click', ()=>{
-    messagerieHidden.style.height = getComputedStyle(messagerieHidden).height === "0px"? `${h -parseInt(heightHeader,10)-70}px`:'0px';
+    messagerieHidden.style.height = getComputedStyle(messagerieHidden).height === "0px"? `${h -parseInt(heightHeaderGet,10)-70}px`:'0px';
 });
 
 

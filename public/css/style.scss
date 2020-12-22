@@ -9,13 +9,18 @@
 @import "menuMoncompte";
 @import "accueil";
 @import "contact";
-@import "inscription";
 @import "connexion";
+@import "mesannonces";
+@import "search";
 
+h3 {
+  color: $secondary-color;
+}
 * {
   box-sizing: border-box;
 }
 body {
+  min-height: 100%;
   margin: 0;
   font-family: $main-font;
   overflow-x: hidden;
@@ -64,6 +69,9 @@ header {
         &.active {
           .btn-moncompte {
             background-color: $third-color;
+          }
+          .mon-compte-icon {
+            color: $third-color;
           }
         }
         .btn-moncompte {
@@ -135,9 +143,12 @@ header {
     margin: auto;
     align-items: center;
     justify-content: space-between;
-    padding-left: 20px;
+    padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
     .header-se-connecter {
       border: none;
       &:focus {
@@ -146,6 +157,7 @@ header {
       a {
         background-color: $clic-color;
         padding: 7px 15px;
+        border-radius: 20px;
         text-decoration: none;
         color: $primary-color;
         font-family: $main-font;
@@ -436,6 +448,9 @@ h1 {
 }
 main {
   padding-top: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   @media screen and (max-width: 1035px) {
     padding-top: 210px;
   }

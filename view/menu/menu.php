@@ -4,7 +4,7 @@
 
     echo '<div class="subheader w-100">
             <div class="subheader-container d-flex w-80 h-100">
-              <div class="search-bar d-flex"><input class="w-90"/><i class="fas fa-search"></i></div><div class="d-flex"><p class="hello-name">Bienvenue <strong>' . $_SESSION['prenom'] . '</strong></p>
+              <div class="search-bar d-flex"><input class="w-90"/><a href="?section=search"><i class="fas fa-search"></i></a></div><div class="d-flex"><p class="hello-name">Bienvenue <strong>' . $_SESSION['prenom'] . '</strong></p>
               <a id="subheader-mon-compte" href="?section=moncompte"><span class="btn-moncompte">Mon compte</span><i class="mon-compte-icon fas fa-user"></i></a>
               <a href="?section=deconnexion"><i class="sign-out-icon fas fa-sign-out-alt"></i></a>
               </div>
@@ -52,7 +52,7 @@
         </div>
       </div>';
   } else {
-    echo '<div class="header-container-deconnected d-flex w-90 h-100">
+    echo '<div class="header-container-deconnected d-flex w-80 h-100">
             <div class="jolly-name h-100 d-flex">
             <div class="h-100 logo-container">
               <a class="d-flex h-100" href="#home"
@@ -63,10 +63,10 @@
           </div>
           <div class="d-flex">
             <div class="header-se-connecter">
-              <a href="?section=connexion"><span class="btn-connexion">Se&nbsp;connecter</span> <i class=" sign-in-icon fas fa-sign-in-alt"></i></a>
+              <a href="?section=connexion"><span class="btn-connexion">Connexion</span> <i class=" sign-in-icon fas fa-sign-in-alt"></i></a>
             </div>
             <div class="header-se-connecter header-se-connecter-inscription">
-              <a class="inscription" href="?section=inscription">S\'inscrire</a>
+              <a class="inscription" href="?section=inscription">Inscription</a>
             </div>
           </div>
         </div>';

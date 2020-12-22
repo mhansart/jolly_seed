@@ -2,7 +2,7 @@
   <section class="centrePageDons">
     <div class="d-flex row enteteDons">
       <a href="#">Voir sur la carte</a>
-      <button class="btnDons"><a href="#">Poster une annonce</a></button>
+      <button class="btnDons">Poster une annonce</button>
       <div class="tri">
         <p class="select">Trier par: <span class="choixTri">Date </span></p>
         <span class="chevron"><i class="fas fa-chevron-down"></i></span>

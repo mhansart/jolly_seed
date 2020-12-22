@@ -1,6 +1,12 @@
 const donsMenu = document.getElementById('dons-menu');
 donsMenu.classList.add('active');
 
+const enteteDons = document.querySelector(".enteteDons");
+const annonceDons = document.querySelector(".annonceDons");
+const posterAnnonce = document.querySelector(".posterAnnonce");
+posterAnnonce.style.display = "none";
+const btnDons = document.querySelector(".btnDons");
+
 // TRI Options
 
 const options = document.querySelector(".options");
@@ -22,6 +28,7 @@ chev.addEventListener("click", function () {
                     } 
                     options.style.display = "none";
                     chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
+                    posterAnnonce.style.display = "none";
                 } else if (e.currentTarget.id === "categorie"){
                     choixTri.innerHTML = "Catégorie"; 
                     ssopts.style.display = "block";
@@ -32,6 +39,7 @@ chev.addEventListener("click", function () {
                         box.style.display="flex";
                         chev.innerHTML = "<i class=\"fas fa-chevron-down\"></i>";
                     } 
+                    posterAnnonce.style.display = "none";
                 } 
             });
         }
@@ -119,23 +127,60 @@ plantopt.addEventListener("click", function (e) {
 
 // MONTRER la Section CREATION d'ANNONCE 
 
-const enteteDons = document.querySelector(".enteteDons");
-const annonceDons = document.querySelector(".annonceDons");
-const posterAnnonce = document.querySelector(".posterAnnonce");
-posterAnnonce.style.display = "none";
-const btnDons = document.querySelector(".btnDons");
 btnDons.addEventListener("click", function (e) {
     posterAnnonce.style.display = "block";
     annonceDons.style.display = "none";
     enteteDons.style.display = "none";
 });
 
-//QUITTER CREATION d'ANNONCE
+//Carte
+const carte = L.map('mapid');
+carte.setView([50.7133938204393, 4.4745827981423885], 12);
+const calque = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors',
+  minZoom: 2,
+  maxZoom: 19
+});
+carte.addLayer(calque);
+//creation d'icone
+var icone = L.icon({
+    iconUrl:"./public/image/pomme-bleue.png",
+    iconSize:[30,40],
+    iconAncor:[20,40]
+})
+//creation d'un marqueur avec popup
+const marker = L.marker([50.68577506311772, 4.482873242428455],{icon: icone});
+marker.addTo(carte);
+marker.bindPopup("<h5>titre de l'annonce<h5><p> et Dieu sait quoi </p>");
+
+
+// MONTRER la Section CARTE 
+
+const map = document.querySelector(".carteTri");
+map.style.display = "none";
+const btnCarte = document.querySelector(".btnCarte");
+btnCarte.addEventListener("click", function (e) {
+    posterAnnonce.style.display = "none";
+    annonceDons.style.display = "none";
+    enteteDons.style.display = "none";
+    map.style.display = "block";
+});
+
+//RETOUR page DONS/JARDINIERS
 const sortir = document.querySelector(".sortir");
 sortir.addEventListener("click", function (e) {
     posterAnnonce.style.display = "none";
     annonceDons.style.display = "flex";
     enteteDons.style.display = "flex";
+    map.style.display = "none";
+});
+//RETOUR page DONS/JARDINIERS
+const retour = document.querySelector(".retour");
+retour.addEventListener("click", function (e) {
+    posterAnnonce.style.display = "none";
+    annonceDons.style.display = "flex";
+    enteteDons.style.display = "flex";
+    map.style.display = "none";
 });
 
 // Modifications d'IMAGE selon CHOIX des CATEGORIES

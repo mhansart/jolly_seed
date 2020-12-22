@@ -104,7 +104,11 @@ const searchWord = (str) => {
   });
   if (uniqueArray.length ===0){
     noResult.style.display="block";
+    allForum.forEach((elt) => {
+      elt.style.display = "none";
+    });
   }else{
+    noResult.style.display="none";
     render(uniqueArray);
   }
 };
@@ -132,9 +136,10 @@ if(iptSearch.value != ""){
   forumRetour.style.display="inline-flex";
   const searchValue = iptSearch.value.toLowerCase();
   searchWord(searchValue);
-  if(iptValue.length>0){
+  if(searchValue.length>0){
     forumRetour.style.display="inline-flex";
   }else{
     forumRetour.style.display="none";
   }
 }
+

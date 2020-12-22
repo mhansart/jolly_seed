@@ -59,6 +59,10 @@
       margin: auto;
       cursor: pointer;
       background-color: $clic-color;
+      a {
+        color: $primary-color;
+        text-decoration: none;
+      }
       &:focus {
         outline: none;
       }

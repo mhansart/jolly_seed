@@ -28,6 +28,12 @@
     }
     .enteteDons {
       margin-top: 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 640px) {
+        flex-direction: column;
+      }
     }
     a {
       color: $clic-color;
@@ -35,14 +41,7 @@
         width: 40%;
       }
     }
-    .row {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      @media screen and (max-width: 640px) {
-        flex-wrap: wrap;
-      }
-    }
+  
     .btnCarte{
       color: $clic-color;
       background-color: transparent;
@@ -50,7 +49,7 @@
         text-decoration: underline;
       }
       @media screen and (max-width: 640px) {
-        width: 50%;
+        width: 80%;
         text-align: left;
       }
     }
@@ -69,7 +68,7 @@
       position: relative;
       @media screen and (max-width: 640px) {
         order: 2;
-        width: 50%;
+        width: 80%;
         text-align: right;
       }
       .select {

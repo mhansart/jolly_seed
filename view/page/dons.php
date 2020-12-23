@@ -1,6 +1,6 @@
 <section class="pageDons">
   <section class="centrePageDons">
-    <div class="d-flex row enteteDons">
+    <div class="d-flex enteteDons">
       <button class=btnCarte>Voir sur la carte</button>
       <button class="btnDons">Poster une annonce</button>
       <div class="tri">

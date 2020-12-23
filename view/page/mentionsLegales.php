@@ -63,7 +63,7 @@
     <h3>Vos engagements envers JollySeed et la communauté</h3>
 
     <p>Nous fournissons ces services à vous et à d’autres personnes afin de pouvoir partager votre passion. En échange, nous avons besoin que vous preniez les engagements suivants :</p>
-    <p>1. Qui peut utiliser JollySeed?</p>
+    <h3>1. Qui peut utiliser JollySeed?</h3>
     <p>Lorsque les personnes répondent de leur avis et de leurs actions, notre communauté est plus sûre et plus responsable. Pour cette raison, vous devez :</p>
     <ul>
         <li>utiliser le même nom que celui que vous utilisez au quotidien ;</li>

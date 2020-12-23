@@ -1701,7 +1701,7 @@ p {
   border-radius: 2px;
 }
 .container-connexion .ipt-checkbox label {
-  display: flex;
+  display: inline;
   flex-grow: 1;
 }
 .container-connexion .nom-connexion,

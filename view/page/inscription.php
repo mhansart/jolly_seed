@@ -55,7 +55,7 @@
 
             <div class="ipt-checkbox">
                 <input type="checkbox" id="checkbox" name="checkbox" require>
-                <label for="checkbox">J'accepte les conditions générales</label>
+                <label for="checkbox" class="label-mentions-legales">J'accepte les <span class="bold"><a class="mentions-legales" href="?section=mentionsLegales">conditions générales et la politique d'utilisation de données</a></span></label>
             </div>
             <span class="bold" style="color:red"><?= $msgInscription; ?></span>
 

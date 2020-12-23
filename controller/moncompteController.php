@@ -36,8 +36,9 @@ $infosUser = '<div class="d-flex infos-user w-100">
                             <p class="infos-categories-moncompte">Description</p><p class="infos-moncompte"> ' . $userDescription . '</p>
                         </div>
                     </div>
-                    <div class="btn-modif-info-moncompte">
+                    <div class="btn-modif-info-moncompte d-flex">
                         <div id="modif-infos-mon-compte">Modifier mes infos</div>
+                        <button class="delete-mon-compte" type="submit">Supprimer mon compte</button>
                     </div>
                 </div>
                 
@@ -90,6 +91,19 @@ if (isset($_POST["update-picture"])) {
         $p->updatePicture($message, $_SESSION['user_id']);
         header("Location:?section=moncompte");
     }
+}
+if (isset($_POST["delete"])) {
+    $a = new Annonce();
+    $a->deleteAds($_SESSION['user_id']);
+    $a->deleteUserLike($_SESSION["user_id"]);
+    $m = new Message();
+    $m->deleteMessage($_SESSION["user_id"]);
+    $f = new Forum();
+    $f->updateForum(25, $_SESSION["user_id"]);
+    $f->updateResponseForum(25, $_SESSION["user_id"]);
+    $p = new Personne();
+    $p->delete($_SESSION["user_id"]);
+    header("Location:?section=deconnexion");
 }
 
 

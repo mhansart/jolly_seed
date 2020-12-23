@@ -89,7 +89,7 @@ class Personne extends Connexion
 
     public function delete($_id)
     {
-        $requete = "DELETE FROM personne WHERE id = :id";
+        $requete = "DELETE FROM users WHERE `user_id` = :id";
         $tabChamps = array(
             ":id" => $_id
         );

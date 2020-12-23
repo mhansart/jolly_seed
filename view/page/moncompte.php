@@ -58,6 +58,14 @@
         <button type="submit">Modifier</button>
     </form>
 </div>
+<div class="delete-infos-moncompte">
+    <form action="#" method="POST">
+        <i class="fas fa-times close"></i>
+        <p>Êtes-vous sûr de vouloir supprimer votre compte?</p>
+        <input type="hidden" name="delete" value="<?= $_SESSION['user_id'] ?>">
+        <button class="oui-delete-mon-compte" type="submit">Oui</button>
+    </form>
+</div>
 <div class="moncompte-container w-80">
     <div class="justify-space-between">
         <?= $infosUser ?>

@@ -66,7 +66,8 @@
   cursor: pointer;
 }
 .form-modif-picture-moncompte,
-.modif-infos-moncompte {
+.modif-infos-moncompte,
+.delete-infos-moncompte {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -207,6 +208,21 @@
   }
 }
 .btn-modif-info-moncompte {
+  justify-content: space-between;
+  .delete-mon-compte {
+    // margin-top: 10px;
+    padding: 7px 15px;
+    padding-right: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    color: $clic-color;
+    font-size: 12px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
   @media screen and (max-width: 600px) {
     display: flex;
     justify-content: center;

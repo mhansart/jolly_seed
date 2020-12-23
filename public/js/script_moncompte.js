@@ -6,6 +6,8 @@ style.sheet.insertRule(`body {height: ${h}px}`);
 const btnModif = document.getElementById('modif-infos-mon-compte');
 const formModif = document.querySelector('.modif-infos-moncompte');
 const btnModifPicture = document.querySelector('.btn-modif-picture-moncompte');
+const btnDelete = document.querySelector('.delete-mon-compte');
+const formDelete = document.querySelector('.delete-infos-moncompte');
 const formModifPicture=document.querySelector('.form-modif-picture-moncompte');
 const overlay = document.getElementById('overlay');
 const menuMoncompte = document.querySelector(".menu-mon-compte");
@@ -49,14 +51,20 @@ if(btnModif){
         formModifPicture.classList.toggle('d-flex');
         overlay.classList.toggle('d-flex');
     })
+    btnDelete.addEventListener('click', ()=>{
+      formDelete.classList.toggle('d-flex');
+      overlay.classList.toggle('d-flex');
+    })
     const close = document.querySelectorAll('.close');
     close.forEach((btn)=>{
         btn.addEventListener('click', ()=>{
             overlay.classList.toggle('d-flex');
             if(formModifPicture.classList.contains('d-flex')){
                 formModifPicture.classList.toggle('d-flex');  
-            }else{
+            }else if(formModif.classList.contains('d-flex')){
                 formModif.classList.toggle('d-flex');
+            }else{
+              formDelete.classList.toggle('d-flex');
             }
             btnModifPicture.style.display="block";
         })

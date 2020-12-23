@@ -2102,6 +2102,31 @@ p {
   outline: none;
 }
 
+.a_propos {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+  .a_propos {
+    width: 100%;
+  }
+}
+.a_propos h2, .a_propos h4 {
+  color: #6e9611;
+}
+.a_propos .conceptrice {
+  display: flex;
+  align-items: center;
+}
+.a_propos .detailConceptrice {
+  margin: 0 15px;
+}
+.a_propos img {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+
 h3 {
   color: #6e9611;
 }

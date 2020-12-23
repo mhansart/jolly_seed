@@ -534,3 +534,9 @@ footer {
 .reduce-mon-compte {
   margin-top: -75px;
 }
+button,
+input {
+  &:focus {
+    outline: none;
+  }
+}

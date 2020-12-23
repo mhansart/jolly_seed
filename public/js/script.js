@@ -59,10 +59,19 @@ if(menuNav){
 
     menuBurger.addEventListener('click', function(){
         if(!menuNav.classList.contains('open-menu')){
-            menuNav.classList.add('open-menu');
-            
+            menuNav.classList.add('open-menu');  
         }else{
             menuNav.classList.remove('open-menu');
         }
     })
+}
+
+const searchBarGeneral = document.getElementById("search-bar-general");
+if(searchBarGeneral){
+        searchBarGeneral.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.key === "Enter") {
+            document.getElementById("search-bar-general-button").click();
+        }
+    });
 }

@@ -1,6 +1,270 @@
 @use 'variables' as *;
 
 .search-container {
-  margin: auto;
+  margin: 0 auto;
   padding: 0 15px;
+  @media screen and (max-width: 1035px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .tri-search {
+    min-width: 270px;
+    margin-right: 15px;
+    position: fixed;
+    transition: all 0.3s;
+    @media screen and (max-width: 1035px) {
+      position: static;
+      width: 100%;
+    }
+    h3 {
+      padding: 15px;
+      margin: 0;
+      border: 1px solid $neutral-color2;
+      background-color: $primary-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i {
+        display: flex;
+        cursor: pointer;
+      }
+      @media screen and (max-width: 1035px) {
+        &:hover {
+          background-color: $clic-color;
+          color: $primary-color;
+          cursor: pointer;
+        }
+      }
+      @media screen and (min-width: 1035px) {
+        border-bottom: none;
+        i {
+          display: none;
+        }
+      }
+    }
+    > div {
+      border-bottom: none;
+      @media screen and (max-width: 1035px) {
+        display: none;
+        &.d-block {
+          display: block;
+        }
+      }
+      &:hover {
+        p {
+          background-color: $clic-color;
+          color: $primary-color;
+          width: 100%;
+        }
+      }
+      p {
+        background-color: $neutral-color2;
+        margin: 0;
+        width: 100%;
+        cursor: pointer;
+        padding: 15px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &:last-child {
+        border: none;
+        p {
+          border: 1px solid $neutral-color2;
+        }
+        &:hover {
+          p {
+            border: 1px solid $clic-color;
+          }
+        }
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 0px;
+      margin: 0;
+      display: none;
+      &.d-block {
+        display: block;
+      }
+      li {
+        cursor: pointer;
+        padding: 4px 15px;
+        border-left: 1px solid $neutral-color2;
+        border-right: 1px solid $neutral-color2;
+        &:hover {
+          background-color: $clic-color;
+          color: $primary-color;
+          border-left: 1px solid $clic-color;
+          border-right: 1px solid $clic-color;
+        }
+      }
+    }
+  }
+  .result-search {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-left: 285px;
+    @media screen and (max-width: 1035px) {
+      margin-left: 0;
+      margin-top: 50px;
+    }
+    .no-research-result {
+      display: none;
+      color: black;
+    }
+    h2 {
+      margin-top: 0;
+      color: $secondary-color;
+    }
+    .box {
+      box-shadow: $shadow-low;
+      width: 100%;
+      margin: 1%;
+      margin-left: 0;
+      padding: 15px;
+      display: flex;
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        width: 100%;
+      }
+      a {
+        color: $primary-color;
+      }
+
+      .imageDon {
+        display: block;
+        background-color: white;
+        width: 200px;
+        padding: 100px;
+        background-size: cover;
+        background-position: center center;
+        @media screen and (max-width: 680px) {
+          margin: auto;
+        }
+      }
+
+      .dons {
+        padding: 0px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media screen and (max-width: 680px) {
+          margin-top: 15px;
+        }
+        .titreDon {
+          display: flex;
+          align-items: center;
+          @media screen and (max-width: 680px) {
+            margin: auto;
+          }
+        }
+        .pomme {
+          height: 30px;
+        }
+        h3 {
+          margin: 0px;
+          margin-left: 5px;
+          display: inline;
+        }
+        .fa-heart {
+          color: $secondary-color;
+          font-size: 20px;
+        }
+        .fa-heart:hover {
+          color: $clic-color;
+          cursor: pointer;
+        }
+        .btnContact {
+          padding: 7px 15px;
+          border: none;
+          border-radius: 20px;
+          display: block;
+          color: $primary-color;
+          //font-weight: bold;
+          font-size: 100%;
+          font-family: $main-font;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .seed {
+          background-color: $color-seed;
+        }
+        .flower {
+          background-color: $color-flower;
+        }
+        .time {
+          background-color: $color-time;
+        }
+        .ground {
+          background-color: $color-ground;
+        }
+        .plant {
+          background-color: $color-plant;
+        }
+      }
+    }
+    .btn-ads-search {
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 15px;
+    }
+    .coeur {
+      background-color: transparent;
+      border: none;
+      margin-top: 0;
+      i {
+        margin: 0;
+      }
+    }
+
+    .one-forum-view {
+      box-shadow: $shadow-low;
+      padding: 15px;
+      margin-bottom: 15px;
+      h2 {
+        margin-top: 0;
+      }
+      form {
+        justify-content: flex-end;
+        .voir-forum {
+          padding: 0;
+          margin: 7px 15px;
+          border-radius: 20px;
+          border: none;
+          background-color: transparent;
+          color: $clic-color;
+          font-family: $main-font;
+          cursor: pointer;
+          transition: all 0.3s;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 0.5px;
+            top: 20px;
+            left: 0;
+            width: 0%;
+            background-color: $clic-color;
+            transition: all 0.3s;
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
 }

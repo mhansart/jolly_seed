@@ -26,7 +26,7 @@ if (!empty($tabAnnonceId)) {
             };
             // création de l'annonce
             $mesfavoris .= "<section class='box'>
-                      <div class='imageDon' style='background-image: url(public/image/" . $value["ads_picture"] . ")'>
+                      <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
                       </div>
                       <div class= 'dons'>
                         <div class='titreDon'>

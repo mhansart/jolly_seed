@@ -76,6 +76,7 @@ const searchContainer = document.querySelector(".all-forum");
 const allForum = document.querySelectorAll(".one-forum-view");
 const tags = document.querySelectorAll(".forum-tag");
 const forumRetour = document.querySelector('.retour-forum');
+const noResult = document.querySelector('.no-result-forum');
 const tagsArr = [];
 
 tags.forEach((tag) => {
@@ -101,7 +102,15 @@ const searchWord = (str) => {
   uniqueArray = resultArr.filter(function (item, pos) {
     return resultArr.indexOf(item) == pos;
   });
-  render(uniqueArray);
+  if (uniqueArray.length ===0){
+    noResult.style.display="block";
+    allForum.forEach((elt) => {
+      elt.style.display = "none";
+    });
+  }else{
+    noResult.style.display="none";
+    render(uniqueArray);
+  }
 };
 
 iptSearch.addEventListener("input", (e) => {
@@ -127,9 +136,10 @@ if(iptSearch.value != ""){
   forumRetour.style.display="inline-flex";
   const searchValue = iptSearch.value.toLowerCase();
   searchWord(searchValue);
-  if(iptValue.length>0){
+  if(searchValue.length>0){
     forumRetour.style.display="inline-flex";
   }else{
     forumRetour.style.display="none";
   }
 }
+

@@ -39,7 +39,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 640px) {
         flex-wrap: wrap;
       }
     }
@@ -49,11 +49,15 @@
       &:hover{
         text-decoration: underline;
       }
+      @media screen and (max-width: 640px) {
+        width: 50%;
+        text-align: left;
+      }
     }
     .btnDons {
       background-color: $clic-color;
       margin: auto;
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 640px) {
         order: 3;
         margin-top: 15px;
       }
@@ -63,14 +67,15 @@
     }
     .tri {
       position: relative;
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 640px) {
         order: 2;
-        width: 40%;
+        width: 50%;
         text-align: right;
       }
       .select {
         color: $secondary-color;
-        display: inline;
+        display: inline-block;
+        padding-right: 15px;
         font-size: 100%;
       }
       .chevron {
@@ -80,12 +85,13 @@
       .choixTri{
         display: inline-block;
         width:75px;
+        text-align: left;
       }
       .options {
         color: $secondary-color;
         position: absolute;
-        right: 0px;
-        top: 30px;
+        right: 15px;
+        top: 40px;
         background-color: $primary-color;
         padding: 10px 0px;
         border: 1px solid $secondary-color;
@@ -397,6 +403,12 @@
       background-color: white;
       margin: 15px;
       text-align: right;
+      @media screen and (max-width: 1035px) {
+        top:200px;
+      }
+      @media screen and (max-width: 600px) {
+        top:150px;
+      }
       i{
         font-size: 150%;
         color: $clic-color;
@@ -407,8 +419,10 @@
       }
     }
     #mapid {
-      transform: translateY(40px);
       height: 600px;
+      @media screen and (max-width: 600px) {
+        transform: translateY(40px);
+      }
     }
   }
 }

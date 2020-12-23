@@ -914,7 +914,8 @@ p {
 }
 
 .form-modif-picture-moncompte,
-.modif-infos-moncompte {
+.modif-infos-moncompte,
+.delete-infos-moncompte {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -927,56 +928,67 @@ p {
   width: 50%;
 }
 .form-modif-picture-moncompte.form-modif-picture-moncompte label,
-.modif-infos-moncompte.form-modif-picture-moncompte label {
+.modif-infos-moncompte.form-modif-picture-moncompte label,
+.delete-infos-moncompte.form-modif-picture-moncompte label {
   margin-bottom: 10px;
 }
 .form-modif-picture-moncompte.modif-infos-moncompte,
-.modif-infos-moncompte.modif-infos-moncompte {
+.modif-infos-moncompte.modif-infos-moncompte,
+.delete-infos-moncompte.modif-infos-moncompte {
   overflow-y: scroll;
   max-height: 90%;
 }
 @media screen and (max-width: 992px) {
   .form-modif-picture-moncompte,
-.modif-infos-moncompte {
+.modif-infos-moncompte,
+.delete-infos-moncompte {
     width: 70%;
   }
 }
 @media screen and (max-width: 600px) {
   .form-modif-picture-moncompte,
-.modif-infos-moncompte {
+.modif-infos-moncompte,
+.delete-infos-moncompte {
     width: 95%;
   }
 }
 .form-modif-picture-moncompte h3,
-.modif-infos-moncompte h3 {
+.modif-infos-moncompte h3,
+.delete-infos-moncompte h3 {
   margin-top: 0;
 }
 .form-modif-picture-moncompte div,
-.modif-infos-moncompte div {
+.modif-infos-moncompte div,
+.delete-infos-moncompte div {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 @media screen and (max-width: 600px) {
   .form-modif-picture-moncompte div,
-.modif-infos-moncompte div {
+.modif-infos-moncompte div,
+.delete-infos-moncompte div {
     flex-direction: column;
   }
 }
 .form-modif-picture-moncompte label,
-.modif-infos-moncompte label {
+.modif-infos-moncompte label,
+.delete-infos-moncompte label {
   min-width: 120px;
 }
 @media screen and (max-width: 600px) {
   .form-modif-picture-moncompte label,
-.modif-infos-moncompte label {
+.modif-infos-moncompte label,
+.delete-infos-moncompte label {
     padding: 7px 15px;
   }
 }
 .form-modif-picture-moncompte input,
 .form-modif-picture-moncompte textarea,
 .modif-infos-moncompte input,
-.modif-infos-moncompte textarea {
+.modif-infos-moncompte textarea,
+.delete-infos-moncompte input,
+.delete-infos-moncompte textarea {
   border: none;
   padding: 7px 15px;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
@@ -985,15 +997,19 @@ p {
 .form-modif-picture-moncompte input:focus,
 .form-modif-picture-moncompte textarea:focus,
 .modif-infos-moncompte input:focus,
-.modif-infos-moncompte textarea:focus {
+.modif-infos-moncompte textarea:focus,
+.delete-infos-moncompte input:focus,
+.delete-infos-moncompte textarea:focus {
   outline: none;
 }
 .form-modif-picture-moncompte .btn-modif-img,
-.modif-infos-moncompte .btn-modif-img {
+.modif-infos-moncompte .btn-modif-img,
+.delete-infos-moncompte .btn-modif-img {
   display: inline;
 }
 .form-modif-picture-moncompte button,
-.modif-infos-moncompte button {
+.modif-infos-moncompte button,
+.delete-infos-moncompte button {
   padding: 7px 15px;
   border-radius: 20px;
   border: none;
@@ -1004,15 +1020,18 @@ p {
   cursor: pointer;
 }
 .form-modif-picture-moncompte button:focus,
-.modif-infos-moncompte button:focus {
+.modif-infos-moncompte button:focus,
+.delete-infos-moncompte button:focus {
   outline: none;
 }
 .form-modif-picture-moncompte.d-flex,
-.modif-infos-moncompte.d-flex {
+.modif-infos-moncompte.d-flex,
+.delete-infos-moncompte.d-flex {
   display: flex;
 }
 .form-modif-picture-moncompte .close,
-.modif-infos-moncompte .close {
+.modif-infos-moncompte .close,
+.delete-infos-moncompte .close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -1089,6 +1108,22 @@ p {
   background-color: white;
 }
 
+.btn-modif-info-moncompte {
+  justify-content: space-between;
+}
+.btn-modif-info-moncompte .delete-mon-compte {
+  padding: 7px 15px;
+  padding-right: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  color: #ff8617;
+  font-size: 12px;
+  cursor: pointer;
+}
+.btn-modif-info-moncompte .delete-mon-compte:focus {
+  outline: none;
+}
 @media screen and (max-width: 600px) {
   .btn-modif-info-moncompte {
     display: flex;

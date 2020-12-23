@@ -47,4 +47,12 @@ class Message extends Connexion
 
         $this->execute($requete, $tabChamps);
     }
+    public function deleteMessage($_userId)
+    {
+        $requete = "DELETE FROM messagerie WHERE sender_id = :userId OR receiver_id = :userId";
+        $tabChamps = array(
+            ":userId" => $_userId,
+        );
+        $this->execute($requete, $tabChamps);
+    }
 }

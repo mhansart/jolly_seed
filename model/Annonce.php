@@ -124,4 +124,22 @@ class Annonce extends Connexion
         );
         $this->execute($requete, $tabChamps);
     }
+
+    public function deleteUserLike($_like_user_id)
+    {
+        $requete = "DELETE FROM like_user_ads WHERE like_user_id = :likeUserId ";
+        $tabChamps = array(
+            ":likeUserId" => $_like_user_id,
+        );
+        $this->execute($requete, $tabChamps);
+    }
+
+    public function deleteAds($_userId)
+    {
+        $requete = "DELETE FROM ads WHERE ads_user_id = :adsUserId ";
+        $tabChamps = array(
+            ":adsUserId" => $_userId,
+        );
+        $this->execute($requete, $tabChamps);
+    }
 }

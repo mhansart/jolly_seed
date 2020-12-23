@@ -64,30 +64,26 @@ class Forum extends Connexion
     }
 
 
-    public function update($_id, $_nom, $_prenom, $_sexe, $_adRue, $_adNum, $_adCp, $_adVille)
+    public function updateForum($_newId, $_userId)
     {
-        $requete = "UPDATE personne SET nom = :nom, prenom = :prenom, sexe = :sexe, ad_rue = :adRue, ad_num = :adNum, ad_cp = :adCp, ad_ville = :adVille WHERE id = :id";
+        $requete = "UPDATE forum SET `user_id` = :newUserId WHERE `user_id` = :userId";
 
         $tabChamps = array(
-            ":nom" => $_nom,
-            ":prenom" => $_prenom,
-            ":sexe" => $_sexe,
-            ":adRue" => $_adRue,
-            ":adNum" => $_adNum,
-            "adCp" => $_adCp,
-            ":adVille" => $_adVille,
-            ":id" => $_id
+            ":newUserId" => $_newId,
+            ":userId" => $_userId
         );
 
         return $this->execute($requete, $tabChamps);
     }
-
-    public function delete($_id)
+    public function updateResponseForum($_newId, $_userId)
     {
-        $requete = "DELETE FROM personne WHERE id = :id";
+        $requete = "UPDATE response_forum SET `user_id` = :newUserId WHERE `user_id` = :userId";
+
         $tabChamps = array(
-            ":id" => $_id
+            ":newUserId" => $_newId,
+            ":userId" => $_userId
         );
-        $this->execute($requete, $tabChamps);
+
+        return $this->execute($requete, $tabChamps);
     }
 }

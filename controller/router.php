@@ -29,6 +29,9 @@ if (isset($_GET["section"])) {
         case 'contact':
             include("controller/contactController.php");
             break;
+        case 'mentionsLegales':
+            include("controller/mentionsController.php");
+            break;
         case 'VoirPlusForum':
             include("controller/VoirPlusForumController.php");
             break;

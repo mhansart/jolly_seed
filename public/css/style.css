@@ -133,7 +133,7 @@
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .pageDons .centrePageDons .row {
     flex-wrap: wrap;
   }
@@ -145,11 +145,17 @@
 .pageDons .centrePageDons .btnCarte:hover {
   text-decoration: underline;
 }
+@media screen and (max-width: 640px) {
+  .pageDons .centrePageDons .btnCarte {
+    width: 50%;
+    text-align: left;
+  }
+}
 .pageDons .centrePageDons .btnDons {
   background-color: #ff8617;
   margin: auto;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .pageDons .centrePageDons .btnDons {
     order: 3;
     margin-top: 15px;
@@ -161,16 +167,17 @@
 .pageDons .centrePageDons .tri {
   position: relative;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .pageDons .centrePageDons .tri {
     order: 2;
-    width: 40%;
+    width: 50%;
     text-align: right;
   }
 }
 .pageDons .centrePageDons .tri .select {
   color: #6e9611;
-  display: inline;
+  display: inline-block;
+  padding-right: 15px;
   font-size: 100%;
 }
 .pageDons .centrePageDons .tri .chevron {
@@ -179,12 +186,13 @@
 .pageDons .centrePageDons .tri .choixTri {
   display: inline-block;
   width: 75px;
+  text-align: left;
 }
 .pageDons .centrePageDons .tri .options {
   color: #6e9611;
   position: absolute;
-  right: 0px;
-  top: 30px;
+  right: 15px;
+  top: 40px;
   background-color: white;
   padding: 10px 0px;
   border: 1px solid #6e9611;
@@ -498,6 +506,16 @@
   margin: 15px;
   text-align: right;
 }
+@media screen and (max-width: 1035px) {
+  .pageDons .carteTri .retour {
+    top: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .pageDons .carteTri .retour {
+    top: 150px;
+  }
+}
 .pageDons .carteTri .retour i {
   font-size: 150%;
   color: #ff8617;
@@ -507,8 +525,12 @@
   color: #23512a;
 }
 .pageDons .carteTri #mapid {
-  transform: translateY(40px);
   height: 600px;
+}
+@media screen and (max-width: 600px) {
+  .pageDons .carteTri #mapid {
+    transform: translateY(40px);
+  }
 }
 
 .forum-container,

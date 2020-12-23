@@ -17,6 +17,9 @@ if (isset($_GET["section"])) {
         case 'jardiniers':
             include("controller/jardiniersController.php");
             break;
+        case 'aPropos':
+            include("controller/aProposController.php");
+            break;
         case 'forum':
             include("controller/forumController.php");
             break;

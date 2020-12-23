@@ -1,0 +1,22 @@
+.a_propos{
+    width:80%;
+    margin:0 auto;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+    h2, h4{
+        color: $secondary-color;
+      }
+    .conceptrice{
+        display: flex;
+        align-items: center;
+    }
+    .detailConceptrice{
+      margin: 0 15px;
+    }
+    img{
+      width:150px;
+      height:150px;
+      border-radius: 75px;
+    }
+}

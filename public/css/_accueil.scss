@@ -1,17 +1,34 @@
-.accueil-container{
-h2 {
-    text-align: center;
-}
+.pageAccueil{
+    .photoAcc{
+        width:100%;
+        height:600px;
+        margin-top:-15px;
+        background-color: burlywood;
+        background-image: url("../image/partage.jpg");
+        background-size: cover;
+        h2{
+            margin: 0;
+            color: $primary-color;
+            font-size: 7vw;
+            padding: 50px;
+            width:40%;
+            @media screen and (max-width: 1142px) {
+                width:50%;
+            }
+        }   
+    }
+    h2{
+        color: $secondary-color;
+    }
+    .textaccueil{
+        width: 80%;
+        margin:auto;
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        }
+    }
 
-#photo-accueil {
 
-    width: 100%;
-    height: auto;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
-}
 
 
 

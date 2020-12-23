@@ -22,12 +22,6 @@ class Annonce extends Connexion
         $this->execute($requete, $tabChamps);
     }
 
-    public function read()
-    {
-        $requete = "SELECT * FROM ads";
-        return $this->execute($requete);
-    }
-
     public function readByCategoryType($_ads_category)
     {
         $requete = "SELECT * FROM ads WHERE ads_category != :temps AND ads_active = 1 ORDER BY ads_id DESC";
@@ -120,27 +114,7 @@ class Annonce extends Connexion
 
         return $this->execute($requete, $tabChamps);
     }
-
-
-    /*
-        public function update($_ads_id, $_ads_type, $_ads_category, $_ads_date, $_ads_description, $_ads_picture, $_ads_active, $_ads_title)
-        {
-            $requete = "UPDATE ads SET ads_type = :adsType, ads_category = :adsCategory, ads_date = :adsDate, ads_description = :adsDescription, ads_picture = :adsPicture, ads_active = :adsActive, ads_title = :adsTitle WHERE ads_id = :id";
-
-            $tabChamps= array(
-                ":adsType" => $_ads_type,
-                ":adsCategory" => $_ads_category,
-                ":adsDate" => $_ads_date,
-                ":adsDescription" => $_ads_description,
-                ":adsPicture" => $_ads_picture,
-                ":adsActive" => $_ads_active,
-                ":adsTitle" => $_ads_title,
-                ":adsId" => $_ads_id
-            );
-
-            return $this->execute($requete, $tabChamps);
-        }
-*/
+    
     public function deleteLike($_like_user_id, $_like_ads_id)
     {
         $requete = "DELETE FROM like_user_ads WHERE like_user_id = :likeUserId AND like_ads_id = :likeAdsId";

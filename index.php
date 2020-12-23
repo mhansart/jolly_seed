@@ -2,6 +2,7 @@
 session_start();
 ob_start();
 require_once("model/Annonce.php");
+require_once("model/User.php");
 require_once("model/Forum.php");
 require_once("model/Message.php");
 require_once("model/Personne.php");

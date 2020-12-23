@@ -241,11 +241,11 @@ for (let coeur of coeurs){
     });
 }
 */
-//fonct sui permet de récuper coordonnées en fonction de l'adresse
+//fonct qui permet de faire une requete Ajax
 function ajaxGet(url){
     return new Promise(function(resolve, reject){
         let xmlhttp = new XMLHttpRequest()
-        xmlhttp.onreadyState = function(){
+        xmlhttp.onreadystatechange = function(){
             if(xmlhttp.readyState==4){
                 if(xmlhttp.status==200){
                     resolve(xmlhttp.responseText)
@@ -262,15 +262,21 @@ function ajaxGet(url){
     })
 }
 //PQ est ce que mon console.log ne fonctionne pas??ainsi que le reste... PQ Pas de ";"
-ajaxGet("https://nominatim.openstreetmap.org/search?q=3+rue+du+patch,+rixensart&format=json&addressdetails1&limit=1").then(reponse => {
-    
+console.log("toto");
+ajaxGet("https://nominatim.openstreetmap.org/search?q=2+rue+du+patch,+rixensart&format=json&addressdetails1&limit=1").then(reponse => {
+    console.log("reponse ", reponse)
     //conversion en Javascript:
     let data = JSON.parse(reponse)
-    console.log(data)
-    coord = [data[0].lat, data[0].lon]
+    let coord = [data[0].lat, data[0].lon]
+    console.log(coord)
     const marker2 = L.marker(coord)
     marker2.addTo(carte)
-})
+}).catch(console.log)
+
+ajaxGet("http://localhost/exo/PHP/jolly_seed/controller/AjaxUsers.php").then(reponse => {
+    let users = JSON.parse(reponse)
+    console.log("ajax:", users)
+});
 
 
 //récuperer lnotre v-base de nonnées... NON-FONCTIONNEL

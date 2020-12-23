@@ -1395,15 +1395,37 @@ p {
   color: white;
 }
 
-.accueil-container h2 {
-  text-align: center;
-}
-.accueil-container #photo-accueil {
+.pageAccueil .photoAcc {
   width: 100%;
-  height: auto;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
+  height: 600px;
+  margin-top: -15px;
+  background-color: burlywood;
+  background-image: url("../image/partage.jpg");
   background-size: cover;
+}
+.pageAccueil .photoAcc h2 {
+  margin: 0;
+  color: white;
+  font-size: 7vw;
+  padding: 50px;
+  width: 40%;
+}
+@media screen and (max-width: 1142px) {
+  .pageAccueil .photoAcc h2 {
+    width: 50%;
+  }
+}
+.pageAccueil h2 {
+  color: #6e9611;
+}
+.pageAccueil .textaccueil {
+  width: 80%;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .pageAccueil .textaccueil {
+    width: 100%;
+  }
 }
 
 .contact-container {

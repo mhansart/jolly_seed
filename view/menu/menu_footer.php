@@ -5,7 +5,7 @@
             <div class="link-footer w-100 d-flex">
                 <a class="w-100" href="#apropos">À propos</a>
                 <a class="w-100" href="?section=temoignages">Témoignages</a>
-                <a class="w-100" href="#mentions">Mentions Légales</a>
+                <a class="w-100" href="?section=mentionsLegales">Mentions Légales</a>
                 <a class="w-100" href="?section=contact">Contact</a>
             </div>
             <div class="social w-100">

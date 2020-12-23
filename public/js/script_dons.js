@@ -267,7 +267,6 @@ ajaxGet("https://nominatim.openstreetmap.org/search?q=3+rue+du+patch,+rixensart&
     //conversion en Javascript:
     let data = JSON.parse(reponse)
     coord = [data[0].lat, data[0].lon]
-    alert(coord)
     const marker2 = L.marker(coord)
     marker2.addTo(carte)
 })

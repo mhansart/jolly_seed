@@ -1,7 +1,7 @@
 <?php $recherche = isset($_SESSION['forum_recherche']) ? $_SESSION['forum_recherche'] : ""; ?>
-<?php $retour = isset($_SESSION['forum_retour']) ? "?section=VoirPlusForum" : "?section=forum" ?>
+
 <div class="forum-container w-80">
-    <a class="retour-forum" href="<?= $retour; ?>"><i class="fas fa-chevron-left"></i> Page précédente</a>
+    <a class="retour-forum" href="?section=forum"><i class="fas fa-chevron-left"></i> Voir tous les forums</a>
     <div class="d-flex new-forum-container">
         <div class="w-50 bloc-info-forum">
             <h3 class="description-search-forum">Vous avez une question? Recherchez dans les forums si vous trouvez ce que vous cherchez !</h3>
@@ -30,4 +30,3 @@
 </div>
 <script src="public/js/script_forum.js"></script>
 <?php unset($_SESSION['forum_recherche']); ?>
-<?php unset($_SESSION['forum_retour']); ?>

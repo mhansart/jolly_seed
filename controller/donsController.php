@@ -34,12 +34,12 @@ foreach ($tabDons as $value) {
     $imageDon = "pomme-rouge.png";
   };
   // création de l'annonce
-  $dons .= "<section id='don_".$value["ads_id"]."' class='box'>
+  $dons .= "<section id='don_" . $value["ads_id"] . "' class='box'>
               <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
               </div>
               <div class= 'dons'>
                 <div class='titreDon'>
-                  <img id='img_".$value["ads_id"]."' class='pomme pomme_" . $value["ads_category"] . "' src='./public/image/" . $imageDon . "' />
+                  <img id='img_" . $value["ads_id"] . "' class='pomme pomme_" . $value["ads_category"] . "' src='./public/image/" . $imageDon . "' />
                   <h3>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
                 <div class='d-flex row'>
@@ -48,65 +48,63 @@ foreach ($tabDons as $value) {
                   <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                 </div>
                 <article>" . $value["ads_description"] . "</article>
-                <div class='d-flex row'>
+                <div class='d-flex row btn-ads-search'>
                 <form class='contactAnnonce' action='#' method='post'>
-                  <input type='hidden' name='contact' value='".$value["ads_user_id"]."'>
+                  <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
                   <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
                 </form>";
-                //gestion du CONTACT
+  //gestion du CONTACT
 
-         //pose d'un coeur vide       
-         $Like = "far fa-heart";
-         for($i =0; $i < count($tabLike); $i++){
-           if ($tabLike[$i]["like_ads_id"] === $value["ads_id"]){
-               $Like = "fas fa-heart"; // coeur plein si like
-             }
-           }
-         $aime = $value["ads_id"];
-         $dons .= " <form method='post' >
+  //pose d'un coeur vide       
+  $Like = "far fa-heart";
+  for ($i = 0; $i < count($tabLike); $i++) {
+    if ($tabLike[$i]["like_ads_id"] === $value["ads_id"]) {
+      $Like = "fas fa-heart"; // coeur plein si like
+    }
+  }
+  $aime = $value["ads_id"];
+  $dons .= " <form method='post' >
                        <input class='aime' type='hidden' id='aime$aime' name='like_ads_id$aime' value='$aime'/>
                        <button class='coeur' type='submit'><i class='$Like'></i></button>
                      </form>
                </div>
              </div>
            </section>";
-          
-   if(isset($_POST["like_ads_id$aime"])) 
-   { //lecture des likes
-     $r = new annonce(); 
-     $likeDislike = $r->readLikeByUserIdAndAdsId($_SESSION['user_id'],$_POST["like_ads_id$aime"]);
-     if  (empty($likeDislike)) { //si vide alors créer
-       $l = new Annonce();
-       $l->createLike($_SESSION['user_id'], $_POST["like_ads_id$aime"], "1");
-       header("Location:?section=dons");
-     } elseif ($likeDislike[0]["like_option"] === '1'){ //si n'aime plus alors enlever
-       $d = new Annonce();
-       $d ->deleteLike($_SESSION['user_id'], $_POST["like_ads_id$aime"]);
-       header("Location:?section=dons");
-     }
-   }
+
+  if (isset($_POST["like_ads_id$aime"])) { //lecture des likes
+    $r = new annonce();
+    $likeDislike = $r->readLikeByUserIdAndAdsId($_SESSION['user_id'], $_POST["like_ads_id$aime"]);
+    if (empty($likeDislike)) { //si vide alors créer
+      $l = new Annonce();
+      $l->createLike($_SESSION['user_id'], $_POST["like_ads_id$aime"], "1");
+      header("Location:?section=dons");
+    } elseif ($likeDislike[0]["like_option"] === '1') { //si n'aime plus alors enlever
+      $d = new Annonce();
+      $d->deleteLike($_SESSION['user_id'], $_POST["like_ads_id$aime"]);
+      header("Location:?section=dons");
+    }
+  }
 }
 
 //LECTURE dernier ADS_ID  pour nommage de photoperso
 $ai = new Annonce();
 $adsIds = $ai->readAdsId();
-$lastAdsId = $adsIds[count($adsIds)-1]["ads_id"];
-$futurAdsId = $lastAdsId+1;
+$lastAdsId = $adsIds[count($adsIds) - 1]["ads_id"];
+$futurAdsId = $lastAdsId + 1;
 
- // CREATION d'UNE ANNONCE DON
- 
-if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]))
-{
-    $p = new Annonce();
-    $active = 1;
-    $date = date("Y-m-d h:i:sa"); 
-    $type = "don";
-    $time = "";
-    
-    //gestion d'images
-    if (isset($_FILES["ads_picture"])) {
-      var_dump($_FILES["ads_picture"]);
-     if ($_FILES["ads_picture"]["name"]!== ""){
+// CREATION d'UNE ANNONCE DON
+
+if (isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])) {
+  $p = new Annonce();
+  $active = 1;
+  $date = date("Y-m-d h:i:sa");
+  $type = "don";
+  $time = "";
+
+  //gestion d'images
+  if (isset($_FILES["ads_picture"])) {
+    var_dump($_FILES["ads_picture"]);
+    if ($_FILES["ads_picture"]["name"] !== "") {
       $target_dir = "uploads/";
       $target_file = $target_dir . basename($_FILES["ads_picture"]["name"]);
       $uploadOk = 1;
@@ -115,42 +113,42 @@ if(isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"])
       $check = filesize($_FILES["ads_picture"]["tmp_name"]);
 
       if ($check !== false) {
-          $uploadOk = 1;
+        $uploadOk = 1;
       } else {
-          $uploadOk = 0;
+        $uploadOk = 0;
       }
 
       // Allow certain file formats
       if (
-          $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
       ) {
-          echo "Sorry, only JPG, JPEG & PNG files are allowed.";
-          $uploadOk = 0;
+        echo "Sorry, only JPG, JPEG & PNG files are allowed.";
+        $uploadOk = 0;
       }
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
-          echo "Sorry, your file was not uploaded.";
-          // if everything is ok, try to upload file
+        echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
       } else {
-          $newName = strtolower("d-". $futurAdsId . '.' . $imageFileType);
-          echo $newName;
-          if (move_uploaded_file($_FILES["ads_picture"]["tmp_name"], $target_dir . $newName)) {
-          }
+        $newName = strtolower("d-" . $futurAdsId . '.' . $imageFileType);
+        echo $newName;
+        if (move_uploaded_file($_FILES["ads_picture"]["tmp_name"], $target_dir . $newName)) {
+        }
       }
 
       $annoncePicture = $newName;
-     } else { // fixe les images prédéfinies
-        if ($_POST["ads_category"]==="seed"){
-          $annoncePicture = "seed.jpg";  
-        } elseif ($_POST["ads_category"]==="flower"){
-          $annoncePicture = "tomates.jpg";  
-        } elseif ($_POST["ads_category"]==="ground"){
-          $annoncePicture = "copeaux.jpg";  
-        } else {
-          $annoncePicture = "chene.jpg"; 
-        }
+    } else { // fixe les images prédéfinies
+      if ($_POST["ads_category"] === "seed") {
+        $annoncePicture = "seed.jpg";
+      } elseif ($_POST["ads_category"] === "flower") {
+        $annoncePicture = "tomates.jpg";
+      } elseif ($_POST["ads_category"] === "ground") {
+        $annoncePicture = "copeaux.jpg";
+      } else {
+        $annoncePicture = "chene.jpg";
       }
-    } 
+    }
+  }
 
   $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $_POST["ads_category"], $time, $date, $_POST["ads_description"], $annoncePicture, $active, $_POST["ads_title"]);
   header("Location:?section=dons");

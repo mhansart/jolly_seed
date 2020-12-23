@@ -1,10 +1,10 @@
-.pageDons{
-  width:80%;
-  margin:0 auto;
+.pageDons {
+  width: 80%;
+  margin: 0 auto;
   @media screen and (max-width: 600px) {
     width: 100%;
   }
-  button{
+  button {
     cursor: pointer;
   }
   .centrePageDons {
@@ -14,16 +14,16 @@
       border-radius: 20px;
       display: block;
       color: $primary-color;
-      font-size:100%;
+      font-size: 100%;
       font-family: $main-font;
     }
-    h2{
+    h2 {
       color: $secondary-color;
     }
-    h3{
+    h3 {
       color: $secondary-color;
     }
-    .column{
+    .column {
       flex-direction: column;
     }
     .enteteDons {
@@ -41,11 +41,11 @@
         width: 40%;
       }
     }
-  
-    .btnCarte{
+
+    .btnCarte {
       color: $clic-color;
       background-color: transparent;
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
       @media screen and (max-width: 640px) {
@@ -79,11 +79,10 @@
       }
       .chevron {
         color: $clic-color;
-       
       }
-      .choixTri{
+      .choixTri {
         display: inline-block;
-        width:75px;
+        width: 75px;
         text-align: left;
       }
       .options {
@@ -99,29 +98,27 @@
           color: $secondary-color;
           text-align: left;
           padding-left: 10px;
-          padding-right:10px;
+          padding-right: 10px;
           &:hover {
             background-color: $clic-color;
             color: $primary-color;
           }
         }
-        .sous-options{
+        .sous-options {
           text-align: right;
           display: none;
-          .ssopt{
+          .ssopt {
             margin: 0px;
             padding-right: 10px;
-            padding-left:30px;
+            padding-left: 30px;
             white-space: nowrap;
-            
+
             &:hover {
               background-color: $clic-color;
               color: $primary-color;
-
             }
           }
         }
-        
 
         a:hover {
           background-color: $clic-color;
@@ -188,17 +185,17 @@
           margin: auto;
         }
       }
-      
+
       .dons {
         padding: 0px 15px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
+
         @media screen and (max-width: 680px) {
           margin-top: 15px;
         }
-        .titreDon{
+        .titreDon {
           @media screen and (max-width: 680px) {
             margin: auto;
           }
@@ -209,31 +206,36 @@
         h3 {
           margin: 0px;
           display: inline;
-      
         }
         .fa-heart {
           color: $secondary-color;
           font-size: 20px;
           margin-top: 10px;
         }
-        .fa-heart:hover{
+        .fa-heart:hover {
           color: $clic-color;
         }
         button {
           margin-top: 15px;
-        }
-        .btnContact{
-            padding: 7px 15px;
-            border: none;
-            border-radius: 20px;
-            display: block;
-            color: $primary-color;
-            //font-weight: bold;
-            font-size: 100%;
-            font-family: $main-font;
-            &:hover{
-              cursor: pointer;
+          &.coeur {
+            margin-top: 0;
+            i {
+              margin-top: 0;
             }
+          }
+        }
+        .btnContact {
+          padding: 7px 15px;
+          border: none;
+          border-radius: 20px;
+          display: block;
+          color: $primary-color;
+          //font-weight: bold;
+          font-size: 100%;
+          font-family: $main-font;
+          &:hover {
+            cursor: pointer;
+          }
         }
         .seed {
           background-color: $color-seed;
@@ -252,12 +254,12 @@
         }
       }
     }
-    .coeur{
+    .coeur {
       background-color: transparent;
     }
   }
   // CREATION D'ANNONCE
-  .posterAnnonce{
+  .posterAnnonce {
     box-shadow: $shadow-low;
     margin: 1% auto;
     padding: 15px;
@@ -270,68 +272,68 @@
     @media screen and (max-width: 420px) {
       width: 90%;
     }
-    .sortir{
+    .sortir {
       position: absolute;
       top: 0px;
       right: 0px;
       border-radius: 0px;
       background-color: white;
       margin: 5px;
-      i{
+      i {
         font-size: 150%;
         color: $clic-color;
         font-weight: 100;
-        &:hover{
-        color: $third-color;
+        &:hover {
+          color: $third-color;
         }
       }
     }
-    .left{
-      text-align: left; 
+    .left {
+      text-align: left;
       margin: auto;
       display: inline-block;
     }
-    .radio{
-      text-align: left; 
-    padding-left: 25px;
-    width: 350px;
-    margin: auto;
+    .radio {
+      text-align: left;
+      padding-left: 25px;
+      width: 350px;
+      margin: auto;
     }
-    .DonOptionRadio{
+    .DonOptionRadio {
       width: 250px;
     }
-    .donTitre{
+    .donTitre {
       display: block;
       margin: auto;
     }
-    
-    .time{
-      text-align: left; 
+
+    .time {
+      text-align: left;
       width: 200px;
       margin: auto;
     }
-    .timeSlot{
-      text-align: left; 
+    .timeSlot {
+      text-align: left;
       padding-left: 25px;
     }
-    button{
+    button {
       background-color: $clic-color;
       color: $primary-color;
       margin: 25px auto;
     }
-    
-    .sectionCategorie{
-    margin: auto;
+
+    .sectionCategorie {
+      margin: auto;
     }
-    
-    .annonceImage{
+
+    .annonceImage {
       align-items: center;
-      margin:auto;
+      margin: auto;
     }
-    .conteneurImageAnnonce{
+    .conteneurImageAnnonce {
       display: flex;
       flex-wrap: wrap;
-    justify-content: center;
+      justify-content: center;
       width: 100%;
       align-items: center;
     }
@@ -346,30 +348,29 @@
     }
     .imageAnnonceFixe {
       display: block;
-      background-image: url('../image/avatar.png');
+      background-image: url("../image/avatar.png");
       border: 3px solid $secondary-color;
-    width: 250px;
-    padding-top: 250px;
+      width: 250px;
+      padding-top: 250px;
       background-size: cover;
       background-position: center center;
       position: absolute;
-      top:0;
-      left:0;
-  
+      top: 0;
+      left: 0;
     }
 
-    .imageAlternative{
-    padding: 0px 15px;
-    display: block;
-    min-width: 250px;
-    max-width: 500px;
-    text-align: left;
+    .imageAlternative {
+      padding: 0px 15px;
+      display: block;
+      min-width: 250px;
+      max-width: 500px;
+      text-align: left;
     }
-  
-    .inputAccord{
+
+    .inputAccord {
       display: inline;
     }
-    
+
     button {
       padding: 7px 15px;
       border: none;
@@ -382,38 +383,38 @@
         font-family: $main-font;
       }
     }
-    h2{
+    h2 {
       color: $secondary-color;
     }
-    h3{
+    h3 {
       color: $secondary-color;
     }
-    .column{
+    .column {
       flex-direction: column;
     }
   }
   //section CARTE
-  .carteTri{
-    .retour{
+  .carteTri {
+    .retour {
       position: absolute;
-      top:150px;
-      right:0px;
+      top: 150px;
+      right: 0px;
       border: none;
       background-color: white;
       margin: 15px;
       text-align: right;
       @media screen and (max-width: 1035px) {
-        top:200px;
+        top: 200px;
       }
       @media screen and (max-width: 600px) {
-        top:150px;
+        top: 150px;
       }
-      i{
+      i {
         font-size: 150%;
         color: $clic-color;
         font-weight: 100;
-        &:hover{
-        color: $third-color;
+        &:hover {
+          color: $third-color;
         }
       }
     }
@@ -426,4 +427,3 @@
     }
   }
 }
-

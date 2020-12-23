@@ -334,6 +334,12 @@
 .pageDons .centrePageDons .box .dons button {
   margin-top: 15px;
 }
+.pageDons .centrePageDons .box .dons button.coeur {
+  margin-top: 0;
+}
+.pageDons .centrePageDons .box .dons button.coeur i {
+  margin-top: 0;
+}
 .pageDons .centrePageDons .box .dons .btnContact {
   padding: 7px 15px;
   border: none;
@@ -912,6 +918,12 @@ p {
   margin-top: 15px;
   cursor: pointer;
 }
+@media screen and (max-width: 600px) {
+  #modif-infos-mon-compte {
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .form-modif-picture-moncompte,
 .modif-infos-moncompte,
@@ -1126,7 +1138,8 @@ p {
 }
 @media screen and (max-width: 600px) {
   .btn-modif-info-moncompte {
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: center;
   }
 }
@@ -1879,6 +1892,26 @@ p {
   text-align: center;
 }
 
+.titreDon {
+  display: flex;
+  align-items: center;
+}
+.titreDon h3 {
+  margin-left: 5px;
+}
+
+.btn-ads-search {
+  padding-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-ads-search .coeur {
+  margin: 0;
+}
+.btn-ads-search .coeur i {
+  margin: 0;
+}
+
 .search-container {
   margin: 0 auto;
   padding: 0 15px;
@@ -2160,13 +2193,15 @@ p {
 .a_propos {
   width: 80%;
   margin: 0 auto;
+  padding: 0 15px;
 }
 @media screen and (max-width: 600px) {
   .a_propos {
     width: 100%;
   }
 }
-.a_propos h2, .a_propos h4 {
+.a_propos h2,
+.a_propos h4 {
   color: #6e9611;
 }
 .a_propos .conceptrice {

@@ -83,3 +83,21 @@
     text-align: center;
   }
 }
+.titreDon {
+  display: flex;
+  align-items: center;
+  h3 {
+    margin-left: 5px;
+  }
+}
+.btn-ads-search {
+  padding-top: 15px;
+  align-items: center;
+  justify-content: space-between;
+  .coeur {
+    margin: 0;
+    i {
+      margin: 0;
+    }
+  }
+}

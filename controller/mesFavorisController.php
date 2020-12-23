@@ -39,7 +39,7 @@ if (!empty($tabAnnonceId)) {
                           <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                         </div>
                         <article>" . $value["ads_description"] . "</article>
-                        <div class='d-flex row'>
+                        <div class='d-flex row btn-ads-search'>
                         <form class='contactAnnonce' action='#' method='post'>
                           <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
                           <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>

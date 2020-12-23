@@ -61,7 +61,6 @@ if (isset($_POST['repondre'])) {
 }
 
 if (isset($_POST['tags'])) {
-    $_SESSION['forum_retour'] = $_SESSION['forum'];
     $_SESSION['forum_recherche'] = $_POST['tags'];
     header("Location:?section=forum");
 }

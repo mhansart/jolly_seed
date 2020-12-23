@@ -19,3 +19,4 @@
     <p> Vous devez vous connecter pour pouvoir créer un compte et voir la totalité des annonces. Celles-ci sont catégorisées par thèmes, mots-clé mais surtout proximité avec les autres personnes ce qui vous permettra de donner et obtenir de l'aide de la manière la plus simple et optimale qui soit.
         <p />
 </div>
+<script src="public/js/script_accueil.js"></script>

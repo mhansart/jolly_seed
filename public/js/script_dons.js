@@ -135,26 +135,6 @@ btnDons.addEventListener("click", function (e) {
     enteteDons.style.display = "none";
 });
 
-//Carte
-const carte = L.map('mapid');
-carte.setView([50.7133938204393, 4.4745827981423885], 12);
-const calque = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors',
-  minZoom: 2,
-  maxZoom: 19
-});
-carte.addLayer(calque);
-//creation d'icone
-var icone = L.icon({
-    iconUrl:"./public/image/pomme-bleue.png",
-    iconSize:[30,40],
-    iconAncor:[20,40]
-})
-//creation d'un marqueur avec popup
-const marker = L.marker([50.68577506311772, 4.482873242428455],{icon: icone});
-marker.addTo(carte);
-marker.bindPopup("<h5>titre de l'annonce<h5><p> et Dieu sait quoi </p>");
-
 
 // MONTRER la Section CARTE 
 
@@ -223,24 +203,48 @@ if (checkPhoto.checked == true){
 });
 */
 
+//CREATION de CARTE
+const carte = L.map('mapid');
+carte.setView([50.70051950183509, 4.626639985506511], 12);
+const calque = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors',
+  minZoom: 2,
+  maxZoom: 19
+});
+carte.addLayer(calque);
 
-/*
-//GESTION DES COEURS pour ne pas recharger PHP
-const coeurs = document.querySelectorAll(".fa-heart");
-console.log(coeurs);
-for (let coeur of coeurs){
-    coeur.addEventListener("click", function (e) {
-        console.log(e.currentTarget.classList);
-        /*
-        if (coeur.getAttribute("class");) {
-
-        } else {
-
-        };
-        
-    });
-}
-*/
+//creation d'icones
+var iconeSeed = L.icon({
+    iconUrl:"./public/image/pomme-bleue.png",
+    iconSize:[28,38],
+    iconAncor:[14,38]
+})
+var iconeFlower = L.icon({
+    iconUrl:"./public/image/pomme-mauve.png",
+    iconSize:[28,38],
+    iconAncor:[14,38]
+})
+var iconeGround = L.icon({
+    iconUrl:"./public/image/pomme-bordeaux.png",
+    iconSize:[28,38],
+    iconAncor:[14,38]
+})
+var iconePlant = L.icon({
+    iconUrl:"./public/image/pomme-jaune.png",
+    iconSize:[28,38],
+    iconAncor:[14,38]
+})
+var iconeTime = L.icon({
+    iconUrl:"./public/image/pomme-rouge.png",
+    iconSize:[28,38],
+    iconAncor:[14,38]
+})
+//creation d'un marqueur avec popup
+const marker = L.marker([50.68577506311772, 4.482873242428455],{icon: iconeTime});
+marker.addTo(carte);
+marker.bindPopup("<h5>titre de l'annonce<h5><p> et Dieu sait quoi </p>");
+ 
+//REQUETES AJAX
 //fonct qui permet de faire une requete Ajax
 function ajaxGet(url){
     return new Promise(function(resolve, reject){
@@ -261,28 +265,70 @@ function ajaxGet(url){
         xmlhttp.send()
     })
 }
-//PQ est ce que mon console.log ne fonctionne pas??ainsi que le reste... PQ Pas de ";"
-console.log("toto");
-ajaxGet("https://nominatim.openstreetmap.org/search?q=2+rue+du+patch,+rixensart&format=json&addressdetails1&limit=1").then(reponse => {
-    console.log("reponse ", reponse)
-    //conversion en Javascript:
-    let data = JSON.parse(reponse)
-    let coord = [data[0].lat, data[0].lon]
-    console.log(coord)
-    const marker2 = L.marker(coord)
-    marker2.addTo(carte)
-}).catch(console.log)
 
-ajaxGet("http://localhost/exo/PHP/jolly_seed/controller/AjaxUsers.php").then(reponse => {
+//requete pour chercherche de données users
+ajaxGet("http://localhost/jolly_seed/ajax/users.php").then(reponse => {
     let users = JSON.parse(reponse)
     console.log("ajax:", users)
 });
+//requete pour chercherche de données ads
+ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then(reponse => {
+    let ads = JSON.parse(reponse)
+    //console.log("ajax:", ads)
+    for (let ad of ads){
+        if (ad[1]==="don"){
+            switch(ad[2]) {
+                case "flower":
+                    //requete pour transformer adresses en coordonnées
+                    ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                    //conversion en Javascript:
+                    let data = JSON.parse(reponse)
+                    let coord = [data[0].lat, data[0].lon]
+                    console.log(coord)
+                    const marker = L.marker(coord,{icon: iconeFlower})
+                    marker.addTo(carte)
+                    marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                    })
+                  break;
+                case "seed":
+                    ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                        //console.log("reponse ", reponse)
+                        //conversion en Javascript:
+                        let data = JSON.parse(reponse)
+                        let coord = [data[0].lat, data[0].lon]
+                        console.log(coord)
+                        const marker = L.marker(coord,{icon: iconeSeed})
+                        marker.addTo(carte)
+                        marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                        })
+                    break;
+                case "ground":
+                    ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                        //console.log("reponse ", reponse)
+                        //conversion en Javascript:
+                        let data = JSON.parse(reponse)
+                        let coord = [data[0].lat, data[0].lon]
+                        console.log(coord)
+                        const marker = L.marker(coord,{icon: iconeGround})
+                        marker.addTo(carte)
+                        marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                        })
+                    break;
+                default:
+                    ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                        //console.log("reponse ", reponse)
+                        //conversion en Javascript:
+                        let data = JSON.parse(reponse)
+                        let coord = [data[0].lat, data[0].lon]
+                        console.log(coord)
+                        const marker = L.marker(coord,{icon: iconePlant})
+                        marker.addTo(carte)
+                        marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                        })  
+              };
+        }
+    }
+});
 
 
-//récuperer lnotre v-base de nonnées... NON-FONCTIONNEL
-/*
-ajaxGet("http://localhost/phpmyadmin/sql.php?server=1&db=jolly_seed&table=users&pos=0").then(data => {
-    console.log(data);
-})
-*/
 

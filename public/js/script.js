@@ -10,7 +10,9 @@ const heightHeader = parseInt(getComputedStyle(header).height,10);
 const main = document.querySelector('main');
 const footer = document.querySelector('footer');
 const heightFooter = parseInt(getComputedStyle(footer).height,10);
-// mainChat.style.minHeight = `${}`
+const containerChat = document.querySelector('.chat-container');
+const containerForum = document.querySelector('.one-forum');
+
 
 const getSizeMain = ()=>{
     main.style.minHeight = `${h-heightFooter-19}px`;
@@ -20,6 +22,32 @@ getSizeMain();
 window.addEventListener('resize', function(){
     getSizeMain();
 });
+
+const heightMain = parseInt(getComputedStyle(main).minHeight,10);
+console.log(heightMain);
+
+if(containerForum){
+    const getSizeForum = ()=>{
+        containerForum.style.height = `${heightMain - heightHeader}px`;
+    }
+    getSizeForum();
+    window.addEventListener('resize', function(){
+        getSizeForum();
+});
+}
+
+
+if(containerChat){
+    const getSizeChat = ()=>{
+        containerChat.style.height = `${heightMain - heightHeader}px`;
+    }
+    getSizeChat();
+    window.addEventListener('resize', function(){
+        getSizeChat();
+});
+}
+
+
 
 
 // const heightSubheader = getComputedStyle(subHeader).height;
@@ -53,10 +81,6 @@ if(menuNav){
     }
     getSizeNav();
 
-    window.addEventListener('resize', function(){
-        getSizeNav();
-    });
-
     menuBurger.addEventListener('click', function(){
         if(!menuNav.classList.contains('open-menu')){
             menuNav.classList.add('open-menu');  
@@ -64,6 +88,9 @@ if(menuNav){
             menuNav.classList.remove('open-menu');
         }
     })
+    window.addEventListener('resize', function(){
+            getSizeNav();
+    });
 }
 
 const searchBarGeneral = document.getElementById("search-bar-general");

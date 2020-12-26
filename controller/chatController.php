@@ -19,9 +19,10 @@ if (count($tabMessage) !== 0) {
     $conversation .= '<div class="no-chat"><div class="picture-user-chat" style="background-image:url(' . $imageInterlocuteur . ')"></div><p >Vous n\'avez encore jamais envoyé de message à </p><span class="bold">' . $nomInterlocuteur . '.</span>
     <p>Envoyez lui votre premier message maintenant !</p></div>';
 }
-$conversation .= '</div><div class="chat-send"><div class="btn-send-chat w-100"><form action="#" method="post" class="d-flex">
+$conversation .= '</div><div class="chat-send"><div class="btn-send-chat w-100"><form action="#" method="post" class="d-flex send-msg-chat">
 <input type="text" class="ipt-response-chat d-flex" name="msg-response">
-<input type="hidden" name="repondre" value="' . $_SESSION["chat"] . '">
+<input type="hidden" class="receiver-id" name="repondre" value="' . $_SESSION["chat"] . '">
+<input class="chat-response-hidden-user" type="hidden" name="repondre" value="' . $_SESSION["user_id"] . '">
 <button type="submit"><i class="fas fa-paper-plane"></i></button>
 </form></div></div>';
 
@@ -33,14 +34,5 @@ if (isset($_POST['repondre'])) {
         header("Location:?section=chat");
     }
 }
-
-
-
-// print_r($_POST);
-// $_POST["data"] = json_decode(
-//     $_POST["data"],
-//     true /* retourne un tableau associatif */
-// );
-// $msg = $_POST["data"]["message"];
 
 include("view/page/chat.php");

@@ -763,6 +763,9 @@ p {
   margin-top: 15px;
   max-height: 100%;
   overflow-y: scroll;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: all 0.5s;
 }
 .one-forum h2 {
   margin-top: 0;
@@ -771,14 +774,14 @@ p {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   padding: 15px;
   padding-bottom: 0;
-  margin-left: 50px;
+  margin-left: 45px;
   margin-bottom: 15px;
 }
 .one-forum .voir-plus-quest {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   padding: 15px;
   padding-bottom: 0;
-  margin-right: 50px;
+  margin-right: 45px;
   margin-bottom: 15px;
 }
 
@@ -1161,6 +1164,7 @@ p {
   }
 }
 .chat-container > div {
+  max-height: 100%;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   display: flex;
   flex-direction: column;
@@ -1185,18 +1189,19 @@ p {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: flex-end;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-.chat-container .sender-user {
+.chat-container .receiver-user {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   padding: 0 15px;
 }
-.chat-container .sender-user .infos-msg-text {
+.chat-container .receiver-user .infos-msg-text {
   min-width: 40%;
 }
-.chat-container .sender-user .msg-date-chat {
+.chat-container .receiver-user .msg-date-chat {
   padding: 5px 0 15px 0;
   color: #7f7f7f;
   font-size: 12px;
@@ -1204,21 +1209,22 @@ p {
   display: flex;
   justify-content: flex-end;
 }
-.chat-container .receiver-user {
+.chat-container .sender-user {
   padding: 0 15px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
-.chat-container .receiver-user .infos-msg-text {
-  width: 80%;
+.chat-container .sender-user .infos-msg-text {
+  min-width: 40%;
+  max-width: 80%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
 }
-.chat-container .receiver-user .infos-msg-text .msg-date-chat {
+.chat-container .sender-user .infos-msg-text .msg-date-chat {
   padding: 5px 0 15px 0;
   color: #7f7f7f;
   font-size: 12px;
@@ -2799,6 +2805,26 @@ footer p {
 button:focus,
 input:focus {
   outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7f7f7f;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7f7f7f;
 }
 
 /*# sourceMappingURL=style.css.map */

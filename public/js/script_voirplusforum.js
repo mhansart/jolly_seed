@@ -2,22 +2,9 @@ const formSendMsg = document.querySelector('.send-msg-forum');
 const content = document.querySelector('.ipt-response-forum');
 const forumId = document.querySelector('.forum-response-hidden');
 const userId = document.querySelector('.forum-response-hidden-user');
-const containerForum = document.querySelector('.one-forum');
+const forumMenu = document.getElementById('forum-menu');
 
-var heightWindow = window.innerHeight;
-const headerForum = document.querySelector('header');
-const heightHeaderForum = parseInt(getComputedStyle(headerForum).height,10);
-
-// mainChat.style.minHeight = `${}`
-
-const getSizeForum = ()=>{
-    containerForum.style.height = `${heightWindow-heightHeaderForum-270}px`;
-}
-getSizeForum();
-
-window.addEventListener('resize', function(){
-    getSizeForum();
-});
+forumMenu.classList.add('active');
 
 
 const today = ()=>{
@@ -71,11 +58,15 @@ function getMessages(contenu){
   
     // 2. Quand elle reçoit les données, il faut qu'elle les traite (en exploitant le JSON) et il faut qu'elle affiche ces données au format HTML
     requeteAjax.onload = function(){
+       const oldNewResponse = document.querySelector('.new-response-forum');
+       if(oldNewResponse){
+       oldNewResponse.classList.remove('new-response-forum');
+       }
        const resultat = JSON.parse(requeteAjax.responseText);
        const thisUser = resultat.users.filter((user)=>{ return user.user_id == userId.value});
        const thisForum = resultat.forums.filter((forum)=>{ return forum.forum_id == forumId.value});
        const classResponse = thisForum[0].user_id === thisUser[0].user_id? 'voir-plus-quest': 'voir-plus-response';
-       let html = `<div class="${classResponse} d-flex">
+       let html = `<div class="${classResponse} d-flex new-response-forum" style="opacity:0">
        <div class="forum-user-pp" style="background-image:url('uploads/${thisUser[0].user_picture} ')"></div>
        <div>
            <p class="resp-name"><strong>${thisUser[0].user_firstname} ${thisUser[0].user_name}</strong></p>
@@ -84,8 +75,26 @@ function getMessages(contenu){
        </div>
    </div>`;
         containerForum.innerHTML +=html;
-    //   messages.innerHTML = html;
-       containerForum.scrollTop = containerForum.scrollHeight;
+        containerForum.scrollTop = containerForum.scrollHeight;
+        let opacity = 0; 
+        let intervalID = 0; 
+        window.onload = fadeIn;
+        function fadeIn() { 
+            setInterval(show, 100); 
+        } 
+  
+        function show() { 
+            const newResponse = document.querySelector('.new-response-forum');
+            opacity = Number(window.getComputedStyle(newResponse) 
+                             .getPropertyValue("opacity")); 
+            if (opacity < 1) { 
+                opacity = opacity + 0.1; 
+                newResponse.style.opacity = opacity;
+            } else { 
+                clearInterval(intervalID); 
+            } 
+        } 
+        fadeIn();
     }
     requeteAjax.send();
   }

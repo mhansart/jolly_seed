@@ -11,11 +11,13 @@ const main = document.querySelector('main');
 const footer = document.querySelector('footer');
 const heightFooter = parseInt(getComputedStyle(footer).height,10);
 const containerChat = document.querySelector('.chat-container');
-const containerForum = document.querySelector('.one-forum');
-
 
 const getSizeMain = ()=>{
-    main.style.minHeight = `${h-heightFooter-19}px`;
+    if(containerChat){
+        main.style.minHeight = `${h}px`;
+    }else{
+        main.style.minHeight = `${h-heightFooter-19}px`;
+    }
 }
 getSizeMain();
 
@@ -26,31 +28,19 @@ window.addEventListener('resize', function(){
 const heightMain = parseInt(getComputedStyle(main).minHeight,10);
 console.log(heightMain);
 
-if(containerForum){
-    const getSizeForum = ()=>{
-        containerForum.style.height = `${heightMain - heightHeader}px`;
-    }
-    getSizeForum();
-    window.addEventListener('resize', function(){
-        getSizeForum();
-});
-}
-
 
 if(containerChat){
+    footer.style.display="none";
     const getSizeChat = ()=>{
-        containerChat.style.height = `${heightMain - heightHeader}px`;
+        const paddingMain = parseInt(getComputedStyle(main).paddingTop,10);
+        containerChat.style.height = `${heightMain - paddingMain}px`;
     }
     getSizeChat();
     window.addEventListener('resize', function(){
         getSizeChat();
-});
+    });
 }
 
-
-
-
-// const heightSubheader = getComputedStyle(subHeader).height;
 if(subHeader !== null){
     window.addEventListener('scroll', () => {
         (function scroll() {

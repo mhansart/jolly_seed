@@ -56,7 +56,7 @@ const today = ()=>{
 }
 function getMessages(contenu){
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "controller/requetesAjax/getInfos.php");
+    requeteAjax.open("GET", "ajax/getInfos.php");
 
     requeteAjax.onload = function(){
        const noChat = document.querySelector('.no-chat');
@@ -68,7 +68,7 @@ function getMessages(contenu){
        oldNewResponse.classList.remove('new-response-chat');
        }
        const resultat = JSON.parse(requeteAjax.responseText);
-    //    const thisUser = resultat.users.filter((user)=>{ return user.user_id == userId.value});
+
        const thatUser = resultat.users.filter((user)=>{ return user.user_id == receiverId.value});
        let html = `<div class="sender-user new-response-chat" style="opacity:0">
                     <div class="infos-msg-text">
@@ -102,20 +102,16 @@ function postMessage(event){
 
   event.preventDefault();
 
-  // 2. Elle doit récupérer les données du formulaire
-  // const author = document.querySelector('#author');
   if(content.value!==""){
 
-    // 3. Elle doit conditionner les données
     const data = new FormData();
-    // data.append('author', author.value);
+ 
     data.append('content', content.value);
     data.append('receiverId', receiverId.value);
     data.append('userId', userId.value);
 
-    // 4. Elle doit configurer une requête ajax en POST et envoyer les données
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open('POST', 'controller/requetesAjax/newResponseChat.php?task=write');
+    requeteAjax.open('POST', 'ajax/newResponseChat.php?task=write');
     
     requeteAjax.onload = function(){
         setTimeout(function(){ 
@@ -128,6 +124,5 @@ function postMessage(event){
   }
 }
 
-formSendMsg.addEventListener('submit', postMessage);
-// getMessages();
+formSendMsg.addEventListener('submit', postMessage);0000
 

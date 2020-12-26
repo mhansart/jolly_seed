@@ -53,4 +53,9 @@ class User extends Connexion
         $requete = "SELECT *, CONCAT(DAY(msg_date),' ', CASE MONTH(msg_date) WHEN 1 THEN 'Janvier' WHEN 2 THEN 'Février' WHEN 3 THEN 'Mars' WHEN 4 THEN 'Avril' WHEN 5 THEN 'Mai' WHEN 6 THEN 'Juin' WHEN 7 THEN 'Juillet' WHEN 8 THEN 'Août' WHEN 9 THEN 'Septembre' WHEN 10 THEN 'Octobre' WHEN 11 THEN 'Novembre' WHEN 12 THEN 'Décembre' END,' ', YEAR(msg_date)) as 'format_date', CONCAT(HOUR(msg_hour),'h',MINUTE(msg_hour)) as 'format_hour' FROM `messagerie`";
         return $this->execute($requete);
     }
+    public function readAllUsers()
+    {
+        $requete = "SELECT * FROM users";
+        return $this->execute($requete);
+    }
 }

@@ -26,13 +26,4 @@ $conversation .= '</div><div class="chat-send"><div class="btn-send-chat w-100">
 <button type="submit"><i class="fas fa-paper-plane"></i></button>
 </form></div></div>';
 
-if (isset($_POST['repondre'])) {
-    if ($_POST['msg-response'] !== "") {
-        $msgDate = date("Y-m-d");
-        $msgHour = date("H:i:s");
-        $m->createResponse($_SESSION['user_id'], $_SESSION['chat'], $_POST["msg-response"], $msgDate, $msgHour);
-        header("Location:?section=chat");
-    }
-}
-
 include("view/page/chat.php");

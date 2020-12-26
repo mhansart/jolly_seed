@@ -3,6 +3,7 @@ const content = document.querySelector('.ipt-response-forum');
 const forumId = document.querySelector('.forum-response-hidden');
 const userId = document.querySelector('.forum-response-hidden-user');
 const forumMenu = document.getElementById('forum-menu');
+const containerForum = document.querySelector('.one-forum');
 
 forumMenu.classList.add('active');
 
@@ -53,7 +54,7 @@ const today = ()=>{
 function getMessages(contenu){
     // 1. Elle doit créer une requête AJAX pour se connecter au serveur, et notamment au fichier handler.php
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "controller/requetesAjax/getInfos.php");
+    requeteAjax.open("GET", "ajax/getInfos.php");
     // requeteAjax.open("GET", "controller/getForum.php");
   
     // 2. Quand elle reçoit les données, il faut qu'elle les traite (en exploitant le JSON) et il faut qu'elle affiche ces données au format HTML
@@ -63,6 +64,7 @@ function getMessages(contenu){
        oldNewResponse.classList.remove('new-response-forum');
        }
        const resultat = JSON.parse(requeteAjax.responseText);
+       console.log(resultat);
        const thisUser = resultat.users.filter((user)=>{ return user.user_id == userId.value});
        const thisForum = resultat.forums.filter((forum)=>{ return forum.forum_id == forumId.value});
        const classResponse = thisForum[0].user_id === thisUser[0].user_id? 'voir-plus-quest': 'voir-plus-response';
@@ -75,7 +77,6 @@ function getMessages(contenu){
        </div>
    </div>`;
         containerForum.innerHTML +=html;
-        containerForum.scrollTop = containerForum.scrollHeight;
         let opacity = 0; 
         let intervalID = 0; 
         window.onload = fadeIn;
@@ -100,23 +101,18 @@ function getMessages(contenu){
   }
 
 function postMessage(event){
-  // 1. Elle doit stoper le submit du formulaire
   event.preventDefault();
-
-  // 2. Elle doit récupérer les données du formulaire
-  // const author = document.querySelector('#author');
   if(content.value!==""){
 
-    // 3. Elle doit conditionner les données
     const data = new FormData();
-    // data.append('author', author.value);
+ 
     data.append('content', content.value);
     data.append('forumId', forumId.value);
     data.append('userId', userId.value);
 
-    // 4. Elle doit configurer une requête ajax en POST et envoyer les données
+
     const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open('POST', 'controller/requetesAjax/newMsg.php?task=write');
+    requeteAjax.open('POST', 'ajax/newMsg.php?task=write');
     
     requeteAjax.onload = function(){
         setTimeout(function(){ 
@@ -130,5 +126,5 @@ function postMessage(event){
 }
 
 formSendMsg.addEventListener('submit', postMessage);
-// getMessages();
+
 

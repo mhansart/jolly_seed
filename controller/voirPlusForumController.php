@@ -54,12 +54,6 @@ $thisForum .= '</div>
             </div>
         </div>';
 
-// if (isset($_POST['repondre'])) {
-//     if ($_POST['msg-response'] !== "") {
-//         $p->createResponse($_POST['msg-response'], $forumDate, $_SESSION['user_id'], $_SESSION['forum']);
-//         header("Location:?section=VoirPlusForum");
-//     }
-// }
 
 if (isset($_POST['tags'])) {
     $_SESSION['forum_recherche'] = $_POST['tags'];

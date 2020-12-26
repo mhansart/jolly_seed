@@ -529,11 +529,15 @@
 .pageDons .carteTri .retour i:hover {
   color: #23512a;
 }
-.pageDons .carteTri #mapid {
-  height: 600px;
+.pageDons .carteTri .contMap {
+  width: 100%;
+  height: 70vh;
+}
+.pageDons .carteTri .contMap #mapid {
+  height: 100%;
 }
 @media screen and (max-width: 600px) {
-  .pageDons .carteTri #mapid {
+  .pageDons .carteTri .contMap #mapid {
     transform: translateY(40px);
   }
 }
@@ -1455,7 +1459,6 @@ p {
   width: 100%;
   height: 600px;
   margin-top: -15px;
-  background-color: burlywood;
   background-image: url("../image/partage.jpg");
   background-size: cover;
 }

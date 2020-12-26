@@ -65,7 +65,7 @@
   </section>
   <section class="carteTri">
   <button class="retour"><i class="fas fa-times"></i></button>
-    <div id="mapid"></div>
+    <div class="contMap"><div id="mapid"></div></div>
   </section>
 </section>
 <script src="public/js/script_dons.js"></script>

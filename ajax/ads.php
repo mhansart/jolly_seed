@@ -1,7 +1,7 @@
-
 <?php
 include("../model/User.php");
 $f = new User();
-$tabUsers = $f->read();
+$tabAds = $f->readAds();
+
 header('Content-Type: application/json');
-echo (json_encode($tabUsers));
+echo(json_encode($tabAds));

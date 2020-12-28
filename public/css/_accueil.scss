@@ -1,34 +1,57 @@
 .pageAccueil{
     .photoAcc{
-        width:100%;
-        height:600px;
-        margin-top:-15px;
-        background-image: url("../image/partage.jpg");
-        background-size: cover;
+        position: relative;
+        img{
+            width:100%;
+            height: auto;
+            margin-top:-15px; 
+        }
         h2{
+            position: absolute;
+            top:0;
+            left:0;
             margin: 0;
             color: $primary-color;
             font-size: 7vw;
-            padding: 50px;
+            padding: 4%;
             width:40%;
-            @media screen and (max-width: 1142px) {
-                width:50%;
-            }
         }   
-    }
-    h2{
-        color: $secondary-color;
     }
     .textaccueil{
         width: 80%;
         margin:auto;
-    @media screen and (max-width: 600px) {
-        width: 100%;
+        @media screen and (max-width: 600px) {
+        width: calc(100%-30px);
+        }
+        h2{
+            color: $secondary-color;
+            margin-top: 30px;
+        }
+       
+        ul{
+            width:310px;
+            padding-left:0px;
+            display: block;
+            margin: auto;
+            .logo{
+                height: 30px;
+                margin-right:15px;
+            }
+            li{
+                list-style-type: none;
+                display:flex;
+                align-items: center;
+            }
+        }
+            //section CARTE
+        .carteTri {
+            .contMap{
+            width:100%;
+            height:70vh;
+                #mapid {
+                    height: 100%;
+                }
+            }
         }
     }
-
-
-
-
-
 }

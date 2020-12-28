@@ -15,7 +15,6 @@ class User extends Connexion
         return $this->execute($requete);
     }
 
-}
     public function createResponse($_msg, $_dateResponse, $_userId, $_forumId)
     {
         $requete = "INSERT INTO response_forum (response_msg,`user_id`, response_date,forum_id) VALUES (:msg, :userId, :forumDate, :forumId)";

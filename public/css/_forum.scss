@@ -210,7 +210,9 @@ p {
 .one-forum {
   margin-top: 15px;
   max-height: 100%;
-  overflow-y: scroll;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: all 0.5s;
   h2 {
     margin-top: 0;
   }
@@ -218,14 +220,14 @@ p {
     box-shadow: $shadow-low;
     padding: 15px;
     padding-bottom: 0;
-    margin-left: 50px;
+    margin-left: 45px;
     margin-bottom: 15px;
   }
   .voir-plus-quest {
     box-shadow: $shadow-low;
     padding: 15px;
     padding-bottom: 0;
-    margin-right: 50px;
+    margin-right: 45px;
     margin-bottom: 15px;
   }
 }

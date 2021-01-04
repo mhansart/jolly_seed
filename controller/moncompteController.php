@@ -3,35 +3,7 @@
 $etat = "";
 $p = new Personne();
 $tabUser = $p->readById($_SESSION['user_id']);
-// function geocode($address)
-// {
 
-//     // url encode the address
-//     $address = urlencode($address);
-//     echo $address;
-
-//     // Create a stream
-//     $opts = array('http' => array('header' => "User-Agent: StevesCleverAddressScript 3.7.6\r\n"));
-//     $context = stream_context_create($opts);
-
-//     // Open the file using the HTTP headers set above
-//     $file = file_get_contents('http://nominatim.openstreetmap.org/search/q=Rome', false, $context);
-//     echo $file;
-//     $url = "http://nominatim.openstreetmap.org/search?q={$address}&limit=1&format=json";
-//     echo $url;
-
-//     // get the json response
-//     $resp_json = file_get_contents($url);
-
-//     // decode the json
-//     $resp = json_decode($resp_json, true);
-
-//     return array($resp[0]['lat'], $resp[0]['lon']);
-// };
-// var_dump(geocode($tabUser[0]['user_city']));
-// // foreach ($tabUsers as $tabUser) {
-// //     $allCoord[$tabUser['user_id']] = geocode($tabUser['user_city']);
-// // }
 $nom = $tabUser[0]['user_name'];
 $prenom = $tabUser[0]['user_firstname'];
 $street = $tabUser[0]['user_street'];

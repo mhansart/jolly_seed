@@ -14,7 +14,7 @@ function postActive(event) {
   if (adsId.name === "reactiver") {
     data.append("active", "1");
   } else {
-    data.append("active", "0.5");
+    data.append("active", "0");
   }
   console.log(data);
   const requeteAjax = new XMLHttpRequest();

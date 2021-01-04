@@ -4,4 +4,4 @@ $f = new User();
 $tabAds = $f->readAds();
 
 header('Content-Type: application/json');
-echo(json_encode($tabAds));
+echo (json_encode($tabAds));

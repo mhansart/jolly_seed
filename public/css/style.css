@@ -957,6 +957,27 @@ p {
     flex-direction: column;
   }
 }
+.form-modif-picture-moncompte div.container-img-try,
+.modif-infos-moncompte div.container-img-try,
+.delete-infos-moncompte div.container-img-try {
+  flex-direction: row;
+}
+.form-modif-picture-moncompte #img-modif-essai,
+.modif-infos-moncompte #img-modif-essai,
+.delete-infos-moncompte #img-modif-essai {
+  width: auto;
+  max-height: 250px;
+  margin-top: 15px;
+  display: none;
+}
+@media screen and (max-width: 350px) {
+  .form-modif-picture-moncompte #img-modif-essai,
+.modif-infos-moncompte #img-modif-essai,
+.delete-infos-moncompte #img-modif-essai {
+    width: 100%;
+    height: auto;
+  }
+}
 .form-modif-picture-moncompte label,
 .modif-infos-moncompte label,
 .delete-infos-moncompte label {
@@ -2244,7 +2265,7 @@ header {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   position: fixed;
   background-color: white;
-  z-index: 9;
+  z-index: 10000;
 }
 header .subheader {
   background-color: #6e9611;

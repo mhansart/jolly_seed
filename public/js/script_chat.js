@@ -11,7 +11,7 @@ window.addEventListener('load', function()
 	}, false);
 const today = ()=>{
     const thisDate = new Date();
-    const thisDay = thisDate.getDay();
+    const thisDay = thisDate.getDate();
     let thisMonth = thisDate.getMonth();
     if(thisMonth == 0){
         thisMonth = "Janvier";

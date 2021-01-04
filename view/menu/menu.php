@@ -19,7 +19,7 @@ if (isset($_POST["search-general"])) {
               <div class="jolly-name-connexion h-100 d-flex">
               <div class="d-flex">
               <div class="h-100 logo-container">
-                <a class="d-flex h-100" href="#home"
+                <a class="d-flex h-100" href="?section=accueil"
                 ><img src="public/image/logo.png" alt="Logo jolly seed"
                 /></a>
               </div>

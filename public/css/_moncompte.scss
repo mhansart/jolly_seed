@@ -107,6 +107,19 @@
     @media screen and (max-width: 600px) {
       flex-direction: column;
     }
+    &.container-img-try {
+      flex-direction: row;
+    }
+  }
+  #img-modif-essai {
+    width: auto;
+    max-height: 250px;
+    margin-top: 15px;
+    display: none;
+    @media screen and (max-width: 350px) {
+      width: 100%;
+      height: auto;
+    }
   }
   label {
     min-width: 120px;

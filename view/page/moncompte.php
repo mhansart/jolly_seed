@@ -1,10 +1,12 @@
 <?php require_once("view/menu/menu_moncompte.php"); ?>
+
 <form action="#" method="post" enctype="multipart/form-data" class=" form-modif-picture-moncompte">
     <i class="fas fa-times close"></i>
     <h3>Modifier ma photo</h3>
     <label for="user-picture">Chargez une photo de profil</label>
     <input type="file" name="user-picture" id="user-picture">
     <input type='hidden' name='update-picture' value='<?= $_SESSION['user_id'] ?>'>
+    <div class="container-img-try"><img id="img-modif-essai" alt="votre photo" /></div>
     <div class="btn-modif-img"><button type="submit">Modifier</button></div>
 </form>
 <div class="modif-infos-moncompte">

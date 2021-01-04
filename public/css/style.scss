@@ -32,7 +32,7 @@ header {
   box-shadow: $shadow-low;
   position: fixed;
   background-color: $primary-color;
-  z-index: 9;
+  z-index: 10000;
   .subheader {
     background-color: $secondary-color;
     padding: 15px 0;

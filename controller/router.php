@@ -82,5 +82,5 @@ if (isset($_GET["section"])) {
             break;
     }
 } else {
-    require_once("controller/connexion/connexion.php");
+    require_once("controller/accueilController.php");
 }

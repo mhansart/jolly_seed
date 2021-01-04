@@ -1,3 +1,4 @@
+import {ajaxGet, ajaxPost} from './src/helpers.js';
 const messagerieMenu = document.getElementById('menu-messagerie');
 messagerieMenu.classList.add('active');
 const containerChats = document.querySelector('.msgs-chat');
@@ -54,11 +55,10 @@ const today = ()=>{
     const thisMin = thisDate.getMinutes();
     return `${thisDay} ${thisMonth} ${thisYear} ${thisHour}h${thisMin}`
 }
-function getMessages(contenu){
-    const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open("GET", "ajax/getInfos.php");
 
-    requeteAjax.onload = function(){
+function getMessages(contenu){
+    ajaxGet("ajax/getInfos.php").then((reponse) => {
+       const resultat = JSON.parse(reponse);
        const noChat = document.querySelector('.no-chat');
        if(noChat){
        noChat.innerHTML="";
@@ -67,7 +67,6 @@ function getMessages(contenu){
        if(oldNewResponse){
        oldNewResponse.classList.remove('new-response-chat');
        }
-       const resultat = JSON.parse(requeteAjax.responseText);
 
        const thatUser = resultat.users.filter((user)=>{ return user.user_id == receiverId.value});
        let html = `<div class="sender-user new-response-chat" style="opacity:0">
@@ -94,8 +93,7 @@ function getMessages(contenu){
             } 
         } 
         fadeIn();
-    }
-    requeteAjax.send();
+    })
   }
 
 function postMessage(event){
@@ -110,19 +108,15 @@ function postMessage(event){
     data.append('receiverId', receiverId.value);
     data.append('userId', userId.value);
 
-    const requeteAjax = new XMLHttpRequest();
-    requeteAjax.open('POST', 'ajax/newResponseChat.php?task=write');
-    
-    requeteAjax.onload = function(){
+    ajaxPost("ajax/newResponseChat.php?task=write",data).then(() => {
         setTimeout(function(){ 
             getMessages(content.value); 
             content.value = '';
             content.focus();
         }, 300);
-    }
-    requeteAjax.send(data);
+    })
   }
 }
 
-formSendMsg.addEventListener('submit', postMessage);0000
+formSendMsg.addEventListener('submit', postMessage);
 

@@ -1,3 +1,4 @@
+import {ajaxPost} from './src/helpers.js';
 const menuAnnonces = document.getElementById("menu-mesannonces");
 menuAnnonces.classList.add("active");
 
@@ -16,16 +17,12 @@ function postActive(event) {
   } else {
     data.append("active", "0");
   }
-  console.log(data);
-  const requeteAjax = new XMLHttpRequest();
-  requeteAjax.open("POST", "ajax/activeAds.php?task=write");
-  requeteAjax.onload = function () {
+  ajaxPost("ajax/activeAds.php?task=write",data).then(() => {
     annonce.forEach((x)=>{
         x.style.opacity = adsId.name === "reactiver" ? 1:0.5;
     })
     containerAds.querySelector('.btnActive').value = adsId.name === "reactiver"? "Désactiver cette annonce" : "Réactiver cette annonce";
-  };
-  requeteAjax.send(data);
+  })
 }
 
 formSendActive.forEach((form) => {

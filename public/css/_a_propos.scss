@@ -9,6 +9,9 @@
   h4 {
     color: $secondary-color;
   }
+  h2 {
+    margin-top: 0;
+  }
   .conceptrice {
     display: flex;
     align-items: center;
@@ -22,9 +25,9 @@
     border-radius: 75px;
   }
   a {
-    color:$clic-color;
+    color: $clic-color;
     text-decoration: none;
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }

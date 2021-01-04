@@ -910,7 +910,7 @@ p {
   background-color: white;
   padding: 30px;
   flex-direction: column;
-  z-index: 29;
+  z-index: 10002;
   width: 50%;
 }
 .form-modif-picture-moncompte.form-modif-picture-moncompte label,
@@ -1051,7 +1051,7 @@ p {
   width: 100%;
   position: fixed;
   /* Stay in place */
-  z-index: 19;
+  z-index: 10001;
   /* Sit on top */
   left: 0;
   top: 0;
@@ -2223,6 +2223,9 @@ p {
 .a_propos h2,
 .a_propos h4 {
   color: #6e9611;
+}
+.a_propos h2 {
+  margin-top: 0;
 }
 .a_propos .conceptrice {
   display: flex;

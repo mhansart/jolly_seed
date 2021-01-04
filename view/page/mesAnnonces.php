@@ -3,6 +3,10 @@
 <div class="mesannonces-container w-80">
     <section class="pageDons">
         <section class="centrePageDons">
+            <div class="voir-plus-annonces d-flex">
+                <button><a href="?section=dons">Poster un don</a></button>
+                <button><a href="?section=jardiniers">Demander/offrir de l'aide</a></button>
+            </div>
             <div class="annonceDons">
                 <?= $mesdons ?>
             </div>

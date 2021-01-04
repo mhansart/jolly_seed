@@ -41,28 +41,28 @@ foreach ($tabDons as $value) {
                   <img class='pomme' src='./public/image/" . $imageDon . "' />
                   <h3>&nbsp;" . $value["ads_title"] . "</h3>
                 </div>
-                <div style='" . $isActive . "' class='d-flex row'>
+                <div style='" . $isActive . "' class='d-flex row date-info-ads'>
                   <p>Date: " . $value["ads_date"] . "&nbsp;</p>
                   <p> &nbsp; </p>
                   <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                 </div>
-                <article style='" . $isActive . "'>" . $value["ads_description"] . "</article>
+                <article class='ads-description' style='" . $isActive . "'>" . $value["ads_description"] . "</article>
                 <div class='d-flex row justif-end w-100'>
                   <form class='desactiver-annonce' action='#' method='post'>
-                    <input type='hidden' name='" . $btnName . "' value='" . $value["ads_id"] . "'>
+                    <input type='hidden' class='btn-active-id' name='" . $btnName . "' value='" . $value["ads_id"] . "'>
                     <input class='btnContact btnActive " . $value["ads_category"] . "' type='submit' value='" . $btnContent . "'>
                   </form>
                 </div>
               </section>";
 };
 
-if (isset($_POST["desactiver"])) {
-  $a->updateActive($_POST["desactiver"], "0");
-  header("Location:?section=mesAnnonces");
-}
-if (isset($_POST["reactiver"])) {
-  $a->updateActive($_POST["reactiver"], "1");
-  header("Location:?section=mesAnnonces");
-}
+// if (isset($_POST["desactiver"])) {
+//   $a->updateActive($_POST["desactiver"], "0");
+//   header("Location:?section=mesAnnonces");
+// }
+// if (isset($_POST["reactiver"])) {
+//   $a->updateActive($_POST["reactiver"], "1");
+//   header("Location:?section=mesAnnonces");
+// }
 
 include("view/page/mesAnnonces.php");

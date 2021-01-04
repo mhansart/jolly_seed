@@ -49,8 +49,9 @@ if (!empty($tabAnnonceId)) {
             //pose d'un coeur vide       
             $Like = "fas fa-heart";
             $aime = $value["ads_id"];
-            $mesfavoris .= " <form method='post' >
+            $mesfavoris .= " <form method='post' class='coeurs' >
                                <input class='aime' type='hidden' id='aime$aime' name='dislike' value='$aime'/>
+                               <input class='user_id' type='hidden' value='" . $_SESSION['user_id'] . "'/>
                                <button class='coeur' type='submit'><i class='$Like'></i></button>
                              </form>
                        </div>
@@ -62,11 +63,11 @@ if (!empty($tabAnnonceId)) {
     $mesfavoris .= '<p class="no-annonce">Vous n\'avez encore sauvegardé aucune annonce</p>';
 }
 
-if (isset($_POST["dislike"])) { //lecture des likes
-    $r = new Annonce();
-    $r->deleteLike($_SESSION['user_id'], $_POST["dislike"]);
-    header("Location:?section=mesFavoris");
-}
+// if (isset($_POST["dislike"])) { //lecture des likes
+//     $r = new Annonce();
+//     $r->deleteLike($_SESSION['user_id'], $_POST["dislike"]);
+//     header("Location:?section=mesFavoris");
+// }
 
 if (isset($_POST["contact"])) {
     header("Location:?section=chat");

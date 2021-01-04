@@ -59,6 +59,17 @@ class User extends Connexion
         $requete = "SELECT * FROM users";
         return $this->execute($requete);
     }
+    public function updateActive($_id, $_active)
+    {
+        $requete = "UPDATE ads SET `ads_active` = :active WHERE `ads_id`= :ads_id";
+
+        $tabChamps = array(
+            ":active" => $_active,
+            ":ads_id" => $_id
+        );
+
+        return $this->execute($requete, $tabChamps);
+    }
 
     public function deleteLike($_like_user_id, $_like_ads_id)
     {

@@ -1,7 +1,9 @@
 <?php
 
+$etat = "";
 $p = new Personne();
 $tabUser = $p->readById($_SESSION['user_id']);
+
 $nom = $tabUser[0]['user_name'];
 $prenom = $tabUser[0]['user_firstname'];
 $street = $tabUser[0]['user_street'];

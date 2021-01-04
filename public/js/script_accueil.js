@@ -104,7 +104,11 @@ ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then(reponse => {
                         console.log(coord)
                         const marker = L.marker(coord,{icon: iconeSeed})
                         marker.addTo(carte)
-                        marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                        if(ad[4]==="Offert"){
+                            marker.bindPopup(`<h5>Temps offert<h5>`);
+                        } else {
+                            marker.bindPopup(`<h5>Temps demandé<h5>`);   
+                        }
                         })
                     break;
                 case "ground":

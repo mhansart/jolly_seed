@@ -60,7 +60,7 @@ if (isset($_POST["search-general"])) {
     echo '<div class="header-container-deconnected d-flex w-80 h-100">
             <div class="jolly-name h-100 d-flex">
             <div class="h-100 logo-container">
-              <a class="d-flex h-100" href="#home"
+              <a class="d-flex h-100" href="?section=accueil"
                 ><img src="public/image/logo.png" alt="Logo jolly seed"
               /></a>
             </div>

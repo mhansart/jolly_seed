@@ -80,7 +80,7 @@
   background-color: $primary-color;
   padding: 30px;
   flex-direction: column;
-  z-index: 29;
+  z-index: 10002;
   width: 50%;
   &.form-modif-picture-moncompte {
     label {
@@ -168,7 +168,7 @@
   height: 100%;
   width: 100%;
   position: fixed; /* Stay in place */
-  z-index: 19; /* Sit on top */
+  z-index: 10001; /* Sit on top */
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.8); /* Black w/opacity */

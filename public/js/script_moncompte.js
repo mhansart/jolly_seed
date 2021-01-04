@@ -122,6 +122,8 @@ const loadFile = function (e) {
 };
 
 const iptImgPp = document.getElementById("user-picture");
-iptImgPp.addEventListener("change", (e) => {
-  loadFile(e);
-});
+if (iptImgPp) {
+  iptImgPp.addEventListener("change", (e) => {
+    loadFile(e);
+  });
+}

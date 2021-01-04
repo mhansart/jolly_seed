@@ -13,11 +13,20 @@
             </div>
         </div>
         <div class="conceptrice">
-            <div class="detailConceptrice">
+            <div class="detailConceptrice marineTexte">
                 <h4>Marine Hansart</h4>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam, sapiente! Officiis, earum. Dignissimos, maxime alias iusto fuga numquam doloribus placeat maiores autem quisquam, accusamus, laborum earum minima. Eligendi, veritatis voluptas?</p>
             </div>
-            <img src="./public/image/marine.jpg" alt="Daphné Delvaux" />
+            <img class="marine" src="./public/image/marine.jpg" alt="Marine Hansart" />
+        </div>
+        <div class="conceptrice">
+            <div class=cercle>
+                <img src="./public/image/laetitia.jpg" alt="Laetitia Debruyne" />
+            </div>
+            <div class="detailConceptrice">
+                <h4>Laetitia Debruyne</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, ut. Alias vero molestias nesciunt, minima qui fuga sit earum corrupti sequi, laudantium repellat repellendus quas fugiat dolor labore animi molestiae.</p>
+            </div>
         </div>
         <p>Si vous avez des conseils ou des remarques à nous apporter, n'hésitez pas à nous contacter via la page de contact! Merci <i class="far fa-smile-wink"></i></p>
     </section>

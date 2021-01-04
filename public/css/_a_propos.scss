@@ -15,6 +15,9 @@
   .conceptrice {
     display: flex;
     align-items: center;
+    @media screen and (max-width: 420px) {
+      flex-direction: column;
+    }
   }
   .detailConceptrice {
     margin: 0 15px;
@@ -22,7 +25,30 @@
   img {
     width: 150px;
     height: 150px;
+    border-radius: 1000px;
+  }
+  .marine{
+    @media screen and (max-width: 420px) {
+      order: 1;
+    }
+  }
+
+  .marineTexte{
+    @media screen and (max-width: 420px) {
+      order: 2;
+    }
+  }
+
+  .cercle{
+    min-width: 150px;
+    max-width: 150px;
+    height: 150px;
     border-radius: 75px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: auto;
+    }
   }
   a {
     color: $clic-color;
@@ -31,4 +57,5 @@
       text-decoration: underline;
     }
   }
+
 }

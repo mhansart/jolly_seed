@@ -95,15 +95,12 @@ function ajaxGet(url) {
 //requete pour chercherche les données ads
 ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then((reponse) => {
   let ads = JSON.parse(reponse);
-  console.log("ajax:", ads);
   for (let ad of ads) {
-    console.log(ad[5]);
     if (ad[1] === "jardinier") {
       ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
         (reponse) => {
           //conversion en Javascript:
           let data = JSON.parse(reponse);
-          console.log(data.features[0]);
           let coord = data.features[0].geometry.coordinates;
           coord.reverse();
           const marker = L.marker(coord, { icon: iconeTime });
@@ -130,7 +127,6 @@ ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then((reponse) => {
         case "seed":
           ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
             (reponse) => {
-              //console.log("reponse ", reponse)
               //conversion en Javascript:
               let data = JSON.parse(reponse);
               let coord = data.features[0].geometry.coordinates;
@@ -148,7 +144,6 @@ ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then((reponse) => {
         case "ground":
           ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
             (reponse) => {
-              //console.log("reponse ", reponse)
               //conversion en Javascript:
               let data = JSON.parse(reponse);
               let coord = data.features[0].geometry.coordinates;
@@ -162,7 +157,6 @@ ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then((reponse) => {
         default:
           ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
             (reponse) => {
-              //console.log("reponse ", reponse)
               //conversion en Javascript:
               let data = JSON.parse(reponse);
               let coord = data.features[0].geometry.coordinates;
@@ -176,4 +170,3 @@ ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then((reponse) => {
     }
   }
 });
-

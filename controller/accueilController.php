@@ -27,6 +27,6 @@ function geocode($address){
 
 $coordonnees = geocode("Paris");
 var_dump($coordonnees);
-*/
 
+*/
 include("view/page/accueil.php");

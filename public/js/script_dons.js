@@ -59,7 +59,6 @@ const pommes = document.querySelectorAll(".pomme");
 
 // tri seed
 seedopt.addEventListener("click", function (e) {
-    console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
@@ -77,7 +76,6 @@ seedopt.addEventListener("click", function (e) {
 });
 // tri flower
 floweropt.addEventListener("click", function (e) {
-    console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
@@ -94,7 +92,6 @@ floweropt.addEventListener("click", function (e) {
 });
 // tri ground
 groundopt.addEventListener("click", function (e) {
-    console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
@@ -111,7 +108,6 @@ groundopt.addEventListener("click", function (e) {
 });
 //tri plant
 plantopt.addEventListener("click", function (e) {
-    console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
@@ -191,17 +187,13 @@ const loadFile = function (e) {
 
   //gestion des like
   const coeurs = document.querySelectorAll(".coeurs");
-  console.log(coeurs);
   function postLike(event) {
-  event.preventDefault();
-    
-    console.log(event.target);
+    event.preventDefault();
     const data = new FormData();
     const coeur = event.target.querySelector(".coeur");
     const userId = event.target.querySelector(".user_id");
     const adsId = event.target.querySelector(".aime");
     const isFull = coeur.querySelector("i").classList.contains("fas");
-    console.log(isFull);
     data.append("adsId", adsId.value);
     data.append("userId", userId.value);
     data.append("isFull", isFull);
@@ -209,7 +201,6 @@ const loadFile = function (e) {
     const requeteAjax = new XMLHttpRequest();
     requeteAjax.open("POST", "ajax/like.php?task=write");
     requeteAjax.onload = function () {
-        console.log(coeur.innerHTML);
         if (coeur.querySelector("i").classList.contains("fas")){
             coeur.innerHTML = "<i class='far fa-heart'></i>"
         } else {

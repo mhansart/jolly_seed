@@ -44,4 +44,4 @@ if (!isset($_SESSION['user_id'])) {
     echo '</div>';
 };
 ?>
-<script src="public/js/script_accueil.js"></script>
+<script type="module" src="public/js/script_accueil.js"></script>

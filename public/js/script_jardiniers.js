@@ -1,3 +1,4 @@
+import {ajaxPost} from './src/helpers.js';
 const jardiniersMenu = document.getElementById('jardiniers-menu');
 jardiniersMenu.classList.add('active');
 
@@ -128,16 +129,13 @@ function postLike(event) {
   data.append("userId", userId.value);
   data.append("isFull", isFull);
  
-  const requeteAjax = new XMLHttpRequest();
-  requeteAjax.open("POST", "ajax/like.php?task=write");
-  requeteAjax.onload = function () {
+  ajaxPost("ajax/like.php?task=write",data).then(() => {
       if (coeur.querySelector("i").classList.contains("fas")){
           coeur.innerHTML = "<i class='far fa-heart'></i>"
       } else {
           coeur.innerHTML = "<i class='fas fa-heart'></i>"
       }
-  };
-  requeteAjax.send(data);
+  });
 }
 coeurs.forEach((form) => {
   form.addEventListener("submit", postLike);

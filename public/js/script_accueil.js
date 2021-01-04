@@ -1,3 +1,4 @@
+import { ajaxGet } from "./src/helpers.js";
 const accueilMenu = document.getElementById("accueil-menu");
 if (accueilMenu) {
   accueilMenu.classList.add("active");
@@ -70,103 +71,37 @@ const marker = L.marker([50.68577506311772, 4.482873242428455], {
 marker.addTo(carte);
 marker.bindPopup("<h5>Temps offert<h5><p>");
 
-//REQUETES AJAX
-//fonct qui permet de faire une requete Ajax
-function ajaxGet(url) {
-  return new Promise(function (resolve, reject) {
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-      if (xmlhttp.readyState == 4) {
-        if (xmlhttp.status == 200) {
-          resolve(xmlhttp.responseText);
-        } else {
-          reject(xmlhttp);
-        }
-      }
-    };
-    xmlhttp.onerror = function (error) {
-      reject(error);
-    };
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-  });
-}
-
 //requete pour chercherche les données ads
-ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then((reponse) => {
+ajaxGet("ajax/ads.php").then((reponse) => {
   let ads = JSON.parse(reponse);
   for (let ad of ads) {
-    if (ad[1] === "jardinier") {
-      ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
-        (reponse) => {
-          //conversion en Javascript:
-          let data = JSON.parse(reponse);
-          let coord = data.features[0].geometry.coordinates;
-          coord.reverse();
-          const marker = L.marker(coord, { icon: iconeTime });
-          marker.addTo(carte);
-          marker.bindPopup(`<h5>${ad[4]}<h5>`);
+    ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
+      (reponse) => {
+        //conversion en Javascript:
+        let data = JSON.parse(reponse);
+        let coord = data.features[0].geometry.coordinates;
+        coord.reverse();
+        let marker ="";
+        if (ad[1] === "jardinier") {
+          marker = L.marker(coord, { icon: iconeTime });
+        } else {
+          switch (ad[2]) {
+            case "flower":
+              marker = L.marker(coord, { icon: iconeFlower });
+              break;
+            case "seed":
+              marker = L.marker(coord, { icon: iconeSeed });
+              break;
+            case "ground":
+              marker = L.marker(coord, { icon: iconeGround });
+              break;
+            default:
+              marker = L.marker(coord, { icon: iconePlant });
+          }
         }
-      );
-    } else {
-      switch (ad[2]) {
-        case "flower":
-          //requete pour transformer adresses en coordonnées
-          ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
-            (reponse) => {
-              //conversion en Javascript:
-              let data = JSON.parse(reponse);
-              let coord = data.features[0].geometry.coordinates;
-              coord.reverse();
-              const marker = L.marker(coord, { icon: iconeFlower });
-              marker.addTo(carte);
-              marker.bindPopup(`<h5>${ad[4]}<h5>`);
-            }
-          );
-          break;
-        case "seed":
-          ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
-            (reponse) => {
-              //conversion en Javascript:
-              let data = JSON.parse(reponse);
-              let coord = data.features[0].geometry.coordinates;
-              coord.reverse();
-              const marker = L.marker(coord, { icon: iconeSeed });
-              marker.addTo(carte);
-              if (ad[4] === "Offert") {
-                marker.bindPopup(`<h5>Temps offert<h5>`);
-              } else {
-                marker.bindPopup(`<h5>Temps demandé<h5>`);
-              }
-            }
-          );
-          break;
-        case "ground":
-          ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
-            (reponse) => {
-              //conversion en Javascript:
-              let data = JSON.parse(reponse);
-              let coord = data.features[0].geometry.coordinates;
-              coord.reverse();
-              const marker = L.marker(coord, { icon: iconeGround });
-              marker.addTo(carte);
-              marker.bindPopup(`<h5>${ad[4]}<h5>`);
-            }
-          );
-          break;
-        default:
-          ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
-            (reponse) => {
-              //conversion en Javascript:
-              let data = JSON.parse(reponse);
-              let coord = data.features[0].geometry.coordinates;
-              coord.reverse();
-              const marker = L.marker(coord, { icon: iconePlant });
-              marker.addTo(carte);
-              marker.bindPopup(`<h5>${ad[4]}<h5>`);
-            }
-          );
+        marker.addTo(carte);
+        marker.bindPopup(`<h5>${ad[4]}<h5>`);
       }
-    }
+    );
   }
 });

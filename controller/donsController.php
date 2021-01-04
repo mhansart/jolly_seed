@@ -63,8 +63,9 @@ foreach ($tabDons as $value) {
     }
   }
   $aime = $value["ads_id"];
-  $dons .= " <form method='post' >
+  $dons .= " <form class='coeurs' method='post' >
                        <input class='aime' type='hidden' id='aime$aime' name='like_ads_id$aime' value='$aime'/>
+                       <input class='user_id' type='hidden' value='". $_SESSION['user_id']."'/>
                        <button class='coeur' type='submit'><i class='$Like'></i></button>
                      </form>
                </div>

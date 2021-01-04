@@ -143,3 +143,96 @@ ajaxGet("http://localhost/jolly_seed/ajax/ads.php").then(reponse => {
     }
   
 });
+
+/*
+function getCoordonnees(x){
+  const requeteAjax2 = new XMLHttpRequest();
+  requeteAjax2.open("GET", `https://nominatim.openstreetmap.org/search?q=${x}&format=json&addressdetails1&limit=1`);
+  console.log(requeteAjax2);
+  let result = JSON.parse(requeteAjax2.responseText);
+  console.log(result);
+  return result;
+}
+
+function getVille(){
+  // 1. Elle doit créer une requête AJAX pour se connecter au serveur, et notamment au fichier handler.php
+  const requeteAjax = new XMLHttpRequest();
+  requeteAjax.open("GET", "ajax/ads.php");
+
+  // 2. Quand elle reçoit les données, il faut qu'elle les traite (en exploitant le JSON) et il faut qu'elle affiche ces données au format HTML
+  requeteAjax.onload = function(){
+     const ads = JSON.parse(requeteAjax.responseText);
+  console.log(ads);
+     for (let ad of ads){
+      if (ad[1]==="jardinier"){
+          const data = getCoordonnees(ad[5])
+              console.log(data)
+              let coord = [data[0].lat, data[0].lon]
+              console.log(coord)
+              const marker = L.marker(coord,{icon: iconeTime})
+              marker.addTo(carte)
+              marker.bindPopup(`<h5>${ad[4]}<h5>`);
+              }
+      } else {
+          switch(ad[2]) {
+              case "flower":
+                  //requete pour transformer adresses en coordonnées
+                  ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                  //conversion en Javascript:
+                  let data = JSON.parse(reponse)
+                  console.log(data)
+                  let coord = [data[0].lat, data[0].lon]
+                  console.log(coord)
+                  const marker = L.marker(coord,{icon: iconeFlower})
+                  marker.addTo(carte)
+                  marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                  })
+                break;
+              case "seed":
+                  ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                      //console.log("reponse ", reponse)
+                      //conversion en Javascript:
+                      let data = JSON.parse(reponse)
+                      let coord = [data[0].lat, data[0].lon]
+                      console.log(coord)
+                      const marker = L.marker(coord,{icon: iconeSeed})
+                      marker.addTo(carte)
+                      if(ad[4]==="Offert"){
+                          marker.bindPopup(`<h5>Temps offert<h5>`);
+                      } else {
+                          marker.bindPopup(`<h5>Temps demandé<h5>`);   
+                      }
+                      })
+                  break;
+              case "ground":
+                  ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                      //console.log("reponse ", reponse)
+                      //conversion en Javascript:
+                      let data = JSON.parse(reponse)
+                      let coord = [data[0].lat, data[0].lon]
+                      console.log(coord)
+                      const marker = L.marker(coord,{icon: iconeGround})
+                      marker.addTo(carte)
+                      marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                      })
+                  break;
+              default:
+                  ajaxGet(`https://nominatim.openstreetmap.org/search?q=${ad[5]}&format=json&addressdetails1&limit=1`).then(reponse => {
+                      //console.log("reponse ", reponse)
+                      //conversion en Javascript:
+                      let data = JSON.parse(reponse)
+                      let coord = [data[0].lat, data[0].lon]
+                      console.log(coord)
+                      const marker = L.marker(coord,{icon: iconePlant})
+                      marker.addTo(carte)
+                      marker.bindPopup(`<h5>${ad[4]}<h5>`);
+                      })  
+          };
+      }   
+  }
+  
+};
+  requeteAjax.send();
+}
+getVille();
+*/

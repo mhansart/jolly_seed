@@ -339,13 +339,14 @@
     }
     .imageAnnonce {
       display: block;
+      position: relative;
       width: 250px;
       padding-top: 250px;
-      position: relative;
       background-size: cover;
       background-position: center center;
       margin-bottom: 15px;
     }
+   
     .imageAnnonceFixe {
       display: block;
       background-image: url("../image/avatar.png");

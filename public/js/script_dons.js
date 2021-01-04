@@ -172,5 +172,22 @@ for (let categorie of categories){
     });
 }
 
+// afficher l'image après le choix dans les fichiers
+const loadFile = function (e) {
+    const reader = new FileReader();
+    reader.onload = function () {
+    img.style.backgroundImage = `url(${reader.result})`;
+    };
+    // generer un url
+    reader.readAsDataURL(e.target.files[0]);
+  };
+  
+  const iptImgPp = document.querySelector(".fichierImage");
+  if (iptImgPp) {
+    iptImgPp.addEventListener("change", (e) => {
+      loadFile(e);
+    });
+  }
+
 
 

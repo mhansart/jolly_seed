@@ -81,8 +81,8 @@ ajaxGet("ajax/ads.php").then((reponse) => {
         let data = JSON.parse(reponse);
         let coord = data.features[0].geometry.coordinates;
         coord.reverse();
-        let marker ="";
-        if (ad[1] === "jardinier") {
+        let marker = "";
+        if (ad[1].toLowerCase() === "jardinier") {
           marker = L.marker(coord, { icon: iconeTime });
         } else {
           switch (ad[2]) {
@@ -100,7 +100,13 @@ ajaxGet("ajax/ads.php").then((reponse) => {
           }
         }
         marker.addTo(carte);
-        marker.bindPopup(`<h5>${ad[4]}<h5>`);
+        if (ad[1] === "jardinier" && ad[4] === "Offre") {
+          marker.bindPopup(`<h5>Temps offert<h5>`);
+        } else if (ad[1] === "jardinier" && ad[4] === "Demande") {
+          marker.bindPopup(`<h5>Temps demandé<h5>`);
+        } else {
+          marker.bindPopup(`<h5>${ad[4]}<h5>`);
+        }
       }
     );
   }

@@ -457,9 +457,9 @@
 }
 .pageDons .posterAnnonce .imageAnnonce {
   display: block;
+  position: relative;
   width: 250px;
   padding-top: 250px;
-  position: relative;
   background-size: cover;
   background-position: center center;
   margin-bottom: 15px;
@@ -2231,13 +2231,39 @@ p {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 420px) {
+  .a_propos .conceptrice {
+    flex-direction: column;
+  }
+}
 .a_propos .detailConceptrice {
   margin: 0 15px;
 }
 .a_propos img {
   width: 150px;
   height: 150px;
+  border-radius: 1000px;
+}
+@media screen and (max-width: 420px) {
+  .a_propos .marine {
+    order: 1;
+  }
+}
+@media screen and (max-width: 420px) {
+  .a_propos .marineTexte {
+    order: 2;
+  }
+}
+.a_propos .cercle {
+  min-width: 150px;
+  max-width: 150px;
+  height: 150px;
   border-radius: 75px;
+  overflow: hidden;
+}
+.a_propos .cercle img {
+  width: 100%;
+  height: auto;
 }
 .a_propos a {
   color: #ff8617;

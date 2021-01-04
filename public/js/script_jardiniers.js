@@ -57,12 +57,10 @@ const optTmpsOff = document.querySelector(".tmpsOffOpt");
 const titrestemps = document.querySelectorAll(".titreTemps");
 // tri temps donné
 optTmpsDon.addEventListener("click", function (e) {
-    console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
     for (titretemps of titrestemps){
-        console.log(titretemps.innerHTML);
         if(titretemps.innerHTML === "&nbsp;Demande"){
             let titretempsId= titretemps.id;
             boxId = "#don_" + titretempsId.split("_")[1];
@@ -75,12 +73,10 @@ optTmpsDon.addEventListener("click", function (e) {
 });
 // tri temps offert
 optTmpsOff.addEventListener("click", function (e) {
-    console.log("click");
     for (box of boxs){
         box.style.display="none";
     }  
     for (titretemps of titrestemps){
-        console.log(titretemps.innerHTML);
         if(titretemps.innerHTML === "&nbsp;Offre"){
             let titretempsId= titretemps.id;
             boxId = "#don_" + titretempsId.split("_")[1];
@@ -117,5 +113,33 @@ photoPerso.addEventListener("click", function (e) {
    if (imgFixe.style.display === "none"){
     imgFixe.style.display = "block";
    } else { imgFixe.style.display = "none";}
+});
+
+//gestion des like
+const coeurs = document.querySelectorAll(".coeurs");
+function postLike(event) {
+  event.preventDefault();
+  const data = new FormData();
+  const coeur = event.target.querySelector(".coeur");
+  const userId = event.target.querySelector(".user_id");
+  const adsId = event.target.querySelector(".aime");
+  const isFull = coeur.querySelector("i").classList.contains("fas");
+  data.append("adsId", adsId.value);
+  data.append("userId", userId.value);
+  data.append("isFull", isFull);
+ 
+  const requeteAjax = new XMLHttpRequest();
+  requeteAjax.open("POST", "ajax/like.php?task=write");
+  requeteAjax.onload = function () {
+      if (coeur.querySelector("i").classList.contains("fas")){
+          coeur.innerHTML = "<i class='far fa-heart'></i>"
+      } else {
+          coeur.innerHTML = "<i class='fas fa-heart'></i>"
+      }
+  };
+  requeteAjax.send(data);
+}
+coeurs.forEach((form) => {
+  form.addEventListener("submit", postLike);
 });
 

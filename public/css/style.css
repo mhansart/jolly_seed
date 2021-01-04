@@ -457,9 +457,9 @@
 }
 .pageDons .posterAnnonce .imageAnnonce {
   display: block;
+  position: relative;
   width: 250px;
   padding-top: 250px;
-  position: relative;
   background-size: cover;
   background-position: center center;
   margin-bottom: 15px;
@@ -1843,6 +1843,26 @@ p {
 }
 .mesannonces-container .pageDons {
   width: 100%;
+}
+.mesannonces-container .pageDons .centrePageDons .annonceDons {
+  margin-top: 0;
+}
+.mesannonces-container .pageDons .centrePageDons .voir-plus-annonces {
+  justify-content: space-between;
+  padding-top: 15px;
+}
+@media screen and (max-width: 400px) {
+  .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces {
+    flex-direction: column;
+  }
+}
+.mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button {
+  background-color: #ff8617;
+  margin-top: 15px;
+}
+.mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button a {
+  text-decoration: none;
+  color: white;
 }
 .mesannonces-container .pageDons .centrePageDons .box {
   margin: 0;

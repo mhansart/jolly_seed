@@ -172,5 +172,57 @@ for (let categorie of categories){
     });
 }
 
+// afficher l'image après le choix dans les fichiers
+const loadFile = function (e) {
+    const reader = new FileReader();
+    reader.onload = function () {
+    img.style.backgroundImage = `url(${reader.result})`;
+    };
+    // generer un url
+    reader.readAsDataURL(e.target.files[0]);
+  };
+  
+  const iptImgPp = document.querySelector(".fichierImage");
+  if (iptImgPp) {
+    iptImgPp.addEventListener("change", (e) => {
+      loadFile(e);
+    });
+  }
+
+  //gestion des like
+  const coeurs = document.querySelectorAll(".coeurs");
+  console.log(coeurs);
+  function postLike(event) {
+  event.preventDefault();
+    
+    console.log(event.target);
+    const data = new FormData();
+    const coeur = event.target.querySelector(".coeur");
+    const userId = event.target.querySelector(".user_id");
+    const adsId = event.target.querySelector(".aime");
+    const isFull = coeur.querySelector("i").classList.contains("fas");
+    console.log(isFull);
+    data.append("adsId", adsId.value);
+    data.append("userId", userId.value);
+    data.append("isFull", isFull);
+   
+    const requeteAjax = new XMLHttpRequest();
+    requeteAjax.open("POST", "ajax/like.php?task=write");
+    requeteAjax.onload = function () {
+        console.log(coeur.innerHTML);
+        if (coeur.querySelector("i").classList.contains("fas")){
+            coeur.innerHTML = "<i class='far fa-heart'></i>"
+        } else {
+            coeur.innerHTML = "<i class='fas fa-heart'></i>"
+        }
+    };
+    requeteAjax.send(data);
+  }
+  coeurs.forEach((form) => {
+    form.addEventListener("submit", postLike);
+  });
+  
+  
+
 
 

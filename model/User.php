@@ -70,4 +70,27 @@ class User extends Connexion
 
         return $this->execute($requete, $tabChamps);
     }
+
+    public function deleteLike($_like_user_id, $_like_ads_id)
+    {
+        $requete = "DELETE FROM like_user_ads WHERE like_user_id = :likeUserId AND like_ads_id = :likeAdsId";
+        $tabChamps = array(
+            ":likeUserId" => $_like_user_id,
+            ":likeAdsId" => $_like_ads_id
+        );
+        $this->execute($requete, $tabChamps);
+    }
+
+    public function createLike($_like_user_id, $_like_ads_id, $_like_option)
+    {
+        $requete = "INSERT INTO like_user_ads ( like_user_id, like_ads_id, like_option) VALUES (:likeUserId, :likeAdsId, :likeOption)";
+
+        $tabChamps = array(
+            ":likeUserId" => $_like_user_id,
+            ":likeAdsId" => $_like_ads_id,
+            ":likeOption" => $_like_option,
+        );
+
+        $this->execute($requete, $tabChamps);
+    }
 }

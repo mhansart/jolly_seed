@@ -15,7 +15,6 @@
             <p class="ssopt groundOpt">Terreau / Copeaux / Buches / Bois</p>
             <p class="ssopt plantOpt">Plants / Arbustres / Arbres</p>
           </div>
-          <div id="proximite" class="opt">Proximité</div>
         </div>
       </div>
     </div>
@@ -62,10 +61,6 @@
       <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br /> 
       <button class="creer" type="submit">Créer l'annonce</button>
     </form>
-  </section>
-  <section class="carteTri">
-  <button class="retour"><i class="fas fa-times"></i></button>
-    <div class="contMap"><div id="mapid"></div></div>
   </section>
 </section>
 <script src="public/js/script_dons.js"></script>

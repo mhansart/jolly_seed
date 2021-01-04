@@ -7,6 +7,9 @@
   button {
     cursor: pointer;
   }
+  .sb{
+    justify-content: space-between;
+  }
   .centrePageDons {
     button {
       padding: 7px 15px;
@@ -27,11 +30,13 @@
       flex-direction: column;
     }
     .enteteDons {
-      margin-top: 20px;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 600px) {
+        padding-right:15px;
+      }
+      @media screen and (max-width: 400px) {
         flex-direction: column;
       }
     }
@@ -43,22 +48,21 @@
     }
 
     .btnCarte {
+      visibility: hidden;
       color: $clic-color;
       background-color: transparent;
       &:hover {
         text-decoration: underline;
       }
-      @media screen and (max-width: 640px) {
-        width: 80%;
-        text-align: left;
+      @media screen and (max-width: 1035px) {
+        display: none;
       }
     }
     .btnDons {
       background-color: $clic-color;
       margin: auto;
-      @media screen and (max-width: 640px) {
-        order: 3;
-        margin-top: 15px;
+      @media screen and (max-width: 1035px) {
+      margin:0 15px;
       }
       a {
         color: $primary-color;
@@ -66,11 +70,6 @@
     }
     .tri {
       position: relative;
-      @media screen and (max-width: 640px) {
-        order: 2;
-        width: 80%;
-        text-align: right;
-      }
       .select {
         color: $secondary-color;
         display: inline-block;
@@ -88,12 +87,15 @@
       .options {
         color: $secondary-color;
         position: absolute;
-        right: 15px;
-        top: 40px;
+        right: 0px;
+        top: 45px;
         background-color: $primary-color;
         padding: 10px 0px;
-        border: 1px solid $secondary-color;
+        box-shadow: $shadow-low;
         display: none;
+        @media screen and (max-width: 400px) {
+          right:-60px;
+        }
         .opt {
           color: $secondary-color;
           text-align: left;
@@ -107,6 +109,7 @@
         .sous-options {
           text-align: right;
           display: none;
+       
           .ssopt {
             margin: 0px;
             padding-right: 10px;
@@ -119,7 +122,6 @@
             }
           }
         }
-
         a:hover {
           background-color: $clic-color;
           color: $primary-color;
@@ -191,7 +193,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
+        width: 100%;
         @media screen and (max-width: 680px) {
           margin-top: 15px;
         }
@@ -233,6 +235,7 @@
           //font-weight: bold;
           font-size: 100%;
           font-family: $main-font;
+           //margin-top:15px;
           &:hover {
             cursor: pointer;
           }
@@ -306,7 +309,6 @@
       display: block;
       margin: auto;
     }
-
     .time {
       text-align: left;
       width: 200px;
@@ -321,11 +323,9 @@
       color: $primary-color;
       margin: 25px auto;
     }
-
     .sectionCategorie {
       margin: auto;
     }
-
     .annonceImage {
       align-items: center;
       margin: auto;
@@ -358,7 +358,6 @@
       top: 0;
       left: 0;
     }
-
     .imageAlternative {
       padding: 0px 15px;
       display: block;
@@ -366,11 +365,9 @@
       max-width: 500px;
       text-align: left;
     }
-
     .inputAccord {
       display: inline;
     }
-
     button {
       padding: 7px 15px;
       border: none;
@@ -391,43 +388,6 @@
     }
     .column {
       flex-direction: column;
-    }
-  }
-  //section CARTE
-  .carteTri {
-    .retour {
-      position: absolute;
-      top: 150px;
-      right: 0px;
-      border: none;
-      background-color: white;
-      margin: 15px;
-      text-align: right;
-      @media screen and (max-width: 1035px) {
-        top: 200px;
-      }
-      @media screen and (max-width: 600px) {
-        top: 150px;
-      }
-      i {
-        font-size: 150%;
-        color: $clic-color;
-        font-weight: 100;
-        &:hover {
-          color: $third-color;
-        }
-      }
-    }
-    .contMap{
-      width:100%;
-      height:70vh;
-      #mapid {
-       
-        height: 100%;
-        @media screen and (max-width: 600px) {
-          transform: translateY(40px);
-        }
-      }
     }
   }
 }

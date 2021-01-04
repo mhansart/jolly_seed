@@ -14,6 +14,7 @@ class User extends Connexion
         $requete = "SELECT ads_user_id, ads_type, ads_category, ads_active,ads_title, ads_city FROM ads WHERE ads_active = 1";
         return $this->execute($requete);
     }
+
     public function createResponse($_msg, $_dateResponse, $_userId, $_forumId)
     {
         $requete = "INSERT INTO response_forum (response_msg,`user_id`, response_date,forum_id) VALUES (:msg, :userId, :forumDate, :forumId)";
@@ -25,7 +26,7 @@ class User extends Connexion
             ":forumId" => $_forumId
         );
 
-        $this->execute($requete, $tabChamps);
+        return $this->execute($requete, $tabChamps);
     }
 
     public function readforum()

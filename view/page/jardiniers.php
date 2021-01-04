@@ -13,7 +13,6 @@
             <p class="ssopt tmpsDoOpt">Temps demandé</p>
             <p class="ssopt tmpsOffOpt">Temps offert</p>
           </div>
-          <div id="proximite" class="opt">Proximité</div>
         </div>
       </div>
     </div>
@@ -45,7 +44,7 @@
       <h3>Image: </h3>
       <div class="sectionCategorie annonceImage">
         <div class="conteneurImageAnnonce">
-          <div class='imageAnnonce' style='background-image: url("../jolly_seed/public/image/<?=$annoncePicture?>");'>
+          <div class='imageAnnonce' style='background-image: url("../jolly_seed/uploads/<?=$annoncePicture?>");'>
             <div class='imageAnnonceFixe'>
             </div>
           </div>

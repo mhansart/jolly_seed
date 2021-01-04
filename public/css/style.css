@@ -100,6 +100,9 @@
 .pageDons button {
   cursor: pointer;
 }
+.pageDons .sb {
+  justify-content: space-between;
+}
 .pageDons .centrePageDons button {
   padding: 7px 15px;
   border: none;
@@ -119,12 +122,16 @@
   flex-direction: column;
 }
 .pageDons .centrePageDons .enteteDons {
-  margin-top: 20px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
+  .pageDons .centrePageDons .enteteDons {
+    padding-right: 15px;
+  }
+}
+@media screen and (max-width: 400px) {
   .pageDons .centrePageDons .enteteDons {
     flex-direction: column;
   }
@@ -138,26 +145,25 @@
   }
 }
 .pageDons .centrePageDons .btnCarte {
+  visibility: hidden;
   color: #ff8617;
   background-color: transparent;
 }
 .pageDons .centrePageDons .btnCarte:hover {
   text-decoration: underline;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1035px) {
   .pageDons .centrePageDons .btnCarte {
-    width: 80%;
-    text-align: left;
+    display: none;
   }
 }
 .pageDons .centrePageDons .btnDons {
   background-color: #ff8617;
   margin: auto;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1035px) {
   .pageDons .centrePageDons .btnDons {
-    order: 3;
-    margin-top: 15px;
+    margin: 0 15px;
   }
 }
 .pageDons .centrePageDons .btnDons a {
@@ -165,13 +171,6 @@
 }
 .pageDons .centrePageDons .tri {
   position: relative;
-}
-@media screen and (max-width: 640px) {
-  .pageDons .centrePageDons .tri {
-    order: 2;
-    width: 80%;
-    text-align: right;
-  }
 }
 .pageDons .centrePageDons .tri .select {
   color: #6e9611;
@@ -190,12 +189,17 @@
 .pageDons .centrePageDons .tri .options {
   color: #6e9611;
   position: absolute;
-  right: 15px;
-  top: 40px;
+  right: 0px;
+  top: 45px;
   background-color: white;
   padding: 10px 0px;
-  border: 1px solid #6e9611;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   display: none;
+}
+@media screen and (max-width: 400px) {
+  .pageDons .centrePageDons .tri .options {
+    right: -60px;
+  }
 }
 .pageDons .centrePageDons .tri .options .opt {
   color: #6e9611;
@@ -305,6 +309,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 @media screen and (max-width: 680px) {
   .pageDons .centrePageDons .box .dons {
@@ -501,45 +506,6 @@
 }
 .pageDons .posterAnnonce .column {
   flex-direction: column;
-}
-.pageDons .carteTri .retour {
-  position: absolute;
-  top: 150px;
-  right: 0px;
-  border: none;
-  background-color: white;
-  margin: 15px;
-  text-align: right;
-}
-@media screen and (max-width: 1035px) {
-  .pageDons .carteTri .retour {
-    top: 200px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .pageDons .carteTri .retour {
-    top: 150px;
-  }
-}
-.pageDons .carteTri .retour i {
-  font-size: 150%;
-  color: #ff8617;
-  font-weight: 100;
-}
-.pageDons .carteTri .retour i:hover {
-  color: #23512a;
-}
-.pageDons .carteTri .contMap {
-  width: 100%;
-  height: 70vh;
-}
-.pageDons .carteTri .contMap #mapid {
-  height: 100%;
-}
-@media screen and (max-width: 600px) {
-  .pageDons .carteTri .contMap #mapid {
-    transform: translateY(40px);
-  }
 }
 
 .forum-container,
@@ -1477,26 +1443,22 @@ p {
 }
 
 .pageAccueil .photoAcc {
+  position: relative;
+}
+.pageAccueil .photoAcc img {
   width: 100%;
-  height: 600px;
+  height: auto;
   margin-top: -15px;
-  background-image: url("../image/partage.jpg");
-  background-size: cover;
 }
 .pageAccueil .photoAcc h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
   margin: 0;
   color: white;
   font-size: 7vw;
-  padding: 50px;
+  padding: 4%;
   width: 40%;
-}
-@media screen and (max-width: 1142px) {
-  .pageAccueil .photoAcc h2 {
-    width: 50%;
-  }
-}
-.pageAccueil h2 {
-  color: #6e9611;
 }
 .pageAccueil .textaccueil {
   width: 80%;
@@ -1504,8 +1466,34 @@ p {
 }
 @media screen and (max-width: 600px) {
   .pageAccueil .textaccueil {
-    width: 100%;
+    width: calc(100%-30px);
   }
+}
+.pageAccueil .textaccueil h2 {
+  color: #6e9611;
+  margin-top: 30px;
+}
+.pageAccueil .textaccueil ul {
+  width: 310px;
+  padding-left: 0px;
+  display: block;
+  margin: auto;
+}
+.pageAccueil .textaccueil ul .logo {
+  height: 30px;
+  margin-right: 15px;
+}
+.pageAccueil .textaccueil ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.pageAccueil .textaccueil .carteTri .contMap {
+  width: 100%;
+  height: 70vh;
+}
+.pageAccueil .textaccueil .carteTri .contMap #mapid {
+  height: 100%;
 }
 
 .contact-container {
@@ -2247,6 +2235,13 @@ p {
   width: 150px;
   height: 150px;
   border-radius: 75px;
+}
+.a_propos a {
+  color: #ff8617;
+  text-decoration: none;
+}
+.a_propos a:hover {
+  text-decoration: underline;
 }
 
 h3 {

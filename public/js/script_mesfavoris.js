@@ -1,4 +1,4 @@
-import {ajaxPost} from './src/helpers.js';
+import { ajaxPost } from "./src/helpers.js";
 const menuFavoris = document.getElementById("menu-mesfavoris");
 menuFavoris.classList.add("active");
 
@@ -16,9 +16,9 @@ function postLike(event) {
   data.append("userId", userId.value);
   data.append("isFull", isFull);
 
-  ajaxPost("ajax/like.php?task=write",data).then(() => {
-    const coeurContainer = coeur.closest('.box');
-    coeurContainer.style.display="none";
+  ajaxPost("ajax/like.php?task=write", data).then(() => {
+    const coeurContainer = coeur.closest(".box");
+    coeurContainer.style.display = "none";
   });
 }
 coeurs.forEach((form) => {

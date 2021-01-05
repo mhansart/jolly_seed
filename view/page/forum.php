@@ -28,5 +28,5 @@
         <?= $forum; ?>
     </div>
 </div>
-<script src="public/js/script_forum.js"></script>
+<script type="module" src="public/js/script_forum.js"></script>
 <?php unset($_SESSION['forum_recherche']); ?>

@@ -75,4 +75,4 @@
 
 </div>
 <script src="public/js/script_mesinfos.js"></script>
-<script src="public/js/script_moncompte.js"></script>
+<script type="module" src="public/js/script_moncompte.js"></script>

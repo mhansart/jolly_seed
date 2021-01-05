@@ -1,7 +1,6 @@
+import { render } from "./src/helpers.js";
 var h = window.innerHeight;
-var style = document.createElement("style");
-document.head.appendChild(style);
-style.sheet.insertRule(`body {height: ${h}px}`);
+document.body.style.height = h + "px";
 
 const btnModif = document.getElementById("modif-infos-mon-compte");
 const formModif = document.querySelector(".modif-infos-moncompte");
@@ -71,8 +70,8 @@ if (btnModif) {
     });
   });
 }
-// recherche dans le menu messagerie
 
+// recherche dans le menu messagerie
 const interlocuteur = document.querySelectorAll(".user-interlocuteur");
 const oneChat = document.querySelectorAll(".oneChat");
 const searchBar = document.querySelector(".ipt-search-msg");
@@ -82,14 +81,6 @@ interlocuteur.forEach((x) => {
   interlocuteurs.push(x);
 });
 
-const render = (arr) => {
-  oneChat.forEach((elt) => {
-    elt.style.display = "none";
-  });
-  arr.forEach((elt) => {
-    elt.style.display = "block";
-  });
-};
 const searchWord = (str) => {
   const result = interlocuteurs.filter((elt) => {
     return elt.value.toLowerCase().includes(str);
@@ -98,10 +89,10 @@ const searchWord = (str) => {
     return elt.closest(".oneChat");
   });
 
-  uniqueArray = resultArr.filter(function (item, pos) {
+  const uniqueArray = resultArr.filter(function (item, pos) {
     return resultArr.indexOf(item) == pos;
   });
-  render(uniqueArray);
+  render(uniqueArray, oneChat);
 };
 
 searchBar.addEventListener("input", (e) => {

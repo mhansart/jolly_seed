@@ -1,14 +1,15 @@
+import { render } from "./src/helpers.js";
 const btnNewForum = document.querySelector(".new-forum");
 const formNewForum = document.querySelector(".form-new-forum");
 const forumImage = document.querySelector(".forum-image");
 const searchBar = document.querySelector(".search-bar-forum");
 const closeForm = document.querySelector(".close-form-forum");
 const forumContainer = document.querySelector(".new-forum-container");
-const textAdd = document.getElementById('info-add-forum');
-const forumAddForm = document.getElementById('forum-add-form');
-const forumMenu = document.getElementById('forum-menu');
+const textAdd = document.getElementById("info-add-forum");
+const forumAddForm = document.getElementById("forum-add-form");
+const forumMenu = document.getElementById("forum-menu");
 
-forumMenu.classList.add('active');
+forumMenu.classList.add("active");
 
 //remettre les propriétés css de base si la fenêtre change de taille
 const getSizeWindow = () => {
@@ -38,7 +39,7 @@ btnNewForum.addEventListener("click", function () {
   forumAddForm.style.width = "100%";
   formNewForum.style.display = "flex";
   btnNewForum.style.display = "none";
-  textAdd.style.display="none";
+  textAdd.style.display = "none";
   // si la fenetre est plus petite que 720px
   if (w < 720) {
     searchBar.style.order = "1";
@@ -55,8 +56,8 @@ btnNewForum.addEventListener("click", function () {
   closeForm.addEventListener("click", function () {
     formNewForum.style.display = "none";
     btnNewForum.style.display = "block";
-    textAdd.style.display="block";
-    
+    textAdd.style.display = "block";
+
     if (w < 720) {
       searchBar.style.order = "1";
       btnNewForum.style.order = "2";
@@ -72,25 +73,17 @@ btnNewForum.addEventListener("click", function () {
 });
 
 const iptSearch = document.querySelector(".ipt-search");
-const searchContainer = document.querySelector(".all-forum");
 const allForum = document.querySelectorAll(".one-forum-view");
 const tags = document.querySelectorAll(".forum-tag");
-const forumRetour = document.querySelector('.retour-forum');
-const noResult = document.querySelector('.no-result-forum');
+const forumRetour = document.querySelector(".retour-forum");
+const noResult = document.querySelector(".no-result-forum");
 const tagsArr = [];
 
 tags.forEach((tag) => {
   tagsArr.push(tag);
 });
 
-const render = (arr) => {
-  allForum.forEach((elt) => {
-    elt.style.display = "none";
-  });
-  arr.forEach((elt) => {
-    elt.style.display = "block";
-  });
-};
+// fonction de recherche
 const searchWord = (str) => {
   const result = tagsArr.filter((tag) => {
     return tag.innerHTML.toLowerCase().substr(1, tag.length).includes(str);
@@ -99,50 +92,42 @@ const searchWord = (str) => {
     return tag.closest(".one-forum-view");
   });
 
-  uniqueArray = resultArr.filter(function (item, pos) {
+  const uniqueArray = resultArr.filter(function (item, pos) {
     return resultArr.indexOf(item) == pos;
   });
-  if (uniqueArray.length ===0){
-    noResult.style.display="block";
+  if (uniqueArray.length === 0) {
+    noResult.style.display = "block";
     allForum.forEach((elt) => {
       elt.style.display = "none";
     });
-  }else{
-    noResult.style.display="none";
-    render(uniqueArray);
+  } else {
+    noResult.style.display = "none";
+    render(uniqueArray, allForum);
   }
 };
 
+// quand l'input de la barre de recherche change
 iptSearch.addEventListener("input", (e) => {
   const iptValue = e.currentTarget.value.toLowerCase();
-  forumRetour.setAttribute('href','?section=forum');
+  forumRetour.setAttribute("href", "?section=forum");
   searchWord(iptValue);
-  if(iptValue.length>0){
-    forumRetour.style.display="inline-flex";
-  }else{
-    forumRetour.style.display="none";
-  }
+  forumRetour.style.display = iptValue.length > 0 ? "inline-flex" : "none";
 });
+
+// Quand on clic sur un tag
 tags.forEach((tag) => {
   tag.addEventListener("click", function () {
     const tagRecherche = tag.innerHTML.toLowerCase().substr(1, tag.length);
     iptSearch.value = tagRecherche;
     searchWord(tagRecherche);
-    forumRetour.style.display="inline-flex";
+    forumRetour.style.display = "inline-flex";
   });
 });
 
-if(iptSearch.value != ""){
-  forumRetour.style.display="inline-flex";
+// Si la barre de recherche est rempli, un bouton retour apparait
+if (iptSearch.value != "") {
+  forumRetour.style.display = "inline-flex";
   const searchValue = iptSearch.value.toLowerCase();
   searchWord(searchValue);
-  if(searchValue.length>0){
-    forumRetour.style.display="inline-flex";
-  }else{
-    forumRetour.style.display="none";
-  }
+  forumRetour.style.display = searchValue.length > 0 ? "inline-flex" : "none";
 }
-
-
-
-

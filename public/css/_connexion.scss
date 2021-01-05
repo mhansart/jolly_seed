@@ -184,12 +184,13 @@
   cursor: pointer;
   font-size: 15px;
 }
-.form-mdp-oubli {
+.form-mdp-oubli,
+.form-mdp-oubli-reinitialisation {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  // display: none;
+  display: none;
   background-color: $primary-color;
   padding: 30px;
   flex-direction: column;
@@ -197,6 +198,9 @@
   width: 50%;
   &.d-flex {
     display: flex;
+  }
+  h3 {
+    margin-top: 0;
   }
   label {
     margin-top: 15px;
@@ -229,4 +233,18 @@
     right: 15px;
     cursor: pointer;
   }
+  .logo-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    a {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+}
+.container-oubli {
+  height: 100%;
+  width: 100%;
+  background-color: $neutral-color;
 }

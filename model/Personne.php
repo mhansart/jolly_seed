@@ -66,6 +66,17 @@ class Personne extends Connexion
         return $this->execute($requete, $tabChamps);
     }
 
+    public function updateMdp($_userMdp, $_id)
+    {
+        $requete = "UPDATE users SET user_mdp = :mdp WHERE `user_id` = :id";
+
+        $tabChamps = array(
+            ":mdp" => $_userMdp,
+            ":id" => $_id
+        );
+        return $this->execute($requete, $tabChamps);
+    }
+
     public function updateUser($_id, $_nom, $_prenom, $_rue, $_number, $_boxnumber, $_citycode, $_city, $_phone, $_email, $_description)
     {
         $requete = "UPDATE users SET `user_name` = :nom, user_firstname = :prenom, user_street = :street, user_street_number = :streetnumber, user_box = :boxnumber, user_citycode = :citycode, user_city = :city, user_phone = :phone, user_email = :email, user_description = :userdescription WHERE `user_id`= :update_id";

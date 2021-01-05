@@ -1841,33 +1841,44 @@ p {
   font-size: 15px;
 }
 
-.form-mdp-oubli {
+.form-mdp-oubli,
+.form-mdp-oubli-reinitialisation {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  display: none;
   background-color: white;
   padding: 30px;
   flex-direction: column;
   z-index: 10002;
   width: 50%;
 }
-.form-mdp-oubli.d-flex {
+.form-mdp-oubli.d-flex,
+.form-mdp-oubli-reinitialisation.d-flex {
   display: flex;
 }
-.form-mdp-oubli label {
+.form-mdp-oubli h3,
+.form-mdp-oubli-reinitialisation h3 {
+  margin-top: 0;
+}
+.form-mdp-oubli label,
+.form-mdp-oubli-reinitialisation label {
   margin-top: 15px;
 }
-.form-mdp-oubli input {
+.form-mdp-oubli input,
+.form-mdp-oubli-reinitialisation input {
   margin-top: 15px;
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
   padding: 5px;
   border: none;
 }
-.form-mdp-oubli input:active {
+.form-mdp-oubli input:active,
+.form-mdp-oubli-reinitialisation input:active {
   outline: none;
 }
-.form-mdp-oubli button {
+.form-mdp-oubli button,
+.form-mdp-oubli-reinitialisation button {
   padding: 7px 15px;
   border-radius: 20px;
   border: none;
@@ -1877,14 +1888,33 @@ p {
   margin-top: 15px;
   cursor: pointer;
 }
-.form-mdp-oubli button:focus {
+.form-mdp-oubli button:focus,
+.form-mdp-oubli-reinitialisation button:focus {
   outline: none;
 }
-.form-mdp-oubli .close {
+.form-mdp-oubli .close,
+.form-mdp-oubli-reinitialisation .close {
   position: absolute;
   top: 15px;
   right: 15px;
   cursor: pointer;
+}
+.form-mdp-oubli .logo-container,
+.form-mdp-oubli-reinitialisation .logo-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.form-mdp-oubli .logo-container a,
+.form-mdp-oubli-reinitialisation .logo-container a {
+  display: flex;
+  align-items: flex-start;
+}
+
+.container-oubli {
+  height: 100%;
+  width: 100%;
+  background-color: #7f7f7f;
 }
 
 .mesannonces-container {

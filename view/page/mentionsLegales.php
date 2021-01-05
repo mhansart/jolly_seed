@@ -1,4 +1,4 @@
-<div class="contact-container w-80">
+<div class="contact-container w-80 plr-15">
     <h2>Politique d’utilisation des données</h2>
 
     <h3>Quels types d’informations recueillons-nous ?</h3>

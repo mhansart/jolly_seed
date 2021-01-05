@@ -179,3 +179,72 @@
     }
   }
 }
+.mdp-oubli {
+  color: $clic-color;
+  cursor: pointer;
+  font-size: 15px;
+}
+.form-mdp-oubli,
+.form-mdp-oubli-reinitialisation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: none;
+  background-color: $primary-color;
+  padding: 30px;
+  flex-direction: column;
+  z-index: 10002;
+  width: 50%;
+  &.d-flex {
+    display: flex;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  label {
+    margin-top: 15px;
+  }
+  input {
+    margin-top: 15px;
+    box-shadow: $shadow-low;
+    padding: 5px;
+    border: none;
+    &:active {
+      outline: none;
+    }
+  }
+  button {
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: none;
+    display: inline-flex;
+    background-color: $clic-color;
+    color: $primary-color;
+    margin-top: 15px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+  }
+  .logo-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    a {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+}
+.container-oubli {
+  height: 100%;
+  width: 100%;
+  background-color: $neutral-color;
+}

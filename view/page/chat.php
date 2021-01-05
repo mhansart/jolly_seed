@@ -12,4 +12,4 @@
     </div>
 
     <script type="module" src="public/js/script_chat.js"></script>
-    <script src="public/js/script_moncompte.js"></script>
+    <script type="module" src="public/js/script_moncompte.js"></script>

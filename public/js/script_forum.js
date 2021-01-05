@@ -1,7 +1,6 @@
 import { render } from "./src/helpers.js";
 const btnNewForum = document.querySelector(".new-forum");
 const formNewForum = document.querySelector(".form-new-forum");
-const forumImage = document.querySelector(".forum-image");
 const searchBar = document.querySelector(".search-bar-forum");
 const closeForm = document.querySelector(".close-form-forum");
 const forumContainer = document.querySelector(".new-forum-container");

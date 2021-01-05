@@ -68,27 +68,14 @@ foreach ($tabAnnonces as $value) {
             }
         }
         $aime = $value["ads_id"];
-        $allSearch .= " <form method='post' >
-                           <input class='aime' type='hidden' id='aime$aime' name='like_ads_id$aime' value='$aime'/>
-                           <button class='coeur' type='submit'><i class='$Like'></i></button>
-                         </form>
+        $allSearch .= " <form class='coeurs' method='post' >
+                            <input class='aime' type='hidden' id='aime$aime' name='like_ads_id$aime' value='$aime'/>
+                            <input class='user_id' type='hidden' value='" . $_SESSION['user_id'] . "'/>
+                            <button class='coeur' type='submit'><i class='$Like'></i></button>
+                        </form>
                    </div>
                  </div>
                </section>";
-
-        if (isset($_POST["like_ads_id$aime"])) { //lecture des likes
-            $r = new annonce();
-            $likeDislike = $r->readLikeByUserIdAndAdsId($_SESSION['user_id'], $_POST["like_ads_id$aime"]);
-            if (empty($likeDislike)) { //si vide alors créer
-                $l = new Annonce();
-                $l->createLike($_SESSION['user_id'], $_POST["like_ads_id$aime"], "1");
-                header("Location:?section=search");
-            } elseif ($likeDislike[0]["like_option"] === '1') { //si n'aime plus alors enlever
-                $d = new Annonce();
-                $d->deleteLike($_SESSION['user_id'], $_POST["like_ads_id$aime"]);
-                header("Location:?section=search");
-            }
-        }
     }
 }
 foreach ($tabForums as $oneForum) {

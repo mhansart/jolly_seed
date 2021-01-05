@@ -1,3 +1,11 @@
+<form action="#" method="post" class="form-mdp-oubli">
+    <i class="fas fa-times close"></i>
+    <h3>Mot de passe oublié?</h3>
+    <label for="mdp-perdu">Rentrez votre adresse mail pour modifier votre mot de passe</label>
+    <input type="text" name="mdp-perdu" id="mdp-perdu">
+    <div class="btn-send-mail-mdp"><button type="submit">Envoyer un e-mail</button></div>
+    <span style="color:<?= $colorEtat; ?>"><?= $etat; ?></span>
+</form>
 <section class="container-connexion w-80">
     <div class="picture-connexion connexion-page w-50"></div>
     <div class="content-connexion w-50">
@@ -17,5 +25,7 @@
             <div class="btns-connexion"><button type="submit" id="bouton">Se connecter</button><button type="reset" class="effacer-connexion">Effacer</button></div>
         </form>
         <p class="fin-connexion"><span>Pas encore de compte? </span><a href="?section=inscription"><span class="bold"> Inscrivez-vous</a></p>
+        <p class="mdp-oubli">Mot de passe oublié?</p>
     </div>
 </section>
+<script src="public/js/script_connexion.js"></script>

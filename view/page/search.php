@@ -32,4 +32,4 @@
         <?= $allSearch; ?>
     </div>
 </div>
-<script src="public/js/script_search.js"></script>
+<script type="module" src="public/js/script_search.js"></script>

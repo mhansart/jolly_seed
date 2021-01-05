@@ -1,13 +1,16 @@
 var h = window.innerHeight;
 document.body.style.height = h + "px";
 
+
 const subHeader = document.querySelector(".subheader");
 
 const header = document.querySelector("header");
-const heightHeader = parseInt(getComputedStyle(header).height, 10);
+
+const heightHeader = header? parseInt(getComputedStyle(header).height, 10):0;
 const main = document.querySelector("main");
 const footer = document.querySelector("footer");
-const heightFooter = parseInt(getComputedStyle(footer).height, 10);
+const heightFooter = footer? parseInt(getComputedStyle(footer).height, 10):0;
+
 const containerChat = document.querySelector(".chat-container");
 
 const getSizeMain = () => {
@@ -87,4 +90,10 @@ if (searchBarGeneral) {
       document.getElementById("search-bar-general-button").click();
     }
   });
+}
+const containerOubli = document.querySelector('.container-oubli');
+if(containerOubli){
+  main.style.height= `${h}px`;
+  main.style.paddingTop="0px";
+  containerOubli.style.height=`${h}px`;
 }

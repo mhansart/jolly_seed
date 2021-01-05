@@ -21,6 +21,11 @@ class Annonce extends Connexion
 
         $this->execute($requete, $tabChamps);
     }
+    public function read()
+    {
+        $requete = "SELECT * FROM ads ";
+        return $this->execute($requete);
+    }
 
     public function readByCategoryType($_ads_category)
     {
@@ -114,7 +119,7 @@ class Annonce extends Connexion
 
         return $this->execute($requete, $tabChamps);
     }
-    
+
     public function deleteLike($_like_user_id, $_like_ads_id)
     {
         $requete = "DELETE FROM like_user_ads WHERE like_user_id = :likeUserId AND like_ads_id = :likeAdsId";

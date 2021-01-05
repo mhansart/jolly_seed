@@ -1,4 +1,4 @@
-<div class="contact-container w-80">
+<div class="contact-container w-80 plr-15">
     <div class="temoignages-container w-80">
         <h2>Quelques témoignages d'utilisateurs à propos de JollySeed !</h2>
 

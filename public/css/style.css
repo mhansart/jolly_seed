@@ -1499,7 +1499,6 @@ p {
 .contact-container {
   margin: auto;
   margin-top: -60px;
-  padding: 0 15px;
 }
 @media screen and (max-width: 600px) {
   .contact-container {
@@ -1631,6 +1630,10 @@ p {
   display: flex;
   align-items: flex-end;
   opacity: 0.8;
+}
+
+.plr-15 {
+  padding: 0 15px;
 }
 
 .container-connexion {
@@ -1832,6 +1835,88 @@ p {
   }
 }
 
+.mdp-oubli {
+  color: #ff8617;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.form-mdp-oubli,
+.form-mdp-oubli-reinitialisation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: none;
+  background-color: white;
+  padding: 30px;
+  flex-direction: column;
+  z-index: 10002;
+  width: 50%;
+}
+.form-mdp-oubli.d-flex,
+.form-mdp-oubli-reinitialisation.d-flex {
+  display: flex;
+}
+.form-mdp-oubli h3,
+.form-mdp-oubli-reinitialisation h3 {
+  margin-top: 0;
+}
+.form-mdp-oubli label,
+.form-mdp-oubli-reinitialisation label {
+  margin-top: 15px;
+}
+.form-mdp-oubli input,
+.form-mdp-oubli-reinitialisation input {
+  margin-top: 15px;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 5px;
+  border: none;
+}
+.form-mdp-oubli input:active,
+.form-mdp-oubli-reinitialisation input:active {
+  outline: none;
+}
+.form-mdp-oubli button,
+.form-mdp-oubli-reinitialisation button {
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: none;
+  display: inline-flex;
+  background-color: #ff8617;
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.form-mdp-oubli button:focus,
+.form-mdp-oubli-reinitialisation button:focus {
+  outline: none;
+}
+.form-mdp-oubli .close,
+.form-mdp-oubli-reinitialisation .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+.form-mdp-oubli .logo-container,
+.form-mdp-oubli-reinitialisation .logo-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.form-mdp-oubli .logo-container a,
+.form-mdp-oubli-reinitialisation .logo-container a {
+  display: flex;
+  align-items: flex-start;
+}
+
+.container-oubli {
+  height: 100%;
+  width: 100%;
+  background-color: #7f7f7f;
+}
+
 .mesannonces-container {
   margin: auto;
   padding: 0 15px;
@@ -1950,6 +2035,10 @@ p {
 }
 .btn-ads-search .coeur i {
   margin: 0;
+}
+
+.pt-15 {
+  padding-top: 15px;
 }
 
 .search-container {
@@ -2893,6 +2982,10 @@ input:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7f7f7f;
+}
+
+input {
+  font-family: "Louis George Cafe'";
 }
 
 /*# sourceMappingURL=style.css.map */

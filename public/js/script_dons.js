@@ -7,6 +7,7 @@ const annonceDons = document.querySelector(".annonceDons");
 const posterAnnonce = document.querySelector(".posterAnnonce");
 posterAnnonce.style.display = "none";
 const btnDons = document.querySelector(".btnDons");
+let boxId = "";
 
 // TRI Options
 
@@ -24,7 +25,7 @@ chev.addEventListener("click", function () {
       opt.addEventListener("click", function (e) {
         if (e.currentTarget.id === "date") {
           choixTri.innerHTML = "Date";
-          for (box of boxs) {
+          for (let box of boxs) {
             box.style.display = "flex";
           }
           options.style.display = "none";
@@ -36,7 +37,7 @@ chev.addEventListener("click", function () {
         } else {
           choixTri.innerHTML = "Proximité";
           options.style.display = "none";
-          for (box of boxs) {
+          for (let box of boxs) {
             box.style.display = "flex";
             chev.innerHTML = '<i class="fas fa-chevron-down"></i>';
           }
@@ -60,11 +61,12 @@ const pommes = document.querySelectorAll(".pomme");
 
 // tri seed
 seedopt.addEventListener("click", function (e) {
-  for (box of boxs) {
+  console.log('click');
+  for (let box of boxs) {
     box.style.display = "none";
   }
 
-  for (pomme of pommes) {
+  for (let pomme of pommes) {
     if (pomme.classList.contains("pomme_seed")) {
       let pommeId = pomme.id;
       boxId = "#don_" + pommeId.split("_")[1];
@@ -77,10 +79,10 @@ seedopt.addEventListener("click", function (e) {
 });
 // tri flower
 floweropt.addEventListener("click", function (e) {
-  for (box of boxs) {
+  for (let box of boxs) {
     box.style.display = "none";
   }
-  for (pomme of pommes) {
+  for (let pomme of pommes) {
     if (pomme.classList.contains("pomme_flower")) {
       let pommeId = pomme.id;
       boxId = "#don_" + pommeId.split("_")[1];
@@ -93,10 +95,10 @@ floweropt.addEventListener("click", function (e) {
 });
 // tri ground
 groundopt.addEventListener("click", function (e) {
-  for (box of boxs) {
+  for (let box of boxs) {
     box.style.display = "none";
   }
-  for (pomme of pommes) {
+  for (let pomme of pommes) {
     if (pomme.classList.contains("pomme_ground")) {
       let pommeId = pomme.id;
       boxId = "#don_" + pommeId.split("_")[1];
@@ -109,10 +111,10 @@ groundopt.addEventListener("click", function (e) {
 });
 //tri plant
 plantopt.addEventListener("click", function (e) {
-  for (box of boxs) {
+  for (let box of boxs) {
     box.style.display = "none";
   }
-  for (pomme of pommes) {
+  for (let pomme of pommes) {
     if (pomme.classList.contains("pomme_plant")) {
       let pommeId = pomme.id;
       boxId = "#don_" + pommeId.split("_")[1];

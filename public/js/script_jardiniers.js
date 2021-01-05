@@ -7,6 +7,7 @@ const annonceDons = document.querySelector(".annonceDons");
 const posterAnnonce = document.querySelector(".posterAnnonce");
 posterAnnonce.style.display = "none";
 const btnDons = document.querySelector(".btnDons");
+let boxId ="";
 
 // TRI Options
 
@@ -24,7 +25,7 @@ chev.addEventListener("click", function () {
       opt.addEventListener("click", function (e) {
         if (e.currentTarget.id === "date") {
           choixTri.innerHTML = "Date";
-          for (box of boxs) {
+          for (let box of boxs) {
             box.style.display = "flex";
           }
           options.style.display = "none";
@@ -37,7 +38,7 @@ chev.addEventListener("click", function () {
           choixTri.innerHTML = "Proximité";
           options.style.display = "none";
           chev.innerHTML = '<i class="fas fa-chevron-down"></i>';
-          for (box of boxs) {
+          for (let box of boxs) {
             box.style.display = "flex";
           }
           posterAnnonce.style.display = "none";
@@ -58,10 +59,10 @@ const optTmpsOff = document.querySelector(".tmpsOffOpt");
 const titrestemps = document.querySelectorAll(".titreTemps");
 // tri temps donné
 optTmpsDon.addEventListener("click", function (e) {
-  for (box of boxs) {
+  for (let box of boxs) {
     box.style.display = "none";
   }
-  for (titretemps of titrestemps) {
+  for (let titretemps of titrestemps) {
     if (titretemps.innerHTML === "&nbsp;Demande") {
       let titretempsId = titretemps.id;
       boxId = "#don_" + titretempsId.split("_")[1];
@@ -74,10 +75,10 @@ optTmpsDon.addEventListener("click", function (e) {
 });
 // tri temps offert
 optTmpsOff.addEventListener("click", function (e) {
-  for (box of boxs) {
+  for (let box of boxs) {
     box.style.display = "none";
   }
-  for (titretemps of titrestemps) {
+  for (let titretemps of titrestemps) {
     if (titretemps.innerHTML === "&nbsp;Offre") {
       let titretempsId = titretemps.id;
       boxId = "#don_" + titretempsId.split("_")[1];

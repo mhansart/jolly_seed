@@ -560,3 +560,6 @@ input {
 ::-webkit-scrollbar-thumb:hover {
   background: $neutral-color;
 }
+input {
+  font-family: $main-font;
+}

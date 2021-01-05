@@ -23,6 +23,7 @@ function postActive(event) {
     data.append("active", "0");
   }
   ajaxPost("ajax/activeAds.php?task=write", data).then(() => {
+    console.log(adsId.name);
     annonce.forEach((x) => {
       x.style.opacity = adsId.name === "reactiver" ? 1 : 0.5;
     });
@@ -30,6 +31,7 @@ function postActive(event) {
       adsId.name === "reactiver"
         ? "Désactiver cette annonce"
         : "Réactiver cette annonce";
+    adsId.name = adsId.name === "reactiver" ? "desactiver" : "reactiver";
   });
 }
 

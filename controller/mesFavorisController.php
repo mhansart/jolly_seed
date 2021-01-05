@@ -63,12 +63,6 @@ if (!empty($tabAnnonceId)) {
     $mesfavoris .= '<p class="no-annonce">Vous n\'avez encore sauvegardé aucune annonce</p>';
 }
 
-// if (isset($_POST["dislike"])) { //lecture des likes
-//     $r = new Annonce();
-//     $r->deleteLike($_SESSION['user_id'], $_POST["dislike"]);
-//     header("Location:?section=mesFavoris");
-// }
-
 if (isset($_POST["contact"])) {
     header("Location:?section=chat");
     $_SESSION["chat"] = $_POST["contact"];

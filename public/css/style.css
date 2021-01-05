@@ -1499,7 +1499,6 @@ p {
 .contact-container {
   margin: auto;
   margin-top: -60px;
-  padding: 0 15px;
 }
 @media screen and (max-width: 600px) {
   .contact-container {
@@ -1631,6 +1630,10 @@ p {
   display: flex;
   align-items: flex-end;
   opacity: 0.8;
+}
+
+.plr-15 {
+  padding: 0 15px;
 }
 
 .container-connexion {
@@ -1832,6 +1835,58 @@ p {
   }
 }
 
+.mdp-oubli {
+  color: #ff8617;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.form-mdp-oubli {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  padding: 30px;
+  flex-direction: column;
+  z-index: 10002;
+  width: 50%;
+}
+.form-mdp-oubli.d-flex {
+  display: flex;
+}
+.form-mdp-oubli label {
+  margin-top: 15px;
+}
+.form-mdp-oubli input {
+  margin-top: 15px;
+  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
+  padding: 5px;
+  border: none;
+}
+.form-mdp-oubli input:active {
+  outline: none;
+}
+.form-mdp-oubli button {
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: none;
+  display: inline-flex;
+  background-color: #ff8617;
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.form-mdp-oubli button:focus {
+  outline: none;
+}
+.form-mdp-oubli .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
 .mesannonces-container {
   margin: auto;
   padding: 0 15px;
@@ -1950,6 +2005,10 @@ p {
 }
 .btn-ads-search .coeur i {
   margin: 0;
+}
+
+.pt-15 {
+  padding-top: 15px;
 }
 
 .search-container {

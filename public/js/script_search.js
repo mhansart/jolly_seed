@@ -1,3 +1,4 @@
+import { ajaxPost } from "./src/helpers.js";
 window.addEventListener("scroll", () => {
   (function scroll() {
     const containerTri = document.querySelector(".tri-search");
@@ -109,4 +110,29 @@ openMoreFilter.addEventListener("click", () => {
       angleDownUp.classList.replace("fa-angle-up", "fa-angle-down");
     }
   }
+});
+
+//gestion des like
+const coeurs = document.querySelectorAll(".coeurs");
+function postLike(event) {
+  event.preventDefault();
+  const data = new FormData();
+  const coeur = event.target.querySelector(".coeur");
+  const userId = event.target.querySelector(".user_id");
+  const adsId = event.target.querySelector(".aime");
+  const isFull = coeur.querySelector("i").classList.contains("fas");
+  data.append("adsId", adsId.value);
+  data.append("userId", userId.value);
+  data.append("isFull", isFull);
+
+  ajaxPost("ajax/like.php?task=write", data).then(() => {
+    if (coeur.querySelector("i").classList.contains("fas")) {
+      coeur.innerHTML = "<i class='far fa-heart'></i>";
+    } else {
+      coeur.innerHTML = "<i class='fas fa-heart'></i>";
+    }
+  });
+}
+coeurs.forEach((form) => {
+  form.addEventListener("submit", postLike);
 });

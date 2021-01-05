@@ -1,4 +1,4 @@
-<div class="contact-container w-80 d-flex">
+<div class="contact-container w-80 d-flex plr-15">
     <div class="image-deco-contact w-50">
     </div>
     <div class="w-50 form-contact">

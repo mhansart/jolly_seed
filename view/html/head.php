@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="public/css/font/font.css" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="public/css/style.css">
+  <!--liens pour favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/image/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/image/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/image/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6e9611">
+  <meta name="msapplication-TileColor" content="#ff8617">
+  <meta name="theme-color" content="#ffffff">
   <title>Jolly Seed</title>
   <!-- Rajout pour cartes -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"

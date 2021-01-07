@@ -255,33 +255,21 @@
 }
 @media screen and (max-width: 1200px) {
   .pageDons .centrePageDons .box {
-    width: 70%;
-    margin: 1% auto;
-  }
-}
-@media screen and (max-width: 1035px) {
-  .pageDons .centrePageDons .box {
-    width: 80%;
-    margin: 1% auto;
-  }
-}
-@media screen and (max-width: 860px) {
-  .pageDons .centrePageDons .box {
-    width: 90%;
+    width: 100%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 680px) {
   .pageDons .centrePageDons .box {
     flex-direction: column;
-    width: 70%;
+    width: 95%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 550px) {
   .pageDons .centrePageDons .box {
     flex-direction: column;
-    width: 80%;
+    width: 95%;
     margin: 1% auto;
   }
 }
@@ -3168,8 +3156,6 @@ input[type=checkbox]:checked:after {
   padding-left: 28px;
   cursor: pointer;
   line-height: 16px;
-  height: 13px;
-  width: 13px;
   display: inline-block;
 }
 [type=radio]:checked + label:hover::before,

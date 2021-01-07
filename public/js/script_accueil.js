@@ -75,7 +75,7 @@ marker.bindPopup("<h5>Temps offert<h5><p>");
 ajaxGet("ajax/ads.php").then((reponse) => {
   let ads = JSON.parse(reponse);
   for (let ad of ads) {
-    ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}&limit=1`).then(
+    ajaxGet(`https://photon.komoot.io/api/?q=${ad[5]}, Belgique&limit=1`).then(
       (reponse) => {
         //conversion en Javascript:
         let data = JSON.parse(reponse);

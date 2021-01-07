@@ -1761,6 +1761,12 @@ p {
   flex-direction: row;
   padding-top: 15px;
 }
+.container-connexion form .btns-connexion button[type=submit] {
+  transition: all ease 0.3s;
+}
+.container-connexion form .btns-connexion button[type=submit]:hover {
+  transform: scale(0.95);
+}
 @media screen and (max-width: 600px) {
   .container-connexion form .btns-connexion {
     justify-content: center;
@@ -1770,6 +1776,22 @@ p {
   background-color: transparent;
   color: #ff8617;
   font-size: 16px;
+  position: relative;
+  padding: 7px 0;
+  margin-left: 15px;
+}
+.container-connexion form .btns-connexion .effacer-connexion::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.container-connexion form .btns-connexion .effacer-connexion:hover::before {
+  width: 100%;
 }
 .container-connexion .picture-connexion {
   background-image: url("../image/carrot.jpg");
@@ -1854,6 +1876,22 @@ p {
     margin-top: 0;
   }
 }
+.container-connexion .fin-connexion a {
+  position: relative;
+}
+.container-connexion .fin-connexion a::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  top: 25px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.container-connexion .fin-connexion a:hover::before {
+  width: 100%;
+}
 @media screen and (max-width: 600px) {
   .container-connexion .fin-connexion {
     display: flex;
@@ -1871,6 +1909,22 @@ p {
   color: #ff8617;
   cursor: pointer;
   font-size: 15px;
+  display: inline-flex;
+  margin-top: 0;
+  position: relative;
+}
+.mdp-oubli::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  top: 25px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.mdp-oubli:hover::before {
+  width: 100%;
 }
 
 .form-mdp-oubli,
@@ -1919,10 +1973,15 @@ p {
   color: white;
   margin-top: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
 }
 .form-mdp-oubli button:focus,
 .form-mdp-oubli-reinitialisation button:focus {
   outline: none;
+}
+.form-mdp-oubli button:hover,
+.form-mdp-oubli-reinitialisation button:hover {
+  transform: scale(0.95);
 }
 .form-mdp-oubli .close,
 .form-mdp-oubli-reinitialisation .close {
@@ -2582,9 +2641,13 @@ header .header-container-deconnected {
 }
 header .header-container-deconnected .header-se-connecter {
   border: none;
+  transition: ease all 0.3s;
 }
 header .header-container-deconnected .header-se-connecter:focus {
   outline: none;
+}
+header .header-container-deconnected .header-se-connecter:hover {
+  transform: scale(0.95);
 }
 header .header-container-deconnected .header-se-connecter a {
   background-color: #ff8617;
@@ -2615,9 +2678,31 @@ header .header-container-deconnected .header-se-connecter a .sign-in-icon {
     color: #ff8617;
   }
 }
+header .header-container-deconnected .header-se-connecter-inscription:hover {
+  transform: none;
+}
 header .header-container-deconnected .header-se-connecter-inscription .inscription {
   background-color: transparent;
   color: #ff8617;
+  position: relative;
+  padding: 7px 0;
+  margin: 0 15px;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription:hover {
+  transform: none;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription:hover::before {
+  width: 100%;
 }
 @media screen and (max-width: 600px) {
   header .header-container-deconnected .header-se-connecter-inscription {

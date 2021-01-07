@@ -152,8 +152,12 @@ header {
     }
     .header-se-connecter {
       border: none;
+      transition: ease all 0.3s;
       &:focus {
         outline: none;
+      }
+      &:hover {
+        transform: scale(0.95);
       }
       a {
         background-color: $clic-color;
@@ -181,9 +185,31 @@ header {
         }
       }
       &-inscription {
+        &:hover {
+          transform: none;
+        }
         .inscription {
           background-color: transparent;
           color: $clic-color;
+          position: relative;
+          padding: 7px 0;
+          margin: 0 15px;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 0.5px;
+            bottom: 0px;
+            left: 0;
+            width: 0%;
+            background-color: $clic-color;
+            transition: all 0.3s;
+          }
+          &:hover {
+            transform: none;
+            &::before {
+              width: 100%;
+            }
+          }
         }
         @media screen and (max-width: 600px) {
           display: none;

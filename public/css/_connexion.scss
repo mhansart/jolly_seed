@@ -54,6 +54,12 @@
     .btns-connexion {
       flex-direction: row;
       padding-top: 15px;
+      button[type="submit"] {
+        transition: all ease 0.3s;
+        &:hover {
+          transform: scale(0.95);
+        }
+      }
       @media screen and (max-width: 600px) {
         justify-content: center;
       }
@@ -61,6 +67,24 @@
         background-color: transparent;
         color: $clic-color;
         font-size: 16px;
+        position: relative;
+        padding: 7px 0;
+        margin-left: 15px;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 0.5px;
+          bottom: 0px;
+          left: 0;
+          width: 0%;
+          background-color: $clic-color;
+          transition: all 0.3s;
+        }
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -134,6 +158,24 @@
     }
   }
   .fin-connexion {
+    a {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 0.5px;
+        top: 25px;
+        left: 0;
+        width: 0%;
+        background-color: $clic-color;
+        transition: all 0.3s;
+      }
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
     @media screen and (max-width: 600px) {
       display: flex;
       flex-direction: column;
@@ -150,6 +192,24 @@
   color: $clic-color;
   cursor: pointer;
   font-size: 15px;
+  display: inline-flex;
+  margin-top: 0;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    top: 25px;
+    left: 0;
+    width: 0%;
+    background-color: $clic-color;
+    transition: all 0.3s;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
 }
 .form-mdp-oubli,
 .form-mdp-oubli-reinitialisation {
@@ -190,8 +250,12 @@
     color: $primary-color;
     margin-top: 15px;
     cursor: pointer;
+    transition: ease all 0.3s;
     &:focus {
       outline: none;
+    }
+    &:hover {
+      transform: scale(0.95);
     }
   }
   .close {

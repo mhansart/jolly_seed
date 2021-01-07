@@ -55,4 +55,16 @@ class Message extends Connexion
         );
         $this->execute($requete, $tabChamps);
     }
+    public function updateMsg($_id, $_otherId, $_vu)
+    {
+        $requete = "UPDATE messagerie SET msg_vu = :vu WHERE sender_id = :id AND receiver_id = :otherid";
+
+        $tabChamps = array(
+            ":id" => $_id,
+            ":otherid" => $_otherId,
+            ":vu" => $_vu
+
+        );
+        return $this->execute($requete, $tabChamps);
+    }
 }

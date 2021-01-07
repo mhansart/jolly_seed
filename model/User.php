@@ -35,9 +35,9 @@ class User extends Connexion
         return $this->execute($requete);
     }
 
-    public function createResponseChat($_senderId, $_receiverId, $_msg, $_msgDate, $_msgHour)
+    public function createResponseChat($_senderId, $_receiverId, $_msg, $_msgDate, $_msgHour, $_msgVu)
     {
-        $requete = "INSERT INTO messagerie (sender_id,`receiver_id`, msg_text, msg_date, msg_hour) VALUES (:sender, :receiver, :msg, :dateMsg, :hourMsg)";
+        $requete = "INSERT INTO messagerie (sender_id,`receiver_id`, msg_text, msg_date, msg_hour,msg_vu) VALUES (:sender, :receiver, :msg, :dateMsg, :hourMsg,:vu)";
 
         $tabChamps = array(
             ":sender" => $_senderId,
@@ -45,6 +45,7 @@ class User extends Connexion
             ":msg" => $_msg,
             ":dateMsg" => $_msgDate,
             ":hourMsg" => $_msgHour,
+            ':vu' => $_msgVu
         );
 
         $this->execute($requete, $tabChamps);

@@ -130,6 +130,12 @@
   .oneChat {
     border-bottom: 1px solid $secondary-color;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    i {
+      color: $clic-color;
+    }
     input {
       cursor: pointer;
       font-size: $content-size;
@@ -137,7 +143,7 @@
       justify-content: flex-start;
       color: $secondary-color;
       font-family: $main-font;
-      padding: 15px 30px;
+      padding: 15px 0px;
       height: 100%;
       width: 100%;
       background-color: transparent;
@@ -152,6 +158,9 @@
     &:hover {
       background-color: $clic-color;
       color: $primary-color;
+      i {
+        color: $primary-color;
+      }
     }
   }
 }

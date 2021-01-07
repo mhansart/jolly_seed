@@ -25,7 +25,7 @@ function postMessage()
     $userId = $_POST["userId"];
 
     $e = new User();
-    $e->createResponseChat($userId, $receiverId, $content, $msgDate, $msgHour);
+    $e->createResponseChat($userId, $receiverId, $content, $msgDate, $msgHour, '0');
 
     echo json_encode(["status" => "success"]);
 }

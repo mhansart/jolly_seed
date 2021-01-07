@@ -539,7 +539,7 @@
 }
 @media screen and (max-width: 600px) {
   .forum-container,
-  .voir-plus-forum-container {
+.voir-plus-forum-container {
     width: 100%;
     padding: 0 15px;
   }
@@ -965,15 +965,15 @@ p {
 }
 @media screen and (max-width: 992px) {
   .form-modif-picture-moncompte,
-  .modif-infos-moncompte,
-  .delete-infos-moncompte {
+.modif-infos-moncompte,
+.delete-infos-moncompte {
     width: 70%;
   }
 }
 @media screen and (max-width: 600px) {
   .form-modif-picture-moncompte,
-  .modif-infos-moncompte,
-  .delete-infos-moncompte {
+.modif-infos-moncompte,
+.delete-infos-moncompte {
     width: 95%;
   }
 }
@@ -991,8 +991,8 @@ p {
 }
 @media screen and (max-width: 600px) {
   .form-modif-picture-moncompte div,
-  .modif-infos-moncompte div,
-  .delete-infos-moncompte div {
+.modif-infos-moncompte div,
+.delete-infos-moncompte div {
     flex-direction: column;
   }
 }
@@ -1011,8 +1011,8 @@ p {
 }
 @media screen and (max-width: 350px) {
   .form-modif-picture-moncompte #img-modif-essai,
-  .modif-infos-moncompte #img-modif-essai,
-  .delete-infos-moncompte #img-modif-essai {
+.modif-infos-moncompte #img-modif-essai,
+.delete-infos-moncompte #img-modif-essai {
     width: 100%;
     height: auto;
   }
@@ -1024,8 +1024,8 @@ p {
 }
 @media screen and (max-width: 600px) {
   .form-modif-picture-moncompte label,
-  .modif-infos-moncompte label,
-  .delete-infos-moncompte label {
+.modif-infos-moncompte label,
+.delete-infos-moncompte label {
     padding: 7px 15px;
   }
 }
@@ -1064,11 +1064,17 @@ p {
   color: white;
   margin-top: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
 }
 .form-modif-picture-moncompte button:focus,
 .modif-infos-moncompte button:focus,
 .delete-infos-moncompte button:focus {
   outline: none;
+}
+.form-modif-picture-moncompte button:hover,
+.modif-infos-moncompte button:hover,
+.delete-infos-moncompte button:hover {
+  transform: scale(0.95);
 }
 .form-modif-picture-moncompte.d-flex,
 .modif-infos-moncompte.d-flex,
@@ -1134,10 +1140,7 @@ p {
 .infos-container-moncompte .infos .mes-infos-mon-compte:first-child {
   margin-top: 0;
 }
-.infos-container-moncompte
-  .infos
-  .mes-infos-mon-compte
-  .infos-categories-moncompte {
+.infos-container-moncompte .infos .mes-infos-mon-compte .infos-categories-moncompte {
   min-width: 40%;
   padding-left: 18px;
   padding-bottom: 5px;
@@ -1148,10 +1151,7 @@ p {
   align-items: center;
 }
 @media screen and (max-width: 400px) {
-  .infos-container-moncompte
-    .infos
-    .mes-infos-mon-compte
-    .infos-categories-moncompte {
+  .infos-container-moncompte .infos .mes-infos-mon-compte .infos-categories-moncompte {
     padding: 7px 15px;
   }
 }
@@ -1178,7 +1178,7 @@ p {
   content: "";
   position: absolute;
   height: 0.5px;
-  bottom: 15px;
+  bottom: 12px;
   left: 0;
   width: 0%;
   background-color: #ff8617;
@@ -1739,7 +1739,7 @@ p {
     flex-direction: column;
   }
   .container-connexion form > div label,
-  .container-connexion form > div input {
+.container-connexion form > div input {
     width: 100%;
     margin-bottom: 0;
   }
@@ -1761,6 +1761,12 @@ p {
   flex-direction: row;
   padding-top: 15px;
 }
+.container-connexion form .btns-connexion button[type=submit] {
+  transition: all ease 0.3s;
+}
+.container-connexion form .btns-connexion button[type=submit]:hover {
+  transform: scale(0.95);
+}
 @media screen and (max-width: 600px) {
   .container-connexion form .btns-connexion {
     justify-content: center;
@@ -1770,6 +1776,22 @@ p {
   background-color: transparent;
   color: #ff8617;
   font-size: 16px;
+  position: relative;
+  padding: 7px 0;
+  margin-left: 15px;
+}
+.container-connexion form .btns-connexion .effacer-connexion::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.container-connexion form .btns-connexion .effacer-connexion:hover::before {
+  width: 100%;
 }
 .container-connexion .picture-connexion {
   background-image: url("../image/carrot.jpg");
@@ -1838,7 +1860,7 @@ p {
 }
 @media screen and (max-width: 850px) {
   .container-connexion .nom-connexion input,
-  .container-connexion .motdepasse-connexion input {
+.container-connexion .motdepasse-connexion input {
     margin: 0;
     margin-bottom: 15px;
   }
@@ -1849,10 +1871,26 @@ p {
 }
 @media screen and (max-width: 850px) {
   .container-connexion .nom-connexion label,
-  .container-connexion .motdepasse-connexion label {
+.container-connexion .motdepasse-connexion label {
     display: block;
     margin-top: 0;
   }
+}
+.container-connexion .fin-connexion a {
+  position: relative;
+}
+.container-connexion .fin-connexion a::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  top: 25px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.container-connexion .fin-connexion a:hover::before {
+  width: 100%;
 }
 @media screen and (max-width: 600px) {
   .container-connexion .fin-connexion {
@@ -1871,6 +1909,22 @@ p {
   color: #ff8617;
   cursor: pointer;
   font-size: 15px;
+  display: inline-flex;
+  margin-top: 0;
+  position: relative;
+}
+.mdp-oubli::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  top: 25px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.mdp-oubli:hover::before {
+  width: 100%;
 }
 
 .form-mdp-oubli,
@@ -1919,10 +1973,15 @@ p {
   color: white;
   margin-top: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
 }
 .form-mdp-oubli button:focus,
 .form-mdp-oubli-reinitialisation button:focus {
   outline: none;
+}
+.form-mdp-oubli button:hover,
+.form-mdp-oubli-reinitialisation button:hover {
+  transform: scale(0.95);
 }
 .form-mdp-oubli .close,
 .form-mdp-oubli-reinitialisation .close {
@@ -1978,11 +2037,7 @@ p {
   margin-top: 15px;
   transition: all 0.3s ease;
 }
-.mesannonces-container
-  .pageDons
-  .centrePageDons
-  .voir-plus-annonces
-  button:hover {
+.mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button:hover {
   transform: scale(0.95);
 }
 .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button a {
@@ -1997,7 +2052,7 @@ p {
 .mesannonces-container .pageDons .centrePageDons .box:nth-child(2n) {
   margin-left: 7px;
 }
-.mesannonces-container .pageDons .centrePageDons .box:nth-child(2n + 1) {
+.mesannonces-container .pageDons .centrePageDons .box:nth-child(2n+1) {
   margin-right: 7px;
 }
 .mesannonces-container .pageDons .centrePageDons .box .dons {
@@ -2024,7 +2079,7 @@ p {
   .mesannonces-container .pageDons .centrePageDons .box:nth-child(2n) {
     margin-left: 0px;
   }
-  .mesannonces-container .pageDons .centrePageDons .box:nth-child(2n + 1) {
+  .mesannonces-container .pageDons .centrePageDons .box:nth-child(2n+1) {
     margin-right: 0px;
   }
 }
@@ -2366,11 +2421,7 @@ p {
   background-color: #ff8617;
   transition: all 0.3s;
 }
-.search-container
-  .result-search
-  .one-forum-view
-  form
-  .voir-forum:hover::before {
+.search-container .result-search .one-forum-view form .voir-forum:hover::before {
   width: 100%;
 }
 .search-container .result-search .one-forum-view form .voir-forum:focus {
@@ -2590,9 +2641,13 @@ header .header-container-deconnected {
 }
 header .header-container-deconnected .header-se-connecter {
   border: none;
+  transition: ease all 0.3s;
 }
 header .header-container-deconnected .header-se-connecter:focus {
   outline: none;
+}
+header .header-container-deconnected .header-se-connecter:hover {
+  transform: scale(0.95);
 }
 header .header-container-deconnected .header-se-connecter a {
   background-color: #ff8617;
@@ -2623,12 +2678,31 @@ header .header-container-deconnected .header-se-connecter a .sign-in-icon {
     color: #ff8617;
   }
 }
-header
-  .header-container-deconnected
-  .header-se-connecter-inscription
-  .inscription {
+header .header-container-deconnected .header-se-connecter-inscription:hover {
+  transform: none;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription {
   background-color: transparent;
   color: #ff8617;
+  position: relative;
+  padding: 7px 0;
+  margin: 0 15px;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription:hover {
+  transform: none;
+}
+header .header-container-deconnected .header-se-connecter-inscription .inscription:hover::before {
+  width: 100%;
 }
 @media screen and (max-width: 600px) {
   header .header-container-deconnected .header-se-connecter-inscription {
@@ -2749,22 +2823,11 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) {
     justify-content: space-between;
     border-bottom: 1px solid #6e9611;
   }
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li:not(:last-child)
-    a:hover {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover {
     background-color: #ff8617;
     color: white;
   }
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li:not(:last-child)
-    a:hover
-    svg {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a:hover svg {
     fill: white;
   }
 }
@@ -2773,12 +2836,7 @@ header .header-container .nav-connected .nav-pages li:not(:last-child) a {
   color: #ff8617;
   display: flex;
 }
-header
-  .header-container
-  .nav-connected
-  .nav-pages
-  li:not(:last-child)
-  a::before {
+header .header-container .nav-connected .nav-pages li:not(:last-child) a::before {
   content: "";
   width: 0%;
   height: 1px;
@@ -2788,68 +2846,32 @@ header
   background-color: #ff8617;
   transition: all 0.3s;
 }
-header
-  .header-container
-  .nav-connected
-  .nav-pages
-  li:not(:last-child)
-  a.active {
+header .header-container .nav-connected .nav-pages li:not(:last-child) a.active {
   color: #6e9611;
 }
-header
-  .header-container
-  .nav-connected
-  .nav-pages
-  li:not(:last-child)
-  a.active::before {
+header .header-container .nav-connected .nav-pages li:not(:last-child) a.active::before {
   width: 100%;
   background-color: #6e9611;
 }
 @media screen and (max-width: 600px) {
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li:not(:last-child)
-    a.active::before {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a.active::before {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li:not(:last-child)
-    a.active {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a.active {
     background-color: #6e9611;
     color: white;
   }
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li:not(:last-child)
-    a.active
-    svg {
+  header .header-container .nav-connected .nav-pages li:not(:last-child) a.active svg {
     fill: white;
   }
 }
-header
-  .header-container
-  .nav-connected
-  .nav-pages
-  li:not(:last-child):hover
-  a::before {
+header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
   width: 100%;
 }
 @media screen and (max-width: 600px) {
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li:not(:last-child):hover
-    a::before {
+  header .header-container .nav-connected .nav-pages li:not(:last-child):hover a::before {
     display: none;
   }
 }
@@ -2906,21 +2928,11 @@ header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover {
     background-color: #ff8617;
   }
 }
-header
-  .header-container
-  .nav-connected
-  .nav-pages
-  li.btn-moncompte
-  a:hover::before {
+header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
   width: 100%;
 }
 @media screen and (max-width: 600px) {
-  header
-    .header-container
-    .nav-connected
-    .nav-pages
-    li.btn-moncompte
-    a:hover::before {
+  header .header-container .nav-connected .nav-pages li.btn-moncompte a:hover::before {
     display: none;
   }
 }
@@ -3111,7 +3123,7 @@ input {
   font-family: "Louis George Cafe'";
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
   position: relative;
   padding: 5px;
   margin-right: 10px;
@@ -3121,7 +3133,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-input[type="checkbox"]:not(:checked):after {
+input[type=checkbox]:not(:checked):after {
   content: "";
   position: absolute;
   top: -2px;
@@ -3132,7 +3144,7 @@ input[type="checkbox"]:not(:checked):after {
   border: 1px solid #ff8617;
   border-radius: 2px;
 }
-input[type="checkbox"]:checked:after {
+input[type=checkbox]:checked:after {
   content: "";
   position: absolute;
   top: -2px;
@@ -3144,14 +3156,14 @@ input[type="checkbox"]:checked:after {
   border-radius: 2px;
 }
 
-[type="radio"]:checked,
-[type="radio"]:not(:checked) {
+[type=radio]:checked,
+[type=radio]:not(:checked) {
   position: absolute;
   left: -9999px;
 }
 
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label {
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
   position: relative;
   padding-left: 28px;
   cursor: pointer;
@@ -3160,13 +3172,13 @@ input[type="checkbox"]:checked:after {
   width: 13px;
   display: inline-block;
 }
-[type="radio"]:checked + label:hover::before,
-[type="radio"]:not(:checked) + label:hover::before {
+[type=radio]:checked + label:hover::before,
+[type=radio]:not(:checked) + label:hover::before {
   border-color: #ff8617;
 }
 
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
   content: "";
   position: absolute;
   left: 0;
@@ -3178,8 +3190,8 @@ input[type="checkbox"]:checked:after {
   background: #fff;
 }
 
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
   content: "";
   width: 10px;
   height: 10px;
@@ -3192,13 +3204,13 @@ input[type="checkbox"]:checked:after {
   transition: all 0.2s ease;
 }
 
-[type="radio"]:not(:checked) + label:after {
+[type=radio]:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-[type="radio"]:checked + label:after {
+[type=radio]:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);

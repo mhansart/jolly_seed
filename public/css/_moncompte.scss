@@ -157,8 +157,12 @@
     color: $primary-color;
     margin-top: 15px;
     cursor: pointer;
+    transition: ease all 0.3s;
     &:focus {
       outline: none;
+    }
+    &:hover {
+      transform: scale(0.95);
     }
   }
   &.d-flex {
@@ -249,7 +253,7 @@
       content: "";
       position: absolute;
       height: 0.5px;
-      bottom: 15px;
+      bottom: 12px;
       left: 0;
       width: 0%;
       background-color: $clic-color;

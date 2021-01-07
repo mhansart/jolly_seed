@@ -21,6 +21,10 @@
         button {
           background-color: $clic-color;
           margin-top: 15px;
+          transition: all 0.3s ease;
+          &:hover {
+            transform: scale(0.95);
+          }
           a {
             text-decoration: none;
             color: $primary-color;
@@ -83,6 +87,10 @@
       margin: auto;
       cursor: pointer;
       background-color: $clic-color;
+      transition: all ease 0.3s;
+      &:hover {
+        transform: scale(0.95);
+      }
       a {
         color: $primary-color;
         text-decoration: none;

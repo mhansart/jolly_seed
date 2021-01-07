@@ -31,8 +31,12 @@
       background-color: $clic-color;
       color: $primary-color;
       cursor: pointer;
+      transition: ease all 0.3s;
       &:focus {
         outline: none;
+      }
+      &:hover {
+        transform: scale(0.92);
       }
     }
   }

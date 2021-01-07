@@ -39,6 +39,7 @@ foreach ($tabAnnonces as $value) {
             }
         };
         // création de l'annonce
+        $disabled = $value["ads_user_id"] == $_SESSION['user_id'] ? "disabled" : "";
         $allSearch .= "<section id='don_" . $value["ads_id"] . "' class='box " . $classCategory . "-search'>
                   <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
                   </div>
@@ -56,7 +57,7 @@ foreach ($tabAnnonces as $value) {
                     <div class='d-flex row btn-ads-search'>
                     <form class='contactAnnonce' action='#' method='post'>
                       <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
-                      <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
+                      <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact' " . $disabled . ">
                     </form>";
         //gestion du CONTACT
 

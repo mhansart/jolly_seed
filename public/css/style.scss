@@ -563,3 +563,91 @@ input {
 input {
   font-family: $main-font;
 }
+input[type="checkbox"] {
+  position: relative;
+  padding: 5px;
+  margin-right: 10px;
+  width: auto;
+  margin-bottom: 0;
+  margin-top: 9px;
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  &:not(:checked):after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: 120%;
+    width: 120%;
+    background-color: white;
+    border: 1px solid $clic-color;
+    border-radius: 2px;
+  }
+  &:checked:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: 120%;
+    width: 120%;
+    background-color: $clic-color;
+    border: 1px solid $clic-color;
+    border-radius: 2px;
+  }
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 16px;
+  height: 13px;
+  width: 13px;
+  display: inline-block;
+  &:hover {
+    &::before {
+      border-color: $clic-color;
+    }
+  }
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  border: 1px solid $neutral-color2;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: $clic-color;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}

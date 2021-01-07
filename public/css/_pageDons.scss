@@ -7,7 +7,7 @@
   button {
     cursor: pointer;
   }
-  .sb{
+  .sb {
     justify-content: space-between;
   }
   .centrePageDons {
@@ -34,7 +34,7 @@
       align-items: center;
       justify-content: space-between;
       @media screen and (max-width: 600px) {
-        padding-right:15px;
+        padding-right: 15px;
       }
       @media screen and (max-width: 400px) {
         flex-direction: column;
@@ -61,8 +61,12 @@
     .btnDons {
       background-color: $clic-color;
       margin: auto;
+      transition: ease all 0.3s;
+      &:hover {
+        transform: scale(0.95);
+      }
       @media screen and (max-width: 1035px) {
-      margin:0 15px;
+        margin: 0 15px;
       }
       a {
         color: $primary-color;
@@ -94,7 +98,7 @@
         box-shadow: $shadow-low;
         display: none;
         @media screen and (max-width: 400px) {
-          right:-60px;
+          right: -60px;
         }
         .opt {
           color: $secondary-color;
@@ -109,7 +113,7 @@
         .sous-options {
           text-align: right;
           display: none;
-       
+
           .ssopt {
             margin: 0px;
             padding-right: 10px;
@@ -213,6 +217,7 @@
           color: $secondary-color;
           font-size: 20px;
           margin-top: 10px;
+          transition: all 0.3s;
         }
         .fa-heart:hover {
           color: $clic-color;
@@ -235,9 +240,15 @@
           //font-weight: bold;
           font-size: 100%;
           font-family: $main-font;
-           //margin-top:15px;
+          transition: ease all 0.3s;
+          //margin-top:15px;
           &:hover {
             cursor: pointer;
+            transform: scale(0.92);
+          }
+          &:disabled {
+            transform: none;
+            opacity: 0.5;
           }
         }
         .seed {
@@ -322,6 +333,10 @@
       background-color: $clic-color;
       color: $primary-color;
       margin: 25px auto;
+      transition: ease all 0.3s;
+      &:hover {
+        transform: scale(0.95);
+      }
     }
     .sectionCategorie {
       margin: auto;
@@ -346,7 +361,7 @@
       background-position: center center;
       margin-bottom: 15px;
     }
-   
+
     .imageAnnonceFixe {
       display: block;
       background-image: url("../image/avatar.png");

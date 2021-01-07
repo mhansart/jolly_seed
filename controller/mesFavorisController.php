@@ -25,6 +25,7 @@ if (!empty($tabAnnonceId)) {
                 $imageDon = "pomme-rouge.png";
             };
             // création de l'annonce
+            $disabled = $value["ads_user_id"] == $_SESSION['user_id'] ? "disabled" : "";
             $mesfavoris .= "<section class='box'>
                       <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
                       </div>
@@ -42,7 +43,7 @@ if (!empty($tabAnnonceId)) {
                         <div class='d-flex row btn-ads-search'>
                         <form class='contactAnnonce' action='#' method='post'>
                           <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
-                          <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
+                          <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact' " . $disabled . ">
                         </form>";
             //gestion du CONTACT
 

@@ -1,4 +1,5 @@
 @use 'variables' as *;
+
 .forum-container,
 .voir-plus-forum-container {
   margin: 0px auto;
@@ -70,8 +71,12 @@ p {
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    transition: ease all 0.3s;
     &:focus {
       outline: none;
+    }
+    &:hover {
+      transform: scale(0.95);
     }
     @media screen and (max-width: 720px) {
       width: 100%;
@@ -143,14 +148,13 @@ p {
       color: $primary-color;
       font-family: $main-font;
       font-size: $content-size;
-      box-shadow: $shadow-low;
-      transition: all 0.3s;
+      transition: ease all 0.3s;
       cursor: pointer;
-      &:hover {
-        box-shadow: none;
-      }
       &:focus {
         outline: none;
+      }
+      &:hover {
+        transform: scale(0.95);
       }
     }
   }
@@ -272,6 +276,10 @@ p {
   display: inline-flex;
   margin-bottom: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
+  &:hover {
+    transform: scale(0.95);
+  }
   form {
     input {
       border: none;

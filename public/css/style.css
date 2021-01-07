@@ -1064,11 +1064,17 @@ p {
   color: white;
   margin-top: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
 }
 .form-modif-picture-moncompte button:focus,
 .modif-infos-moncompte button:focus,
 .delete-infos-moncompte button:focus {
   outline: none;
+}
+.form-modif-picture-moncompte button:hover,
+.modif-infos-moncompte button:hover,
+.delete-infos-moncompte button:hover {
+  transform: scale(0.95);
 }
 .form-modif-picture-moncompte.d-flex,
 .modif-infos-moncompte.d-flex,
@@ -1172,7 +1178,7 @@ p {
   content: "";
   position: absolute;
   height: 0.5px;
-  bottom: 15px;
+  bottom: 12px;
   left: 0;
   width: 0%;
   background-color: #ff8617;

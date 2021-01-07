@@ -55,6 +55,10 @@
   color: $primary-color;
   display: inline-flex;
   cursor: pointer;
+  transition: ease all 0.3s;
+  &:hover {
+    transform: scale(0.95);
+  }
 }
 #modif-infos-mon-compte {
   padding: 7px 15px;
@@ -64,6 +68,10 @@
   display: inline-flex;
   margin-top: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
+  &:hover {
+    transform: scale(0.95);
+  }
   @media screen and (max-width: 600px) {
     align-items: center;
     justify-content: center;
@@ -228,14 +236,30 @@
   justify-content: space-between;
   .delete-mon-compte {
     // margin-top: 10px;
-    padding: 7px 15px;
-    padding-right: 0;
+    padding: 7px 0px;
+    margin-left: 15px;
     background-color: transparent;
     border: none;
     border-radius: 20px;
     color: $clic-color;
     font-size: 12px;
     cursor: pointer;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 0.5px;
+      bottom: 15px;
+      left: 0;
+      width: 0%;
+      background-color: $clic-color;
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
     &:focus {
       outline: none;
     }

@@ -160,6 +160,10 @@
 .pageDons .centrePageDons .btnDons {
   background-color: #ff8617;
   margin: auto;
+  transition: ease all 0.3s;
+}
+.pageDons .centrePageDons .btnDons:hover {
+  transform: scale(0.95);
 }
 @media screen and (max-width: 1035px) {
   .pageDons .centrePageDons .btnDons {
@@ -332,6 +336,7 @@
   color: #6e9611;
   font-size: 20px;
   margin-top: 10px;
+  transition: all 0.3s;
 }
 .pageDons .centrePageDons .box .dons .fa-heart:hover {
   color: #ff8617;
@@ -353,9 +358,15 @@
   color: white;
   font-size: 100%;
   font-family: "Louis George Cafe'";
+  transition: ease all 0.3s;
 }
 .pageDons .centrePageDons .box .dons .btnContact:hover {
   cursor: pointer;
+  transform: scale(0.92);
+}
+.pageDons .centrePageDons .box .dons .btnContact:disabled {
+  transform: none;
+  opacity: 0.5;
 }
 .pageDons .centrePageDons .box .dons .seed {
   background-color: #34348b;
@@ -449,6 +460,10 @@
   background-color: #ff8617;
   color: white;
   margin: 25px auto;
+  transition: ease all 0.3s;
+}
+.pageDons .posterAnnonce button:hover {
+  transform: scale(0.95);
 }
 .pageDons .posterAnnonce .sectionCategorie {
   margin: auto;
@@ -595,9 +610,13 @@ p {
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  transition: ease all 0.3s;
 }
 .new-forum-container .new-forum:focus {
   outline: none;
+}
+.new-forum-container .new-forum:hover {
+  transform: scale(0.95);
 }
 @media screen and (max-width: 720px) {
   .new-forum-container .new-forum {
@@ -674,15 +693,14 @@ p {
   color: white;
   font-family: "Louis George Cafe'";
   font-size: 17px;
-  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
-  transition: all 0.3s;
+  transition: ease all 0.3s;
   cursor: pointer;
-}
-.new-forum-container .form-new-forum button:hover {
-  box-shadow: none;
 }
 .new-forum-container .form-new-forum button:focus {
   outline: none;
+}
+.new-forum-container .form-new-forum button:hover {
+  transform: scale(0.95);
 }
 
 .one-forum-view {
@@ -806,6 +824,10 @@ p {
   display: inline-flex;
   margin-bottom: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
+}
+.forum-tag:hover {
+  transform: scale(0.95);
 }
 .forum-tag form input {
   border: none;
@@ -890,6 +912,10 @@ p {
   color: white;
   display: inline-flex;
   cursor: pointer;
+  transition: ease all 0.3s;
+}
+.btn-modif-picture-moncompte:hover {
+  transform: scale(0.95);
 }
 
 #modif-infos-mon-compte {
@@ -900,6 +926,10 @@ p {
   display: inline-flex;
   margin-top: 15px;
   cursor: pointer;
+  transition: ease all 0.3s;
+}
+#modif-infos-mon-compte:hover {
+  transform: scale(0.95);
 }
 @media screen and (max-width: 600px) {
   #modif-infos-mon-compte {
@@ -1128,14 +1158,28 @@ p {
   justify-content: space-between;
 }
 .btn-modif-info-moncompte .delete-mon-compte {
-  padding: 7px 15px;
-  padding-right: 0;
+  padding: 7px 0px;
+  margin-left: 15px;
   background-color: transparent;
   border: none;
   border-radius: 20px;
   color: #ff8617;
   font-size: 12px;
   cursor: pointer;
+  position: relative;
+}
+.btn-modif-info-moncompte .delete-mon-compte::before {
+  content: "";
+  position: absolute;
+  height: 0.5px;
+  bottom: 15px;
+  left: 0;
+  width: 0%;
+  background-color: #ff8617;
+  transition: all 0.3s;
+}
+.btn-modif-info-moncompte .delete-mon-compte:hover::before {
+  width: 100%;
 }
 .btn-modif-info-moncompte .delete-mon-compte:focus {
   outline: none;
@@ -1540,9 +1584,13 @@ p {
   background-color: #ff8617;
   color: white;
   cursor: pointer;
+  transition: ease all 0.3s;
 }
 .contact-container form button:focus {
   outline: none;
+}
+.contact-container form button:hover {
+  transform: scale(0.92);
 }
 .contact-container h3 {
   margin-top: 0;
@@ -1769,37 +1817,6 @@ p {
     width: auto;
   }
 }
-.container-connexion .ipt-checkbox input[type=checkbox] {
-  position: relative;
-  padding: 5px;
-  margin-right: 10px;
-  width: auto;
-  margin-bottom: 0;
-  margin-top: 9px;
-  cursor: pointer;
-}
-.container-connexion .ipt-checkbox input[type=checkbox]:not(:checked):after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  height: 120%;
-  width: 120%;
-  background-color: white;
-  border: 1px solid #ff8617;
-  border-radius: 2px;
-}
-.container-connexion .ipt-checkbox input[type=checkbox]:checked:after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  height: 120%;
-  width: 120%;
-  background-color: #ff8617;
-  border: 1px solid #ff8617;
-  border-radius: 2px;
-}
 .container-connexion .ipt-checkbox label {
   display: inline;
   flex-grow: 1;
@@ -1953,6 +1970,10 @@ p {
 .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button {
   background-color: #ff8617;
   margin-top: 15px;
+  transition: all 0.3s ease;
+}
+.mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button:hover {
+  transform: scale(0.95);
 }
 .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces button a {
   text-decoration: none;
@@ -2009,6 +2030,10 @@ p {
   margin: auto;
   cursor: pointer;
   background-color: #ff8617;
+  transition: all ease 0.3s;
+}
+.mesannonces-container .voir-plus-favoris button:hover {
+  transform: scale(0.95);
 }
 .mesannonces-container .voir-plus-favoris button a {
   color: white;
@@ -2085,6 +2110,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.1s;
 }
 .search-container .tri-search h3 i {
   display: flex;
@@ -2131,6 +2157,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.1s;
 }
 .search-container .tri-search > div:last-child {
   border: none;
@@ -2155,6 +2182,7 @@ p {
   padding: 4px 15px;
   border-left: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
+  transition: all 0.1s;
 }
 .search-container .tri-search ul li:hover {
   background-color: #ff8617;
@@ -2256,9 +2284,15 @@ p {
   color: white;
   font-size: 100%;
   font-family: "Louis George Cafe'";
+  cursor: pointer;
+  transition: all ease 0.3s;
 }
 .search-container .result-search .box .dons .btnContact:hover {
-  cursor: pointer;
+  transform: scale(0.92);
+}
+.search-container .result-search .box .dons .btnContact:disabled {
+  opacity: 0.5;
+  transform: none;
 }
 .search-container .result-search .box .dons .seed {
   background-color: #34348b;
@@ -2287,6 +2321,7 @@ p {
 }
 .search-container .result-search .coeur i {
   margin: 0;
+  transition: all 0.3s;
 }
 .search-container .result-search .one-forum-view {
   box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
@@ -2995,6 +3030,99 @@ input:focus {
 
 input {
   font-family: "Louis George Cafe'";
+}
+
+input[type=checkbox] {
+  position: relative;
+  padding: 5px;
+  margin-right: 10px;
+  width: auto;
+  margin-bottom: 0;
+  margin-top: 9px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:not(:checked):after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 120%;
+  width: 120%;
+  background-color: white;
+  border: 1px solid #ff8617;
+  border-radius: 2px;
+}
+input[type=checkbox]:checked:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 120%;
+  width: 120%;
+  background-color: #ff8617;
+  border: 1px solid #ff8617;
+  border-radius: 2px;
+}
+
+[type=radio]:checked,
+[type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 16px;
+  height: 13px;
+  width: 13px;
+  display: inline-block;
+}
+[type=radio]:checked + label:hover::before,
+[type=radio]:not(:checked) + label:hover::before {
+  border-color: #ff8617;
+}
+
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #e0e0e0;
+  border-radius: 100%;
+  background: #fff;
+}
+
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #ff8617;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[type=radio]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=style.css.map */

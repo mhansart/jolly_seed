@@ -27,6 +27,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all 0.1s;
       i {
         display: flex;
         cursor: pointer;
@@ -70,6 +71,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: all 0.1s;
       }
       &:last-child {
         border: none;
@@ -96,6 +98,7 @@
         padding: 4px 15px;
         border-left: 1px solid $neutral-color2;
         border-right: 1px solid $neutral-color2;
+        transition: all 0.1s;
         &:hover {
           background-color: $clic-color;
           color: $primary-color;
@@ -190,8 +193,14 @@
           //font-weight: bold;
           font-size: 100%;
           font-family: $main-font;
+          cursor: pointer;
+          transition: all ease 0.3s;
           &:hover {
-            cursor: pointer;
+            transform: scale(0.92);
+          }
+          &:disabled {
+            opacity: 0.5;
+            transform: none;
           }
         }
         .seed {
@@ -222,6 +231,7 @@
       margin-top: 0;
       i {
         margin: 0;
+        transition: all 0.3s;
       }
     }
 

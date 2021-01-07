@@ -48,19 +48,13 @@
             <p>Afin d'illustrer vortre annonce, vous pouvez soit utiliser l'image ci-contre ou en télécharger une nouvelle.</p>
             <input type="file" class="fichierImage" name="ads_picture" value="Pas d'image"><br /><br />
             <input class="futurId" type="hidden" value="<?= $futurAdsId ?>">
-            <input type="checkbox" id="checkPhoto" name="checkPhoto" />
-            <label for="checkPhoto">Je désire utiliser ma photo</label><br />
           </div>
         </div>
       </div>
       <h3>Titre: </h3>
-      <label class="donTitre" for="donTitre">Titre à remplir:</label><br />
-      <input class="donTitre" type="text" id="donTitre" name="ads_title" placeholder="nombre de char à fixer" value="Pas de donTitre" /><br />
+      <input class="donTitre" type="text" id="donTitre" name="ads_title" placeholder="Titre" value="" /><br />
       <h3>Description:</h3>
-      <label for="description">
-        <p>Descriptif du don proposé:</p>
-      </label>
-      <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br />
+      <textarea id="description" name="ads_description" placeholder="Maximum 200 caractères" rows="5" maxlength="200"></textarea><br />
       <button class="creer" type="submit">Créer l'annonce</button>
     </form>
   </section>

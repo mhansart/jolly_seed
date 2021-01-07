@@ -56,7 +56,7 @@
       </div>
 
       <h3>Description:</h3>
-      <textarea id="description" name="ads_description" rows="4" cols="40"> </textarea><br />
+      <textarea id="description" name="ads_description" placeholder="Maximum 200 caractères" rows="4" cols="40" maxlength="200"></textarea><br />
       <button class="creer" type="submit">Créer l'annonce</button>
     </form>
   </section>

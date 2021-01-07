@@ -28,17 +28,11 @@ foreach ($tabJardiniers as $value) {
                 <article>" . $value["ads_description"] . "</article>
                 <div class='d-flex row btn-ads-search'>";
       //gestion du bouton CONTACT selon utilisateur
-      if($value["ads_user_id"]===$_SESSION['user_id']){
-          $dons .= "<form class='contactAnnonce' action='#' method='post'>
-                    <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
-                    <input class='btnContact " . $value["ads_category"] . "' disabled type='submit' value='Contact'>
-                  </form>";
-                } else {
-          $dons .= "<form class='contactAnnonce' action='#' method='post'>
-                    <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
-                    <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
-                  </form>";
-                }
+        $disabled = $value["ads_user_id"]==$_SESSION['user_id'] ? "disabled" : "";
+        $dons .= "<form class='contactAnnonce' action='#' method='post'>
+                  <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
+                  <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact' " . $disabled . ">
+                </form>";
            //pose d'un coeur vide       
           $Like = "far fa-heart";
           for($i =0; $i < count($tabLike); $i++){

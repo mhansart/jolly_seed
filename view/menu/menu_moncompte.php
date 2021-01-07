@@ -3,21 +3,27 @@ $lesInterlocuteurs = "";
 $m = new Message();
 $tabMessages = $m->readById($_SESSION['user_id']);
 $interlocuteur = array();
+$vu = array();
 foreach ($tabMessages as $messages) {
     if ($messages['sender_id'] !== $_SESSION['user_id'] && !in_array($messages['sender_id'], $interlocuteur)) {
         array_push($interlocuteur, $messages['sender_id']);
     } elseif ($messages['receiver_id'] !== $_SESSION['user_id'] && !in_array($messages['receiver_id'], $interlocuteur)) {
         array_push($interlocuteur, $messages['receiver_id']);
     }
+    if ($messages['sender_id'] !== $_SESSION['user_id'] && $messages['msg_vu'] !== '1' && !in_array($messages['sender_id'], $vu)) {
+        array_push($vu, $messages['sender_id']);
+    }
 }
 $p = new Personne();
 foreach ($interlocuteur as $personne) {
+    $bell = in_array($personne, $vu) ? '<i class="fas fa-bell"></i>' : "";
     $tabUser = $p->readById($personne);
     $lesInterlocuteurs .= '<form class="oneChat" action="#" method="post"><input type="hidden" name="chat" value="' . $personne . '">
-    <input class="user-interlocuteur" type="submit" value="' . $tabUser[0]['user_firstname'] . ' ' . $tabUser[0]['user_name'] . '"></form>';
+    <input class="user-interlocuteur" type="submit" value="' . $tabUser[0]['user_firstname'] . ' ' . $tabUser[0]['user_name'] . '">' . $bell . '</form>';
 }
 
 if (isset($_POST["chat"])) {
+    $m->updateMsg($_POST["chat"], $_SESSION['user_id'], '1');
     header("Location:?section=chat");
     $_SESSION["chat"] = $_POST["chat"];
 }

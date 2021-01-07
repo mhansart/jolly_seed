@@ -394,7 +394,7 @@
   text-align: center;
   position: relative;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 600px) {
   .pageDons .posterAnnonce {
     width: 75%;
   }
@@ -437,15 +437,6 @@
 .pageDons .posterAnnonce .donTitre {
   display: block;
   margin: auto;
-  border: none;
-  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
-  padding: 5px;
-}
-.pageDons .posterAnnonce #description {
-  border: none;
-  box-shadow: 0px 2px 5px rgba(110, 110, 110, 0.2);
-  padding: 5px;
-  width: 80%;
 }
 .pageDons .posterAnnonce .time {
   text-align: left;
@@ -1476,6 +1467,12 @@ p {
 .allMsg-menu .oneChat {
   border-bottom: 1px solid #6e9611;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+.allMsg-menu .oneChat i {
+  color: #ff8617;
 }
 .allMsg-menu .oneChat input {
   cursor: pointer;
@@ -1484,7 +1481,7 @@ p {
   justify-content: flex-start;
   color: #6e9611;
   font-family: "Louis George Cafe'";
-  padding: 15px 30px;
+  padding: 15px 0px;
   height: 100%;
   width: 100%;
   background-color: transparent;
@@ -1498,6 +1495,9 @@ p {
 }
 .allMsg-menu .oneChat:hover {
   background-color: #ff8617;
+  color: white;
+}
+.allMsg-menu .oneChat:hover i {
   color: white;
 }
 
@@ -2011,6 +2011,7 @@ p {
 .mesannonces-container {
   margin: auto;
   padding: 0 15px;
+  width: calc(80% + 14px);
 }
 @media screen and (max-width: 600px) {
   .mesannonces-container {
@@ -2025,7 +2026,7 @@ p {
 }
 .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces {
   justify-content: space-between;
-  padding-top: 15px;
+  padding: 15px 7px 0 7px;
 }
 @media screen and (max-width: 400px) {
   .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces {
@@ -2046,14 +2047,8 @@ p {
 }
 .mesannonces-container .pageDons .centrePageDons .box {
   margin: 0;
-  width: calc(50% - 7px);
-  margin-top: 15px;
-}
-.mesannonces-container .pageDons .centrePageDons .box:nth-child(2n) {
-  margin-left: 7px;
-}
-.mesannonces-container .pageDons .centrePageDons .box:nth-child(2n+1) {
-  margin-right: 7px;
+  width: calc(50% - 14px);
+  margin: 15px 7px 0 7px;
 }
 .mesannonces-container .pageDons .centrePageDons .box .dons {
   display: flex;
@@ -3168,8 +3163,6 @@ input[type=checkbox]:checked:after {
   padding-left: 28px;
   cursor: pointer;
   line-height: 16px;
-  height: 13px;
-  width: 13px;
   display: inline-block;
 }
 [type=radio]:checked + label:hover::before,

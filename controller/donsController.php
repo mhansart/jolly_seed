@@ -48,13 +48,20 @@ foreach ($tabDons as $value) {
                   <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                 </div>
                 <article>" . $value["ads_description"] . "</article>
-                <div class='d-flex row btn-ads-search'>
-                <form class='contactAnnonce' action='#' method='post'>
+                <div class='d-flex row btn-ads-search'>";
+      //gestion du bouton CONTACT selon utilisateur
+      if($value["ads_user_id"]===$_SESSION['user_id']){
+        $dons .= "<form class='contactAnnonce' action='#' method='post'>
+                  <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
+                  <input class='btnContact " . $value["ads_category"] . "' disabled type='submit' value='Contact'>
+                </form>";
+              } else {
+        $dons .= "<form class='contactAnnonce' action='#' method='post'>
                   <input type='hidden' name='contact' value='" . $value["ads_user_id"] . "'>
                   <input class='btnContact " . $value["ads_category"] . "' type='submit' value='Contact'>
                 </form>";
-  //gestion du CONTACT
-
+                }
+  
   //pose d'un coeur vide       
   $Like = "far fa-heart";
   for ($i = 0; $i < count($tabLike); $i++) {
@@ -156,6 +163,8 @@ if (isset($_POST["ads_category"], $_POST["ads_title"], $_POST["ads_description"]
 }
 
 //LIEN vers CONTACT
+
+
 if (isset($_POST["contact"])) {
   header("Location:?section=chat");
   $_SESSION["chat"] = $_POST["contact"];

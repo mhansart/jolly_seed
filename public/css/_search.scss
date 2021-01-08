@@ -10,6 +10,9 @@
     width: 100%;
     padding: 0 15px;
   }
+  .adsTime {
+    margin: 0;
+  }
   .tri-search {
     min-width: 270px;
     margin-right: 15px;
@@ -162,19 +165,17 @@
           margin-top: 15px;
         }
         .titreDon {
-          display: flex;
-          align-items: center;
           @media screen and (max-width: 680px) {
             margin: auto;
           }
+          h3 {
+            margin: 0px;
+            margin-top: 6px;
+          }
         }
         .pomme {
+          margin-right: 10px;
           height: 30px;
-        }
-        h3 {
-          margin: 0px;
-          margin-left: 5px;
-          display: inline;
         }
         .fa-heart {
           color: $secondary-color;

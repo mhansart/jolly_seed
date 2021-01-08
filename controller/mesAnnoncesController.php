@@ -33,6 +33,7 @@ foreach ($tabDons as $value) {
     $imageDon = "pomme-rouge.png";
   };
   // création de l'annonce
+  $adsTime = $value["ads_time"] !== "" ? "<p class='adsTime'>" . $value["ads_time"] . "</p>" : "";
   $mesdons .= "<section class='box'>
               <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . "); " . $isActive . "'>
               </div>
@@ -41,7 +42,7 @@ foreach ($tabDons as $value) {
                   <img class='pomme' src='./public/image/" . $imageDon . "' />
                   <div>
                     <h3>" . $value["ads_title"] . "</h3>
-                    <p class='adsTime'>" . $value["ads_time"] . "</p>
+                    " . $adsTime . "
                   </div>
                 </div>
                 <div style='" . $isActive . "' class='d-flex row date-info-ads'>

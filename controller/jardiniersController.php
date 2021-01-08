@@ -18,7 +18,10 @@ foreach ($tabJardiniers as $value) {
               <div class= 'dons'>
                 <div class='titreDon'>
                   <img id='img_" . $value["ads_id"] . "' class='pomme' src='./public/image/pomme-rouge.png' />
-                  <h3 id='titre_" . $value["ads_id"] . "' class='titreTemps'>&nbsp;" . $value["ads_title"] . "</h3>
+                  <div>
+                    <h3 id='titre_" . $value["ads_id"] . "' class='titreTemps'>" . $value["ads_title"] . "</h3>
+                    <p class='adsTime'>" . $value["ads_time"] . "</p>
+                  </div>
                 </div>
                 <div class='d-flex row sb'>
                   <p>Date: " . $value["ads_date"] . "&nbsp;</p>

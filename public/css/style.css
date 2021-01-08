@@ -255,33 +255,21 @@
 }
 @media screen and (max-width: 1200px) {
   .pageDons .centrePageDons .box {
-    width: 70%;
-    margin: 1% auto;
-  }
-}
-@media screen and (max-width: 1035px) {
-  .pageDons .centrePageDons .box {
-    width: 80%;
-    margin: 1% auto;
-  }
-}
-@media screen and (max-width: 860px) {
-  .pageDons .centrePageDons .box {
-    width: 90%;
+    width: 100%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 680px) {
   .pageDons .centrePageDons .box {
     flex-direction: column;
-    width: 70%;
+    width: 95%;
     margin: 1% auto;
   }
 }
 @media screen and (max-width: 550px) {
   .pageDons .centrePageDons .box {
     flex-direction: column;
-    width: 80%;
+    width: 95%;
     margin: 1% auto;
   }
 }
@@ -325,12 +313,13 @@
     margin: auto;
   }
 }
+.pageDons .centrePageDons .box .dons .titreDon h3 {
+  margin: 0px;
+  margin-top: 6px;
+}
 .pageDons .centrePageDons .box .dons .pomme {
   height: 30px;
-}
-.pageDons .centrePageDons .box .dons h3 {
-  margin: 0px;
-  display: inline;
+  margin-right: 15px;
 }
 .pageDons .centrePageDons .box .dons .fa-heart {
   color: #6e9611;
@@ -367,6 +356,9 @@
 .pageDons .centrePageDons .box .dons .btnContact:disabled {
   transform: none;
   opacity: 0.5;
+}
+.pageDons .centrePageDons .box .dons .adsTime {
+  margin: 0;
 }
 .pageDons .centrePageDons .box .dons .seed {
   background-color: #34348b;
@@ -2113,7 +2105,7 @@ p {
 
 .titreDon {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .titreDon h3 {
   margin-left: 5px;

@@ -2500,6 +2500,9 @@ body {
   font-family: "Louis George Cafe'";
   overflow-x: hidden;
 }
+body .body-container {
+  display: none;
+}
 
 header {
   transition: all 0.3s;
@@ -3207,6 +3210,98 @@ input[type=checkbox]:checked:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+@keyframes load1 {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(1.6);
+  }
+  80% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes load2 {
+  0% {
+    transform: scale(1.2);
+  }
+  20% {
+    transform: scale(1.4);
+  }
+  40% {
+    transform: scale(1.6);
+  }
+  60% {
+    transform: scale(1.4);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes load3 {
+  0% {
+    transform: scale(1.4);
+  }
+  20% {
+    transform: scale(1.6);
+  }
+  40% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.loader {
+  background-color: white;
+  cursor: wait;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader > div {
+  height: 15px;
+  width: 15px;
+  border-radius: 20px;
+  margin: 7px;
+}
+.loader > div.load1 {
+  background-color: #6e9611;
+  animation: load1 1s infinite;
+}
+.loader > div.load2 {
+  background-color: #ff8617;
+  animation: load2 1s infinite;
+}
+.loader > div.load3 {
+  background-color: #6e9611;
+  animation: load3 1s infinite;
 }
 
 /*# sourceMappingURL=style.css.map */

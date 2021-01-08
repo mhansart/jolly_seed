@@ -11,8 +11,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./public/image/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./public/image/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./public/image/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6e9611">
+  <!-- <link rel="manifest" href="/site.webmanifest"> -->
+  <link rel="manifest" href="/favicons/manifest.json>
+  <link rel=" mask-icon" href="/safari-pinned-tab.svg" color="#6e9611">
   <meta name="msapplication-TileColor" content="#ff8617">
   <meta name="theme-color" content="#ffffff">
   <title>Jolly Seed</title>

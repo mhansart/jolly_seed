@@ -32,7 +32,10 @@ if (!empty($tabAnnonceId)) {
                       <div class= 'dons'>
                         <div class='titreDon'>
                           <img class='pomme' src='./public/image/" . $imageDon . "' />
-                          <h3>&nbsp;" . $value["ads_title"] . "</h3>
+                          <div>
+                            <h3>" . $value["ads_title"] . "</h3>
+                            <p class='adsTime'>" . $value["ads_time"] . "</p>
+                          </div>
                         </div>
                         <div class='d-flex row'>
                           <p>Date: " . $value["ads_date"] . "&nbsp;</p>

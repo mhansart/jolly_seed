@@ -198,14 +198,15 @@
           @media screen and (max-width: 680px) {
             margin: auto;
           }
+          h3 {
+            margin: 0px;
+            margin-top: 6px;
+            }
         }
         .pomme {
           height: 30px;
-        }
-        h3 {
-          margin: 0px;
-          display: inline;
-        }
+          margin-right: 15px;
+        }    
         .fa-heart {
           color: $secondary-color;
           font-size: 20px;
@@ -243,6 +244,9 @@
             transform: none;
             opacity: 0.5;
           }
+        }
+        .adsTime{
+          margin:0;
         }
         .seed {
           background-color: $color-seed;

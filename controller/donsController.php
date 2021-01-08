@@ -40,7 +40,9 @@ foreach ($tabDons as $value) {
               <div class= 'dons'>
                 <div class='titreDon'>
                   <img id='img_" . $value["ads_id"] . "' class='pomme pomme_" . $value["ads_category"] . "' src='./public/image/" . $imageDon . "' />
-                  <h3>&nbsp;" . $value["ads_title"] . "</h3>
+                  <div>
+                    <h3>" . $value["ads_title"] . "</h3>
+                  </div>
                 </div>
                 <div class='d-flex row sb'>
                   <p>Date: " . $value["ads_date"] . "&nbsp;</p>

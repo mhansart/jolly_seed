@@ -1,3 +1,6 @@
+$(window).load(function() {
+  $(".loader").fadeOut("slow");;
+});
 var h = window.innerHeight;
 document.body.style.height = h + "px";
 

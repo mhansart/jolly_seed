@@ -86,12 +86,15 @@ export const today = (needHour) => {
   return result;
 };
 
-export const render = (arr1,arr2) => {
+export const render = (arr1, arr2, bool) => {
   arr2.forEach((elt) => {
     elt.style.display = "none";
   });
   arr1.forEach((elt) => {
-    elt.style.display = "block";
+    if(bool){
+      elt.style.display = "flex";
+    }else{
+      elt.style.display="block";
+    }
   });
 };
-

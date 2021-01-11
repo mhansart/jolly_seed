@@ -92,7 +92,7 @@ const searchWord = (str) => {
   const uniqueArray = resultArr.filter(function (item, pos) {
     return resultArr.indexOf(item) == pos;
   });
-  render(uniqueArray, oneChat);
+  render(uniqueArray, oneChat, true);
 };
 
 searchBar.addEventListener("input", (e) => {

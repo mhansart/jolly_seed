@@ -72,7 +72,7 @@ searchCategory.forEach((category) => {
       });
     } else if (category.classList.contains("research-demande")) {
       boxShowed = allItems.filter((x) => {
-        return x.classList.contains("offre-demande");
+        return x.classList.contains("demande-search");
       });
     } else if (category.innerHTML === "Les forums") {
       boxShowed = allItems.filter((x) => {

@@ -39,6 +39,7 @@ foreach ($tabAnnonces as $value) {
             }
         };
         // création de l'annonce
+        $adsTime = $value["ads_time"] !== "" ? "<p class='adsTime'>" . $value["ads_time"] . "</p>" : "";
         $disabled = $value["ads_user_id"] == $_SESSION['user_id'] ? "disabled" : "";
         $allSearch .= "<section id='don_" . $value["ads_id"] . "' class='box " . $classCategory . "-search'>
                   <div class='imageDon' style='background-image: url(uploads/" . $value["ads_picture"] . ")'>
@@ -46,7 +47,10 @@ foreach ($tabAnnonces as $value) {
                   <div class= 'dons'>
                     <div class='titreDon'>
                       <img id='img_" . $value["ads_id"] . "' class='pomme' src='./public/image/" . $imageDon . "' />
-                      <h3>&nbsp;" . $value["ads_title"] . "</h3>
+                      <div>
+                        <h3>" . $value["ads_title"] . "</h3>
+                        " . $adsTime . "
+                      </div>
                     </div>
                     <div class='d-flex row '>
                       <p>Date: " . $value["ads_date"] . "&nbsp;</p>

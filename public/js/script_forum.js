@@ -101,7 +101,7 @@ const searchWord = (str) => {
     });
   } else {
     noResult.style.display = "none";
-    render(uniqueArray, allForum);
+    render(uniqueArray, allForum, false);
   }
 };
 

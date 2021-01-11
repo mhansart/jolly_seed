@@ -15,7 +15,7 @@
         <div class="conceptrice">
             <div class="detailConceptrice marineTexte">
                 <h4>Marine Hansart</h4>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam, sapiente! Officiis, earum. Dignissimos, maxime alias iusto fuga numquam doloribus placeat maiores autem quisquam, accusamus, laborum earum minima. Eligendi, veritatis voluptas?</p>
+                <p>Styliste de formation, après 5 ans dans ce milieu, elle s'est rendue compte que cela ne lui correspondait pas. S'intéressant au milieu du web, elle s'est lancée dans la formation Interface3 pour approfondir ses connaissances du code, qui est devenu une vraie passion.</p>
             </div>
             <img class="marine" src="./public/image/marine.jpg" alt="Marine Hansart" />
         </div>

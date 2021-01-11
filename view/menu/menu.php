@@ -77,6 +77,5 @@ if (isset($_POST["search-general"])) {
         </div>';
   } ?>
 
-  </div>
 </header>
 <main>

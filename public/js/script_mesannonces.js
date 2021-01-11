@@ -10,7 +10,6 @@ function postActive(event) {
   const thisMonth = (thisDate.getMonth() +1).toString().length === 1? `0${thisDate.getMonth()+1}`: thisDate.getMonth()+1;
   const todayDate = `${thisDate.getFullYear()}-${thisDate.getMonth() +1}-${thisDate.getDate()}`;
   ;
-  console.log(todayDate);
   const data = new FormData();
   const adsId = event.target.querySelector(".btn-active-id");
   const containerAds = adsId.closest(".box");

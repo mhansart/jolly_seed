@@ -94,7 +94,7 @@ if (isset($_POST["ads_titleSecondaire"], $_POST["ads_time"], $_POST["ads_descrip
     $annoncePicture = "avatar.png";
   }
   $p->create($_SESSION['user_id'], $_SESSION['user_city'], $type, $category, $_POST["ads_time"], $date, $_POST["ads_description"], $annoncePicture, $active, $title);
-  //header("Location:?section=jardiniers");
+  header("Location:?section=jardiniers");
 }
 
 //LIEN vers CONTACT

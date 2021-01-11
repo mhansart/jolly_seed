@@ -55,7 +55,6 @@ chev.addEventListener("click", function () {
 
 const optTmpsDon = document.querySelector(".tmpsDoOpt");
 const optTmpsOff = document.querySelector(".tmpsOffOpt");
-
 const titrestemps = document.querySelectorAll(".titreTemps");
 // tri temps donné
 optTmpsDon.addEventListener("click", function (e) {
@@ -63,7 +62,7 @@ optTmpsDon.addEventListener("click", function (e) {
     box.style.display = "none";
   }
   for (let titretemps of titrestemps) {
-    if (titretemps.innerHTML === "&nbsp;Demande") {
+    if (titretemps.innerHTML === "Demande") {
       let titretempsId = titretemps.id;
       boxId = "#don_" + titretempsId.split("_")[1];
       let box = document.querySelector(boxId);
@@ -79,7 +78,7 @@ optTmpsOff.addEventListener("click", function (e) {
     box.style.display = "none";
   }
   for (let titretemps of titrestemps) {
-    if (titretemps.innerHTML === "&nbsp;Offre") {
+    if (titretemps.innerHTML === "Offre") {
       let titretempsId = titretemps.id;
       boxId = "#don_" + titretempsId.split("_")[1];
       let box = document.querySelector(boxId);

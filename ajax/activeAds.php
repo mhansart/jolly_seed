@@ -19,10 +19,11 @@ function ActiveAds()
         return;
     }
     $active = $_POST['active'];
+    $date = $_POST['date'];
     $adsId = $_POST["adsId"];
 
     $e = new User();
-    $e->updateActive($adsId, $active);
+    $e->updateActive($adsId, $active, $date);
 
     echo json_encode(["status" => "success"]);
 }

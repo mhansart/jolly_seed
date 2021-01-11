@@ -46,8 +46,8 @@ foreach ($tabDons as $value) {
                   </div>
                 </div>
                 <div style='" . $isActive . "' class='d-flex row date-info-ads'>
-                  <p>Date: " . $value["ads_date"] . "&nbsp;</p>
-                  <p> &nbsp; </p>
+                  <p>Date: <span class='ads-date'>" . $value["ads_date"] . "</span></p>
+                  <p> &nbsp; &nbsp; </p>
                   <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                 </div>
                 <article class='ads-description' style='" . $isActive . "'>" . $value["ads_description"] . "</article>

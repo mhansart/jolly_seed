@@ -16,6 +16,9 @@
       .voir-plus-annonces {
         justify-content: space-between;
         padding: 15px 7px 0 7px;
+        @media screen and (max-width: 1220px) {
+          padding-bottom: 7px;
+        }
         @media screen and (max-width: 400px) {
           flex-direction: column;
         }
@@ -58,12 +61,7 @@
         }
         @media screen and (max-width: 1220px) {
           width: 100%;
-          &:nth-child(2n) {
-            margin-left: 0px;
-          }
-          &:nth-child(2n + 1) {
-            margin-right: 0px;
-          }
+          margin: 7px 0;
         }
       }
     }

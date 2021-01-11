@@ -60,12 +60,13 @@ class User extends Connexion
         $requete = "SELECT * FROM users";
         return $this->execute($requete);
     }
-    public function updateActive($_id, $_active)
+    public function updateActive($_id, $_active, $_date)
     {
-        $requete = "UPDATE ads SET `ads_active` = :active WHERE `ads_id`= :ads_id";
+        $requete = "UPDATE ads SET `ads_active` = :active, ads_date = :adsDate WHERE `ads_id`= :ads_id";
 
         $tabChamps = array(
             ":active" => $_active,
+            ":adsDate" => $_date,
             ":ads_id" => $_id
         );
 

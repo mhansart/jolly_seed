@@ -2020,6 +2020,11 @@ p {
   justify-content: space-between;
   padding: 15px 7px 0 7px;
 }
+@media screen and (max-width: 1220px) {
+  .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces {
+    padding-bottom: 7px;
+  }
+}
 @media screen and (max-width: 400px) {
   .mesannonces-container .pageDons .centrePageDons .voir-plus-annonces {
     flex-direction: column;
@@ -2062,12 +2067,7 @@ p {
 @media screen and (max-width: 1220px) {
   .mesannonces-container .pageDons .centrePageDons .box {
     width: 100%;
-  }
-  .mesannonces-container .pageDons .centrePageDons .box:nth-child(2n) {
-    margin-left: 0px;
-  }
-  .mesannonces-container .pageDons .centrePageDons .box:nth-child(2n+1) {
-    margin-right: 0px;
+    margin: 7px 0;
   }
 }
 .mesannonces-container .coeur:focus {

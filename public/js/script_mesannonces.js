@@ -6,10 +6,15 @@ const formSendActive = document.querySelectorAll(".desactiver-annonce");
 
 function postActive(event) {
   event.preventDefault();
-
+  const thisDate = new Date();
+  const thisMonth = (thisDate.getMonth() +1).toString().length === 1? `0${thisDate.getMonth()+1}`: thisDate.getMonth()+1;
+  const todayDate = `${thisDate.getFullYear()}-${thisDate.getMonth() +1}-${thisDate.getDate()}`;
+  ;
+  console.log(todayDate);
   const data = new FormData();
   const adsId = event.target.querySelector(".btn-active-id");
   const containerAds = adsId.closest(".box");
+  const adsDate = containerAds.querySelector(".ads-date");
   const annonce = [
     containerAds.querySelector(".imageDon"),
     containerAds.querySelector(".titreDon"),
@@ -19,14 +24,16 @@ function postActive(event) {
   data.append("adsId", adsId.value);
   if (adsId.name === "reactiver") {
     data.append("active", "1");
+    data.append("date", todayDate);
   } else {
     data.append("active", "0");
+    data.append("date", adsDate.innerHTML);
   }
   ajaxPost("ajax/activeAds.php?task=write", data).then(() => {
-    console.log(adsId.name);
     annonce.forEach((x) => {
       x.style.opacity = adsId.name === "reactiver" ? 1 : 0.5;
     });
+    adsDate.innerHTML = adsId.name === "reactiver" ? `${thisDate.getFullYear()}-${thisMonth}-${thisDate.getDate()}`: adsDate.innerHTML;
     containerAds.querySelector(".btnActive").value =
       adsId.name === "reactiver"
         ? "Désactiver cette annonce"

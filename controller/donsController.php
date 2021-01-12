@@ -45,7 +45,7 @@ foreach ($tabDons as $value) {
                   </div>
                 </div>
                 <div class='d-flex row sb'>
-                  <p>Date: " . $value["ads_date"] . "&nbsp;</p>
+                  <p>Date: " . $value["ads_date"] . "</p>
                   <p> &nbsp; </p>
                   <p>&nbsp;Lieu : " . $value["ads_city"] . "</p>
                 </div>

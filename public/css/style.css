@@ -354,6 +354,7 @@
   transform: scale(0.92);
 }
 .pageDons .centrePageDons .box .dons .btnContact:disabled {
+  cursor: context-menu;
   transform: none;
   opacity: 0.5;
 }

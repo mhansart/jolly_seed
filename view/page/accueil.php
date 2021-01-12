@@ -23,13 +23,13 @@ if (!isset($_SESSION['user_id'])) {
                 <p>Afin de faciliter les recherches, les annonces sont classées par catégories. A chaque catégorie sa couleur:</p>
                 <ul>
                     <li><img class="logo" src="public/image/pomme-bleue.png" alt="logo bleu" />Graines / Semences / Noyaux</li>
-                    <li><img class="logo" src="public/image/pomme-mauve.png" alt="logo bleu" />
+                    <li><img class="logo" src="public/image/pomme-mauve.png" alt="logo mauve" />
                         Fleurs / Fruits / Légumes </li>
-                    <li><img class="logo" src="public/image/pomme-bordeaux.png" alt="logo bleu" />
+                    <li><img class="logo" src="public/image/pomme-bordeaux.png" alt="logo bordeaux" />
                         Terreau / Copeaux / Buches / Bois</li>
-                    <li><img class="logo" src="public/image/pomme-jaune.png" alt="logo bleu" />
+                    <li><img class="logo" src="public/image/pomme-jaune.png" alt="logo jaune" />
                         Plants / Arbustres / Arbres</li>
-                    <li><img class="logo" src="public/image/pomme-rouge.png" alt="logo bleu" />
+                    <li><img class="logo" src="public/image/pomme-rouge.png" alt="logo rouge" />
                         Temps offert ou demandé</li>
                 </ul>
                 <p> Vous voulez un petit aperçu géographique et thématique des annonces? Regardez! Puis n'hésitez plus, venez nous rejoindre !</p>

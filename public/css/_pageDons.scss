@@ -241,6 +241,7 @@
             transform: scale(0.92);
           }
           &:disabled {
+            cursor: context-menu;
             transform: none;
             opacity: 0.5;
           }

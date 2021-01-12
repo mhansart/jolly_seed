@@ -32,11 +32,11 @@
           <input type="radio" id="offre" name="ads_titleSecondaire" value="Offre" />
           <label for="offre">Temps offert</label><br />
           <div class="timeSlot">
-            <input type="radio" id="demiJournee" name="ads_time" value="demiJournee" />
+            <input type="radio" id="demiJournee" name="ads_time" value="Demi-Journée" />
             <label for="demiJournee">Une demi-journée</label><br />
-            <input type="radio" id="journee" name="ads_time" value="journee" />
-            <label for="journee">Une journee</label><br />
-            <input type="radio" id="plus" name="ads_time" value="plus" />
+            <input type="radio" id="journee" name="ads_time" value="Journée" />
+            <label for="journee">Une journée</label><br />
+            <input type="radio" id="plus" name="ads_time" value="Plus d'une journée" />
             <label for="plus">Plus d'une journée</label><br />
           </div>
         </div>

@@ -29,7 +29,7 @@ class Annonce extends Connexion
 
     public function readByCategoryType($_ads_category)
     {
-        $requete = "SELECT * FROM ads WHERE ads_category != :temps AND ads_active = 1 ORDER BY ads_id DESC";
+        $requete = "SELECT * FROM ads WHERE ads_category != :temps AND ads_active = 1 ORDER BY ads_date DESC";
         $tabChamps = array(
             ":temps" => $_ads_category
         );
@@ -38,7 +38,7 @@ class Annonce extends Connexion
 
     public function readByCategoryTime($_category)
     {
-        $requete = "SELECT * FROM ads WHERE ads_category = :temps AND ads_active = 1 ORDER BY ads_id DESC";
+        $requete = "SELECT * FROM ads WHERE ads_category = :temps AND ads_active = 1 ORDER BY ads_date DESC";
         $tabChamps = array(
             ":temps" => $_category
         );

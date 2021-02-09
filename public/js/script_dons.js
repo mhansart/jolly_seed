@@ -148,28 +148,28 @@ sortir.addEventListener("click", function (e) {
 let fichierImage = document.querySelector(".fichierImage");
 const categories = document.getElementsByName("ads_category");
 const img = document.querySelector(".imageAnnonce");
-img.style.backgroundImage = "url('../jolly_seed/public/image/seed.jpg')";
+img.style.backgroundImage = "url('public/image/seed.jpg')";
 for (let categorie of categories) {
   categorie.addEventListener("change", function (e) {
     switch (e.currentTarget.value) {
       case "seed":
         img.style.backgroundImage =
-          "url('../jolly_seed/public/image/seed.jpg')";
+          "url('public/image/seed.jpg')";
         fichierImage.value = "seed.jpg";
         break;
       case "flower":
         img.style.backgroundImage =
-          "url('../jolly_seed/public/image/tomates.jpg')";
+          "url('public/image/tomates.jpg')";
         fichierImage.value = "tomates.jpg";
         break;
       case "ground":
         img.style.backgroundImage =
-          "url('../jolly_seed/public/image/copeaux.jpg')";
+          "url('public/image/copeaux.jpg')";
         fichierImage.value = "copeaux.jpg";
         break;
       default:
         img.style.backgroundImage =
-          "url('../jolly_seed/public/image/chene.jpg')";
+          "url('public/image/chene.jpg')";
         fichierImage.value = "chene.jpg";
     }
   });

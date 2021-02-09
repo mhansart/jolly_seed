@@ -44,7 +44,7 @@
       <h3>Image: </h3>
       <div class="sectionCategorie annonceImage">
         <div class="conteneurImageAnnonce">
-          <div class='imageAnnonce' style='background-image: url("../jolly_seed/uploads/<?= $annoncePicture ?>");'>
+          <div class='imageAnnonce' style='background-image: url("uploads/<?= $annoncePicture ?>");'>
             <div class='imageAnnonceFixe'>
             </div>
           </div>
